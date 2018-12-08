@@ -13,7 +13,7 @@ else
    echo you need settings:PLUGIN_MODULE
 fi
 if [ ! -z "${PLUGIN_VERSION}" ]; then
-    sed -i '8s/PLUGIN_VERSION/'"${PLUGIN_VERSION}"'' settings.xml
+    ./setParameter.sh  PLUGIN_VERSION ${PLUGIN_VERSION} settings.xml
     echo "set PLUGIN_VERSION complete"
 else
    echo you need settings:PLUGIN_VERSION
