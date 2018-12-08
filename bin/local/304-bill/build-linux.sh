@@ -7,13 +7,13 @@ echo ${PLUGIN_MODULE} ${PLUGIN_VERSION} ${PLUGIN_BASE}
 
 if [ ! -z "${PLUGIN_MODULE}" ]; then
     echo ${PLUGIN_MODULE} 
-    sed -i 's/value="PLUGIN_MODULE"/value="'"${PLUGIN_MODULE}"'"</g' settings.xml
+    sed -i 's/value="PLUGIN_MODULE"/value="'"${PLUGIN_MODULE}"'"</g' /tmp/qs-build/bin/local/304-bill/settings.xml
     echo "set PLUGIN_MODULE complete"
 else
    echo you need settings:PLUGIN_MODULE
 fi
 if [ ! -z "${PLUGIN_VERSION}" ]; then
-    /tmp/qs-build/bin/local/304-bill/setParameter.sh  PLUGIN_VERSION ${PLUGIN_VERSION} settings.xml
+    /tmp/qs-build/bin/local/304-bill/setParameter.sh  PLUGIN_VERSION ${PLUGIN_VERSION} /tmp/qs-build/bin/local/304-bill/settings.xml
     echo "set PLUGIN_VERSION complete"
 else
    echo you need settings:PLUGIN_VERSION
