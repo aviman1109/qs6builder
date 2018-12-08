@@ -16,5 +16,5 @@ steps:
     username: aviman1109
     password: ToDrogogOivwad0
     repo: aviman1109/qs6builder
-    tags: bill
+    tags: no_command
     dockerfile: Dockerfile
