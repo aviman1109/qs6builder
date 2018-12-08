@@ -6,7 +6,7 @@
 	<property name="project.name"			value="PLUGIN_MODULE"/>
 	<property name="project.module"			value="PLUGIN_MODULE"/>
 	<property name="project.version"		value="PLUGIN_VERSION"/>
-	<property name="project.base"			location="PLUGIN_BASE"/>
+	<property name="project.base"			location="/drone/PLUGIN_BASE"/>
 	<property name="project.jarname"		value="chainsea-pgw.jar"/>
 	<property name="quicksilver.package"	location="/tmp/qs-build/quicksilver"/>
 
