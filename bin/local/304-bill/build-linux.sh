@@ -19,7 +19,7 @@ else
    echo you need settings:PLUGIN_VERSION
 fi
 if [ ! -z "${PLUGIN_BASE}" ]; then
-    sed -i 's/value="PLUGIN_BASE"/value="'"${PLUGIN_BASE}"'"</g' /tmp/qs-build/bin/local/304-bill/settings.xml
+    sed -i 's/location="PLUGIN_BASE"/value="'"${PLUGIN_BASE}"'"</g' /tmp/qs-build/bin/local/304-bill/settings.xml
     echo "set PLUGIN_BASE complete"
 else
    echo you need settings:PLUGIN_BASE
