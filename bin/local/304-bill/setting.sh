@@ -4,8 +4,10 @@ echo ${PLUGIN_MODULE} ${PLUGIN_VERSION} ${PLUGIN_BASE}
 # sed -i 's/<'"$1"\>'.*</<'"$1"'\>'"$2"'</g' $3
 # sed -i 's/value="PLUGIN_MODULE"/>/value="'"${PLUGIN_MODULE}"'"' settings.xml
 # <'"$1"\>'.*<
+
 if [ ! -z "${PLUGIN_MODULE}" ]; then
-    sed -i 's/PLUGIN_MODULE/pgw' settings.xml
+    echo ${PLUGIN_MODULE} 
+    sed -i 's/PLUGIN_MODULE/'"${PLUGIN_MODULE}"'' settings.xml
     echo "set PLUGIN_MODULE complete"
 else
    echo you need settings:PLUGIN_MODULE
