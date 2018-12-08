@@ -10,4 +10,4 @@ RUN chmod 777 -R /tmp/qs-build/
 # RUN /tmp/qs-build/bin/local/304-bill/setting.sh
 # RUN /tmp/qs-build/bin/local/304-bill/build-linux.sh
 # RUN ["/tmp/qs-build/bin/local/304-bill/setting.sh"]
-ENTRYPOINT ["/tmp/qs-build/bin/local/304-bill/build-linux.sh", "&& echo Success" ,"|| echo Failure"]
+ENTRYPOINT /tmp/qs-build/bin/local/304-bill/build-linux.sh && echo Success || echo Failure
