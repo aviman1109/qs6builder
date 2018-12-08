@@ -1,0 +1,387 @@
+﻿.JuiList
+{
+	width				: 100%;
+	height				: 100%;
+	position			: relative;
+	user-select			: none;
+	-ms-user-select		: none;
+	-moz-user-select	: none;
+	-webkit-user-select	: none;
+}
+
+.JuiList[Border]
+{
+	border				: 1px solid #6593CF;
+}
+
+.JuiList[TopBorder]
+{
+	border-top			: 1px solid #6593CF;
+}
+
+.JuiListColumnResizer
+{
+	position			: absolute;
+	top					: 0px;
+	width				: 7px;
+	height				: 25px;
+	background-color	: blue;
+	display				: none;
+	cursor				: w-resize;
+	opacity				: 0.01; /* for IE's bug, use opacity rather than background-color:transparent */
+}
+
+.JuiListColumnResizeShadow
+{
+	position			: absolute;
+	top					: 0px;
+	display				: none;
+	background-color	: #FFFF00;
+	border-right		: 1px solid #000000;
+	opacity				: 0.2;
+}
+
+.JuiListColumnResizeMask
+{
+	position			: fixed;	
+	left				: 0px;
+	top					: 0px;
+	right				: 0px;
+	bottom				: 0px;
+	display				: none;
+}
+
+.JuiList .JuiListZone0
+{
+	width				: 0px;
+	overflow			: hidden;
+	cursor				: default;
+}
+
+.JuiList .JuiListZone1
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	overflow-x			: hidden;
+	cursor				: default;
+}
+
+.JuiList .JuiListZone2
+{
+	position			: absolute;
+	width				: 0px;
+	top					: 25px;
+	bottom				: 0px;
+	overflow-y			: hidden;
+	cursor				: default;
+}
+
+.JuiList .JuiListZone3
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	top					: 25px;
+	bottom				: 0px;
+	overflow			: auto;
+}
+
+.JuiList[multiPage] .JuiListZone2,
+.JuiList[multiPage] .JuiListZone3
+{
+	bottom				: 28px;
+}
+
+.JuiListBottomZone
+{
+	display				: none;
+	position			: absolute;
+	height				: 29px;
+	bottom				: 0px;
+	width				: 100%;
+	background-color	: #DFDBFF;
+	box-shadow			: inset 0px 0px 3px #FFFFFF;
+	border-top			: 1px solid #B7B7B7;
+	text-align			: right;
+	overflow			: hidden;
+	padding				: 4px 6px 0px 0px;
+}
+
+.JuiList[multiPage] .JuiListBottomZone
+{
+	display				: block;
+}
+
+.JuiListBackFormZone
+{
+	display				: none;	
+}
+
+.JuiList[fixedColumns=one] .JuiListZone0,
+.JuiList[fixedColumns=one] .JuiListZone2
+{
+	width				: 40px;
+}
+
+.JuiList[fixedColumns=one] .JuiListZone1,
+.JuiList[fixedColumns=one] .JuiListZone3
+{
+	left				: 40px;
+}
+
+.JuiList[fixedColumns=two] .JuiListZone0,
+.JuiList[fixedColumns=two] .JuiListZone2
+{
+	width				: 80px;
+}
+
+.JuiList[fixedColumns=two] .JuiListZone1,
+.JuiList[fixedColumns=two] .JuiListZone3
+{
+	left				: 80px;
+}
+
+.JuiListTable
+{
+	table-layout		: fixed;
+	white-space			: nowrap;
+	overflow			: hidden;
+	width				: 100%;
+	border-spacing		: 0px;
+	border-collapse		: separate;
+}
+
+.JuiListLeftTable,
+.JuiListDataTable
+{
+	background-color	: #FFFFFF;
+}
+
+.JuiListMouseRow td
+{
+	background-color	: #FFFFAA;
+}
+
+.JuiListSelectedRow td
+{
+	background-color	: #FFFFAA;
+}
+
+.JuiListEditRow td
+{
+	background-color	: #FFFFAA;
+}
+
+.JuiList[NoVscroll] .JuiListZone1 td:last-child,
+.JuiList[NoVscroll] .JuiListZone3 td:last-child
+{
+	border-right		: none;
+}
+
+.JuiListTable td
+{
+	border-right		: 1px solid #B7B7B7;
+	border-bottom		: 1px solid #B7B7B7;
+	padding				: 0px 3px;
+	overflow			: hidden;
+	height				: 25px;
+}
+
+.JuiListHeadTable td,
+.JuiListRowNumberCell
+{
+	text-align			: center;
+	box-shadow			: inset 0px 0px 2px #FFFFFF;
+	background-image	: url(image/ListHead.png);
+	background-image	: linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -ms-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -moz-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -webkit-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+}
+
+.JuiListEditRow td
+{
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListHeadTable td > span
+{
+	display				: inline-block;
+	width				: 100%;
+	overflow			: hidden;
+	margin-top			: 3px;
+	line-height			: 16px;
+}
+
+.JuiListDataTable td > span
+{
+	display				: inline-block;
+	width				: 100%;
+	overflow			: hidden;
+	margin-top			: 3px;
+	line-height			: 16px;
+}
+
+.JuiListEditRow td > span
+{
+	display				: none;
+}
+
+.JuiListDataTable td > span > label
+{
+	user-select			: text;
+	-ms-user-select		: text;
+	-moz-user-select	: text;
+	-webkit-user-select	: text;
+}
+
+.JuiListHeadRowNumberCell
+{
+	width				: 40px;
+}
+
+.JuiListHeadCheckCell
+{
+	width				: 40px;
+}
+
+.JuiListHeadAscendCell
+{
+}
+
+.JuiListHeadDescendCell
+{
+}
+
+.JuiListRowNumberCell
+{
+	width				: 40px;
+	text-align			: center;
+}
+
+.JuiListCheckCell
+{
+	width				: 40px;
+	text-align			: center;
+}
+
+.JuiListHeadCheckCell .JuiCheck,
+.JuiListCheckCell .JuiCheck
+{
+	margin-top			: 4px;
+}
+
+.JuiListLink
+{
+	color				: #0050A0;
+	cursor				: pointer;
+	text-decoration		: underline;
+}
+
+.JuiListTextHighlight
+{
+	background-color	: #FFFF00;
+}
+
+.JuiListLink > .JuiListTextHighlight
+{
+	cursor				: pointer;
+}
+
+.JuiListBottomZone table
+{
+	display				: inline-block;
+	height				: 20px;
+	border-spacing		: 0px;
+}
+
+.JuiListBottomZone td
+{
+	padding				: 0px;
+}
+
+.JuiListBottomZone div
+{
+	background-image	: url(image/ListButton.png);
+	background-repeat	: no-repeat;
+	background-position	: center 0px;
+	border				: 1px solid transparent;
+	width				: 24px;
+	height				: 20px;
+}
+
+.JuiListBottomZone .JuiListPreviousPageButton
+{
+	background-position	: center -18px;
+	margin-right		: 3px;
+}
+
+.JuiListBottomZone .JuiListNextPageButton
+{
+	background-position	: center -36px;
+	margin-left			: 3px;
+}
+
+.JuiListBottomZone .JuiListLastPageButton
+{
+	background-position	: center -54px;
+}
+
+.JuiListBottomZone div:hover
+{
+	border				: 1px solid #FFBD69;
+	background-color	: #FFE5A0;
+}
+
+.JuiListBottomZone div:active
+{
+	border				: 1px solid #FB8C3C;
+	background-color	: #FC973D;
+}
+
+.JuiListBottomZone div[Forbidden]
+{
+	border				: 1px solid transparent;
+	background-color	: transparent;
+	opacity				: 0.5;
+}
+
+.JuiListBottomZone .JuiListTimeCost
+{
+	padding-right		: 8px;
+}
+
+.JuiListBottomZone .JuiListShowCount
+{
+	padding-right		: 8px;
+}
+
+.JuiListBottomZone .JuiListPageIndex
+{
+	border				: 1px solid #DFDBFF;
+	width				: 54px;
+	height				: 20px;
+	text-align			: right;
+	padding-right		: 1px;
+	margin				: 0px;
+}
+
+.JuiListBottomZone .JuiListPageIndex[ReadOnly]
+{
+	background-color	: #EEEEEE;
+	border				: 1px solid #CCCCCC;
+}
+
+.JuiListBottomZone .JuiListPageSplitter
+{
+	padding				: 0px 2px;
+}
+
+.JuiListDataIcon
+{
+	display				: block;
+	margin				: 1px auto 0px auto;
+}

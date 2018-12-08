@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>InputBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				Jui.basic.InputBox.create({target: "normal", value: "这是个普通输入框"});
+				Jui.basic.InputBox.create({target: "readonly", disabled: true, value: "这是个只读输入框"});
+				Jui.basic.InputBox.create({target: "url", type: "url", value: "http: //google.com", backgroundColor: "#FFFFCC"});
+				Jui.basic.InputBox.create({target: "email", type: "email", value: "a@b.com", style: "width: 300px"});
+				Jui.basic.InputBox.create({target: "phone", type: "phone", value: "77066188"});
+				Jui.basic.InputBox.create({target: "float", type: "double", value: 8848.13});
+				Jui.basic.InputBox.create({target: "percent", type: "percent", value: 23.45, backgroundColor: "#CCFFCC"});
+				Jui.basic.InputBox.create({target: "int", type: "int", value: 1234567});
+				Jui.basic.InputBox.create({target: "password", type: "password", value: "12345678", backgroundColor: "#FFCCCC"});
+				Jui.basic.InputBox.create({target: "autocomplete", emptyText: "请输入内容", autoComplete: true, onautocomplete: doAutoComplete});
+				Jui.basic.InputBox.create({target: "tool", face: "ToolInputBox", value: "Hello"});
+				Jui.basic.InputBox.create({target: "tool-readonly", face: "ToolInputBox", disabled: true, value: "Hello"});
+
+				var t1 = new Date().valueOf();
+				var buffer = ["<table id=batch class='SeparateTable' style='table-layout:fixed'><col width=160><col width=160><col width=160>"];
+				var args = {highlight: true, style: "width:100%", type: "int"};
+				for (var i = 0; i < 30; ++i) {
+					if (i % 3 == 0) {
+						buffer.push("<tr>");
+					}
+					buffer.push("<td>" + Jui.basic.InputBox.getHtml(args) + "</td>");
+					if (i % 3 == 2) {
+						buffer.push("</tr>");
+					}
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				for (var i = 0, rows = document.getElementById("batch").rows; i < rows.length; ++i) {
+					for (var j = 0, cells = rows[i].cells; j < cells.length; ++j) {
+						args.id = i * 3 + j;
+						args.name = Jui.random.next();
+						var box = Jui.basic.InputBox.initialize(cells[j].firstChild, args);
+						if (j == 0) {
+							box.setValue(i);
+						}
+						else if (j == 1) {
+							box.setDisabled(true);
+						}
+						else if (j == 2) {
+							box.setEmptyText("input a number");
+						}
+					}
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function doAutoComplete(event)
+			{
+				var box = this;
+				var items = [];
+				for (var i = 0, n = 3 + Jui.random.nextInt(7); i < n; ++i) {
+					items.push(event.text + (i + 1));
+				}
+				box.setAutoCompleteItems(event.sequence, items);
+			}
+			
+			Jui.basic.InputBox.setPhoneClickHandler(function(phone) {
+				Jui.message.alert("Add your code to outbound here. phone=" + phone);
+			});
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable" style="width:100%">
+			<col width="120"><col>
+			<tr><td>普通</td><td id="normal"></td></tr>
+			<tr><td>只读</td><td id="readonly"></td></tr>
+			<tr><td>URL</td><td id="url"></td></tr>
+			<tr><td>Email</td><td id="email"></td></tr>
+			<tr><td>电话</td><td id="phone"></td></tr>
+			<tr><td>浮点</td><td id="float"></td></tr>
+			<tr><td>百分比</td><td id="percent"></td></tr>
+			<tr><td>整数</td><td id="int"></td></tr>
+			<tr><td>密码</td><td id="password"></td></tr>
+			<tr><td>自动完成</td><td id="autocomplete"></td></tr>
+			<tr><td>工具输入框</td><td id="tool"></td></tr>
+			<tr><td>只读工具输入框</td><td id="tool-readonly"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

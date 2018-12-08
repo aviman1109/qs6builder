@@ -1,0 +1,10 @@
+﻿.JuiMapGraph
+{
+	overflow			: hidden;
+}
+
+.JuiMapGraph .JuiMapGraphMap
+{
+	position			: absolute;
+	opacity				: 1;
+}

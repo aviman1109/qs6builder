@@ -1,0 +1,65 @@
+.LeftZone
+{
+	position		: absolute;
+	padding			: 8px;
+	width			: 240px;
+	height			: 100%;
+}
+
+.RightZone
+{
+	position		: absolute;
+	left			: 240px;
+	right			: 0px;
+	top				: 8px;
+	bottom			: 8px;
+	overflow-x		: hidden;
+	overflow-y		: auto;
+}
+
+.BlockTitle
+{
+	height			: 28px;
+	padding-top		: 4px;
+	line-height		: 24px;
+}
+
+.TopBlockTitle
+{
+	height			: 21px;
+	line-height		: 18px;
+}
+
+.BlockContent
+{
+	padding			: 0px 8px 0px 12px;
+	width			: 100%;
+}
+
+.TopBlockContent
+{
+	padding-left	: 6px;
+	width			: 100%;
+}
+
+.OrderTable
+{
+	margin			: 0px auto;
+}
+
+.OrderTable .OrderTableTitleRow
+{
+	height			: 18px;
+	vertical-align	: top; 
+}
+
+.OrderTable tr
+{
+	height			: 32px; 
+}
+
+.OrderTable td
+{
+	text-align		: center;
+	padding			: 0px 6px;
+}

@@ -1,0 +1,2 @@
+﻿delete from TsDictionaryItem where FId='99c99fdf-b0cd-4915-bf19-4b8bf6afbbe7';
+insert into TsDictionaryItem set FDictionaryId='bbb93944-7973-408b-a8fe-c948daf0356c', FId='99c99fdf-b0cd-4915-bf19-4b8bf6afbbe7', FIndex=8, FParentValue=null, FText='分配', FValue='Assign';

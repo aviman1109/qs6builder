@@ -1,0 +1,35 @@
+.QsContent
+{
+	overflow-x		: hidden;
+	overflow-y		: auto;
+	padding			: 8px 4px 0px 4px;
+}
+
+.HomepageTable
+{
+	width			: 100%;
+	table-layout	: fixed;
+	border-collapse	: collapse;
+}
+
+.HomepageZone
+{
+	padding			: 0px 4px 8px 4px;
+}
+
+.HomepageZone .HomepageItem
+{
+	width			: 100%;
+	margin-top		: 8px;
+}
+
+.HomepageZone > div:first-child
+{
+	margin-top		: 0px;
+}
+
+.HomepageItemContent
+{
+	width			: 100%;
+	overflow		: hidden;
+}

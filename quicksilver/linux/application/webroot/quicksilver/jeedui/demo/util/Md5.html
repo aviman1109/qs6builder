@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>MD5</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+		</script>
+	</head>
+	<body>
+		<script>
+			document.write(Jui.md5.asString("hello"));
+			document.write("<br>");
+			document.write("5d41402abc4b2a76b9719d911017c592");
+
+			document.write("<br>");
+			document.write("<br>");
+			var uint8 = Jui.md5.asUint8Array("hello");
+			document.write("[");
+			for (var i = 0; i < uint8.length; ++i) {
+				if (i > 0) {
+					document.write(", ");
+				}
+				document.write(uint8[i]);
+			}
+			document.write("]");
+		</script>
+	</body>
+</html>

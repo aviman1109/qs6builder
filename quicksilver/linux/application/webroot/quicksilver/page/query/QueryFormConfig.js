@@ -1,0 +1,6 @@
+var QueryFormConfig =
+{
+	doLoad: function()
+	{
+	}
+};

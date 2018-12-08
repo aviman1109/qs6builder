@@ -1,0 +1,12 @@
+{
+    "extract": {
+        "appName": "quicksilver",
+        "serviceName": "Quicksilver",
+        "productName": "Quicksilver"
+    },
+    "modules": [{
+        "buildTime": "20180424-102227",
+        "name": "main",
+        "version": "6.9.10.1"
+    }]
+}

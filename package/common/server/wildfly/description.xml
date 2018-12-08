@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<version>8.0.0</version>
+	<compatible-version>8</compatible-version>
+	<directory>wildfly</directory>
+	<deploy-directory>wildfly/standalone/deployments</deploy-directory>
+	<deploy-as-war>true</deploy-as-war>
+	<solr-deploy-directory>wildfly/standalone/deployments</solr-deploy-directory>
+	<ignore-paths>
+		wildfly/extension/${Ets.Install.AppName}/config/
+		wildfly/extension/${Ets.Install.AppName}/image/logo/
+		h2/data/
+
+		server.bat
+		jboss/welcome-content/index.html
+	</ignore-paths>
+	<!--
+		wildfly/standalone/configuration/
+		jboss/bin/service.bat
+	-->
+	<delete-files>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">log4j-1\..*\.jar</delete-file>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">log4j\.properties</delete-file>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">slf4j-log4j1.*\.jar</delete-file>
+	</delete-files>
+	<text-replacements>
+		<text-replacement file="${Ets.Install.Path}/wildfly/extension/${Ets.Install.AppName}/config/application.properties">
+			<item>
+				<expression>log.provider.class\s*=\s*com.jeedsoft.common.advanced.log.log4j.Log4jLogProvider</expression>
+				<replacement>log.provider.class = com.jeedsoft.common.advanced.log.log4j2.Log4j2FullAsyncLogProvider</replacement>
+			</item>
+			<item>
+				<expression>log.config.file\s*=\s*log4j.xml</expression>
+				<replacement>log.config.file = log4j2.xml</replacement>
+			</item>
+		</text-replacement>
+	</text-replacements>
+</root>

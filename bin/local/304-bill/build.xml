@@ -1,0 +1,204 @@
+﻿<!--
+	该 XML 用来描述如何打包。
+
+	在更新打包工具时，该 XML 可能被调整。所以原则上请避免在专案层面修改该 XML。
+	专案层面的内容请放在 settings.xml 中，并以 import 的方式引入。在打包工具更
+	新时，不会影响 settings.xml。
+-->
+
+<project name="local" default="clean" basedir="../../..">
+
+	<!-- 引入第三方的 Ant-Contrib 库，以支持 if 任务 -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+	<!-- 引入专案级别的 settings.xml -->
+	<import file="settings.xml"/>
+
+	<!-- 自定义 hastarget 脚本 -->
+	<scriptdef name="hastarget" language="javascript">
+		<attribute name="targetname"/>
+		<attribute name="property"/>
+		<![CDATA[
+			if (project.getTargets().containsKey(attributes.get("targetname"))) {
+				project.setProperty(attributes.get("property"), "true");
+			}
+		]]>
+	</scriptdef>
+
+	<!-- 打包时间（作为包名的一部分） -->
+	<tstamp>
+		<format property="build.time" pattern="yyyyMMdd-HHmmss"/>
+	</tstamp>
+
+	<!-- 路径和文件设置 -->
+	<property name="file.name"			value="${project.name}-${os}-${project.version}-${build.time}"/>
+	<property name="temp"				location="temp/${project.name}/${os}"/>
+	<property name="package"			location="package"/>
+	<property name="output"				location="${temp}/${file.name}"/>
+	<property name="output.extension"	location="${output}/application/extension"/>
+	<property name="output.webroot"		location="${output}/application/webroot"/>
+	<property name="output.applib"		location="${output}/application/webroot/WEB-INF/lib"/>
+	<property name="output.home"		location="${output}/home"/>
+	<property name="output.sql"			location="${output.home}/tool/sql"/>
+	<property name="src.lib"			location="${project.base}/WebRoot/WEB-INF/lib"/>
+	<property name="package.lib"		location="${package}/common/bin/lib"/>
+	<property name="tomcat.lib"			location="bin/lib/tomcat"/>
+	<property name="project.bin"		location="${temp}/bin"/>
+	<property name="project.jar"		location="${output.applib}/${project.jarname}"/>
+	
+	<!-- 測試加的 -->
+	 <property name="tomcat.webapps"	location="${output}/server/tomcat/home/apache-tomcat/webapps"/>
+
+	<!-- 条件属性 -->
+	<condition property="is-windows">
+		<equals arg1="${os}" arg2="windows"/>
+	</condition>
+	<condition property="is-linux">
+		<equals arg1="${os}" arg2="linux"/>
+	</condition>
+
+	<!-- 初始化：删除已存在的临时文件，创建必须的目录 -->
+	<target name="init">
+	    <delete dir="${temp}"/>
+		<mkdir dir="${project.bin}"/>
+		<mkdir dir="${output}"/>
+	</target>
+
+	<!-- 复制文件到打包的位置 -->
+	<target name="copy" depends="init">
+		<hastarget targetname="before-copy" property="is-before-copy-defined"/>
+		<if>
+			<isset property="is-before-copy-defined"/>
+			<then>
+				<antcall target="before-copy"/>
+			</then>
+		</if>
+
+		<if>
+			<isset property="quicksilver.package"/>
+			<then>
+				<copy todir="${output}">
+					<fileset dir="${quicksilver.package}/${os}"/>
+				</copy>
+			</then>
+			<else>
+				<copy todir="${output}" overwrite="true">
+					<fileset dir="${package}/common">
+						<include name="bin/**/*"/>
+						<include name="server/**/description.xml"/>
+						<include name="report/**/web.xml.append"/>
+					</fileset>
+				</copy>
+				<copy todir="${output}" overwrite="true">
+					<fileset dir="${package}/${os}">
+						<include name="bin/**/*"/>
+						<include name="upgrade*"/>
+					</fileset>
+				</copy>
+			</else>
+		</if>
+
+		<copy todir="${output}" overwrite="true" failonerror="false">
+			<fileset dir="${project.base}/package/common"/>
+		</copy>
+		<copy todir="${output}" overwrite="true" failonerror="false">
+			<fileset dir="${project.base}/package/${os}"/>
+		</copy>
+
+		<hastarget targetname="after-copy" property="is-after-copy-defined"/>
+		<if>
+			<isset property="is-after-copy-defined"/>
+			<then>
+				<antcall target="after-copy"/>
+			</then>
+		</if>
+	</target>
+
+	<!-- 编译 Java -->
+	<target name="compile" depends="copy">
+		<hastarget targetname="before-build" property="is-before-build-defined"/>
+		<if>
+			<isset property="is-before-build-defined"/>
+			<then>
+				<antcall target="before-build"/>
+			</then>
+		</if>
+
+		<javac srcdir="${project.base}/src" destdir="${project.bin}" debug="on" fork="yes" includeAntRuntime="false" encoding="utf-8">
+			<classpath>
+				<fileset dir="${src.lib}" includes="*.jar"/>
+				<fileset dir="${tomcat.lib}" includes="*.jar"/>
+			</classpath>
+		</javac>
+		<copy todir="${project.bin}">
+			<fileset dir="${project.base}/src" excludes="**/*.java"/>
+		</copy>
+		<jar basedir="${project.bin}" destfile="${project.jar}"/>
+
+		<hastarget targetname="after-build" property="is-after-build-defined"/>
+		<if>
+			<isset property="is-after-build-defined"/>
+			<then>
+				<antcall target="after-build"/>
+			</then>
+		</if>
+	</target>
+
+	<!-- 生成 bin/config/settings.json -->
+	<target name="settings" depends="compile">
+		<property name="settings.temp" location="${output}/bin/config/settings.temp"/>
+		<echo file="${settings.temp}" append="false">
+			<![CDATA[
+				{
+					module: "${project.module}",
+					version: "${project.version}",
+					buildTime: "${build.time}",
+					os: "${os}",
+					quicksilver: "${quicksilver.package}"
+				}
+			]]>
+		</echo>
+		<java classname="com.jeedsoft.quicksilver.toolset.pack.anttask.PackageSettingsGenerator" failonerror="true">
+			<arg value="${output}/bin/config"/>
+			<arg value="${package.settings}"/>
+			<classpath>
+				<fileset dir="${package.lib}" includes="*.jar"/>
+			</classpath>
+		</java>
+	    <delete file="${settings.temp}"/>
+	</target>
+
+	<!-- 将内容压缩为 ZIP 格式 -->
+	<target name="compress" depends="settings">
+		<if>
+			<equals arg1="${os}" arg2="windows"/>
+			<then>
+				<zip destfile="output/${file.name}.zip" duplicate="preserve">
+					<zipfileset src="${package}/zip/jre-windows-64.zip" prefix="${file.name}/bin"/>
+					<tarfileset dir="${output}" prefix="${file.name}"/>
+				</zip>
+			</then>
+		</if>
+		<if>
+			<equals arg1="${os}" arg2="linux"/>
+			<then>
+				<zip destfile="output/${file.name}.zip" duplicate="preserve">
+					<zipfileset src="${package}/zip/jre-linux-64.zip" prefix="${file.name}/bin"/>
+					<tarfileset dir="${output}" prefix="${file.name}" filemode="755">
+						<include name="**/*.sh"/>
+					</tarfileset>
+					<tarfileset dir="${output}" prefix="${file.name}">
+						<include name="**"/>
+						<exclude name="**/*.sh"/>
+					</tarfileset>
+				</zip>
+			</then>
+		</if>
+	</target>
+
+	<!-- 清理临时文件 -->
+	<target name="clean" depends="compress">
+	    <delete dir="${temp}"/>
+	</target>
+
+</project>

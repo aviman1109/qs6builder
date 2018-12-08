@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>关于</title>
+		<script src="../../js/Jui.js"></script>
+		<link rel="stylesheet" type="text/css" href="Help.css"/>
+	</head>
+	<body>
+		<div class="main">
+			<h3>关于 JeedUI</h3>
+			<p>JeedUI 是一套简洁轻便的 Web 控件。它对企业领域常用的功能进行封装，开发者只需要创建控件并按需要调用相关方法，不需要过度关注界面设计和 DOM 操作。从而提高生产效率，快速构建企业级 Web 产品的界面部分。</p>
+			<p>JeedUI 基于 HTML5，支持 IE10+、Edge 和 Chrome、Firefox、Safari 等浏览器较新的版本，不支持 IE9 或更低版本的 IE 浏览器。</p>
+			<p>以树控件为例，典型的 JeedUI JavaScript 代码如下：</p>
+			<div class="code">
+				<span class="code-keyword">var</span> tree = Jui.option.Tree.create({
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;target: <span class="code-const">"parent-dom-id"</span>,
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;multiSelect: <span class="code-const">true</span>
+				<br>});
+				<br>tree.load([				
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;{id: <span class="code-const">"1"</span>, text: <span class="code-const">"节点1"</span>, children: [
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id: <span class="code-const">"1.1"</span>, text: <span class="code-const">"节点1.1"</span>},
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{id: <span class="code-const">"1.2"</span>, text: <span class="code-const">"节点1.2"</span>}
+	    			<br>&nbsp;&nbsp;&nbsp;&nbsp;]},
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;{id: <span class="code-const">"2"</span>, text: <span class="code-const">"节点2"</span>},
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;{id: <span class="code-const">"3"</span>, text: <span class="code-const">"节点3"</span>}
+				<br>]);
+			</div>
+			<p>JeedUI 分为以下三部分：</p>
+			<ol>
+				<li>基础控件：可能被多数页面引用的控件，如按钮、各种输入框、工具条、对话框等。在 JeedUI 发行版本中，基础控件被封装在一个 JavaScript 文件中一次性载入。</li>
+				<li>可选控件：被部分页面引用的控件，如列表、表单、树、OutlookBar、页签、日历等。缺省情况下，这些控件每个位于一个独立的 JavaScript 文件中，通过 <span class="inline-code">Jui.use("ControlName")</span> 方法载入。</li>
+				<li>设计图控件：工作流及其它设计图控件。和可选控件类似，这些控件需要通过 <span class="inline-code">Jui.use("ControlName")</span> 方法载入。</li>
+			</ol>
+			<p>您可以点击左侧菜单中的内容，打开相应的控件示例页面，了解控件的功能。您也可以在打开的页面上按右键，查看框架源代码，了解如何通过 JavaScript 创建控件并对控件进行操作。</p>
+			<p>为方便查看，本示例系统的多数页面将 HTML、JavaScript、CSS 放在同一 HTML 文件中。在实际开发时，请将 JavaScript 代码放在 *.js 文件中，将 CSS 样式表代码放在 *.css 文件中，以保持代码结构清晰。</p>
+			<p>本示例系统仅对控件的部分功能予以演示。如需了解全部功能，请参考控件手册。</p>
+		</div>
+	</body>
+</html>

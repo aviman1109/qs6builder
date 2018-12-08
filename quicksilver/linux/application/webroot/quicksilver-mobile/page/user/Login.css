@@ -1,0 +1,209 @@
+.QsLogin
+{
+	background-image	: linear-gradient(top, #1BAFED, #0A2260);
+	background-image	: -ms-linear-gradient(top, #1BAFED, #0A2260);
+	background-image	: -moz-linear-gradient(top, #1BAFED, #0A2260);
+	background-image	: -webkit-linear-gradient(top, #1BAFED, #0A2260);
+	width				: 100%;
+	height				: 100%;
+	position			: relative;
+	font-family			: Helvetica;
+	text-align			: center;
+}
+
+.QsLoginBackground
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	width				: 100%;
+	height				: 100%;
+}
+
+.QsLoginBackground > div:first-child
+{
+	text-align			: left;
+}
+
+.QsLoginBackground > div:last-child
+{
+	position			: absolute;
+	bottom				: 0px;
+	width				: 100%;
+}
+
+.QsLoginBackground > div:first-child > img
+{
+	width				: 320px;
+	height				: 190px;
+}
+
+.QsLoginBackground > div:last-child > img
+{
+	width				: 320px;
+	height				: 340px;
+}
+
+.QsLoginLogo
+{
+	position			: relative;
+	width				: 250px;
+	height				: 90px;
+	margin-top			: 75px;
+}
+
+.QsLoginInputBox
+{
+	position			: relative;
+	width				: 220px;
+	height				: 36px;
+	background-image	: linear-gradient(top, #40A1D8, #349CD1);
+	background-image	: -ms-linear-gradient(top, #40A1D8, #349CD1);
+	background-image	: -moz-linear-gradient(top, #40A1D8, #349CD1);
+	background-image	: -webkit-linear-gradient(top, #40A1D8, #349CD1);
+	border				: 1px solid #C1E5FF;
+	border-radius		: 18px;
+	box-shadow			: 0px 2px 2px rgba(7,57,116,0.7), 0px 2px 2px rgba(24,112,176,0.7) inset;
+	margin				: 0px auto;
+	text-align			: right;
+	padding				: 5px 12px 3px 52px;
+}
+
+.QsLoginNameBox
+{
+	margin-top			: 6px;
+}
+
+.QsLoginPasswordBox
+{
+	margin-top			: 16px;
+}
+
+.QsLoginInputBox > div:first-child
+{
+	border-right		: 1px solid #1772A9;
+	width				: 45px;
+	height				: 26px;
+	padding-left		: 12px;
+	text-align			: left;
+	position			: absolute;
+	left				: 0px;
+	top					: 5px;
+}
+
+.QsLoginInputBox > div:first-child > img
+{
+	width				: 24px;
+	height				: 24px;
+}
+
+.QsLoginInputBox > input
+{
+	border				: none;
+	width				: 100%;
+	height				: 100%;
+	background-color	: transparent;
+	font-size			: 18px;
+	padding				: 0px;
+}
+
+.QsLoginInputBox ::-webkit-input-placeholder
+{
+	color				: #E8E8E8;
+}
+
+.QsLoginRemberName
+{
+	position			: relative;
+	width				: 220px;
+	margin				: 16px auto 0px auto;
+	text-align			: left;
+	padding-left		: 6px;
+	color				: #FFFFFF;
+	text-shadow			: 1px 1px #000000;
+	font-size			: 14px;
+}
+
+.QsLoginRemberName > img
+{
+	width				: 24px;
+	height				: 24px;
+	vertical-align		: top;
+}
+
+.QsLoginRemberName > label
+{
+	line-height			: 24px;
+	padding-left		: 3px;
+	vertical-align		: top;
+}
+
+.QsLoginButton
+{
+	position			: relative;
+	margin				: 16px auto 0px auto;
+	width				: 108px;
+	height				: 36px;
+	line-height			: 36px;
+	border-radius		: 18px;
+	background-image	: linear-gradient(top, #46AAB9, #0E4E71);
+	background-image	: -ms-linear-gradient(top, #46AAB9, #0E4E71);
+	background-image	: -moz-linear-gradient(top, #46AAB9, #0E4E71);
+	background-image	: -webkit-linear-gradient(top, #46AAB9, #0E4E71);
+	box-shadow			: 0px -1px #0B5987, 0px 1px #051121, 0px 1px rgba(86,191,197,0.6) inset, 0px -3px rgba(12,66,104,0.9) inset;
+	color				: #FFFFFF;
+	font-size			: 20px;
+	text-align			: center;
+	text-shadow			: 1px 1px #000000;
+}
+
+.QsLoginBottomZone
+{
+	position			: absolute;
+	bottom				: 6px;				
+	font-size			: 12px;
+	color				: #FFFFFF;
+	text-align			: center;
+	width				: 100%;
+}
+
+.QsLoginLinkRow
+{
+	
+}
+
+.QsLoginLinkRow > a
+{
+	color				: #FFFFFF;
+	font-size			: 14px;
+	text-decoration		: none;
+	text-shadow			: 1px 1px #000000;
+}
+
+.QsLoginLinkRow > a:first-child
+{
+	margin-right		: 16px;
+}
+
+.QsLoginLinkRow > a > img
+{
+	position			: relative;
+	top					: 2px;
+	width				: 16px;
+	height				: 16px;
+	margin-right		: 3px;
+}
+
+.QsLoginCopyrightRow
+{
+	margin-top			: 8px;
+	font-family			: Avenir;	
+}
+
+.QsLoginLineRow
+{
+	height				: 8px;
+	border-top			: 2px solid #2DAEFF;
+	border-bottom		: 2px solid #FDD100;
+	margin-top			: 3px;
+}

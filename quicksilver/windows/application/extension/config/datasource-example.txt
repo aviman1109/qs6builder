@@ -1,0 +1,35 @@
+DB2:
+	<driver-class>com.ibm.db2.jcc.DB2Driver</driver-class>
+	<url>jdbc:db2://localhost:50000/test</url>
+	<user>db2admin</user>
+
+H2:
+	<driver-class>org.h2.Driver</driver-class>
+	<url>jdbc:h2:tcp://127.0.0.1/test</url>
+	<user>sa</user>
+
+H2(Embedded):
+	<driver-class>org.h2.Driver</driver-class>
+	<url>jdbc:h2://database-file-path</url>
+	<user>sa</user>
+
+MySQL:
+	<driver-class>com.mysql.jdbc.Driver</driver-class>
+	<url>jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&amp;useSSL=false</url>
+	<user>root</user>
+	注意：如果在 dsconfig 圖形介面中配置，請將 URL 中的 "&amp;" 改為 "&"
+
+Oracle:
+	<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+	<url>jdbc:oracle:thin:@127.0.0.1:1521:XE</url>
+	<user>test</user>
+
+PostgreSQL:
+	<driver-class>org.postgresql.Driver</driver-class>
+	<url>jdbc:postgresql://localhost/test</url>
+	<user>postgres</user>
+
+SQL Server:
+	<driver-class>net.sourceforge.jtds.jdbc.Driver</driver-class>
+	<url>jdbc:jtds:sqlserver://localhost:1433/test</url>
+	<user>sa</user>

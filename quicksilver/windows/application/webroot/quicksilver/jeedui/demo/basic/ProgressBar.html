@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>MessageBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right:[
+					{control:"Button",	"text":"ShowAndClose",	"icon":"../image/misc/1.png",	onclick:"doShow(2)"},
+					{control:"Button",	"text":"Show",			"icon":"../image/misc/2.png",	onclick:"doShow()"}
+				]});
+			}
+
+			function doShow(duration)
+			{
+				var bar = Jui.message.progress(function() {
+					Jui.message.hint("Manually closed.");
+				});
+				if (duration > 0) {
+					setTimeout(function() {
+						bar.close(); 
+					}, duration * 1000);
+				}
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="text-align:center;padding-top:20px"></div>
+	</body>
+</html>

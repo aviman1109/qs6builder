@@ -1,0 +1,447 @@
+﻿.JuiCalendar
+{
+	position			: relative;
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+.JuiCalendar .JuiCalendarLeftPane
+{
+	display				: none;
+}
+
+.JuiCalendar[hasLeft] .JuiCalendarLeftPane
+{
+	display				: block;
+	position			: absolute;
+	width				: 170px;
+	height				: 100%;
+}
+
+.JuiCalendar .JuiCalendarRightPane
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	padding-top			: 4px;
+}
+
+.JuiCalendar[hasLeft] .JuiCalendarRightPane
+{
+	position			: absolute;
+	border				: 1px solid #ACACB5;
+	box-shadow			: 0px 0px 5px #ACACB5;
+	left				: 175px;
+	right				: 5px;
+	top					: 5px;
+	bottom				: 5px;
+	width				: auto;
+	height				: auto;
+	background-color	: #FFFFFF;
+}
+
+.JuiCalendar .JuiCalendarTopPane
+{
+	width				: 100%;
+	height				: 36px;
+	padding				: 6px;
+	overflow			: hidden;
+	cursor				: default;
+}
+
+.JuiCalendar .JuiCalendarTopPane > DIV
+{
+	display				: inline-block;
+	vertical-align		: top;
+}
+
+.JuiCalendar .JuiCalendarButton
+{
+	border-radius		: 3px;
+	padding				: 0px 10px 0px 10px;
+	height				: 100%;
+	line-height			: 22px;
+	box-shadow			: none;
+	background			: white;  
+	border				: none;  
+	border-bottom		: 1px solid silver;  
+	border-right		: 1px solid silver;  
+	border-left			: 1px solid #eee;  
+	border-top			: 1px solid #EEE;
+}
+
+.JuiCalendar .JuiCalendarButton:hover
+{
+	background-position	: 0px -22px;
+	background			: #eee;
+}
+
+.JuiCalendar .JuiCalendarButton:active, .JuiCalendar .JuiCalendarButton[current]
+{
+	background-position	: 0px -44px;
+	background			: #eee;  
+	border-top-color	: silver;  
+	border-left-color	: silver;  
+	border-bottom-color	: #eee;  
+	border-right-color	: #eee;
+}
+
+.JuiCalendar .JuiCalendarDay
+{
+	border-radius		: 3px 0px 0px 3px;
+	margin-left			: 6px;
+}
+
+.JuiCalendar .JuiCalendarWeek
+{
+	border-left			: none;
+	border-radius		: 0px;
+}
+
+.JuiCalendar .JuiCalendarMonth
+{
+	border-left			: none;
+	border-radius		: 0px 3px 3px 0px;
+	margin-right		: 15px;
+}
+
+.JuiCalendar .JuiCalendarToday
+{
+	margin-right		: 15px;
+}
+
+.JuiCalendar .JuiCalendarBack
+{
+	border-radius		: 3px 0px 0px 3px;
+	font-weight			: bold;
+}
+
+.JuiCalendar .JuiCalendarForward
+{
+	border-left			: none;
+	border-radius		: 0px 3px 3px 0px;
+	font-weight			: bold;
+	margin-right		: 15px;
+}
+
+.JuiCalendar .JuiCalendarTitle
+{
+	font-size			: 16px;
+	height				: 100%;
+	line-height			: 24px;
+}
+
+.JuiCalendar .JuiCalendarHeadPane
+{
+	position			: absolute;
+	top					: 40px;
+	left				: 60px;
+	right				: 0px;
+	overflow-x			: hidden;
+	overflow-y			: scroll;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarHeadPane
+{
+	overflow-y			: hidden;
+	left				: 0px;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarHeadPane
+{
+	overflow-y			: hidden;
+	left				: 6px;
+}
+
+.JuiCalendar .JuiCalendarDataHeadOuter
+{
+	float				: left;
+	overflow			: hidden;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMultiple .JuiCalendarDataHeadOuter,
+.JuiCalendar .JuiCalendarRightPaneMultiple .JuiCalendarDataBodyOuter,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataHeadOuter,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataBodyOuter
+{
+	padding-right		: 6px;
+}
+
+.JuiCalendar .JuiDataUserName
+{
+	display				: inline-block;
+	border				: 1px solid #8DAED9;
+	border-bottom		: 0px;
+	height				: 20px;
+	line-height			: 19px;
+	padding				: 0px 8px 0px 8px;
+	background-color	: rgba(229, 240, 255, 1);
+	border-radius		: 3px 3px 0px 0px;
+	position			: relative;
+	top					: 1px;
+	cursor				: default;
+	box-shadow			: inset -7px 15px 13px -5px rgb(248, 252, 255);
+}
+
+.JuiCalendar .JuiCalendarRightPane .JuiCalendarDataHeadBorder
+{
+	border-bottom		: 1px solid #8DAED9;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataHeadBorder,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataHeadBorder
+{
+	border-bottom		: none;
+}
+
+.JuiCalendar .JuiCalendarDataHeadOuter TABLE
+{
+	border-collapse		: collapse;
+	width				: 100%;
+	table-layout		: fixed;
+}
+
+.JuiCalendar .JuiCalendarDataHeadOuter TD
+{
+	padding				: 0px;
+	cursor				: default;
+	text-align			: center;
+	border				: 1px solid #8DAED9;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataHeadOuter TD[left]
+{
+	border-left			: none;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataHeadOuter TD[right]
+{
+	border-right		: none;
+}
+
+.JuiCalendar .JuiCalendarDataHeadOuter .JuiCalendarDataHead
+{
+	height				: 21px;
+	background-color	: rgba(212, 229, 250, 0.6);
+}
+
+.JuiCalendar .JuiCalendarDataHeadOuter .JuiCalendarDataJaw
+{
+	height				: 19px;
+	background-color	: rgba(203, 219, 240, 0.6);
+	border-bottom		: none;
+}
+
+.JuiCalendar .JuiCalendarTimePane
+{
+	position			: absolute;
+	top					: 80px;
+	bottom				: 0px;
+	width				: 60px;
+	overflow			: hidden;
+	line-height			: 24px;
+	border-top			: 1px solid #A9B0D8;
+	background-color	: #FFFFFF;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMultiple .JuiCalendarTimePane
+{
+	top					: 100px;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarTimePane,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarTimePane
+{
+	display				: none;
+}
+
+.JuiCalendar .JuiCalendarTimePane TABLE
+{
+	border-collapse		: collapse;
+	width				: 100%;
+}
+
+.JuiCalendar .JuiCalendarTimePane TD
+{
+	text-align			: center;
+	height				: 56px;
+	border-top			: 1px solid #8DAED9;
+	border-bottom  		: 1px solid #8DAED9;
+}
+
+.JuiCalendar .JuiCalendarTimePane TD[top]
+{
+	border-top			: none;
+	height				: 55px;
+}
+
+.JuiCalendar .JuiCalendarTimePane TD[bottom]
+{
+	border-bottom		: none;
+	height				: 55px;
+}
+
+.JuiCalendar .JuiCalendarBodyPane
+{
+	position			: absolute;
+	top					: 81px;
+	bottom				: 0px;
+	left				: 60px;
+	right				: 0px;
+	overflow			: auto;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMultiple .JuiCalendarBodyPane
+{
+	top					: 101px;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarBodyPane
+{
+	left				: 0px;
+	top					: 62px;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarBodyPane
+{
+	left				: 6px;
+	top					: 82px;
+	padding-bottom		: 6px;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter
+{
+	float				: left;
+	overflow			: hidden;
+	position			: relative;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataBodyOuter,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataBodyOuter
+{
+	height				: 100%;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TABLE
+{
+	border-collapse		: collapse;
+	width				: 100%;
+	background-color	: #FFFFFF;
+	table-layout		: fixed;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataBodyOuter TABLE,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataBodyOuter TABLE
+{
+	height				: 100%;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TD
+{
+	height				: 28px;
+	border				: 1px solid #8DAED9;
+	overflow			: hidden;
+	vertical-align		: top;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TD[top]
+{
+	border-top			: none;
+	height				: 27px;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TD[bottom]
+{
+	border-bottom		: none;
+	height				: 27px;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataBodyOuter TD[left]
+{
+	border-left			: none;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataBodyOuter TD[right]
+{
+	border-right		: none;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataBodyOuter TD[bottom]
+{
+	border				: 1px solid #8DAED9;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TD[up]
+{
+	border-bottom		: 1px solid #E6EDF7;
+}
+
+.JuiCalendar .JuiCalendarDataBodyOuter TD[down]
+{
+	border-top			: 1px solid #E6EDF7;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarDataBodyOuter TD,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarDataBodyOuter TD
+{
+	height				: auto;
+}
+
+.JuiCalendar .JuiCalendarOtherMonthDate
+{
+	background-color	: #EEEEEE;
+}
+
+.JuiCalendar .JuiCalendarMonthDate
+{
+	height				: 18px;
+	color				: #666666;
+}
+
+.JuiCalendar .JuiCalendarActivityColumn
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	right				: 0px;
+	bottom				: 0px;
+	overflow			: hidden;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarActivityColumn
+{
+	right				: 6px;
+}
+
+.JuiCalendar .JuiCalendarActivity
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	word-break			: break-all;
+	box-shadow			: inset 0px 0px 0px 1px #5d8cc9;
+	background-image	: linear-gradient(top, #DAF2CC, #BAE9A0);
+	background-image	: -ms-linear-gradient(top, #DAF2CC, #BAE9A0);
+	background-image	: -moz-linear-gradient(top, #DAF2CC, #BAE9A0);
+	background-image	: -webkit-linear-gradient(top, #DAF2CC, #BAE9A0);
+	border-radius		: 3px;
+	overflow			: hidden;
+}
+
+.JuiCalendar .JuiCalendarRightPaneMonth .JuiCalendarActivity,
+.JuiCalendar .JuiCalendarRightPaneMonthMultiple .JuiCalendarActivity
+{
+	position			: static;
+	height				: 20px;
+	line-height			: 18px;
+	width				: 100%;
+	margin-bottom		: 1px;
+}
+
+.JuiCalendar .JuiCalendarMonthCellContent
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}

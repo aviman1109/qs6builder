@@ -1,0 +1,53 @@
+.QsContent
+{
+	padding				: 8px 20px;
+	font-family			: Courier New;
+}
+
+.Information
+{
+	height				: 24px;
+	line-height			: 24px;
+}
+
+.EmptyMessage
+{
+	text-align			: center;
+	padding-top			: 20px;
+}
+
+.Table
+{
+	background-image	: url(../../image/16/DatabaseTable.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+	height				: 24px;
+	line-height			: 24px;
+}
+
+.Index
+{
+	background-image	: url(../../image/16/DatabaseIndex.png);
+	background-repeat	: no-repeat;
+	background-position	: 30px center;
+	height				: 24px;
+	line-height			: 24px;	
+	padding-left		: 50px;
+}
+
+.PrimaryKey
+{
+	background-image	: url(../../image/16/DatabasePrimaryKey.png);
+}
+
+.Unique
+{
+	background-image	: url(../../image/16/DatabaseUniqueKey.png);
+}
+
+.IndexColumn
+{
+	color				: #808080;
+	padding-left		: 3px;
+}

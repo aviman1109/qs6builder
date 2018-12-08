@@ -1,0 +1,15 @@
+﻿alter table TsPage add FDialogMaximized bit;
+delete from TsField where FId='0b003786-13e7-4954-b632-8d8ccb9a6500';
+insert into TsField set FId='0b003786-13e7-4954-b632-8d8ccb9a6500', FUnitId='00000000-0000-0000-0001-000000000006', FName='FDialogMaximized',		FTitle='窗口自动最大化',	FType='CheckBox',            FSize=0,   FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null,                                   FEntityUnitId=null,                                   FSupportLocalText=null, FLocalTextField=null, FSelectListFilterSql=null,											FSourceType='local', FJoinField=null, FSourceField=null, FSource=null, FColSpan=1, FRowSpan=1, FIsNewRow=null, FListWidth=100, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValue=null,									FValidation=null, FRelationCapacity=null;
+java setFormFields('aaf46acb-c21a-4e23-8621-6bd007f59c77', '基本信息', '0185c28b-3e08-4bf9-9baf-c4a4c4aa4edc', null, 'FPlatform,FType,FIsSlavePage,FRelationId,FUnitId,FMasterUnitId', '通用信息', '66ff47a0-2194-4a9b-9b0b-06d0dc1ac27b', '0185c28b-3e08-4bf9-9baf-c4a4c4aa4edc', 'FCode,FName,FTitle,FUrl,FActionMethodName,FLoadHandler', '列表信息', '6fdfaf24-efd9-444f-952b-a738654a4d68', '0185c28b-3e08-4bf9-9baf-c4a4c4aa4edc', 'FQueryOnLoad,FQuerySchemaId,FQueryFormAutoQuery,FHasViewFrame', '电脑信息', '0e78d39e-0a96-4520-9c64-499b583b9897', '0185c28b-3e08-4bf9-9baf-c4a4c4aa4edc', 'FIcon,FDialogWidth,FDialogHeight,FDialogMaximized', '描述', 'ed6e4ca6-8917-4648-9247-5d158179fb97', '0185c28b-3e08-4bf9-9baf-c4a4c4aa4edc', 'FDescription');
+
+delete from TsTextResource where FId='196cdcb9-3330-4263-ba69-c66c78e75e8c';
+delete from TsTextResource where FId='67db3d0b-8203-4bbb-aa4d-6b49ab6af946';
+insert into TsTextResource set FCode='T.Qs.Index.InstallWordPaster',						FId='196cdcb9-3330-4263-ba69-c66c78e75e8c', FValue='安装贴图插件';
+insert into TsTextResource set FCode='T.Qs.Misc.InstallWordPasterInformation',				FId='67db3d0b-8203-4bbb-aa4d-6b49ab6af946', FValue='如果贴图插件已经成功安装，则点击 <img src="quicksilver/editor/ckeditor/plugins/imagepaster/images/paster.png"> 图标，可粘贴剪切板中的图片。如果贴图插件尚未安装，则浏览器将提醒用户安装贴图插件。<br><br>注：请将当前站点加入到受信任站点，并将受信任站点的安全级别调至较低级别。';
+
+delete from TsTextResource where FId='b8a9b0f9-e2e7-433b-b89f-fba61b3d20a7';
+insert into TsTextResource set FId='b8a9b0f9-e2e7-433b-b89f-fba61b3d20a7', FCode='E.Qs.FullText.InvalidExpression',						FValue='查詢關鍵字不合法。在全文檢索時，“NOT”、反斜線和以下字元不允許作為關鍵字：+-&|!(){}[]^”~*?:';
+
+delete from TsPage where FId='c0de4d8b-b837-4a66-95b6-a43a3f4fdd70';
+insert into TsPage set FId='c0de4d8b-b837-4a66-95b6-a43a3f4fdd70', FName='安装贴图插件', FTitle='安装贴图插件',	FCode='Qs.Misc.InstallWordPaster',     FType='Other', FIcon=null,												FUrl='quicksilver/page/misc/InstallWordPaster.jsp',		FActionMethodName='Qs.Misc.prepareInstallWordPaster',		FLoadHandler=null, FRelationId=null, FUnitId=null, FMasterUnitId='00000000-0000-0000-0001-000000002007', FIsSlavePage=0, FPlatform='Computer', FIndex=null, FDialogWidth=null, FDialogHeight=null, FDescription=null, FVisible=1;

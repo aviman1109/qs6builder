@@ -1,0 +1,489 @@
+﻿/*----------------------------------------------------------------------*/
+/* LeftTabStrip															*/
+/*----------------------------------------------------------------------*/
+
+.JuiLeftTabStrip
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	position			: relative;
+}
+
+.JuiLeftTabStrip .JuiTabStripTabZoneOuter
+{
+	position			: absolute;
+	left				: 0px;
+	width				: 36px;
+	top					: 0px;
+	bottom				: 0px;
+	overflow			: hidden;
+	width				: 41px;  
+	z-index				: 8;
+	margin-left			: -8px;
+}
+
+.JuiLeftTabStrip .JuiTabStripTabZone
+{
+	width				: 100%;
+	height				: 100%;      
+	padding				: 1px 0px 6px 10px;
+}
+
+.JuiLeftTabStrip .JuiTabStripBodyZone
+{
+	border-radius		: 0;
+	left				: auto;  
+	right				: auto;  
+	bottom				: auto;  
+	top					: auto;  
+	position			: relative;  
+	width				: 100%;  
+	height				: 100%;
+	padding-left		: 32px;  
+	display: none;
+}
+
+.JuiLeftTabStrip .JuiTabStripTab
+{
+	position			: relative;
+	width				: 26px;
+	padding				: 3px 0px 20px 2px;
+	box-shadow			: -1px 0px 1px 0px #ABABAB,
+						  0px 0px 1px 0px #ccc,
+						  inset -3px 7px 43px rgba(183, 181, 97, 0.37);
+	border-radius		: 0;   
+	margin-bottom		: 6px;      
+	background-image	: url(../basic/image/ToolBarBackground.png);                  
+	background-color	: rgb(255, 255, 255);
+	color				: rgba(0, 0, 0, 1);      
+	font-size			: 14px;   
+	text-shadow			: 0px 1px 5px #FFF;   
+	margin-top			: 0px;   
+	margin-left			: 4px;
+	overflow			: hidden;
+	z-index				: inherit !important;
+}
+
+.JuiLeftTabStrip .JuiTabStripTab[status="active"]
+{
+	width				: 100%;
+	background-image	: url(../basic/image/ToolBarBackground.png);
+	background-color	: rgba(255, 255, 255, 0);  
+	box-shadow			: 2px 0px rgba(253, 253, 250, 1), 
+						  -2px -2px 0px -1px #A1A1A1,
+						  4px 10px 10px -11px #A1A1A1,
+						  4px -10px 10px -11px #A1A1A1,
+						  -2px 2px 0px -1px #A1A1A1,
+						  inset -8px 0px 19px rgba(255, 255, 249, 1),
+						  inset -1px 0px 13px rgba(20, 34, 58, 0.15),
+						  inset -31px -4px 17px rgba(255, 255, 249, 0.9);  
+	color				: black;  
+	text-shadow			: 0px 1px 0px white, 
+						  0px 0px 1px gray;
+	font-size			: 14px;
+	font-weight			: bold;
+	margin-left			: 2px;
+	padding				: 11px 0px 12px 2px;
+	border-right		: 5px solid rgba(255, 255, 247, 1) !important;    
+	z-index				: 99 !important;
+}
+
+.JuiLeftTabStrip .JuiTabStripTab[status="active"]:nth-child(1),
+.JuiLeftTabStrip .JuiTabStripTab[status="active"]:nth-child(1):hover{
+	box-shadow			: 2px 0px rgba(252, 252, 252, 0.5),
+						  -2px -2px 0px -1px rgba(161, 161, 161, 0.47),
+						  -2px 12px 10px -12px #A1A1A1,
+						  -2px 2px 0px -1px rgba(161, 161, 161, 0.75),
+						  inset -8px 0px 19px #FFFFFF,
+						  inset -1px 0px 13px rgba(20, 34, 58, 0.15),
+						  inset -31px -4px 17px rgba(255, 255, 249, 0.9);  
+}
+
+.JuiLeftTabStrip .JuiTabStripTabText
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	cursor				: default;
+	text-align			: center;
+	line-height			: 15px;
+}
+
+.JuiLeftTabStrip .JuiTabStripTabText[WithIcon]
+{
+	background-repeat	: no-repeat;
+	background-position : center 6px;
+	padding-top   		: 24px;
+	margin				: auto;
+}
+
+.MenuZone .JuiTabStripTabZoneOuter .JuiTabStripTab span{
+    position			: absolute;
+    top					: 45px;
+    left				: -4px;
+    font-size			: 39px;
+    color				: #18313C;
+}
+
+.MenuZone .JuiTabStripTabZoneOuter .JuiTabStripTab[status="active"] span{
+	left				: -1px;
+	color				: white;
+	text-shadow			: 0px 0px 2px rgb(70, 70, 70);
+}
+
+.JuiLeftTabStrip .JuiTabStripBody
+{
+	border-radius  		: 0px 3px 3px 3px;
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+	display				: none !important;
+}
+
+.JuiLeftTabStrip .JuiTabStripBody[style="display: block;"] {
+	position			: relative;
+	top					: 0;
+	left				: 0;
+	right				: 0;
+	bottom				: 0;
+	width				: 100%;
+	padding				: 4px 4px 2px 3px;
+	background			: rgba(255, 255, 249, 0.9);
+	border-radius		: 0;
+	border				: 1px solid #ccc !important;
+}
+
+.JuiLeftTabStrip .JuiTabStripBody[status="active"] {
+	display				:block !important;
+}
+/*----------------------------------------------------------------------*/
+/* DynamicTopTabStrip													*/
+/*----------------------------------------------------------------------*/
+
+.JuiDynamicTopTabStrip
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: visible;
+	position			: relative;
+}
+
+.JuiDynamicTopTabStrip[Maximized]
+{
+	position			: fixed;
+	top					: 0px;
+	left				: 0px;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabZone
+{
+	width				: 100%;
+	height				: 100%;
+	padding				: 6px 0px 0px 6px;
+	padding-left		: 0px;
+	display				: inline-block;
+}
+
+.JuiDynamicTopTabStrip[Maximized] .JuiTabStripTabZone
+{
+	display				: none;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripBodyZone
+{
+	position			: absolute;
+	top					: 33px;
+	bottom				: 5px;
+	right				: 6px;
+	box-sizing			: content-box;
+	-moz-box-sizing		: content-box;
+	left				: 0px;
+	box-shadow			: inset 0px 0px 2px #FFFFFF, 
+						  0px 0px 0px 1px #ccc;
+	background			: #FFFFFF;
+	z-index				: 0;
+}
+
+.JuiDynamicTopTabStrip[Maximized] .JuiTabStripBodyZone
+{
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	border				: none;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripRestore
+{
+	display				: none;
+	width				: 32px;
+	height				: 32px;
+	background-image	: url(image/TabStripRestore.png);
+	position			: fixed;
+	left				: 8px;
+	bottom				: 8px;
+	opacity				: 0.4;
+	transition			: opacity 0.2s linear;
+}
+
+.JuiDynamicTopTabStrip[Maximized] .JuiTabStripRestore
+{
+	display				: block;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripRestore:hover
+{
+	opacity				: 1;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripBodyZone:before{
+	content				: '';
+	position			: absolute;
+	height				: 100%;
+	width				: 100%;
+	left				: 0;
+	top					: 0;
+	background			: white;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTab
+{
+	position			: relative;
+	float				: left;
+	height				: 26px;
+	overflow			: hidden;
+	padding				: 0px 9px 0px 9px;
+	background			: rgba(255, 255, 255, 0.82);  
+	color				: gray;  
+	border-radius		: 0;  
+	top					: 1px;  
+	opacity				: 0.9;
+	font-size			: small;
+	box-shadow			: inset -2px 0px 0px rgb(226, 226, 226),
+						  inset 1px -2px 7px -6px black,
+						  -4px -1px 5px -6px white,
+						  0px -1px 3px -3px gray;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent, 
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent:hover
+{
+	height				: 28px;
+	border-bottom		: none;
+	padding-bottom		: 2px;
+	color				: black;
+	border-radius		: 0;
+	top					: -1px;
+	opacity				: 1;
+	font-size			: inherit;
+	box-shadow			: inset 0px -15px 26px -4px #F8F8F8,
+						  inset 0px 29px 0px #FFF,
+						  -1px -1px 0px 0px #CCC,
+						  1px -1px #ccc;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTab[lock="true"]:before{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	left				: 0;
+	border-top			: 13px solid #E3E3E3;
+	border-right		: 13px solid transparent;
+	box-shadow			: 0px 0px 1px #e3e3e3;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTab:hover{
+	background			: white;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent + .JuiTabStripTab{
+    box-shadow			: inset -2px 0px 0px rgb(226, 226, 226),
+    					  inset 2px 0px 0px rgb(226, 226, 226),
+    					  inset 1px -2px 7px -6px black,
+    					  -4px -1px 5px -6px white,
+    					  0px -1px 3px -3px gray;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabFlash
+{
+	background-image	: linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -ms-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -moz-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -webkit-linear-gradient(top, #FDE06C, #C0DBFF);
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabText
+{
+	height				: 100%;
+	overflow			: hidden;
+	cursor				: default;
+	text-align			: center;
+	line-height			: 25px;
+	white-space			: nowrap;
+	float				: left;
+	max-width			: 180px !important;
+	overflow			: hidden !important;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabText[WithIcon]
+{
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTab .JuiTabStripTabClose
+{
+	width				: 12px;
+	height				: 12px;
+	float				: right;
+	margin				: 7px 0px 0px 5px;
+	display				: none;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent .JuiTabStripTabClose
+{
+	background-image	: url('image/TabStripClose.png');
+	display				: block;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent .JuiTabStripTabClose:hover
+{
+	background-position	: 0px -12px;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripTabCurrent .JuiTabStripTabClose:active
+{
+	background-position	: 0px -24px;
+}
+
+.JuiDynamicTopTabStrip .JuiTabStripBody
+{
+	width				: 100%;
+	height				: 100%;
+	display				: none;
+	position			: relative;
+	z-index				: 9;
+}
+
+/*----------------------------------------------------------------------*/
+/* TopTabStrip															*/
+/*----------------------------------------------------------------------*/
+
+.JuiTopTabStrip
+{
+	width				: 100%;
+	height				: 100%;
+	position			: relative;
+}
+
+.JuiTopTabStrip .JuiTabStripTabZoneOuter
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	height				: 31px;
+	overflow			: hidden;
+	z-index				: 1;
+}
+
+.JuiTopTabStrip .JuiTabStripTabZone
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	padding				: 6px 6px 0px 6px;
+}
+
+.JuiTopTabStrip .JuiTabStripBodyZone
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 30px;
+	bottom				: 1px;
+	right				: 0px;
+	overflow			: hidden;
+	box-shadow			: 0px -1px 0px 0px #ddd;
+	border				: none;
+}
+
+.JuiTopTabStrip .JuiTabStripTab
+{
+	border-radius		: 4px 4px 0px 0px;
+	position			: relative;
+	float				: left;
+	height				: 21px;
+	top					: 2px;
+	overflow			: hidden;
+	border				: 1px solid #898C95;
+	padding				: 0px 9px 0px 9px;
+	box-shadow			: 0px 0px 3px rgba(101,147,207,0.5), 
+						  inset 0px 0px 2px #FFFFFF;
+}
+
+.JuiTopTabStrip .JuiTabStripTab{
+	border				: none;
+	background-image	: none;
+	background			: #eee;
+	color				: #333;
+	box-shadow			: 0px 0px 1px rgba(101,147,207,0.5), 
+						  inset 1px 0px 2px #FFFFFF;
+}
+
+.JuiTopTabStrip .JuiTabStripTab:hover
+{
+	background			: #eee;  
+	color				: gray;
+}
+
+.JuiTopTabStrip .JuiTabStripTabCurrent, .JuiTopTabStrip .JuiTabStripTabCurrent:hover
+{
+	height				: 25px;
+	top					: 0px;
+	border-bottom		: none;
+	padding-bottom		: 1px;
+	box-shadow			: 0px 0px 3px rgba(101,147,207,0.5);
+}
+
+.JuiTopTabStrip .JuiTabStripTabCurrent, 
+.JuiTopTabStrip .JuiTabStripTabCurrent:hover{
+	background				: white;
+	color					: rgba(0, 0, 0, 1);
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+	box-shadow				: -1px -1px 0px 0px #ddd,
+							  1px -1px 0px 0px #ddd, 
+							  inset 0px 0px 2px #FFFFFF;
+}
+.JuiTopTabStrip .JuiTabStripTab .JuiTabStripTabText
+{
+	height				: 100%;
+	overflow			: hidden;
+	cursor				: default;
+	text-align			: center;
+	line-height			: 21px;
+	white-space			: nowrap;
+	float				: left;
+}
+
+.JuiTopTabStrip .JuiTabStripTabCurrent .JuiTabStripTabText
+{
+	line-height			: 23px;
+}
+
+.JuiTopTabStrip .JuiTabStripTab .JuiTabStripTabText[WithIcon]
+{
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+}
+
+.JuiTopTabStrip .JuiTabStripBody
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+	display				: none;
+}

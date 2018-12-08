@@ -1,0 +1,24 @@
+.QsContent
+{
+	padding				: 12px 10px 0px 20px;
+}
+
+table
+{
+	border-collapse		: collapse;
+}
+
+td
+{
+	padding				: 3px; 
+}
+
+td:first-child
+{
+	padding-right		: 0px; 
+}
+
+label
+{
+	font-weight			: bold;
+}

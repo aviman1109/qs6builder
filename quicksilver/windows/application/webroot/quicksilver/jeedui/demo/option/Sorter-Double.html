@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Sorter</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Sorter");
+			
+			var leftData = [
+				{value:"1", text:"纽约"},
+				{value:"2", text:"东京"},
+				{value:"3", text:"伦敦"},
+				{value:"4", text:"巴黎"},
+				{value:"5", text:"罗马"},
+				{value:"6", text:"雅典"},
+				{value:"7", text:"柏林"},
+				{value:"8", text:"悉尼"},
+				{value:"9", text:"开罗"},
+				{value:"10", text:"圣保罗"},
+				{value:"11", text:"布宜诺斯艾利斯"},
+				{value:"12", text:"蒙特利尔"},
+				{value:"13", text:"多伦多"}
+			];
+			
+			var rightData = [
+				{value:"14", text:"维也纳"},
+				{value:"15", text:"莫斯科"},
+				{value:"16", text:"里斯本"},
+				{value:"17", text:"斯德哥尔摩"},
+				{value:"18", text:"奥斯陆"}
+			];
+		
+			function doMoveRight()
+			{
+				right.add(left.deleteSelected());
+			}
+			
+			function doMoveLeft()
+			{
+				left.add(right.deleteSelected());
+			}
+		
+			function doMoveTop()
+			{
+				right.moveTop();
+			}
+			
+			function doMoveUp()
+			{
+				right.moveUp();
+			}
+			
+			function doMoveDown()
+			{
+				right.moveDown();
+			}
+			
+			function doMoveBottom()
+			{
+				right.moveBottom();
+			}
+
+			window.onload = function()
+			{
+				Jui.basic.ToolBar.create({target: "ToolBarPane"});
+
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: ">>",
+					style	: "display:block;width:60px",
+					onclick	: doMoveRight
+				});
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: "<<",
+					style	: "display:block;width:60px;margin-top:8px",
+					onclick	: doMoveLeft
+				});
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: "置顶",
+					style	: "display:block;width:60px;margin-top:8px",
+					onclick	: doMoveTop
+				});
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: "上移",
+					style	: "display:block;width:60px;margin-top:8px",
+					onclick	: doMoveUp
+				});
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: "下移",
+					style	: "display:block;width:60px;margin-top:8px",
+					onclick	: doMoveDown
+				});
+				Jui.basic.Button.create({
+					target	: "ButtonContainer",
+					text	: "置底",
+					style	: "display:block;width:60px;margin-top:8px",
+					onclick	: doMoveBottom
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="padding:20px">
+			<div style="width:500px;height:100%;margin:0 auto;position:relative">
+				<script>
+					var left = Jui.option.Sorter.create({
+						style			: "position:absolute;left:0px;top:0px;width:200px;height:100%",
+						ondoubleclick	: doMoveRight
+					});
+					var right = Jui.option.Sorter.create({
+						style			: "position:absolute;right:0px;top:0px;width:200px;height:100%",
+						ondoubleclick	: doMoveLeft
+					});
+					left.load(leftData);
+					right.load(rightData);
+				</script>
+				<table style="position:absolute;left:200px;top:0px;width:100px;height:100%">
+					<tr><td align="center" id="ButtonContainer"></td></tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

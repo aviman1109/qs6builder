@@ -1,0 +1,117 @@
+﻿.JuiMultiRowTabStrip
+{
+	width				: 100%;
+	height				: 100%;
+	position			: relative;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTabZoneOuter
+{
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTabZone
+{
+	width				: 100%;
+	height				: 100%;
+	padding				: 6px 0px 0px 6px;
+	padding-left		: 0px;
+	display				: inline-block;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTabZone:after
+{
+	content				: "";
+	height				: 1px;
+	display				: inline-block;
+	/* background-color	: #6593CF; */
+	position			: absolute;
+	left				: 6px;
+	right				: 6px;
+	bottom				: 0px;
+	z-index				: 0;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripBodyZone
+{
+	position			: absolute;
+	top					: 33px;
+	bottom				: 5px;
+	right				: 6px;
+	box-sizing			: content-box;
+	-moz-box-sizing		: content-box;
+	left				: 0px;
+	box-shadow			: inset 0px 0px 2px #FFFFFF, 
+						  0px 0px 0px 1px #ccc;
+	background: white;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTab
+{
+	position			: relative;
+	float				: left;
+	height				: 26px;
+	overflow			: hidden;
+	padding				: 0px 9px 0px 9px;
+	background			: rgba(255, 255, 255, 0.82);
+	color				: gray;
+	border-radius		: 0;
+	top     			: 1px;
+	box-shadow			: inset -2px 0px 0px rgb(226, 226, 226),
+						  inset 1px -2px 7px -6px black,
+						  -4px -1px 5px -6px white,
+						  -1px -1px 2px -1px gray;
+	opacity				: 0.9;
+	font-size			: small;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTab:hover
+{
+	background			: white;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTabCurrent,
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTabCurrent:hover
+{
+	/* height				: 28px; */
+	border-bottom		: none;
+	padding-bottom		: 2px;
+	color				: black;
+	border-radius		: 0;
+	top					: 0px;
+	opacity				: 1;
+	font-size			: inherit;
+	box-shadow			: inset 0px -15px 26px -4px #F8F8F8,
+						  inset 0px 29px 0px #FFF,
+						  0px -2px 0px 1px #ccc,
+						  -1px 0px #ccc,
+						  1px 0px #ccc;
+ }
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTab[LastRow]
+{
+	height    			: 26px;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTab .JuiMultiRowTabStripTabText
+{
+	cursor				: default;
+	line-height			: 24px;
+	white-space			: nowrap;
+	overflow			: hidden;
+	display				: inline-block;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripTab .JuiMultiRowTabStripTabText[WithIcon]
+{
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+}
+
+.JuiMultiRowTabStrip .JuiMultiRowTabStripBody
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+	display				: none;
+}

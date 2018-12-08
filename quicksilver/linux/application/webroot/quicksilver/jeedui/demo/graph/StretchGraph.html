@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+	<title>StretchGraph</title>
+	<script src="../../js/Jui.js"></script>
+	<script>
+		Jui.use("Jui.graph.StretchGraph");
+
+		window.onload = function()
+		{
+			var nodes = [
+				{id:"Camera1",			text:"摄像机",		type:"Camera",			x:56.18824701195221,	y:10.93426294820716},
+				{id:"Camera2",			text:"摄像机",		type:"Camera",			x:12.73605577689244,	y:30.2808764940239},
+				{id:"Switch1",			text:"交换机",		type:"Switch",			x:8.68027888446215,		y:50.91235059760956},
+				{id:"Server1",			text:"服务器",		type:"Server",			x:30.148406374502,		y:70.4820717131474},
+				{id:"EncodeServer1",	text:"编码服务器",	type:"EncodeServer",	x:70.2460159362549605,	y:85.99800796812748},
+				{id:"Cloud1",			text:"路段网络",		type:"Cloud",			x:85.6085657370518,		y:60.6832669322709}
+			];
+			var lines = [
+				{type:"Arrow", from:"Camera1", to:"Switch1"},
+				{type:"Arrow", from:"Camera2", to:"Switch1"},
+				{type:"Arrow", from:"Server1", to:"Switch1"},
+				{type:"Arrow", from:"EncodeServer1", to:"Switch1"},
+				{type:"Arrow", from:"Switch1", to:"Cloud1"}
+			];
+			graph.load({nodes:nodes, lines:lines});
+		}
+
+		function getNodeHtml(node)
+		{
+			return "<div class=JuiGraphNode style='border:1px solid black;height:20px'>" + node.text + "</div>";
+		}
+
+		function doDoubleClick()
+		{
+			alert(JSON.stringify(graph.getJson()));
+			graph.load(graph.getJson());
+		}
+	</script>
+</head>
+<body ondblclick="doDoubleClick()">
+	<div class="JuiBottomBorder" style="position:fixed;top:0px;left:0px;right:0px">
+		<script>
+			var bar = Jui.basic.ToolBar.create();
+			bar.load({right:[
+				{"control":"Button", "name":"add",		"text":"新增", "icon":"../image/misc/2.png"},
+				{"control":"Button", "name":"edit",		"text":"修改", "icon":"../image/misc/3.png"},
+				{"control":"Button", "name":"delete",	"text":"删除", "icon":"../image/misc/4.png"},
+				{"control":"Button", "name":"refresh",	"text":"刷新", "icon":"../image/misc/5.png"}
+			]});
+		</script>
+	</div>
+	<div style="position:fixed;left:0px;top:25px;right:0px;bottom:0px">
+		<script>
+			var nodeTypes = [
+				"VirtualNode",
+				{name:"Switch",			width:128,	height:128, icon:"../image/Switch.png"},
+				{name:"EncodeServer",	width:128,	height:128, icon:"../image/EncodeServer.png"},
+				{name:"Camera",			width:128,	height:128, icon:"../image/Camera.png"},
+				{name:"Notebook",		width:128,	height:128, icon:"../image/Notebook.png"},
+				{name:"Server",			width:128,	height:128, icon:"../image/Server.png"},
+				{name:"Cloud",			width:128,	height:128, icon:"../image/Cloud.png"},
+				{name:"JoinPoint",		width:10,	height:10,	icon:"../image/JoinPoint.png"}
+			];
+			var lineTypes = [
+				{name:"Line",	width:3, color:"#DDF"},
+				{name:"Arrow",	width:3, color:"#DDF", arrow:"single"}
+			];
+			var legendItems = [
+				{type:"Line",			text:"连接线",		className:"JuiGraphLegendLine"},
+				{type:"Arrow",			text:"箭头线",		className:"JuiGraphLegendArrow"},
+				{type:"Camera",			text:"摄像头",		icon:"../image/LegendCamera.png"},
+				{type:"Server",			text:"服务器",		icon:"../image/LegendServer.png"},
+				{type:"Switch",			text:"交换机",		icon:"../image/LegendSwitch.png"},
+				{type:"EncodeServer",	text:"编码服务器",	icon:"../image/LegendEncodeServer.png"},
+				{type:"Cloud",			text:"云",		icon:"../image/LegendCloud.png"},
+				{type:"Notebook",		text:"终端",		icon:"../image/LegendNotebook.png"},
+				{type:"JoinPoint",		text:"连接点",		icon:"../image/LegendJoinPoint.png"}
+			];
+			var graph = Jui.graph.StretchGraph.create({
+				isDesignMode	: true,
+				gridSize		: 128,
+				gridVisible		: false,
+				lineTypes		: lineTypes,
+				nodeTypes		: nodeTypes,
+				image			: "image/StretchGraphBackground.jpg",
+				legendItems		: legendItems,
+				nodeTextStyle	: "font-weight:bold"
+			});
+		</script>
+	</div>
+</body>
+</html>

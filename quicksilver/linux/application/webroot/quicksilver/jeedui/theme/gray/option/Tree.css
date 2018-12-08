@@ -1,0 +1,249 @@
+﻿.JuiTree
+{
+    overflow			: visible !important;
+}
+
+.JuiTreeNodeHead
+{
+	display				: table;
+	height				: 22px;
+	padding-top			: 5px;
+	padding-bottom		: 1px;
+}
+
+.JuiTreeNodeBody
+{
+	display				: none;
+	padding-left		: 10px;
+}
+
+.JuiTreeNodeBodyWithLine
+{
+	background-image	: url(image/TreeVertLine.png);
+	background-repeat	: repeat-y;
+}
+
+.JuiTreeFlagCell
+{
+	background-image	: url(image/TreeNodeLine.png);
+	background-repeat	: no-repeat;
+	display				: table-cell;
+	vertical-align		: top;
+	width				: 20px;
+}
+
+.JuiTreeHorzLine
+{
+	background-position	: 4px 0px;
+}
+
+.JuiTreeHorzLineHorrow
+{
+	background-position	: 4px -92px;
+}
+
+.JuiTreeUpLLine
+{
+	background-position	: 4px -23px;
+}
+
+.JuiTreeUpLLineHorrow
+{
+	background-position	: 4px -115px;
+}
+
+.JuiTreeDownLLine
+{
+	background-position	: 4px -46px;
+}
+
+.JuiTreeDownLLineHorrow
+{
+	background-position	: 4px -138px;
+}
+
+.JuiTreeTLine
+{
+	background-position	: 4px -69px;
+}
+
+.JuiTreeTLineHorrow
+{
+	background-position	: 4px -161px;
+}
+
+.JuiTreeFlagCell div
+{
+	width    			: 9px;
+	height				: 9px;
+	margin				: 6px 0px 4px 5px;
+}
+
+.JuiTreeOpenedFlag
+{
+	background-image	: url(image/TreeNodeFlag.png);
+	background-position	: -10px 0px;
+}
+
+.JuiTreeClosedFlag
+{
+	background-image	: url(image/TreeNodeFlag.png);
+}
+
+.JuiTreeCheckCell
+{
+	display				: table-cell;
+	vertical-align		: top;
+}
+
+.JuiTreeCheckCell div
+{
+	width				: 14px;
+	height				: 14px;
+	margin				: 4px 4px 0px 0px;
+	outline				: none; 
+	background			: none;  
+	box-shadow			: inset 0px 0px 2px gray;
+	border-radius		: 2px;
+}
+
+.JuiTreeCheckCell div[status=checked]
+{
+	box-shadow			: inset 0px 0px 0px 1px gray, 
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px gray;
+}
+
+.JuiTreeCheckCell div[status=partial]
+{
+    box-shadow			: inset 0px 0px 0px 2px white, 
+    					  inset 9px 9px 7px rgb(167, 187, 213);
+    border				: 1px solid rgba(128, 128, 128, 0.47);
+}
+
+.JuiTreeCheckCell div:hover
+{
+	box-shadow			: inset 0px 0px 3px gray;
+}
+
+.JuiTreeCheckCell div[status=checked]:hover
+{
+	border				: none;  
+	box-shadow			: inset 0px 0px 0px 1px rgba(192, 192, 192, 1),
+						  inset 0px 0px 0px 3px white,  
+						  inset 0px 0px 20px 10px rgba(192, 192, 192, 1);
+}
+
+.JuiTreeCheckCell div[status=partial]:hover
+{
+    box-shadow			: inset 0px 0px 0px 2px white, 
+    					  inset 9px 9px 7px rgba(167, 187, 213, 0.6);  
+    border				: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.JuiTreeNodeHeadDisabled .JuiTreeCheckCell div
+{  
+	border				: none;
+  	box-shadow			: inset 0px 0px 3px rgba(128, 128, 128, 0.5);
+}
+
+.JuiTreeNodeHeadDisabled .JuiTreeCheckCell div[status=checked]
+{
+    box-shadow			: inset 0px 0px 3px 1px #ddd,
+    					  inset 0px 0px 0px 3px white, 
+    					  inset 0px 0px 20px 10px #ccc;
+}
+
+.JuiTreeNodeHeadDisabled .JuiTreeCheckCell div[status=partial]
+{
+    box-shadow			: inset 0px 0px 0px 2px white, 
+    					  inset 9px 9px 7px rgba(167, 187, 213, 0.6);  
+    border				: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.JuiTreeTextCell
+{
+	display				: table-cell;
+	vertical-align		: top;
+	padding-top			: 2px;
+	background-repeat	: no-repeat;
+	background-position : 1px 3px;
+}
+
+.JuiTreeTextCell div
+{
+	cursor				: default;
+	padding				: 0px 3px 0px 3px;
+	line-height			: 18px;
+	white-space			: nowrap;
+}
+
+.JuiTreeCheckCell div{
+	color				: dimgray;
+	text-decoration		: none !important;
+}
+
+.JuiTreeTextCell .JuiTreeCurrentText
+{
+}
+
+.JuiTreeTextCell:hover div
+{
+	color				: #000080;
+	text-decoration		: underline;
+}
+
+body .JuiTreeTextCell:hover div{	
+	color				: dimgray;
+}
+
+.JuiTreeTextCell:hover .JuiTreeCurrentText
+{
+	color				: #FFFFFF;
+}
+
+.JuiTreeTextCell .JuiTreeCurrentText,
+.JuiTreeTextCell .JuiTreeCurrentText:hover{
+	background			: rgba(207, 218, 232, 1);
+	color				: black;
+}
+
+.JuiTreeNodeHeadDisabled .JuiTreeTextCell
+{
+	opacity				: 0.5;
+}
+
+.JuiTreeNodeHeadDisabled .JuiTreeTextCell div,
+.JuiTreeNodeHeadDisabled .JuiTreeTextCell:hover div
+.JuiTreeNodeHeadDisabled .JuiTreeTextCell:hover .JuiTreeCurrentText
+{
+	color				: #444444;
+	text-decoration		: none;
+}
+
+.JuiTreeBranchIcon
+{
+	background-image	: url(image/TreeBranch.png);
+	padding-left		: 22px;
+}
+.JuiTreeLeafIcon
+{
+	background-image	: url(image/TreeLeaf.png);
+	padding-left		: 22px;
+}
+.LeftZone .JuiTree .JuiTreeLeafIcon{
+	padding-left		:23px;
+}
+.JuiTreeCurrentText:hover{
+	/*color				:gray;*/
+}
+.JuiTreeCurrentText,
+.JuiTreeTextCell:hover .JuiTreeCurrentText{
+	background			: rgba(207, 218, 232, 1);
+	color				: #000000;
+	text-shadow			: 1px 1px 0px white;
+}
+.JuiTreeFlagCell,
+.JuiTreeNodeBodyWithLine{
+	background			:none;
+}

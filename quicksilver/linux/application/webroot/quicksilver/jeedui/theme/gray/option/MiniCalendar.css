@@ -1,0 +1,145 @@
+﻿.JuiMiniCalendar
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	cursor				: default;
+	box-shadow			: 0px 1px 0px 0px silver,
+						  -1px 0px 0px 0px silver,
+						  1px 0px 0px 0px silver,
+						  0px -1px 0px 0px #ccc;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarTable
+{
+	width				: 100%;
+	border-collapse		: collapse;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarTable > tbody > tr > td
+{
+	padding				: 0px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarTable > tbody > tr > .JuiMiniCalendarTopBarCell
+{
+	padding				: 4px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarTopBar
+{
+	width				: 100%;
+	height				: 19px;
+	line-height			: 19px;
+	table-layout		: fixed;
+	border-collapse		: collapse;
+	background-color	: #C4CFD1;
+	box-shadow			: inset 1px 0px 2px silver;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarTopBar td
+{
+	padding				: 0px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarNavigator
+{
+	background-image	: url(../basic/image/DateBoxPopupNavigator.png);
+	background-repeat	: no-repeat;
+	width				: 18px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarPreviousYear
+{
+	background-position	: 4px 5px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarPreviousMonth
+{
+	background-position	: 4px -15px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarNextMonth
+{
+	background-position	: 5px -35px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarNextYear
+{
+	background-position	: 5px -55px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarCurrentYearMonth
+{
+	padding-top			: 1px;
+	text-align			: center;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable
+{
+	table-layout		: fixed;
+	border-spacing		: 0px;
+	border-collapse		: separate;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable tr
+{
+	height				: 20px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable td
+{
+	padding				: 0px;
+	text-align			: center;
+	width				: 27px;
+	border				: 1px solid transparent;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable td:first-child,
+.JuiMiniCalendar .JuiMiniCalendarDateTable td:last-child
+{
+	color				: #FF0000;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable td[disabled]
+{
+	color				: #999999;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable td[highlight]
+{
+	font-weight			: bold;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable .JuiMiniCalendarTodayCell
+{
+	border				: 1px solid #FFBD69;
+	background-color	: #FFE5CC;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable td:hover,
+.JuiMiniCalendar .JuiMiniCalendarDateTable .JuiMiniCalendarSelectedDateCell
+{
+	border				: 1px solid #FFBD69;
+	background-image	: linear-gradient(top, #FFE5CC, #FFD970);
+	background-image	: -ms-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -moz-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -webkit-linear-gradient(top, #FFF5CC, #FFD970);
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable .JuiMiniCalendarSplitter
+{
+	height				: 5px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable .JuiMiniCalendarSplitter td
+{
+	padding				: 0px;
+}
+
+.JuiMiniCalendar .JuiMiniCalendarDateTable .JuiMiniCalendarSplitter div
+{
+	width				: 100%;
+	height				: 1px;
+	background-color	: #ACA899;
+}

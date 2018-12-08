@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+
+	<item key="Ets.I18n.Public.ViewErrorInLog">
+		For detail errors, please view the log.
+	</item>
+	<item key="Ets.I18n.Public.StartExecuting">
+		Start executing ...
+	</item>
+	<item key="Ets.I18n.Public.WaitForOperation">
+		The operation is processing, please wait.
+	</item>
+
+	<item key="Ets.I18n.Button.Confirm">
+		OK
+	</item>
+	<item key="Ets.I18n.Button.Cancel">
+		Cancel
+	</item>
+	<item key="Ets.I18n.Button.Add">
+		Add
+	</item>
+	<item key="Ets.I18n.Button.Modify">
+		Modify
+	</item>
+	<item key="Ets.I18n.Button.Delete">
+		Delete
+	</item>
+	<item key="Ets.I18n.Button.Initialize">
+		Initialize
+	</item>
+	<item key="Ets.I18n.Button.Test">
+		Test
+	</item>
+	<item key="Ets.I18n.Button.PreviousStep">
+		Previous
+	</item>
+	<item key="Ets.I18n.Button.NextStep">
+		Next
+	</item>
+	<item key="Ets.I18n.Button.Close">
+		Close
+	</item>
+	<item key="Ets.I18n.Button.Extract">
+		Extract
+	</item>
+	<item key="Ets.I18n.Button.Upgrade">
+		Upgrade
+	</item>
+	<item key="Ets.I18n.Button.SelectFile">
+		Select
+	</item>
+	<item key="Ets.I18n.Button.Export">
+		Export
+	</item>
+	<item key="Ets.I18n.Button.Import">
+		Import
+	</item>
+	
+	<item key="Ets.I18n.Sql.Executing">
+		Executing ${0} ...
+	</item>
+	<item key="Ets.I18n.Sql.Connecting">
+		Connecting ${0} ...
+	</item>
+	<item key="Ets.I18n.Sql.CheckingDataSource">
+		Checking DataSource ...
+	</item>
+	<item key="Ets.I18n.Sql.InvalidDataSourceFile">
+		DataSource configuration file not exist or format error.
+	</item>
+	<item key="Ets.I18n.Sql.NotConnectable">
+		DataSource ${0} connection failed: ${1}"
+	</item>
+	<item key="Ets.I18n.Sql.DataSource">
+		DataSource
+	</item>
+	<item key="Ets.I18n.Sql.DataSourceId">
+		DataSource ID
+	</item>
+	<item key="Ets.I18n.Sql.JdbcDriver">
+		JDBC Driver
+	</item>
+	<item key="Ets.I18n.Sql.JdbcUrl">
+		JDBC Connection URL
+	</item>
+	<item key="Ets.I18n.Sql.User">
+		User
+	</item>
+	<item key="Ets.I18n.Sql.Password">
+		Password
+	</item>
+	<item key="Ets.I18n.Sql.MinConnection">
+		Min Connection
+	</item>
+	<item key="Ets.I18n.Sql.MaxConnection">
+		Max Connection
+	</item>
+	<item key="Ets.I18n.Sql.TranslateSql">
+		Translate SQL
+	</item>
+	<item key="Ets.I18n.Sql.EncryptPassword">
+		Encrypt Password
+	</item>
+	<item key="Ets.I18n.Sql.DataSourceType">
+		DataSource Type
+	</item>
+	<item key="Ets.I18n.Sql.TransactionTimeout">
+		Transaction Timeout
+	</item>
+	<item key="Ets.I18n.Sql.ConnectOrExecuteFailed">
+		Connection or execution failed:
+	</item>
+	<item key="Ets.I18n.Sql.ModuleMerged">
+		Module "${0}" has been merged to module "${1}".
+	</item>
+	<item key="Ets.I18n.Sql.ModuleUpgradeStart">
+		Upgrading module "${0}"...
+	</item>
+	<item key="Ets.I18n.Sql.ModuleUpgradeEnd">
+		Module "${0}" has been upgraded. Database version: ${1}.
+	</item>
+	<item key="Ets.I18n.Sql.ModuleMergeStart">
+		Merging module "${0}" to module "${1}"...
+	</item>
+	<item key="Ets.I18n.Sql.ModuleMergeEnd">
+		Module "${0}" has been merged to module "${1}".
+	</item>
+
+	<item key="Ets.I18n.File.StartCopy">
+		Start copying ...
+	</item>
+	<item key="Ets.I18n.File.Copying">
+		Copy ${0} ...
+	</item>
+	<item key="Ets.I18n.File.CopyError">
+		Error occurs while copying file ${0}.
+		The file may be in use, or locked for other reasons.
+		Press "Finish" to exit, Press "Retry" to retry, Press "Ignore" to skip this file (NOT RECOMMENDED).
+	</item>
+				
+	<item key="Ets.I18n.WepApp.Creating">
+		Start creating web application ...
+	</item>
+	<item key="Ets.I18n.WepApp.Created">
+		Web application created.
+	</item>
+	<item key="Ets.I18n.WepApp.UnzipOldWar">
+		Unzip web application ...
+	</item>
+	<item key="Ets.I18n.WepApp.ZipWar">
+		Creating web application package ...
+	</item>
+
+	<item key="Ets.I18n.License.Agree">
+		Accept license agreement
+	</item>
+
+	<item key="Ets.I18n.Extract.DialogTitle">
+		Extract Wizard
+	</item>
+	<item key="Ets.I18n.Extract.LicenseTopText">
+		* This wizard will extract the software to runnable program. You should read the following agreement first.
+	</item>
+	<item key="Ets.I18n.Extract.LicenseText">
+		Important: ${Ets.I18n.Company.SimpleName} In this remind you to read and fully understand this "Software License and Services Agreement" (the "Agreement") --- Users should carefully read and fully understand this "Agreement" provisions, more particularly, to the exclusion or restriction ${Ets.I18n.Company.SimpleName} disclaimers of responsibility for the terms of the rights of the user's limitations, agreed dispute resolution, jurisdiction, applicable law provisions. Please read carefully and choose to accept or not to accept this "Agreement." Unless you accept the "Agreement" all of the terms, or you have no right to use the software and related services. Your download and use such acts will be considered for this "agreement" to accept, and agree to be bound by the "Agreement" various provisions.
+
+		The "agreement" is your (the "Users") and its between ${Ets.I18n.Company.FullName} (hereinafter referred to as "${Ets.I18n.Company.SimpleName}") on the user to download and use ${Ets.I18n.Product.FullName} agreements entered into. The "Agreement" describes the rights and obligations with respect to software license and service-related aspects between ${Ets.I18n.Company.SimpleName} and users.
+
+		The "Agreement" ${Ets.I18n.Company.SimpleName} be updated, terms of the agreement that is updated once published instead of the original terms of the agreement, subject to change without notice. Users can re-download this software or website to check the latest version of the terms of the agreement. In the ${Ets.I18n.Company.SimpleName} After modifying the terms of the "Agreement", if the user does not accept the revised terms, please stop using the ${Ets.I18n.Company.SimpleName} software and services offered, the user continues immediately Use ${Ets.I18n.Company.SimpleName} software and services provided will be deemed to have accepted the revised agreement.
+
+		In addition to this "Agreement" expressly provided herein, this "agreement" is not for the use of the "software" to use ${Ets.I18n.Company.SimpleName} provision of other services related to the Terms of Service. For these services, generally have separate terms of service to be regulated, the user must understand and acknowledge separately when using the service. Separate terms of service and where there is a conflict of this Agreement, subject to separate terms of service. If the user uses the service, deemed to have accepted the terms of the relevant services.
+	</item>
+	<item key="Ets.I18n.Extract.HomeFolderPageDescription">
+		Please select these items. Wizard will compose the program by your selection, and create a default H2 database.
+	</item>
+	<item key="Ets.I18n.Extract.HomeFolder">
+		Extract to:
+	</item>
+	<item key="Ets.I18n.Extract.ApplicationServer">
+		Application Server:
+	</item>
+	<item key="Ets.I18n.Extract.DeployMode">
+		Deployment mode:
+	</item>
+	<item key="Ets.I18n.Extract.DeployModeItems">
+		Standalone mode
+		Cluster Mode
+	</item>
+	<item key="Ets.I18n.Extract.ReportSolution">
+		Report solution:
+	</item>
+	<item key="Ets.I18n.Extract.SelectHomeFolderAlert">
+		Please select the extraction path.
+	</item>
+	<item key="Ets.I18n.Extract.SelectApplicationServerAlert">
+		Please select the application server.
+	</item>
+	<item key="Ets.I18n.Extract.SelectDeployModeAlert">
+		Please select the deployment mode.
+	</item>
+	<item key="Ets.I18n.Extract.SelectReportSolutionAlert">
+		Please select the report solution.
+	</item>
+	<item key="Ets.I18n.Extract.CollectInformation">
+		Collect information ...
+	</item>
+	<item key="Ets.I18n.Extract.QuitConfirm">
+		Extraction is not completed, are you sure to terminate?
+	</item>
+	<item key="Ets.I18n.Extract.Finished">
+		Extraction success.
+	</item>
+	<item key="Ets.I18n.Extract.FinishedWithSqlError">
+		Extraction finished with ${0} SQL error(s), please check the log.
+	</item>
+	<item key="Ets.I18n.Extract.Failed">
+		Extraction failed.
+	</item>
+
+	<item key="Ets.I18n.Upgrade.DialogTitle">
+		Upgrade Wizard
+	</item>
+	<item key="Ets.I18n.Upgrade.LicenseTopText">
+		* Before upgrading, please read the following agreement carefully. In particular, you need to stop the application server, back up the original installation directory and database information before the upgrade to prevent data damage or lost by accident.
+	</item>
+	<item key="Ets.I18n.Upgrade.LicenseText">
+		Important: ${Ets.I18n.Company.SimpleName} In this remind you to read and fully understand this "Software License and Services Agreement" (the "Agreement") --- Users should carefully read and fully understand this "Agreement" provisions, more particularly, to the exclusion or restriction ${Ets.I18n.Company.SimpleName} disclaimers of responsibility for the terms of the rights of the user restrictions, agreed dispute resolution, jurisdiction, applicable law provisions. Please read carefully and choose to accept or not to accept this "Agreement." Unless you accept the "Agreement" all of the terms, or you have no right to use the software and related services. Your download and use such acts will be considered for this "agreement" to accept, and agree to be bound by the "Agreement" various provisions.
+
+		The "agreement" is your (the "Users") and its between ${Ets.I18n.Company.FullName} (hereinafter referred to as "${Ets.I18n.Company.SimpleName}") on the user to download and use ${Ets.I18n.Product.FullName} agreements entered into. The "Agreement" describes the rights and obligations with respect to software license and service-related aspects between ${Ets.I18n.Company.SimpleName} and users.
+
+		The "Agreement" ${Ets.I18n.Company.SimpleName} be updated, terms of the agreement that is updated once published instead of the original terms of the agreement, subject to change without notice. Users can re-download this software or website to check the latest version of the terms of the agreement. In the ${Ets.I18n.Company.SimpleName} After modifying the terms of the "Agreement", if the user does not accept the revised terms, please stop using the ${Ets.I18n.Company.SimpleName} software and services offered, the user continues immediately Use ${Ets.I18n.Company.SimpleName} software and services provided will be deemed to have accepted the revised agreement.
+
+		In addition to this "Agreement" expressly provided herein, this "agreement" is not for the use of the "software" to use ${Ets.I18n.Company.SimpleName} provision of other services related to the Terms of Service. For these services, generally have separate terms of service to be regulated, the user must understand and acknowledge separately when using the service. Separate terms of service and where there is a conflict of this Agreement, subject to separate terms of service. If the user uses the service, deemed to have accepted the terms of the relevant services.
+	</item>
+	<item key="Ets.I18n.Upgrade.HomeFolderPageDescription">
+		Please select the installation directory, web directory and extension directory needs upgrade. Upgrade wizard will upgrade files in the directories, and upgrade the database(s).
+	</item>
+	<item key="Ets.I18n.Upgrade.HomeFolder">
+		Installation directory:
+	</item>
+	<item key="Ets.I18n.Upgrade.InvalidHomeFolder">
+		Please select a valid installation directory.
+	</item>
+	<item key="Ets.I18n.Upgrade.SqlOrderDuplicated">
+		SQL order can not be identical in a same datasource.
+	</item>
+	<item key="Ets.I18n.Upgrade.Finished">
+		Upgrade success.
+	</item>
+	<item key="Ets.I18n.Upgrade.FinishedWithSqlError">
+		Upgrade finished with ${0} SQL error(s), please check the log.
+	</item>
+	<item key="Ets.I18n.Upgrade.Failed">
+		Upgrade failed.
+	</item>
+	<item key="Ets.I18n.Upgrade.QuitConfirm">
+		When upgrading, forced quit is likely to result in an error state.
+		Are you sure to quit?
+	</item>
+
+	<item key="Ets.I18n.DsConfig.DialogTitle">
+		DataSource Configuration
+	</item>
+	<item key="Ets.I18n.DsConfig.DefaultDataSourceTitle">
+		Default DataSource
+	</item>
+	<item key="Ets.I18n.DsConfig.DefaultDataSourceDescription">
+		Configuration the default datasource.
+		You can use the default embedded H2 database or other databases. If use other databases, perform data initialization before the first startup.
+	</item>
+	<item key="Ets.I18n.DsConfig.CannotReinitializeAlert">
+		Database has been initialized and can not be initialized twice.
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectionTest">
+		DataSource connection test
+	</item>
+	<item key="Ets.I18n.DsConfig.DatabaseInitialize">
+		Database initialization
+	</item>
+	<item key="Ets.I18n.DsConfig.DatabaseInitializeConfirm">
+		Are you sure to initialize the database "${0}"?
+	</item>
+	<item key="Ets.I18n.DsConfig.UrlFormat">
+		Format:
+	</item>
+	<item key="Ets.I18n.DsConfig.CustomDataSource">
+		Additional DataSources
+	</item>
+	<item key="Ets.I18n.DsConfig.OtherOption">
+		Other
+	</item>
+	<item key="Ets.I18n.DsConfig.ModifySuccess">
+		Configuration saved successfully. It will take effect the next time you start the application server.
+	</item>
+	<item key="Ets.I18n.DsConfig.ModifySelectAlert">
+		Please select the datasource to modify.
+	</item>
+	<item key="Ets.I18n.DsConfig.DeleteSelectAlert">
+		Please select the datasource to delete.
+	</item>
+	<item key="Ets.I18n.DsConfig.TryCreatingDatabase">
+		Try to create the database ...
+	</item>
+	<item key="Ets.I18n.DsConfig.AnalysingSqlFile">
+		Analyzing SQL file ...
+	</item>
+	<item key="Ets.I18n.DsConfig.Initializing">
+		Initializing (${0}%) ...
+	</item>
+	<item key="Ets.I18n.DsConfig.ExecuteFinished">
+		Execution finished. ${0} success, ${1} ignored, ${2} failed.
+	</item>
+	<item key="Ets.I18n.DsConfig.TryConnecting">
+		Try to connect ${0} ...
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectSuccess">
+		The connection is successful.
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectFailed">
+		Connection failed:
+	</item>
+	<item key="Ets.I18n.DsConfig.QuitConfirm">
+		When initializing, forced quit will result in an error state.
+		Are you sure to quit?
+	</item>
+
+	<item key="Ets.I18n.Export.InvalidNumber">
+		"${0}" is not a valid number.
+	</item>
+	<item key="Ets.I18n.Export.SelectDataSourceAlert">
+		Please select the DataSource to export.
+	</item>
+	<item key="Ets.I18n.Export.ReadManual">
+		* Please read the following instructions first. In particular, you need to shut down the application server before export to ensure the data integrity.
+	</item>
+	<item key="Ets.I18n.Export.DataSourceConfigFile">
+		DataSource configuration file
+	</item>
+	<item key="Ets.I18n.Export.RowsPerTable">
+		Single-table row limit
+	</item>
+	<item key="Ets.I18n.Export.DataSourceToExport">
+		DataSources need to export
+	</item>
+	<item key="Ets.I18n.Export.Option">
+		Export Options
+	</item>
+	<item key="Ets.I18n.Export.ToSingleFile">
+		Export to a single file (for small amount of data)
+	</item>
+	<item key="Ets.I18n.Export.GenerateDropStatement">
+		Generate drop statements
+	</item>
+	<item key="Ets.I18n.Export.ViewAsTable">
+		Export view as table
+	</item>
+	<item key="Ets.I18n.Export.StopOnError">
+		Terminate on error
+	</item>
+	<item key="Ets.I18n.Export.TablesExport">
+		Tables to export (default to all)
+	</item>
+	<item key="Ets.I18n.Export.TablesNotExport">
+		Tables to ignore
+	</item>
+	<item key="Ets.I18n.Export.InvalidDataSourceConfigFile">
+		DataSource configuration file is invalid. Please see the console for detail information.
+	</item>
+	<item key="Ets.I18n.Export.DialogTitle">
+		Data Export
+	</item>
+	<item key="Ets.I18n.Export.Finished">
+		Export finished. ${0} success, ${1} failed.
+	</item>
+	<item key="Ets.I18n.Export.Failed">
+		Export failed.
+	</item>
+	<item key="Ets.I18n.Export.ExportingTable">
+		Export data for table "${0}" ...
+	</item>
+	<item key="Ets.I18n.Export.ExportingTableRange">
+		Export data for table "${0}" (${1} - ${2}) ...
+	</item>
+	<item key="Ets.I18n.Export.TableExportError">
+		An error occurred while exporting data for table "${0}".
+	</item>
+	<item key="Ets.I18n.Export.DropStatementGenerateError">
+		An error occurred while generating drop statement for table "${0}".
+	</item>
+	<item key="Ets.I18n.Export.ExportingTableDdl">
+		Export structure for table "${0}" ...
+	</item>
+	<item key="Ets.I18n.Export.TableDdlExportError">
+		An error occurred while exporting structure for table "${0}".
+	</item>
+	<item key="Ets.I18n.Export.DataDirectory">
+		Data directory
+	</item>
+	<item key="Ets.I18n.Export.QuitConfirm">
+		When exporting, forced quit will make the exported data unusable.
+		Are you sure to quit?
+	</item>
+
+	<item key="Ets.I18n.Import.SelectDataSourceAlert">
+		Please select DataSources to import.
+	</item>
+	<item key="Ets.I18n.Import.DataDirectoryNotExist">
+		Data directory "${0}" not exist.
+	</item>
+	<item key="Ets.I18n.Import.DefaultDataDirectoryNotExist">
+		Default directory not exist.
+	</item>
+	<item key="Ets.I18n.Import.ReadManual">
+		* Please read the instructions first. In particular, you should ensure that the target database is empty (no existing table).
+	</item>
+	<item key="Ets.I18n.Import.DataDirectory">
+		Data directory
+	</item>
+	<item key="Ets.I18n.Import.DataSourceToImport">
+		DataSource to import
+	</item>
+	<item key="Ets.I18n.Import.Option">
+		Import Options
+	</item>
+	<item key="Ets.I18n.Import.DialogTitle">
+		Data Import
+	</item>
+	<item key="Ets.I18n.Import.DataNotExist">
+		Cannot import data to DataSource "${0}": data does not exist.
+	</item>
+	<item key="Ets.I18n.Import.Finished">
+		Import finished. ${0} success, ${1} ignored, ${2} failed.
+	</item>
+	<item key="Ets.I18n.Import.Failed">
+		Import failed.
+	</item>
+	<item key="Ets.I18n.Import.InsertingToTable">
+		Importing data to table "${0}" ...
+	</item>
+	<item key="Ets.I18n.Import.CreatingTable">
+		Creating table "${0}" ...
+	</item>
+	<item key="Ets.I18n.Import.TryDeletingTable">
+		Try to delete table "${0}" ...
+	</item>
+	<item key="Ets.I18n.Import.QuitConfirm">
+		When importing, forced quit will result in an error state.
+		Are you sure to quit?
+	</item>
+
+</root>

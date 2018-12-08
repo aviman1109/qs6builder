@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>MiniCalendar</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.MiniCalendar");
+			
+			var calendar = null;
+
+			function doShowDate()
+			{
+				Jui.message.alert(Jui.cast.toString(calendar.getSelectedDate()));
+			}
+
+			window.onload = function()
+			{
+				var bar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				bar.load({right:[
+					{control:"Button", text:"getSelectedDate", icon:"../image/misc/1.png", onclick:"doShowDate"}
+				]});
+				window.calendar = Jui.option.MiniCalendar.create({target:"Container"});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="padding:20px">
+			<div id="Container" style="width:220px;height:180px;margin:0 auto;border:1px solid #6593CF"></div>
+		</div>
+	</body>
+</html>

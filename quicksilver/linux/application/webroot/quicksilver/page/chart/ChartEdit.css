@@ -1,0 +1,31 @@
+.GroupTable
+{
+	margin			: 0px auto;
+}
+
+.GroupTable tr
+{
+	height			: 32px; 
+}
+
+.GroupTable td
+{
+	text-align		: center;
+	padding			: 0px 6px;
+}
+
+.ValueTable
+{
+	margin			: 0px auto;
+}
+
+.ValueTable tr
+{
+	height			: 32px; 
+}
+
+.ValueTable td
+{
+	text-align		: center;
+	padding			: 0px 6px;
+}

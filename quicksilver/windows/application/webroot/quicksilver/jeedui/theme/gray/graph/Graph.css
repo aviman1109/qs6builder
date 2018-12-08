@@ -1,0 +1,248 @@
+﻿.JuiGraph
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	position			: relative;
+	cursor				: default;
+}
+
+.JuiGraph .JuiGraphLegend
+{
+	display				: none;
+}
+
+.JuiGraph[HasLegend] .JuiGraphLegend
+{
+	display				: block;
+	width				: 120px;
+	position			: absolute;
+	/* border: 1px solid #6593CF; */
+	left				: 10px;
+	top					: 10px;
+	overflow			: auto;
+	box-shadow: 0px 0px 1px #ccc, 1px 1px 2px 2px white, 0px 0px 0px 2px #ddd;
+}
+
+.JuiGraph .JuiGraphContent
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	height				: 100%;
+	overflow			: auto;
+}
+
+.JuiGraph[HasLegend] .JuiGraphContent
+{
+	left				: 140px;
+}
+
+.JuiGraph .JuiGraphLegendHead
+{
+	width				: 100%;
+	height				: 22px;
+	overflow			: hidden;
+	text-align			: center;
+	line-height			: 22px;
+	background-image	: linear-gradient(top, #F8F8FF, #DFDFFF);
+	background-image	: -ms-linear-gradient(top, #F8F8FF, #DFDFFF);
+	background-image	: -moz-linear-gradient(top, #F8F8FF, #DFDFFF);
+	background-image	: -webkit-linear-gradient(top, #F8F8FF, #DFDFFF);
+}
+
+.JuiGraph .JuiGraphLegendBody
+{
+	width				: 100%;
+	overflow			: hidden;
+	padding				: 1px;
+	background-color	: #FFFFFF;
+}
+
+.JuiGraph .JuiGraphLegendTable
+{
+	width				: 100%;
+	border-collapse		: separate;
+	border-spacing		: 0px;
+	table-layout		: fixed;
+}
+
+.JuiGraph .JuiGraphLegend tr
+{
+	height				: 22px;
+}
+
+.JuiGraph .JuiGraphLegend td
+{
+	padding				: 0px;
+	margin				: 0px;
+}
+
+.JuiGraph .JuiGraphLegend .JuiGraphLegendIconCell
+{
+	background-color	: #E8E8FF;
+	background-image	: linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -ms-linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -moz-linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -webkit-linear-gradient(left, #F8F8FF, #DFDFFF);
+	width				: 24px;
+	padding				: 0px 0px 0px 3px;
+}
+
+.JuiGraph .JuiGraphLegend[design] .JuiGraphLegendRowCurrent .JuiGraphLegendIconCell,
+.JuiGraph .JuiGraphLegend[design] tr:hover .JuiGraphLegendIconCell
+{
+	background-image	: none;
+	background-color	: #FFE7A2;
+	border-radius		: 3px 0px 0px 3px;
+	border				: 1px solid	#FFBD69;
+	border-right		: none;
+	padding				: 0px 0px 0px 2px;
+}
+
+.JuiGraph .JuiGraphLegendIcon
+{
+	height				: 16px;
+	width				: 16px;
+	background-position	: 0px 0px;
+	background-repeat	: no-repeat;
+}
+
+.JuiGraph .JuiGraphLegendSelect
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px 0px;
+}
+
+.JuiGraph .JuiGraphLegendLine
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px -16px;
+}
+
+.JuiGraph .JuiGraphLegendArrow
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px -32px;
+}
+
+.JuiGraph .JuiGraphLegendDoubleArrow
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px -48px;
+}
+
+.JuiGraph .JuiGraphLegendNormalNode
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px -64px;
+}
+
+.JuiGraph .JuiGraphLegendVirtualNode
+{
+	background-image	: url("image/GraphLegendIcon.png");
+	background-position	: 0px -80px;
+}
+
+.JuiGraph .JuiGraphLegend .JuiGraphLegendTextCell
+{
+	padding-left		: 4px;
+	line-height			: 22px;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+.JuiGraph .JuiGraphLegend[design] .JuiGraphLegendRowCurrent .JuiGraphLegendTextCell,
+.JuiGraph .JuiGraphLegend[design] TR:hover .JuiGraphLegendTextCell
+{
+	background-color	: #FFE7A2;
+	border-radius		: 0px 3px 3px 0px;
+	border				: 1px solid	#FFBD69;
+	border-left			: none;
+	line-height			: 20px;
+}
+
+.JuiGraph .JuiGraphGridCanvas
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiGraph .JuiGraphLineCanvas
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiGraph .JuiGraphTempCanvas
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+	display				: none;
+}
+
+.JuiGraph .JuiGraphNodePanel
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiGraph .JuiGraphMask
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	right				: 0px;
+	bottom				: 0px;
+	background-color	: #FFFFFF;
+	opacity				: 0;
+	display				: none;
+	z-index				: 3;
+}
+
+.JuiGraph .JuiGraphNode
+{
+	position			: absolute;
+	background-repeat	: no-repeat;
+	background-position	: center center;
+	z-index				: 2;
+	text-align			: center;
+	overflow			: hidden;
+	white-space			: nowrap;
+}
+
+.JuiGraph .JuiGraphNodeSelected[highlight]
+{
+	background-color	: #8080FF;
+}
+
+.JuiGraph .JuiGraphNormalNode
+{
+	background-image	: url("image/GraphNodeIconNormal.png");
+}
+
+.JuiGraph .JuiGraphVirtualNode
+{
+	background-image	: url("image/GraphNodeIconVirtual.png");
+}
+
+.JuiGraph .JuiGraphNodeText
+{
+	position			: absolute;
+	text-align			: center;
+	overflow			: hidden;
+	white-space			: nowrap;
+	z-index				: 1;
+}
+
+.JuiGraph .JuiGraphLineText
+{
+	position			: absolute;
+	white-space			: nowrap;
+	z-index				: 1;
+	background-color	: #E8E8E8;
+	opacity				: 0.9;
+}

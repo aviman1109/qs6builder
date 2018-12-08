@@ -1,0 +1,84 @@
+.QsContent
+{
+	padding			: 2px;
+}
+
+#TemplatePanel
+{
+	width			: 600px;
+	height			: 100%;
+	margin			: 0px auto;
+}
+
+#DuplicationPanel
+{
+	width			: 600px;
+	height			: 100%;
+	margin			: 0px auto;
+	padding-bottom	: 143px;
+	overflow		: hidden;
+}
+
+#DuplicationListPanel
+{
+	width			: 100%;
+	height			: 117px;
+	padding			: 8px;
+}
+
+#DuplicationListButtonPanel
+{
+	width			: 100%;
+	text-align		: center;
+}
+
+.DuplicationSorterPanel
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+#SqlMarkDuplicationPanel
+{
+	width			: 800px
+	height			: 100%;
+	margin			: 0px auto;
+	padding-bottom	: 143px;
+}
+
+#SqlMarkDuplicationListPanel
+{
+	width			: 100%;
+	height			: 317px;
+	padding			: 8px;
+}
+
+#SqlMarkDuplicationPanel #SqlMarkDuplicationListPanel
+{
+	float           : right;
+}
+
+#DuplicationListButtonPanel
+{
+	width			: 100%;
+	text-align		: center;
+}
+
+.SqlMarkDuplicationSorterPanel
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+#SqlMarkDuplicationListPanel
+{
+    position        : absolute;
+    height          : 100%;
+    left            : 10%;
+    right           : 10%;
+	width           : 80%;
+}
+#MarkFieldName
+{
+	padding-bottom	: 5px;
+}

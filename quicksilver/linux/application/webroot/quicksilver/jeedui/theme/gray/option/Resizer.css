@@ -1,0 +1,69 @@
+﻿.JuiResizer
+{
+	background-image	: url(image/Resizer.png);
+	position			: fixed;	
+	z-index				: 100000003;
+	opacity				: 0;
+}
+
+.JuiResizerBuddy
+{
+	background-color	: rgba(204, 209, 231, 0.14);
+	position			: absolute;
+	z-index				: 100000002;
+	border-left			: 1px solid rgba(219, 219, 219, 0.6);
+	box-shadow			: 1px 0px 0px rgba(216, 213, 213, 0.6);
+}
+
+.JuiResizerMask
+{
+	position			: fixed;	
+	z-index				: 100000001;
+	left				: 0px;
+	top					: 0px;
+	right				: 0px;
+	bottom				: 0px;
+	display				: none;
+}
+
+.JuiResizerDragger
+{
+	background-image	: url(image/Resizer.png);
+	position			: fixed;	
+	z-index				: 100000000;
+	display				: none;
+}
+
+.JuiResizer[LineType=H],
+.JuiResizerBuddy[LineType=H],
+.JuiResizerDragger[LineType=H]
+{
+	height				: 6px;
+	cursor				: s-resize;
+}
+
+.JuiResizer[LineType=V],
+.JuiResizerBuddy[LineType=V],
+.JuiResizerDragger[LineType=V]
+{
+	width				: 6px;
+	cursor				: w-resize;
+}
+
+.QsDarkBackground .JuiResizer[LineType=V],
+.QsDarkBackground .JuiResizerBuddy[LineType=V],
+.QsDarkBackground .JuiResizerDragger[LineType=V]
+{
+	margin-top			: 34px;	
+	display				: none;
+}
+
+.JuiResizer:active
+{
+	opacity				: 1;
+}
+
+.JuiResizerDragging:active
+{
+	opacity				: 0.01;
+}

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>TextBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				Jui.basic.TextBox.create({target: "normal", emptyText: "Input some text"});
+				Jui.basic.TextBox.create({target: "readonly", disabled: true});
+
+				var t1 = new Date().valueOf();
+				var buffer = [];
+				buffer.push("<table id=batch class='DemoTable SeparateTable'>");
+				buffer.push("<col width=250><col width=250><col width=250>");
+				var args = {style: "width:100%"};
+				for (var i = 0; i < 30; ++i) {
+					if (i % 3 == 0) {
+						buffer.push("<tr>");
+					}
+					buffer.push("<td>" + Jui.basic.TextBox.getHtml(args) + "</td>");
+					if (i % 3 == 2) {
+						buffer.push("</tr>");
+					}
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				for (var i = 0, rows = document.getElementById("batch").rows; i < rows.length; ++i) {
+					for (var j = 0, cells = rows[i].cells; j < cells.length; ++j) {
+						args.id = i * 3 + j;
+						args.name = Jui.random.next();
+						var box = Jui.basic.TextBox.initialize(cells[j].firstChild, args);
+						if (j == 0) {
+							box.setValue(i);
+						}
+						else if (j == 1) {
+							box.setDisabled(true);
+						}
+					}
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function doTextBoxChange()
+			{
+				Jui.message.hint(this.getValue());
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable" style="width:100%">
+			<col width="140"><col>
+			<tr><td>大文本框</td><td id="normal"></td></tr>
+			<tr><td>大文本框 - 只读</td><td id="readonly"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

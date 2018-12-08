@@ -1,0 +1,6 @@
+var HomepageItemEdit =
+{
+	doLoad: function()
+	{
+	}
+};

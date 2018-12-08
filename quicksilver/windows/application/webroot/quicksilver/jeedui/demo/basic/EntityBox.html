@@ -1,0 +1,139 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>EntityBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			var items = [
+				{value:"11", 	text:"David Huang"},
+				{value:"12", 	text:"James Chang"},
+				{value:"13", 	text:"Aven Chen"},
+				{value:"14", 	text:"Leo Yu"},
+				{value:"21", 	text:"Painter Lin"},
+				{value:"22", 	text:"June Pan"},
+				{value:"23", 	text:"Lynn Lo"},
+				{value:"24", 	text:"Iris Lai"},
+				{value:"25", 	text:"Hetty Chen"},
+				{value:"26", 	text:"Grace Hsiao"},
+				{value:"27", 	text:"温少"},
+				{value:"28", 	text:"Apple Kao"},
+				{value:"31", 	text:"Gordon Wu"}
+			];
+
+			function init()
+			{
+				Jui.basic.EntityBox.create({
+					target			: "normal",
+					entityType		: "Qs.User",
+					value			: "26",
+					text			: "Bill Clinton",
+					autoComplete	: true,
+					onbeforedrop	: doBeforeDrop,
+					onselect		: doSelect,
+					onview			: doView,
+					onautocomplete	: doAutoComplete
+				});
+				Jui.basic.EntityBox.create({target: "readonly", entityType: "Qs.User", disabled: true, value: "41", text: "Jerry"});
+				Jui.basic.EntityBox.create({target: "no-dropdown", entityType: "Qs.User", hasDropdown: false, onselect: doSelect});
+				Jui.basic.EntityBox.create({target: "no-magnifier", entityType: "Qs.User", hasMagnifier: false, backgroundColor: "#FFFFBB", items: items});
+				Jui.basic.EntityBox.create({target: "no-dm", entityType: "Qs.User", hasDropdown: false, hasMagnifier: false});
+				Jui.basic.EntityBox.create({target: "no-link", entityType: "Qs.User", hasLink: false, items: items});
+				Jui.basic.EntityBox.create({target: "fixed-width", entityType: "Qs.User", style: "width:33%", onselect: doSelect, items: items});
+				Jui.basic.EntityBox.create({
+					target			: "tool",
+					face			: "ToolEntityBox",
+					entityType		: "Qs.User",
+					value			: "52",
+					text			: "Geoge Bush",
+					autoComplete	: true,
+					onbeforedrop	: doBeforeDrop,
+					onselect		: doSelect,
+					onview			: doView,
+					onautocomplete	: doAutoComplete
+				});
+				Jui.basic.EntityBox.create({target: "tool-readonly", face: "ToolEntityBox", entityType: "Qs.User", disabled: true, value: "41", text: "Thomas"});
+
+				var t1 = new Date().valueOf();
+				var buffer = [];
+				buffer.push("<table id=batch class='DemoTable SeparateTable'>");
+				buffer.push("<col width=160><col width=160><col width=160>");
+				var args = {entityType: "Qs.User", style: "width:100%", onbeforedrop: doBeforeDrop, onselect: doSelect};
+				for (var i = 0; i < 30; ++i) {
+					if (i % 3 == 0) {
+						buffer.push("<tr>");
+					}
+					buffer.push("<td>" + Jui.basic.EntityBox.getHtml(args) + "</td>");
+					if (i % 3 == 2) {
+						buffer.push("</tr>");
+					}
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				for (var i = 0, rows = document.getElementById("batch").rows; i < rows.length; ++i) {
+					for (var j = 0, cells = rows[i].cells; j < cells.length; ++j) {
+						args.id = i * 3 + j;
+						args.name = Jui.random.next();
+						var box = Jui.basic.EntityBox.initialize(cells[j].firstChild, args);
+						if (j == 0) {
+							box.setValue(i);
+						}
+						else if (j == 1) {
+							box.setDisabled(true);
+						}
+					}
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function doBeforeDrop()
+			{
+				var groups = [{title:"最近使用", items:[]}, {title:"下拉选单", items:[]}];
+				for (var i = 0; i < groups.length; ++i) {
+					for (var j = 0, n = 1 + Jui.random.nextInt(10); j < n; ++j) {
+						groups[i].items.push({value:Jui.random.nextInt(1000), text:Jui.random.nextString(3, 15)});
+					}
+				}
+				this.loadItems(groups);
+			}
+			
+			function doSelect()
+			{
+				Jui.message.hint("弹出选择列表（entityType=" + this.getEntityType() + "）");
+				this.setValue(Jui.random.nextInt(1000), Jui.random.nextString(3, 20));
+			}
+			
+			function doView()
+			{
+				Jui.message.hint("View: entityType=" + this.getEntityType() + ", value=" + this.getValue());
+			}
+			
+			function doAutoComplete(event)
+			{
+				var box = this;
+				var items = [];
+				for (var i = 0, n = 3 + Jui.random.nextInt(7); i < n; ++i) {
+					items.push({value:Jui.random.nextInt(1000), text:event.text + Jui.random.nextString(1, 5)});
+				}
+				box.setAutoCompleteItems(event.sequence, items);
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable" style="width:100%">
+			<col width="150"><col>
+			<tr><td>实体框</td><td id="normal"></td></tr>
+			<tr><td>实体框 - 只读</td><td id="readonly"></td></tr>
+			<tr><td>实体框 - 无下拉</td><td id="no-dropdown"></td></tr>
+			<tr><td>实体框 - 无放大镜</td><td id="no-magnifier"></td></tr>
+			<tr><td>实体框 - 无下拉和放大镜</td><td id="no-dm"></td></tr>
+			<tr><td>实体框 - 无链接</td><td id="no-link"></td></tr>
+			<tr><td>实体框 - 指定宽度</td><td id="fixed-width"></td></tr>
+			<tr><td>工具条实体框</td><td id="tool"></td></tr>
+			<tr><td>工具条实体框 - 只读</td><td id="tool-readonly"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

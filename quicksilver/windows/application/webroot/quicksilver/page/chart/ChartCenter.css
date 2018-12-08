@@ -1,0 +1,17 @@
+#LeftZone
+{
+	width		: 220px;
+	height		: 100%;
+	padding		: 4px 0px 0px 8px;
+	overflow	: auto;
+}
+
+#RightZone
+{
+	position	: absolute;
+	left		: 226px;
+	top			: 0px;
+	right		: 0px;
+	bottom		: 0px;
+	overflow	: hidden;
+}

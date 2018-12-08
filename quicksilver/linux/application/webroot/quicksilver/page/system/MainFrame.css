@@ -1,0 +1,107 @@
+.TopZone
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	height				: 40px;
+	background-image	: url(../../image/other/MainFrameTopBackground.png);
+}
+
+.LogoZone
+{
+	position			: absolute;
+	width				: 220px;
+	height				: 100%;
+	background-position	: 0px center;
+	background-repeat	: no-repeat;
+	background-image	: url(../../../Qs.Misc.GetLogo.file?args=%7BfileName%3A%27MainFrameLogo.png%27%7D);
+}
+
+.CustomZone
+{
+	position			: absolute;
+	left				: 220px;
+	right				: 220px;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+.UserZone
+{
+	position			: absolute;
+	right				: 0px;
+	height				: 100%;
+	color				: #FFFFFF;
+	line-height			: 40px;
+	padding-right		: 13px;
+}
+
+.ToolBarZone
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 40px;
+	height				: 26px;
+}
+
+.MarqueeZone
+{
+	position			: absolute;
+	height				: 100%;
+	z-index				: 1;
+	padding				: 0px 20px;
+}
+
+.MenuZone
+{
+	position			: fixed;
+	left				: 0px;
+	width				: 260px;
+	top					: 66px;
+	bottom				: 0px;
+	z-index				: 0;
+}
+
+.MenuZone[SearchMenu]
+{
+	padding-top			: 32px;
+}
+
+.SearchMenuPane
+{
+	position			: absolute;
+	top					: 0px;
+	width				: 100%;
+	padding				: 6px 6px 0px 6px;
+	display				: none;
+}
+
+.MenuZone[SearchMenu] .SearchMenuPane
+{
+	display				: block;
+}
+
+.TabZone
+{
+	position			: fixed;
+	left				: 254px;
+	right				: 0px;
+	top					: 66px;
+	bottom				: 0px;
+}
+
+.MenuNumbers
+{
+	font-family			: Verdana;
+	padding-left		: 3px;
+}
+
+.MenuNumber
+{
+	padding				: 0px 1px;
+}
+
+.MenuNumberSplitter
+{
+}

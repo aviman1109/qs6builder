@@ -1,0 +1,3863 @@
+﻿/*----------------------------------------------------------------------*/
+/* Common																*/
+/*----------------------------------------------------------------------*/
+
+*
+{
+	box-sizing			: border-box;
+	-moz-box-sizing		: border-box;
+}
+
+[unselectable=on]
+{
+	user-select			: none;
+	-moz-user-select	: none;
+	-ms-user-select		: none;
+	-webkit-user-select	: none;
+}
+
+[unselectable=off]
+{
+	user-select			: auto;
+	-moz-user-select	: auto;
+	-ms-user-select		: text;
+	-webkit-user-select	: auto;
+}
+
+html
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+body
+{
+	width				: 100%;
+	height				: 100%;
+	margin				: 0px;
+	background-color	: #F7F7FF;
+}
+
+input
+{
+	outline				: none;	
+}
+
+::-webkit-input-placeholder
+{
+	color				: #999999;
+}
+
+::-moz-placeholder
+{
+	color				: #777777;
+}
+
+:-ms-input-placeholder
+{  
+	color				: #999999;
+}
+
+::-ms-clear
+{
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* Font																	*/
+/*----------------------------------------------------------------------*/
+
+body, input, textarea
+{
+	font-family			: helvetica,arial,verdana;
+	font-size			: 14px;
+}
+
+.JuiTitle
+{
+	font-family			: Segoe UI,微软雅黑,黑体;
+}
+
+/*----------------------------------------------------------------------*/
+/* JUI Common															*/
+/*----------------------------------------------------------------------*/
+
+.JuiLink
+{
+	color				: #0050A0;
+	cursor				: pointer;
+	white-space			: nowrap;
+}
+
+.JuiNumberBubble
+{
+	background-color	: #F46B0A;
+	color				: #FFFFFF;
+	display				: inline-block;
+	height				: 16px;
+	line-height			: 16px;
+	min-width			: 16px;
+	border-radius		: 8px;
+	padding				: 0px 4px;
+	text-align			: center;
+	font-size			: 12px;
+	box-shadow			: 0px 0px 2px rgba(244,97,10,0.5);
+}
+
+/*----------------------------------------------------------------------*/
+/* RectCheck/RoundCheck (for CheckBox/MultiCheckBox/List/Tree           */
+/*----------------------------------------------------------------------*/
+
+.JuiCheck
+{
+	display				: inline-block;
+	box-sizing			: content-box;
+	height				: 12px;
+	width				: 12px;
+	border				: 1px solid #7F9DB9;
+	background			: url(image/CheckBox.png) #F4F4F4;
+	outline				: none;
+}
+
+.JuiCheck:hover
+{
+	border-color			: #2392F3;
+	background-color		: #DEF9FA;
+	background-position-x	: -12px;
+}
+
+.JuiCheck:active
+{
+	border-color			: #2C628B;
+	background-color		: #C2E4F6;
+	background-position-x	: -24px;
+}
+
+.JuiCheck[disabled], .JuiCheckParent[disabled] .JuiCheck
+{
+	border-color			: #C5C5C5;
+	background-color		: #F5F5F5;
+	background-position-x	: -36px;
+}
+
+.JuiCheck[checked=full]
+{
+	background-position-y	: -12px;
+}
+
+.JuiCheck[checked=part]
+{
+	background-position-y	: -24px;
+}
+
+/*----------------------------------------------------------------------*/
+/* Button																*/
+/*----------------------------------------------------------------------*/
+
+.JuiButtonText > *
+{
+	vertical-align		: top;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiButton
+{
+	display				: inline-block;
+	height				: 26px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-image	: url(image/Button.png);
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	cursor				: default;
+	padding				: 4px 8px 0px 8px;
+	text-align			: center;
+	line-height			: 16px;
+	white-space			: nowrap;
+}
+
+.JuiButton[Dark]
+{
+	background-image	: linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -ms-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -moz-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -webkit-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+}
+
+.JuiButton:hover
+{
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+}
+
+.JuiButton:active,
+.JuiButtonMouseDown:hover /* for IE */
+{
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+}
+
+.JuiButtonDisabled,
+.JuiButtonDisabled:hover
+{
+	border				: 1px solid #808080;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+}
+
+.JuiButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiButton .JuiButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiSmallButton
+{
+	display				: inline-block;
+	height				: 22px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-image	: url(image/Button.png);
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	cursor				: default;
+	padding				: 2px 6px 0px 6px;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiSmallButton[Dark]
+{
+	background-image	: linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -ms-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -moz-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -webkit-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+}
+
+.JuiSmallButton:hover
+{
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+}
+
+.JuiSmallButton:active,
+.JuiSmallButtonMouseDown:hover /* for IE */
+{
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+}
+
+.JuiSmallButtonDisabled,
+.JuiSmallButtonDisabled:hover
+{
+	border				: 1px solid #808080;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+}
+
+.JuiSmallButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiSmallButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiSmallButton .JuiButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiSmallButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolButton
+{
+	display				: inline-block;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 2px 1px 0px 1px;
+	white-space			: nowrap;
+	cursor				: default;
+}
+
+.JuiToolButton:hover
+{
+	border-color		: #FFBD69;
+	background-image	: linear-gradient(to bottom, #FFF5CC, #FFD970);
+}
+
+.JuiToolButton:active,
+.JuiToolButtonMouseDown:hover /* for IE */
+{
+	border-color		: #FB8C3C;
+	background-image	: linear-gradient(to bottom, #FC973D, #FFBA62);
+}
+
+.JuiToolButtonDisabled,
+.JuiToolButtonDisabled:hover
+{
+	border-color		: transparent;
+	background-image	: none;
+}
+
+.JuiToolButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiToolButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiToolButton .JuiButtonText
+{
+	display				: inline-block;
+	padding				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiToolButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+/* CheckBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiCheckBox
+{
+	display				: inline-block;
+	width				: 14px;
+	height				: 26px;
+	line-height			: 26px;
+	cursor				: default;
+	padding-top			: 2px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolCheckBox
+{
+	display				: inline-block;
+	width				: 14px;
+	height				: 22px;
+	line-height			: 22px;
+	cursor				: default;
+	padding-top			: 2px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListCheckBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	line-height			: 24px;
+	cursor				: default;
+	padding-top			: 2px;
+	text-align			: center;
+}
+
+.JuiListCheckBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiComboBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 25px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiComboBox:hover,
+.JuiComboBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiComboBoxDropUp
+{
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiComboBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiComboBoxDisabled,
+.JuiComboBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiComboBox .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiComboBox .JuiComboBoxIcon:active,
+.JuiComboBoxDropUp .JuiComboBoxIcon,
+.JuiComboBoxDropUp .JuiComboBoxIcon:hover,
+.JuiComboBoxDropDown .JuiComboBoxIcon,
+.JuiComboBoxDropDown .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiComboBoxDisabled .JuiComboBoxIcon,
+.JuiComboBoxDisabled .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolComboBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 0px 18px 0px 3px;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+	background-clip		: padding-box;
+}
+
+.JuiToolComboBox:hover,
+.JuiToolComboBoxFocused
+{
+	border				: 1px solid #FFBD69;
+}
+
+.JuiToolComboBoxDropUp,
+.JuiToolComboBoxDropUp:hover,
+.JuiToolComboBoxDropDown,
+.JuiToolComboBoxDropDown:hover
+{
+	border				: 1px solid #2392F3;
+}
+
+.JuiToolComboBoxDisabled,
+.JuiToolComboBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+}
+
+.JuiToolComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ToolComboBoxIcon.png);
+	background-clip		: padding-box;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolComboBox:hover .JuiComboBoxIcon,
+.JuiToolComboBoxFocused .JuiComboBoxIcon
+{
+	background-position	: 0px -20px;
+	border-left			: 1px solid #FFBD69;
+}
+
+.JuiToolComboBox .JuiComboBoxIcon:active,
+.JuiToolComboBoxDropUp .JuiComboBoxIcon,
+.JuiToolComboBoxDropUp:hover .JuiComboBoxIcon,
+.JuiToolComboBoxDropDown .JuiComboBoxIcon,
+.JuiToolComboBoxDropDown:hover .JuiComboBoxIcon
+{
+	background-position	: 0px -40px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolComboBoxDisabled .JuiComboBoxIcon,
+.JuiToolComboBoxDisabled:hover .JuiComboBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListComboBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListComboBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiListComboBox .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListComboBox .JuiComboBoxIcon:active,
+.JuiListComboBoxDropUp .JuiComboBoxIcon,
+.JuiListComboBoxDropUp .JuiComboBoxIcon:hover,
+.JuiListComboBoxDropDown .JuiComboBoxIcon,
+.JuiListComboBoxDropDown .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListComboBoxDisabled .JuiComboBoxIcon,
+.JuiListComboBoxDisabled .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboButton															*/
+/*----------------------------------------------------------------------*/
+
+.JuiComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 26px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-image	: url(image/Button.png);
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	cursor				: default;
+	padding				: 4px 17px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiComboButton:hover
+{
+	background-position	: 0px -24px;
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 22px, #F8B230 23px, #E5A710 24px);
+}
+
+.JuiComboButtonMouseDown:hover
+{
+	background-position	: 0px -48px;
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 21.5px, #EAE9E3 22.5px, #F2F1EE 23.5px);
+}
+
+.JuiComboButtonDropUp,
+.JuiComboButtonDropUp:hover
+{
+	border					: 1px solid #2392F3;
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+	background-image		: linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -ms-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -moz-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -webkit-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-position		: 0px -48px;
+}
+
+.JuiComboButtonDropDown,
+.JuiComboButtonDropDown:hover
+{
+	border						: 1px solid #2392F3;
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+	background-image			: linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -ms-linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -moz-linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -webkit-linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-position			: 0px -48px;
+}
+
+.JuiComboButtonDisabled,
+.JuiComboButtonDisabled:hover
+{
+	border				: 1px solid #808080;
+	background-position	: 0px -72px;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+}
+
+.JuiComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiComboButton .JuiComboButtonArrow
+{
+	width				: 14px;
+	height				: 24px;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 2px;
+	top					: 0px;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+}
+
+.JuiComboButton:hover .JuiComboButtonArrow
+{
+	border-left			: 1px solid #003C74;
+	background-position	: 2px center;
+}
+
+.JuiComboButtonMouseDown .JuiComboButtonArrow
+{
+	border-left			: 1px solid #003C74;
+	background-position	: 2px center;
+}
+
+.JuiComboButtonDropUp .JuiComboButtonArrow,
+.JuiComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiComboButtonDropDown .JuiComboButtonArrow,
+.JuiComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiComboButtonDisabled .JuiComboButtonArrow,
+.JuiComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left			: none;
+	background-position	: 3px center;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonArrow
+{
+	opacity				: 0.5;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiSmallComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 22px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	cursor				: default;
+	padding				: 2px 17px 0px 6px;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiSmallComboButton:hover
+{
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+}
+
+.JuiSmallComboButtonMouseDown:hover
+{
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+}
+
+.JuiSmallComboButtonDropUp,
+.JuiSmallComboButtonDropUp:hover
+{
+	border					: 1px solid #2392F3;
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+	background-image		: linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -ms-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -moz-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+	background-image		: -webkit-linear-gradient(bottom, #F7F8F6, #EDEBE7);
+}
+
+.JuiSmallComboButtonDropDown,
+.JuiSmallComboButtonDropDown:hover
+{
+	border						: 1px solid #2392F3;
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+	background-image			: linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -ms-linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -moz-linear-gradient(top, #F7F8F6, #EDEBE7);
+	background-image			: -webkit-linear-gradient(top, #F7F8F6, #EDEBE7);
+}
+
+.JuiSmallComboButtonDisabled,
+.JuiSmallComboButtonDisabled:hover
+{
+	border				: 1px solid #808080;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+}
+
+.JuiSmallComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiSmallComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiSmallComboButton .JuiComboButtonArrow
+{
+	width				: 14px;
+	height				: 20px;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 2px;
+	top					: 0px;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+}
+
+.JuiSmallComboButton:hover .JuiComboButtonArrow
+{
+	border-left			: 1px solid #003C74;
+	background-position	: 2px center;
+}
+
+.JuiSmallComboButtonMouseDown .JuiComboButtonArrow
+{
+	border-left			: 1px solid #003C74;
+	background-position	: 2px center;
+}
+
+.JuiSmallComboButtonDropUp .JuiComboButtonArrow,
+.JuiSmallComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiSmallComboButtonDropDown .JuiComboButtonArrow,
+.JuiSmallComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiSmallComboButtonDisabled .JuiComboButtonArrow,
+.JuiSmallComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left			: none;
+	background-position	: 3px center;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonArrow
+{
+	opacity				: 0.5;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 22px;
+	line-height			: 16px;
+	border				: 1px solid transparent;
+	padding				: 2px 13px 0px 1px;
+	cursor				: default;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiToolComboButton:hover
+{
+	border-color		: #FFBD69;
+	background-image	: linear-gradient(to bottom, #FFF5CC, #FFD970);
+}
+
+.JuiToolComboButtonMouseDown,
+.JuiToolComboButtonMouseDown:hover
+{
+	border-color		: #FB8C3C;
+	background-image	: linear-gradient(to bottom, #FC973D, #FFBA62);
+}
+
+.JuiToolComboButtonDropUp,
+.JuiToolComboButtonDropUp:hover,
+.JuiToolComboButtonDropDown,
+.JuiToolComboButtonDropDown:hover
+{
+	border-color		: #2392F3;
+	background-image	: linear-gradient(to bottom, #E3FFFE, #87B3EC);
+}
+
+.JuiToolComboButtonDisabled,
+.JuiToolComboButtonDisabled:hover
+{
+	border-color		: transparent;
+	background-image	: none;
+}
+
+.JuiToolComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiToolComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiToolComboButton .JuiComboButtonArrow
+{
+	width				: 12px;
+	height				: 100%;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 0px;
+	top					: 0px;
+	border-left			: 1px solid transparent;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+}
+
+.JuiToolComboButton:hover .JuiComboButtonArrow
+{
+	border-left-color	: #FFBD69;
+}
+
+.JuiToolComboButtonMouseDown .JuiComboButtonArrow,
+.JuiToolComboButtonMouseDown:hover .JuiComboButtonArrow
+{
+	border-left-color	: #FB8C3C;
+}
+
+.JuiToolComboButtonDropUp .JuiComboButtonArrow,
+.JuiToolComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiToolComboButtonDropDown .JuiComboButtonArrow,
+.JuiToolComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left-color	: transparent;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	opacity				: 0.5;
+	right				: 1px;
+}
+
+/*----------------------------------------------------------------------*/
+/* MonthDayBox                                                          */
+/*----------------------------------------------------------------------*/
+
+.JuiMonthDayBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 25px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiMonthDayBox:hover,
+.JuiMonthDayBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiMonthDayBoxDropUp
+{
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+}
+
+.JuiMonthDayBoxDropDown
+{
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+}
+
+.JuiMonthDayBoxDisabled,
+.JuiMonthDayBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiMonthDayBox .JuiMonthDayText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiMonthDayBox .JuiMonthDayIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiMonthDayBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiMonthDayBox.JuiMonthDayBoxIcon:active,
+.JuiMonthDayBoxDropUp .JuiMonthDayBoxIcon,
+.JuiMonthDayBoxDropUp .JuiMonthDayBoxIcon:hover,
+.JuiMonthDayBoxDropDown .JuiMonthDayBoxIcon,
+.JuiMonthDayBoxDropDown .JuiMonthDayBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiMonthDayBoxDisabled .JuiMonthDayBoxIcon,
+.JuiMonthDayBoxDisabled .JuiMonthDayBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiMonthDayBoxPopup
+{
+	position			: absolute;
+	background-color	: #FFFFFF;
+	border				: 1px solid #2392F3;
+	overflow			: hidden;
+	box-shadow			: 0px 2px 10px #CCCCCC;
+	z-index				: 300000000;
+	cursor				: default;
+}
+
+.JuiMonthDayBoxPopup[Up]
+{
+	box-shadow			: 0px -2px 10px #CCCCCC;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupTable
+{
+	width				: 100%;
+	border-collapse		: collapse;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupTable > tbody > tr > td
+{
+	padding				: 0px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable
+{
+	table-layout		: fixed;
+	border-spacing		: 0px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable tr
+{
+	height				: 20px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable td
+{
+	padding				: 0px;
+	text-align			: center;
+	width				: 27px;
+	border				: 1px solid transparent;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable td:first-child,
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable td:nth-child(2)
+{
+	color				: #FF0000;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable td[Disabled]
+{
+	color				: #999999;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable td[Current]
+{
+	border				: 1px solid #FFAD49;
+	background-image	: linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -ms-linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -moz-linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -webkit-linear-gradient(top, #FFE5AC, #FFC950);
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable .JuiMonthDayBoxPopupDateRow td:hover
+{
+	border				: 1px solid #FFBD69;
+	background-image	: linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -ms-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -moz-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -webkit-linear-gradient(top, #FFF5CC, #FFD970);
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable .JuiMonthDayBoxPopupSplitter
+{
+	height				: 5px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable .JuiMonthDayBoxPopupSplitter td
+{
+	padding				: 0px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupDateTable .JuiMonthDayBoxPopupSplitter div
+{
+	width				: 100%;
+	height				: 1px;
+	background-color	: #ACA899;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupButtonTable
+{
+	margin				: 4px 0px 6px 0px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupButtonTable td
+{
+	padding				: 0px 3px;
+	font-size			: 12px;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupButtonTable div
+{
+	display				: inline-block;
+	height				: 20px;
+	line-height			: 18px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-color	: #F0F0EA;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	padding				: 0px 6px 0px 6px;
+	white-space			: nowrap;
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupButtonTable div:hover
+{
+	background-color	: #FDD889;
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+}
+
+.JuiMonthDayBoxPopup .JuiMonthDayBoxPopupButtonTable div:active
+{
+	background-color	: #DCD8CF;
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+}
+
+
+/*----------------------------------------------------------------------*/
+/* DateBox 																*/
+/*----------------------------------------------------------------------*/
+
+.JuiDateBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 25px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiDateBox:hover,
+.JuiDateBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiDateBoxDropUp
+{
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+}
+
+.JuiDateBoxDropDown
+{
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+}
+
+.JuiDateBoxDisabled,
+.JuiDateBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiDateBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiDateBox .JuiDateBoxIcon:active,
+.JuiDateBoxDropUp .JuiDateBoxIcon,
+.JuiDateBoxDropUp .JuiDateBoxIcon:hover,
+.JuiDateBoxDropDown .JuiDateBoxIcon,
+.JuiDateBoxDropDown .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiDateBoxDisabled .JuiDateBoxIcon,
+.JuiDateBoxDisabled .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolDateBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 0px 18px 0px 3px;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+	background-clip		: padding-box;
+}
+
+.JuiToolDateBox:hover,
+.JuiToolDateBoxFocused
+{
+	border				: 1px solid #FFBD69;
+}
+
+.JuiToolDateBoxDropUp,
+.JuiToolDateBoxDropUp:hover,
+.JuiToolDateBoxDropDown,
+.JuiToolDateBoxDropDown:hover
+{
+	border				: 1px solid #2392F3;
+}
+
+.JuiToolDateBoxDisabled,
+.JuiToolDateBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+}
+
+.JuiToolDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ToolComboBoxIcon.png);
+	background-clip		: padding-box;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolDateBox:hover .JuiDateBoxIcon,
+.JuiToolDateBoxFocused .JuiDateBoxIcon
+{
+	background-position	: 0px -20px;
+	border-left			: 1px solid #FFBD69;
+}
+
+.JuiToolDateBox .JuiDateBoxIcon:active,
+.JuiToolDateBoxDropUp .JuiDateBoxIcon,
+.JuiToolDateBoxDropUp:hover .JuiDateBoxIcon,
+.JuiToolDateBoxDropDown .JuiDateBoxIcon,
+.JuiToolDateBoxDropDown:hover .JuiDateBoxIcon
+{
+	background-position	: 0px -40px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolDateBoxDisabled .JuiDateBoxIcon,
+.JuiToolDateBoxDisabled:hover .JuiDateBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListDateBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListDateBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiListDateBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListDateBox .JuiDateBoxIcon:active,
+.JuiListDateBoxDropUp .JuiDateBoxIcon,
+.JuiListDateBoxDropUp .JuiDateBoxIcon:hover,
+.JuiListDateBoxDropDown .JuiDateBoxIcon,
+.JuiListDateBoxDropDown .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListDateBoxDisabled .JuiDateBoxIcon,
+.JuiListDateBoxDisabled .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiDateBoxPopup
+{
+	position			: absolute;
+	background-color	: #FFFFFF;
+	border				: 1px solid #2392F3;
+	overflow			: hidden;
+	box-shadow			: 0px 2px 10px #CCCCCC;
+	z-index				: 300000000;
+	cursor				: default;
+}
+
+.JuiDateBoxPopup[Up]
+{
+	box-shadow			: 0px -2px 10px #CCCCCC;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable
+{
+	width				: 100%;
+	border-collapse		: collapse;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable > tbody > tr > td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable > tbody > tr > .JuiDateBoxPopupTopBarCell
+{
+	padding				: 4px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTopBar
+{
+	width				: 100%;
+	height				: 19px;
+	line-height			: 19px;
+	table-layout		: fixed;
+	border-collapse		: collapse;
+	background-color	: #9EBEF5;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTopBar td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNavigator
+{
+	background-image	: url(image/DateBoxPopupNavigator.png);
+	background-repeat	: no-repeat;
+	cursor				: pointer;
+	width				: 18px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupPreviousYear
+{
+	background-position	: 4px 5px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupPreviousMonth
+{
+	background-position	: 4px -15px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNextMonth
+{
+	background-position	: 5px -35px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNextYear
+{
+	background-position	: 5px -55px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupCurrentYearMonth
+{
+	padding-top			: 1px;
+	text-align			: center;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable
+{
+	table-layout		: fixed;
+	border-spacing		: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable tr
+{
+	height				: 20px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td
+{
+	padding				: 0px;
+	text-align			: center;
+	width				: 27px;
+	border				: 1px solid transparent;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td:first-child,
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td:last-child
+{
+	color				: #FF0000;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td[Disabled]
+{
+	color				: #999999;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td[Current]
+{
+	border				: 1px solid #FFAD49;
+	background-image	: linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -ms-linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -moz-linear-gradient(top, #FFE5AC, #FFC950);
+	background-image	: -webkit-linear-gradient(top, #FFE5AC, #FFC950);
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupDateRow td:hover
+{
+	border				: 1px solid #FFBD69;
+	background-image	: linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -ms-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -moz-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -webkit-linear-gradient(top, #FFF5CC, #FFD970);
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter
+{
+	height				: 5px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter div
+{
+	width				: 100%;
+	height				: 1px;
+	background-color	: #ACA899;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable
+{
+	margin				: 4px 0px 0px 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable div > *
+{
+	vertical-align		: bottom;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable div > div
+{
+	display				: inline-block;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable input
+{
+	width				: 36px;
+	height				: 20px;
+	text-align			: center;
+	border				: 1px solid #2392F3;
+	border-right		: none;
+	border-radius		: 3px 0px 0px 3px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span
+{
+	border				: 1px solid #2392F3;
+	background-color	: #9EBEF5;
+	display				: block;
+	width				: 15px;
+	height				: 10px;
+	background-image	: url(image/DateBoxUpDown.png);
+	background-repeat	: no-repeat;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:hover
+{
+	background-color	: #FFE990;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:active
+{
+	background-color	: #CCA970;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:first-child
+{
+	background-position	: center -1px;
+	border-radius		: 0px 3px 0px 0px;
+	border-bottom		: none;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:last-child
+{
+	background-position	: center -14px;
+	border-radius		: 0px 0px 3px 0px;
+	border-top			: none;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeSeparator
+{
+	font-family			: Fixedsys;
+	vertical-align		: top;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable
+{
+	margin				: 4px 0px 6px 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable td
+{
+	padding				: 0px 3px;
+	font-size			: 12px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div
+{
+	display				: inline-block;
+	height				: 20px;
+	line-height			: 18px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-color	: #F0F0EA;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	padding				: 0px 6px 0px 6px;
+	white-space			: nowrap;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div:hover
+{
+	background-color	: #FDD889;
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 16px, #F8B230 17px, #E5A710 18px);
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div:active
+{
+	background-color	: #DCD8CF;
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 15.5px, #EAE9E3 16.5px, #F2F1EE 17.5px);
+}
+
+/*----------------------------------------------------------------------*/
+/* Dialog																*/
+/*----------------------------------------------------------------------*/
+
+.JuiDialog
+{
+	min-width			: 300px;
+	min-height			: 150px;
+	border				: 1px solid #628EC6;
+	border-radius		: 3px 3px 0px 0px;
+	box-shadow			: 0px 0px 50px 10px rgba(128,128,128,0.4), 0px 0px 3px #FFFFFF inset;
+	position			: fixed;
+	background-color	: #C7D6E9;
+	background-image	: url(image/MessageBox.png);
+	background-repeat	: repeat-x;
+	background-image	: linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -ms-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -moz-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -webkit-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	cursor				: default;
+	resize				: both;
+	overflow			: hidden;
+}
+
+.JuiDialogFlash
+{
+	background-color	: #FDE06C;
+	background-image	: none;
+	background-image	: linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -ms-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -moz-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -webkit-linear-gradient(top, #FDE06C, #C0DBFF);
+}
+
+.JuiDialogMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	opacity				: 0.03;
+	cursor				: default;
+}
+
+.JuiDialogMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+}
+
+.JuiDialog .JuiDialogTitle
+{
+	position			: absolute;
+	left				: 6px;
+	top					: 3px;
+	right				: 48px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+	background-image	: url(image/DialogIcon.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+	resize				: none;
+}
+
+.JuiDialog .JuiDialogTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 40px;
+	height				: 28px;
+	background-color	: transparent;
+}
+
+.JuiDialog .JuiDialogButton
+{
+	position			: absolute;
+	top					: 4px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/DialogButton.png);
+}
+
+.JuiDialog .JuiDialogMaximize
+{
+	right				: 23px;
+	background-position	: 0px -15px;
+}
+
+.JuiDialog .JuiDialogMaximizeCloseHidden
+{
+	right				: 6px;
+	background-position	: 0px -15px;
+}
+
+.JuiDialog .JuiDialogMaximize[Maximized]
+{
+	background-position	: 0px -30px;
+}
+
+.JuiDialog .JuiDialogClose
+{
+	right				: 5px;
+}
+
+.JuiDialog .JuiDialogCloseHidden
+{
+	right				: -15px;
+}
+
+.JuiDialog .JuiDialogClose:hover
+{
+	background-position	: -15px 0px;
+}
+
+.JuiDialog .JuiDialogMaximize:hover
+{
+	background-position	: -15px -15px;
+}
+
+.JuiDialog .JuiDialogMaximize[Maximized]:hover
+{
+	background-position	: -15px -30px;
+}
+
+.JuiDialog .JuiDialogBody
+{
+	position			: absolute;
+	top					: 28px;
+	bottom				: 6px;
+	left				: 6px;
+	right				: 6px;
+	background-color	: #F7F7FF;;
+	border				: 1px solid #99BBE8;
+	box-sizing			: content-box;
+	-moz-box-sizing		: content-box;
+	resize				: none;
+}
+
+.JuiDialog .JuiDialogBody iframe
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiDialog .JuiDialogBody .JuiDialogFrameMask
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* EntityBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiEntityBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 48px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiEntityBox1Icon
+{
+	padding-right		: 25px;
+}
+
+.JuiEntityBox0Icon
+{
+	padding-right		: 4px;
+}
+
+.JuiEntityBox:hover,
+.JuiEntityBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiEntityBoxDropUp
+{
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiEntityBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiEntityBoxDisabled,
+.JuiEntityBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiEntityBox .JuiEntityBoxMagnifier
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/EntityBoxIcon.png);
+}
+
+.JuiEntityBox .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiEntityBoxDisabled .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+.JuiEntityBox .JuiEntityBoxArrow
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiEntityBox .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiEntityBox .JuiEntityBoxArrow:active,
+.JuiEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiEntityBoxArrowDown .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiEntityBoxDisabled .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolEntityBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 0px 34px 0px 3px;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+	background-clip		: padding-box;
+}
+
+.JuiToolEntityBox1Icon
+{
+	padding-right		: 18px;
+}
+
+.JuiToolEntityBox0Icon
+{
+	padding-right		: 3px;
+}
+
+.JuiToolEntityBox:hover,
+.JuiToolEntityBoxFocused
+{
+	border				: 1px solid #FFBD69;
+}
+
+.JuiToolEntityBoxDropUp,
+.JuiToolEntityBoxDropUp:hover,
+.JuiToolEntityBoxDropDown,
+.JuiToolEntityBoxDropDown:hover
+{
+	border				: 1px solid #2392F3;
+}
+
+.JuiToolEntityBoxDisabled,
+.JuiToolEntityBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+}
+
+.JuiToolEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiToolEntityBox .JuiEntityBoxMagnifier
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ToolEntityBoxIcon.png);
+	background-clip		: padding-box;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolEntityBox:hover .JuiEntityBoxMagnifier,
+.JuiToolEntityBoxFocused .JuiEntityBoxMagnifier
+{
+	background-position	: 0px -20px;
+	border-left			: 1px solid #FFBD69;
+}
+
+.JuiToolEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+	border-left			: 1px solid #FB8C3C;
+}
+
+.JuiToolEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiToolEntityBoxDisabled:hover .JuiEntityBoxMagnifier
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolEntityBox .JuiEntityBoxArrow
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ToolComboBoxIcon.png);
+	background-clip		: padding-box;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolEntityBox:hover .JuiEntityBoxArrow,
+.JuiToolEntityBoxFocused .JuiEntityBoxArrow
+{
+	background-position	: 0px -20px;
+	border-left			: 1px solid #FFBD69;
+}
+
+.JuiToolEntityBox .JuiEntityBoxArrow:active,
+.JuiToolEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiToolEntityBoxArrowDown:hover .JuiEntityBoxArrow
+{
+	background-position	: 0px -40px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiToolEntityBoxDisabled:hover .JuiEntityBoxArrow
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListEntityBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 48px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListEntityBox1Icon
+{
+	padding-right		: 25px;
+}
+
+.JuiListEntityBox0Icon
+{
+	padding-right		: 3px;
+}
+
+.JuiListEntityBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/EntityBoxIcon.png);
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiListEntityBoxDisabled .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow:active,
+.JuiListEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiListEntityBoxArrowDown .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiListEntityBoxDisabled .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* File Dropzone														*/
+/*----------------------------------------------------------------------*/
+
+.JuiFileDropZoneMask
+{
+	border				: 10px dashed #000000; 
+	background-color	: #808080;
+	opacity				: 0.25;
+	position			: fixed;
+	z-index				: 99999999;
+}
+
+/*----------------------------------------------------------------------*/
+/* HtmlBox 																*/
+/*----------------------------------------------------------------------*/
+
+.JuiHtmlBox
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+/*----------------------------------------------------------------------*/
+/* InputBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiInputBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 4px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	background-color	: #FFFFFF;
+}
+
+.JuiInputBox:hover,
+.JuiInputBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiInputBoxDropUp
+{
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiInputBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiInputBoxDisabled,
+.JuiInputBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Phone]
+{
+	background-image	: url(image/InputBoxPhone.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 24px;
+}
+
+.JuiInputBox input
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+	vertical-align		: top;
+}
+
+.JuiInputBox[type=Number] input,
+.JuiInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiInputBox[type=Email] input,
+.JuiInputBox[type=Url] input,
+.JuiInputBox[type=Phone] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolInputBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 0px 3px 0px 3px;
+	background-color	: #FFFFFF;
+	background-clip		: padding-box;
+}
+
+.JuiToolInputBox:hover,
+.JuiToolInputBoxFocused
+{
+	border				: 1px solid #FFBD69;
+}
+
+.JuiToolInputBoxDisabled,
+.JuiToolInputBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+}
+
+.JuiToolInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 23px;
+}
+
+.JuiToolInputBox input
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolInputBox[type=Number] input,
+.JuiToolInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiToolInputBox[type=Email] input,
+.JuiToolInputBox[type=Url] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListInputBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 3px 0px 3px;
+}
+
+.JuiListInputBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 24px;
+}
+
+.JuiListInputBox input
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListInputBox[type=Number] input,
+.JuiListInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiListInputBox[type=Email] input,
+.JuiListInputBox[type=Url] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+/* Label																*/
+/*----------------------------------------------------------------------*/
+
+.JuiLabel
+{
+	padding				: 2px 0px;
+	/*
+	line-height			: 22px;
+	*/
+	overflow-x			: hidden;
+	white-space			: normal;
+}
+
+/*----------------------------------------------------------------------*/
+/* MessageBox															*/
+/*----------------------------------------------------------------------*/
+
+.JuiMessageBox
+{
+	min-width			: 240px;
+	min-height			: 130px;
+	border				: 1px solid #979EA6;
+	border-radius		: 3px;
+	position			: fixed;
+	background-color	: #C7D6E9;
+	background-image	: url(image/MessageBox.png);
+	background-repeat	: repeat-x;
+	background-image	: linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -ms-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -moz-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -webkit-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	box-shadow			: 0px 0px 20px 5px rgba(128,128,128,0.4), 0px 0px 2px #FFFFFF inset;
+	cursor				: default;
+}
+
+.JuiMessageBox[Warning]
+{
+	background-image	: linear-gradient(top, #F9E9DC, #E9D6C7 24px, #E9D6C7 92%, #F4D9C9);
+	background-image	: -ms-linear-gradient(top, #F9E9DC, #E9D6C7 24px, #E9D6C7 92%, #F4D9C9);
+	background-image	: -moz-linear-gradient(top, #F9E9DC, #E9D6C7 24px, #E9D6C7 92%, #F4D9C9);
+	background-image	: -webkit-linear-gradient(top, #F9E9DC, #E9D6C7 24px, #E9D6C7 92%, #F4D9C9);
+}
+
+.JuiMessageBoxMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+	display				: none;
+}
+
+.JuiMessageBoxTitle
+{
+	position			: absolute;
+	left				: 7px;
+	top					: 3px;
+	right				: 30px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+}
+
+.JuiMessageBoxTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 24px;
+	height				: 28px;
+	background-color	: transparent;
+}
+
+.JuiMessageBoxClose
+{
+	position			: absolute;
+	top					: 4px;
+	right				: 5px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/CommandIcon.gif);
+}
+
+.JuiMessageBoxClose:hover
+{
+	background-position	: 15px 0px;
+}
+
+.JuiMessageBoxIcon
+{
+	position			: absolute;
+	top					: 34px;
+	left				: 13px;
+	width				: 32px;
+	height				: 32px;
+	background-image	: url(image/MessageBoxInfo.png);
+}
+
+.JuiMessageBoxWarningIcon
+{
+	background-image	: url(image/MessageBoxWarning.png);
+}
+
+.JuiMessageBoxErrorIcon
+{
+	background-image	: url(image/MessageBoxError.png);
+}
+
+.JuiMessageBoxQuestionIcon
+{
+	background-image	: url(image/MessageBoxQuestion.png);
+}
+
+.JuiMessageBoxSuccessIcon
+{
+	background-image	: url(image/MessageBoxSuccess.png);
+}
+
+.JuiMessageBoxText
+{
+	margin				: 34px 15px 42px 55px;
+	max-width			: 400px;
+	max-height			: 240px;
+	line-height			: 18px;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+}
+
+.JuiMessageBoxHint .JuiMessageBoxText
+{
+	margin-bottom		: 8px;
+	min-width			: 200px;
+	max-width			: 200px;
+}
+
+.JuiMessageBoxButtonRow
+{
+	position			: absolute;
+	bottom				: 8px;
+	width				: 100%;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiMessageBoxHint .JuiMessageBoxButtonRow
+{
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiCheckBox 														*/
+/*----------------------------------------------------------------------*/
+
+.JuiMultiCheckBox
+{
+	white-space			: normal;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem
+{
+	display				: inline-block;
+	height				: 23px;
+	line-height			: 22px;
+	margin-right		: 8px;
+	cursor				: default;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+.JuiMultiCheckBoxOneItemPerLine .JuiMultiCheckBoxItem
+{
+	display				: block;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem div
+{
+	display				: inline-block;
+	vertical-align		: middle;
+}
+
+.JuiMultiCheckBox .JuiCheck
+{
+	margin-right		: 3px;
+}
+
+.JuiMultiCheckBoxSingleSelect .JuiCheck
+{
+	background-image	: none;
+	border-radius		: 7px;
+}
+
+.JuiMultiCheckBoxSingleSelect .JuiCheck:after
+{
+	box-sizing: border-box;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #fff;
+	display: block;
+	background-color: #dde;
+	content: "";
+}
+
+.JuiMultiCheckBoxSingleSelect .JuiCheck[checked]:after
+{
+	background-color: #77a;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem:hover .JuiCheck:after
+{
+	background-color: #d7d7f7;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem:active .JuiCheck:after
+{
+	background-color: #ccd;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem:hover .JuiCheck[checked]:after
+{
+	background-color: #88d;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem:active .JuiCheck[checked]:after
+{
+	background-color: #77d;
+}
+
+.JuiMultiCheckBoxSingleSelect[disabled] .JuiCheck:after
+{
+	background-color: #eee!important;
+}
+
+.JuiMultiCheckBoxSingleSelect[disabled] .JuiCheck[checked]:after
+{
+	background-color: #aaa!important;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiCheckBox
+{
+	height				: 24px;
+	overflow			: hidden;
+	white-space			: nowrap;
+	padding-left		: 3px;
+}
+
+.JuiListMultiCheckBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem
+{
+	display				: inline-block;
+	height				: 24px;
+	line-height			: 22px;
+	margin-right		: 5px;
+	cursor				: default;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem div
+{
+	display				: inline-block;
+	vertical-align		: middle;
+}
+
+.JuiListMultiCheckBox .JuiCheck
+{
+	margin-right		: 2px;
+}
+
+.JuiListMultiCheckBoxSingleSelect .JuiCheck
+{
+	background-image	: none;
+	border-radius		: 7px;
+}
+
+.JuiListMultiCheckBoxSingleSelect .JuiCheck:after
+{
+	box-sizing: border-box;
+	border-radius: 6px;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #fff;
+	display: block;
+	background-color: #dde;
+	content: "";
+}
+
+.JuiListMultiCheckBoxSingleSelect .JuiCheck[checked]:after
+{
+	background-color: #77a;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem:hover .JuiCheck:after
+{
+	background-color: #d7d7f7;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem:active .JuiCheck:after
+{
+	background-color: #ccd;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem:hover .JuiCheck[checked]:after
+{
+	background-color: #88d;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem:active .JuiCheck[checked]:after
+{
+	background-color: #77d;
+}
+
+.JuiListMultiCheckBoxSingleSelect[disabled] .JuiCheck:after
+{
+	background-color: #eee!important;
+}
+
+.JuiListMultiCheckBoxSingleSelect[disabled] .JuiCheck[checked]:after
+{
+	background-color: #aaa!important;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiCheckComboBox 												    */
+/*----------------------------------------------------------------------*/
+
+.JuiMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 25px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiMultiCheckComboBox:hover,
+.JuiMultiCheckComboBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiMultiCheckComboBoxDropUp
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiMultiCheckComboBoxDropDown
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiMultiCheckComboBoxDisabled,
+.JuiMultiCheckComboBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon:hover,
+.JuiMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+.JuiMultiCheckComboBoxPopup
+{
+	position			: absolute;
+	display				: block;	
+	background-color	: #FFFFFF;
+	border				: 1px solid #2392F3;
+	overflow-x			: hidden;
+	overflow-y			: auto;
+	padding				: 1px 6px;
+	box-shadow			: 0px 2px 10px #CCCCCC;
+	z-index				: 300000000;
+}
+
+.JuiMultiCheckComboBoxPopup[Up]
+{
+	box-shadow			: 0px -2px 10px #CCCCCC;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border				: 1px solid transparent;
+	padding				: 0px 18px 0px 3px;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+	background-clip		: padding-box;
+}
+
+.JuiToolMultiCheckComboBox:hover,
+.JuiToolMultiCheckComboBoxFocused
+{
+	border				: 1px solid #FFBD69;
+}
+
+.JuiToolMultiCheckComboBoxDropUp,
+.JuiToolMultiCheckComboBoxDropUp:hover,
+.JuiToolMultiCheckComboBoxDropDown,
+.JuiToolMultiCheckComboBoxDropDown:hover
+{
+	border				: 1px solid #2392F3;
+}
+
+.JuiToolMultiCheckComboBoxDisabled,
+.JuiToolMultiCheckComboBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ToolComboBoxIcon.png);
+	background-clip		: padding-box;
+	border-left			: 1px solid transparent;
+}
+
+.JuiToolMultiCheckComboBox:hover .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxFocused .JuiMultiCheckComboBoxIcon
+{
+	background-position	: 0px -20px;
+	border-left			: 1px solid #FFBD69;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiToolMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropUp:hover .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropDown:hover .JuiMultiCheckComboBoxIcon
+{
+	background-position	: 0px -40px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDisabled:hover .JuiMultiCheckComboBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListMultiCheckComboBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiListMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon:hover,
+.JuiListMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiEntityBox 														*/
+/*----------------------------------------------------------------------*/
+
+.JuiMultiEntityBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 2px 25px 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: #FFFFFF;
+}
+
+.JuiMultiEntityBox:hover,
+.JuiMultiEntityBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiMultiEntityBoxDisabled,
+.JuiMultiEntityBoxDisabled:hover
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/EntityBoxIcon.png);
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier,
+.JuiMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiEntityBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListMultiEntityBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	margin-left			: 2px;
+	background-image	: url(image/EntityBoxIcon.png);
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier,
+.JuiListMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* PictureBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiPictureBox
+{
+	height				: 180px;
+	width				: 200px;
+	border				: 1px solid #7F9DB9;
+	background-color	: #FFFFFF;
+	overflow			: hidden;
+	text-align			: center;
+	padding				: 3px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	outline				: none;
+}
+
+.JuiPictureBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiPictureBox div
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border-radius		: 3px;
+}
+
+.JuiPictureBox img
+{
+	position			: absolute;
+	top					: -1000px;
+}
+
+/*----------------------------------------------------------------------*/
+/* PopupList     														*/
+/*----------------------------------------------------------------------*/
+
+.JuiPopupList
+{
+	position			: absolute;
+	display				: block;	
+	background-color	: #FFFFFF;
+	border				: 1px solid #2392F3;
+	overflow-x			: hidden;
+	overflow-y			: auto;
+	padding				: 1px 0px;
+	box-shadow			: 0px 2px 10px #CCCCCC;
+	z-index				: 300000000;
+}
+
+.JuiPopupList[Up]
+{
+	box-shadow			: 0px -2px 10px #CCCCCC;
+}
+
+.JuiPopupList[NoTopPadding]
+{
+	padding-top			: 0px;
+}
+
+.JuiPopupList table
+{
+	border-collapse		: separate;
+	cursor				: default;
+	overflow			: hidden;
+	table-layout		: fixed;
+	width				: 100%;
+}
+
+.JuiPopupList tr
+{
+	height				: 22px;
+	white-space			: nowrap;
+}
+
+.JuiPopupList .Group
+{
+	height				: 24px;
+}
+
+.JuiPopupList .Group:first-child
+{
+	height				: 22px;
+}
+
+.JuiPopupList .Group td
+{
+	padding				: 1px 0px;
+}
+
+.JuiPopupList .Group:first-child td
+{
+	padding-top			: 0px;
+}
+
+.JuiPopupList .Group div
+{
+	background-color	: #DDE7EE;
+	border-top			: 1px solid #C5C5C5;
+	border-bottom		: 1px solid #C5C5C5;
+	color				: #808080;
+	width				: 100%;
+	height				: 100%;
+	line-height			: 20px;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+	padding-left		: 16px;
+}
+
+.JuiPopupList .Group:first-child div
+{
+	border-top			: none;
+}
+
+.JuiPopupList .Item td
+{
+	border-left			: 1px solid #FFFFFF;
+	border-right		: 1px solid #FFFFFF;
+}
+
+.JuiPopupList .Item div
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border				: 1px solid transparent;
+	line-height			: 20px;
+	padding-left		: 3px;
+}
+
+.JuiPopupList .Item:hover div,
+.JuiPopupList .Item[Hover] div
+{
+	background-color	: #FFE7A1;
+	border				: 1px solid #0A246A;
+}
+
+/*----------------------------------------------------------------------*/
+/* PopupMenu															*/
+/*----------------------------------------------------------------------*/
+
+.JuiPopupMenu
+{
+	border				: 1px solid #2392F3;
+	cursor				: default;
+	position			: absolute;
+	z-index				: 300000000;
+}
+
+.JuiPopupMenuTopLeft
+{
+	box-shadow			: -2px -2px 10px #CCCCCC;
+}
+
+.JuiPopupMenuTopRight
+{
+	box-shadow			: 2px -2px 10px #CCCCCC;
+}
+
+.JuiPopupMenuBottomLeft
+{
+	box-shadow			: -2px 2px 10px #CCCCCC;
+}
+
+.JuiPopupMenuBottomRight
+{
+	box-shadow			: 2px 2px 10px #CCCCCC;
+}
+
+.JuiPopupMenu .JuiPopupMenuBorderMask
+{
+	height				: 1px;
+	background-color	: #FBFBFF;
+	overflow			: hidden;
+	position			: absolute;
+	display				: none;
+}
+
+.JuiPopupMenu table
+{
+	background-color	: #FBFBFF;
+	border				: 1px solid	#FBFBFF;
+	border-collapse		: separate;
+	border-spacing		: 0;
+	width				: 100%;
+}
+
+.JuiPopupMenu tr
+{
+	height				: 24px;
+}
+
+.JuiPopupMenu td
+{
+	padding				: 0px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuIconCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuIconCell,
+.JuiPopupMenu .JuiPopupMenuSplitter .JuiPopupMenuIconCell
+{
+	background-color	: #E8E8FF;
+	background-image	: linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -ms-linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -moz-linear-gradient(left, #F8F8FF, #DFDFFF);
+	background-image	: -webkit-linear-gradient(left, #F8F8FF, #DFDFFF);
+	width				: 24px;
+	padding				: 0px 0px 0px 1px;
+	overflow			: hidden;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuIconCell
+{
+	background-image	: none;
+	background-color	: #FFE7A2;
+	border				: 1px solid	#FFBD69;
+	border-right		: none;
+	border-radius		: 3px 0px 0px 3px;
+	padding				: 0px 0px 0px 0px;
+}
+
+.JuiPopupMenu .JuiPopupMenuIcon
+{
+	height				: 16px;
+	width				: 20px;
+	background-position	: 3px 0px;
+	background-repeat	: no-repeat;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuTextCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuTextCell
+{
+	padding-left		: 8px;
+	line-height			: 22px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuTextCell
+{
+	background-color	: #FFE7A2;
+	border-top			: 1px solid	#FFBD69;
+	border-bottom		: 1px solid	#FFBD69;
+	line-height			: 20px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuTextCell
+{
+	color				: #808080;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuArrowCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuArrowCell
+{
+	width				: 20px;
+	border-right		: 1px solid #FBFBFF;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuArrowCell
+{
+	background-color	: #FFE7A2;
+	border				: 1px solid	#FFBD69;
+	border-left			: none;
+	border-radius		: 0px 3px 3px 0px;
+}
+
+.JuiPopupMenu .JuiPopupMenuArrow
+{
+	background-image	: url(image/PopupMenuArrow.png);
+	background-position	: 7px 0px;
+	background-repeat	: no-repeat;
+	height				: 7px;
+	width				: 11px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuArrow
+{
+	opacity				: 0.5;
+}
+
+.JuiPopupMenu .JuiPopupMenuSplitter
+{
+	height				: 3px;
+}
+
+.JuiPopupMenu .JuiPopupMenuIconSplitterCell
+{
+	padding-left		: 8px;
+}
+
+.JuiPopupMenu .JuiPopupMenuSplitterLine
+{
+	background-color	: #9AC6FF;
+	height				: 1px;
+	width				: 100%;
+}
+
+/*----------------------------------------------------------------------*/
+/* ProgressBar															*/
+/*----------------------------------------------------------------------*/
+
+.JuiProgressBar
+{
+	width				: 180px;
+	height				: 120px;
+	border				: 1px solid #979EA6;
+	border-radius		: 3px;
+	position			: fixed;
+	background-color	: #C7D6E9;
+	background-image	: url(image/MessageBox.png);
+	background-repeat	: repeat-x;
+	background-image	: linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -ms-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -moz-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -webkit-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	box-shadow			: 0px 0px 10px #B7BEC6, 0px 0px 2px #FFFFFF inset;
+	cursor				: default;
+}
+
+.JuiProgressBarMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+	display				: none;
+}
+
+.JuiProgressBarTitle
+{
+	position			: absolute;
+	left				: 7px;
+	top					: 3px;
+	right				: 30px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+}
+
+.JuiProgressBarTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 24px;
+	height				: 28px;
+	background-color	: transparent;
+}
+
+.JuiProgressBarClose
+{
+	position			: absolute;
+	top					: 4px;
+	right				: 5px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/CommandIcon.gif);
+}
+
+.JuiProgressBarClose:hover
+{
+	background-position	: 15px 0px;
+}
+
+.JuiProgressBarAnimation
+{
+	position			: absolute;
+	left				: 6px;
+	right				: 6px;
+	top					: 28px;
+	bottom				: 6px;
+	border				: 1px solid #BBBBBB;
+	background-color	: #F4F4E4;
+	background-image	: url(image/ProgressBar.gif);
+	background-repeat	: no-repeat;
+	background-position	: center center;
+}
+
+/*----------------------------------------------------------------------*/
+/* TextBox																*/
+/*----------------------------------------------------------------------*/
+
+.JuiTextBox
+{
+	width				: 300px;
+	height				: 108px;
+}
+
+.JuiTextBox textarea
+{
+	background-color	: #FFFFFF;
+	width				: 100%;
+	height				: 100%;
+	border				: 1px solid #7F9DB9;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	outline				: none;
+	resize				: none;
+	overflow-y			: scroll;
+	line-height			: 17px;
+	margin				: 0px;
+	white-space			: pre-wrap; 	
+	padding				: 2px;
+}
+
+.JuiTextBoxMirror
+{
+	border				: 1px solid #7F9DB9;
+	overflow-y			: scroll;
+	line-height			: 17px;
+	white-space			: pre-wrap; 	
+	padding				: 2px;
+}
+
+.JuiTextBox:hover textarea,
+.JuiTextBoxFocused textarea
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.JuiTextBoxDisabled textarea,
+.JuiTextBoxDisabled:hover textarea
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListTextBox
+{
+	width				: 100%;
+	height				: 24px;
+}
+
+.JuiListTextBox textarea
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	margin				: 0px;
+	border				: none;
+	padding				: 4px 0px 0px 3px;
+	outline				: none;
+	resize				: none;
+	line-height			: 17px;
+	background-color	: transparent;
+}
+
+.JuiListTextBoxDisabled textarea
+{
+	background-color	: #E7E7E7;
+}
+
+/*----------------------------------------------------------------------*/
+/* ToolBar																*/
+/*----------------------------------------------------------------------*/
+
+.JuiToolBar
+{
+	position			: relative;
+	width				: 100%;
+	height				: 26px;
+	white-space			: nowrap;
+	background-image	: url(image/ToolBarBody.png);
+	background-image	: linear-gradient(top, #E3EFFF, #E3EFFF 55%, #DEECFF 55%, #ADD1FF);
+	background-image	: -ms-linear-gradient(top, #E3EFFF, #E3EFFF 55%, #DEECFF 55%, #ADD1FF);
+	background-image	: -moz-linear-gradient(top, #E3EFFF, #E3EFFF 55%, #DEECFF 55%, #ADD1FF);
+	background-image	: -webkit-linear-gradient(top, #E3EFFF, #E3EFFF 55%, #DEECFF 55%, #ADD1FF);
+}
+
+.JuiToolBar > div, .JuiToolBar > div > div, .JuiToolBar > div > div > div
+{
+	display				: inline-block;
+	vertical-align		: top;
+	white-space			: nowrap;
+}
+
+.JuiToolBar > div > div > div
+{
+	padding-top			: 2px;
+}
+
+.JuiToolBar .JuiToolBarHead
+{
+	position			: absolute;
+	left				: 0px;
+	width				: 7px;
+	height				: 100%;
+	background-image	: url(image/ToolBarHead.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+}
+
+.JuiToolBar .JuiToolBarBody
+{
+	position			: absolute;
+	left				: 9px;
+	right				: 16px;
+	height				: 100%;
+}
+
+.JuiToolBar .JuiToolBarTail
+{
+	position			: absolute;
+	right				: 0px;
+	width				: 13px;
+	height				: 100%;
+	background-image	: url(image/ToolBarTail.png);
+	opacity				: 0.5;
+}
+
+.JuiToolBar .JuiToolBarTailEnabled
+{
+	opacity				: 1;
+}
+
+.JuiToolBar .JuiToolBarTailEnabled:hover
+{
+	background-position	: 0px -26px;
+}
+
+.JuiToolBar .JuiToolBarTailDropDown,
+.JuiToolBar .JuiToolBarTailDropDown:hover
+{
+	background-position	: -1px 0px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolBar .JuiToolBarLeft
+{
+}
+
+.JuiToolBar .JuiToolBarRight
+{
+	position			: absolute;
+	right				: 0px;
+}
+
+.JuiToolBar .JuiToolBarLabelCell,
+.JuiToolBar .JuiToolBarLinkCell
+{
+	height				: 24px;
+	line-height			: 22px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+}
+
+.JuiToolBar .JuiToolBarVisibleSplitter,
+.JuiToolBar .JuiToolBarHiddenSplitter
+{
+	width				: 4px;
+}

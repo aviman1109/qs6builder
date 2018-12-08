@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+	<title>Graph</title>
+	<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+	<script src="../../js/Jui.js"></script>
+	<script>
+		Jui.use("Jui.graph.Graph");
+
+		window.onload = function()
+		{
+			toolBar.load({right:[
+  				{control:"Button",	text:"addModule",		icon:"../image/misc/1.png",	onclick:"doAddModule"},
+  				{control:"Button",	text:"getModules",		icon:"../image/misc/2.png",	onclick:"doGetModules"}
+  			]});
+			var nodes = [
+				{type:"NormalNode",		id:"a", text:"测试",				x:100, y:60},
+				{type:"VirtualNode",	id:"b", text:"测试二",			x:400, y:150},
+				{type:"NormalNode",		id:"c", text:"this is a test",	x:200, y:350}
+			];
+			var lines = [
+				{type:"Line",			from:"a", to:"b"},
+				{type:"Arrow",			from:"b", to:"c", routes:[]},
+				{type:"DoubleArrow",	from:"c", to:"a", routes:[{x:100,y:200}]}
+			];
+			graph.load({nodes:nodes, lines:lines});
+		}
+
+		function getNodeHtml(node)
+		{
+			return "<div class=JuiGraphNode style='border:1px solid red;height:20px;cursor:default;white-space:nowrap'>" + node.text + "</div>";
+		}
+	</script>
+</head>
+<body>
+	<div class="ToolBarPane">
+		<script>
+			var toolBar = Jui.basic.ToolBar.create();
+		</script>
+	</div>
+	<div class="ContentPane">
+		<script>
+			var nodeTypes = [
+				"NormalNode",
+				"VirtualNode",
+				{name:"CustomNode", htmlFunc:getNodeHtml}
+			];
+			var lineTypes = [
+				"Line", "Arrow", "DoubleArrow"
+			]
+			var graph = Jui.graph.Graph.create({
+				isDesignMode	: true,
+				lineTypes		: lineTypes, 
+				nodeTypes		: nodeTypes, 
+				gridSize		: 32
+			});
+		</script>
+	</div>
+</body>
+</html>

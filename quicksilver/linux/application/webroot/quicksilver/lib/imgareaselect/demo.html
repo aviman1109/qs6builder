@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/jquery.imgareaselect.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css"/>
+		<script>
+			$(document).ready(function () {
+				console.log($("#image"));
+				$("#image").imgAreaSelect({maxWidth:200, maxHeight:150, handles:true});
+			});
+		</script>
+	</head>
+	<body>
+		<img id="image" src="../../image/other/Scenario1.jpg">
+	</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Condition</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="ConditionData.js"></script>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Condition");
+			
+			var condition;
+
+			function doValidate()
+			{ 
+				if (condition.validate()) {
+					Jui.message.hint("校验通过。");
+				}
+			}
+			
+			function doGetData()
+			{
+				Jui.message.hint(JSON.stringify(condition.getData()));
+			}
+
+			window.onload = function()
+			{
+				var toolBar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				toolBar.load({right:[
+					{control:"Button",	text:"validate",	icon:"../image/misc/1.png",	onclick:"doValidate"},
+					{control:"Button",	text:"getData",		icon:"../image/misc/2.png",	onclick:"doGetData"}
+				]});
+				window.condition = Jui.option.Condition.create({target:"Container"});
+				condition.load(data);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="padding:20px">
+			<div id="Container" style="width:600px;height:100%;margin:0 auto"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1168 @@
+﻿/*----------------------------------------------------------------------*/
+/* Common																*/
+/*----------------------------------------------------------------------*/
+
+*
+{
+	box-sizing					: border-box;
+	-moz-box-sizing				: border-box;
+	-webkit-text-size-adjust	: none;
+}
+
+html
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+body
+{
+	width				: 100%;
+	height				: 100%;
+	margin				: 0px;
+	padding				: 0px;
+}
+
+input
+{
+	outline				: none;	
+}
+
+::-webkit-input-placeholder
+{
+	color				: #FFFFFF;
+}
+
+::-moz-placeholder
+{
+	color				: #777777;
+}
+
+:-ms-input-placeholder
+{  
+	color				: #999999;
+}
+
+[unselectable=on]
+{
+	user-select			: none;
+	-moz-user-select	: none;
+	-ms-user-select		: none;
+	-webkit-user-select	: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* Scroll																*/
+/*----------------------------------------------------------------------*/
+
+[JuiScrollable=true]
+{
+	position			: relative;
+}
+
+[JuiScrollable=true] > div:first-child
+{
+	position			: absolute;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+.JuiScrollBar
+{
+	display				: none;
+	position			: absolute;
+	z-index				: 999999;
+	right				: 3px;
+	width				: 6px;
+	top					: 3px;
+	bottom				: 3px;
+	border-radius		: 3px;
+	background-image	: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+	background-image	: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+	background-image	: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+	background-image	: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+}
+
+.JuiScrollRefresher
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 12px;
+	width				: 100%;
+	padding-top			: 6px;
+	overflow			: hidden;
+	z-index				: 0;
+	display				: none;
+}
+
+[JuiRefreshable] .JuiScrollRefresher
+{
+	display				: block;
+}
+
+.JuiScrollRefresher > div:first-child
+{
+	width				: 30px;
+	height				: 30px;
+	border-radius		: 15px;
+	margin				: 0px auto;
+	background-image	: linear-gradient(top, #66CCFF, #88DDFF);
+	background-image	: -ms-linear-gradient(top, #66CCFF, #88DDFF);
+	background-image	: -moz-linear-gradient(top, #66CCFF, #88DDFF);
+	background-image	: -webkit-linear-gradient(top, #66CCFF, #88DDFF);
+	padding				: 3px;
+}
+
+.JuiScrollRefresher[active] > div:first-child
+{
+	background-image	: linear-gradient(top, #4488FF, #66CCFF);
+	background-image	: -ms-linear-gradient(top, #4488FF, #66CCFF);
+	background-image	: -moz-linear-gradient(top, #4488FF, #66CCFF);
+	background-image	: -webkit-linear-gradient(top, #4488FF, #66CCFF);
+}
+
+.JuiScrollRefresher > div > div
+{
+	width				: 100%;
+	height				: 100%;
+	background-color 	: #EEEEFF;
+	border-radius		: 12px;
+	padding-top			: 6px;
+}
+
+.JuiScrollRefresher > div > div > div
+{
+	width				: 12px;
+	height				: 12px;
+	border-radius		: 6px;
+	margin				: 0px auto;
+	background-image	: linear-gradient(top, #FFE899, #FF9955);
+	background-image	: -ms-linear-gradient(top, #FFE899, #FF9955);
+	background-image	: -moz-linear-gradient(top, #FFE899, #FF9955);
+	background-image	: -webkit-linear-gradient(top, #FFE899, #FF9955);
+}
+
+.JuiScrollRefresher > div:last-child
+{
+	width				: 100%;
+	height				: 18px;
+	font-size			: 12px;
+	text-align			: center;
+	padding-top			: 3px;
+	color				: #999999;
+}
+
+.JuiScrollRefresher[active] > div:last-child
+{
+	color				: #000000;
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboControl (ComboBox/DateBox/EntityBox/ComboButton)				*/
+/*----------------------------------------------------------------------*/
+
+.JuiFormCombo
+{
+	width				: 100%;
+	height				: 43px;
+	padding-right		: 45px;
+	white-space			: nowrap;
+}
+
+.JuiFormCombo > *:first-child
+{
+	display				: inline-block;
+	border				: none;
+	width				: 100%;
+	height				: 43px;
+	font-size			: 17px;
+}
+
+.JuiFormCombo > *:last-child
+{
+	display				: inline-block;
+	width				: 45px;
+	height				: 43px;
+	/*line-height			: 31px;*/
+	vertical-align		: top;
+	padding				: 13px 0px 0px 14px;
+}
+
+.JuiFormCombo > *:last-child > img
+{
+	width				: 16px;
+	height				: 16px;
+	display				: block;
+}
+
+/*----------------------------------------------------------------------*/
+/* Container															*/
+/*----------------------------------------------------------------------*/
+
+.JuiPageContainer
+{
+	position			: fixed;
+	width				: 100%;
+	top					: 0px;
+	bottom				: 45px;
+	z-index				: 9999;
+	overflow			: hidden;
+}
+
+.JuiPageContainerFullScreen
+{
+	bottom				: 0px;	
+}
+
+.JuiTabContainer
+{
+	background-color	: #F7F7F8;
+	border-top			: 1px solid #A7A7AB;
+	position			: fixed;
+	width				: 100%;
+	height				: 45px;
+	bottom				: 0px;
+	z-index				: 9998;
+}
+
+/*----------------------------------------------------------------------*/
+/* Button																*/
+/*----------------------------------------------------------------------*/
+
+.JuiPageButton
+{
+	height				: 40px;
+	padding				: 8px 5px;
+	overflow			: visible;
+	display				: inline-block;
+	color				: #007AFF;
+}
+
+.JuiPageNavBarLeft .JuiPageButton:first-child
+{
+	padding-left		: 5px;
+	padding-right		: 10px;
+}
+
+.JuiPageNavBarRight .JuiPageButton:last-child
+{
+	padding-right		: 14px;
+}
+
+.JuiPageButton > img
+{
+	width				: 24px;
+	height				: 24px;
+}
+
+.JuiPageButton > div
+{
+	line-height			: 24px;
+	font-size			: 17px;
+	padding				: 0px 2px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiFormButton
+{
+	height				: 43px;
+	padding				: 9px 0px;
+	overflow			: visible;
+	color				: #007AFF;
+}
+
+.JuiFormButton > img
+{
+	width				: 24px;
+	height				: 24px;
+}
+
+.JuiFormButton > div
+{
+	line-height			: 24px;
+	font-size			: 17px;
+	text-align			: center;
+}
+
+/*----------------------------------------------------------------------*/
+/* CheckBox																*/
+/*----------------------------------------------------------------------*/
+
+.JuiFormCheckBox
+{
+	width				: 100%;
+	padding				: 6px 15px 0px 0px;
+	text-align			: right;
+}
+
+.JuiFormCheckBox > div
+{
+	display				: inline-block;
+	width				: 56px;
+	height				: 31px;
+	border-radius		: 15px;
+	border				: 1px solid #E0E0E0;
+	position			: relative;
+}
+
+.JuiFormCheckBox[checked] > div
+{
+	border				: 1px solid #4BD863;
+	background-color	: #4BD863;
+}
+
+.JuiFormCheckBox > div > div
+{
+	background-color	: #FFFFFF;
+	position			: absolute;
+	display				: inline-block;
+	left				: 0px;
+	width				: 29px;
+	height				: 29px;
+	border-radius		: 14px;
+	border				: 1px solid #E0E0E0;
+	box-shadow			: 0px 4px 4px rgba(220,220,220,0.5);
+}
+
+.JuiFormCheckBox[checked] > div > div
+{
+	border				: 1px solid #4BD863;
+	left				: auto;
+	right				: 0px;
+	box-shadow			: 0px 4px 4px rgba(75,216,99,0.5);
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboBox																*/
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/* ComboButton															*/
+/*----------------------------------------------------------------------*/
+
+.JuiFormComboButton > div:first-child
+{
+	padding-left		: 10px;
+	line-height			: 43px;
+}
+
+/*----------------------------------------------------------------------*/
+/* DateBox																*/
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/* DatePicker															*/
+/*----------------------------------------------------------------------*/
+
+.JuiDatePicker
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+.JuiDatePickerBody
+{
+	position			: relative;
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	background-color	: #FFFFFF;
+	height				: 252px;
+	margin-top			: 36px;
+}
+
+.JuiDatePickerHighlight
+{
+	position			: absolute;
+	top					: 108px;
+	height				: 36px;
+	width				: 100%;
+	border-top			: 1px solid #CCCCCC;
+	border-bottom		: 1px solid #CCCCCC;
+	text-align			: center;
+}
+
+.JuiDatePickerHighlight > div
+{
+	display				: inline-block;
+	height				: 100%;
+	line-height			: 34px;
+	font-size			: 18px;
+	font-family			: verdana;
+	color				: #999999;
+}
+
+.JuiDatePickerHighlight > div:first-child
+{
+	width				: 94px;
+	padding-left		: 46px;
+}
+
+.JuiDatePickerHighlight > div:nth-child(2)
+{
+	width				: 72px;
+	padding-right		: 24px;
+}
+
+.JuiDatePickerHighlight > div:last-child
+{
+	width				: 96px;
+}
+
+.JuiDatePickerScrollerContainer
+{
+	width				: 262px;
+	height				: 100%;
+	overflow-y			: hidden;
+	margin				: 0px auto;
+}
+
+.JuiDatePickerScroller
+{
+	width				: 48px;
+	height				: 100%;
+	top					: 0px;
+	overflow			: hidden;
+	float				: left;
+	position			: relative;
+}
+
+.JuiDatePickerScroller > div
+{
+	position			: absolute;
+	width				: 100%;
+	text-align			: center;
+}
+
+.JuiDatePickerScroller > div > div
+{
+	height				: 36px;
+	line-height			: 36px;
+	font-size			: 18px;
+	font-family			: verdana;
+}
+
+.JuiDatePickerScroller:first-child
+{
+	width				: 70px;
+}
+
+.JuiDatePicker[NoTime] .JuiDatePickerHighlight > div:last-child
+{
+	display				: none;
+}
+
+.JuiDatePicker[NoTime] .JuiDatePickerScrollerContainer
+{
+	width				: 166px;
+}
+
+.JuiDatePicker[NoTime] .JuiDatePickerYearScroller:nth-child(n+3)
+{
+	display				: none;
+}
+
+.JuiDatePickerScrollerMask
+{
+	position			: absolute;
+	top					: 0px;
+	height				: 108px;
+	background-color	: #FFFFFF;
+	opacity				: 0.67;
+}
+
+.JuiDatePickerScrollerMask:last-child
+{
+	top					: auto;
+	bottom				: 0px;
+}
+
+.JuiDatePickerItem
+{
+	width				: 100%;
+	height				: 36px;
+}
+
+/*----------------------------------------------------------------------*/
+/* EntityBox															*/
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/* Form																	*/
+/*----------------------------------------------------------------------*/
+
+.JuiForm
+{
+}
+
+.JuiFormGroup
+{
+	padding-bottom		: 20px;
+}
+
+.JuiFormGroup:first-child
+{
+	padding-top			: 20px;
+}
+
+.JuiFormItem
+{
+	height				: 44px;
+	background-color	: #FFFFFF;
+	border-bottom		: 1px solid #C8C7CC;
+	position			: relative;
+	padding-left		: 36%;
+}
+
+.JuiFormItemWithoutTitle
+{
+	padding-left		: 0px;	
+}
+
+.JuiFormGroupTitle
+{
+	padding				: 0px 0px 6px 12px;
+	font-size			: 14px;
+	color				: #808080; 
+}
+
+.JuiFormItem[firstOfGroup]
+{
+	border-top			: 1px solid #C8C7CC;
+	height				: 45px;
+}
+
+.JuiFormItemTitle
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	width				: 36%;
+	height				: 100%;
+	vertical-align		: middle;
+	overflow			: hidden;
+	padding-left		: 10px;
+	font-size			: 17px;
+}
+
+.JuiFormItemWithoutTitle .JuiFormItemTitle
+{
+	display				: none;	
+}
+
+.JuiFormItem[required] .JuiFormItemTitle
+{
+	font-weight			: bold;
+	color				: #FF0000;
+}
+
+.JuiFormItem[disabled] .JuiFormItemTitle
+{
+	font-weight			: normal;
+	color				: #999999;
+}
+
+.JuiFormItemTitle:before
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	width				: 0px;
+	height				: 100%;
+	content				: "";
+}
+
+.JuiFormItemTitle span
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	white-space			: normal;
+}
+
+.JuiFormItemControl
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+/*----------------------------------------------------------------------*/
+/* InputBox																*/
+/*----------------------------------------------------------------------*/
+
+.JuiFormInputBox
+{
+	width				: 100%;
+	height				: 43px;
+	padding				: 0px 6px 0px 0px;
+}
+
+.JuiFormInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiFormInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiFormInputBox[type=Phone]
+{
+	background-image	: url(image/InputBoxPhone.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiFormInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiFormInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 24px;
+}
+
+.JuiFormInputBox input
+{
+	width				: 100%;
+	height				: 100%;
+	font-size			: 17px;
+	border				: none;
+}
+
+.JuiFormInputBox[type=Number] input,
+.JuiFormInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiFormInputBox[type=Email] input,
+.JuiFormInputBox[type=Url] input,
+.JuiFormInputBox[type=Phone] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+}
+
+/*----------------------------------------------------------------------*/
+/* List																	*/
+/*----------------------------------------------------------------------*/
+
+.JuiList
+{
+	background-color	: #FFFFFF;
+	overflow-x			: hidden;
+}
+
+.JuiListGroup
+{
+	height				: 30px;
+	width				: 100%;
+	white-space			: nowrap;
+	padding-left		: 30px;
+	line-height			: 30px;
+	font-weight			: bold;
+	font-size			: 18px;
+	background-color	: #ECECEC;
+}
+
+.JuiListItem
+{
+	padding-right		: 60px;
+	width				: 100%;
+	white-space			: nowrap;
+	border-top			: 1px solid #C8C7CC;
+}
+
+.JuiListItem[FirstOfGroup]
+{
+	border-top			: none;
+}
+
+.JuiListItem > div
+{
+	vertical-align		: top;
+}
+
+.JuiListItemIcon
+{
+	display				: inline-block;
+	width				: 60px;
+	padding				: 6px 0px 6px 12px;
+	line-height			: 0px;
+}
+
+.JuiListItemIcon > img
+{
+	width				: 32px;
+	height				: 32px;
+}
+
+.JuiListItemData
+{
+	display				: inline-block;
+	width				: 100%;
+	padding				: 5px 0px 3px 0px;
+}
+
+.JuiListItemDataRow
+{
+	white-space			: nowrap;
+	padding-right		: 8px;
+}
+
+.JuiListItemDataRow:only-child
+{
+	height				: 36px;
+	padding-top			: 9px;
+}
+
+.JuiListItemDataRow > div
+{
+	height				: 18px;
+	overflow			: hidden;
+	position			: relative;
+	padding				: 0px;
+}
+
+.JuiListItemDataRow > div:first-child
+{
+	float				: left;
+	width				: 67%;
+	text-overflow		: ellipsis;
+}
+
+.JuiListItemDataRow > div:last-child
+{
+	width				: 30%;
+	text-overflow		: ellipsis;
+	text-align			: right;
+	float				: right;
+}
+
+.JuiListItemDataRow > div:only-child
+{
+	width				: 100%;
+	text-align			: left;
+	margin-right		: 0px;
+}
+
+.JuiListItemDataRow > div:first-child:after
+{
+	display				: block;
+	width				: 10px;
+	height				: 100%;
+	position			: absolute;
+	top					: 0px;
+	right				: 0px;
+	content				: "";
+	background-image	: linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.7));
+	background-image	: -ms-linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.7));
+	background-image	: -moz-linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.7));
+	background-image	: -webkit-linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.7));
+}
+
+.JuiListItemDataRow > div > div
+{
+	display				: inline-block;
+	height				: 18px;
+	vertical-align		: top;
+	font-size			: 13px;
+	line-height			: 13px;
+	padding-top			: 5px;
+	color				: #999999;
+	margin-left			: 12px;
+}
+
+.JuiListItemDataRow:first-child > div:first-child > div:first-child
+{
+	font-size			: 18px;
+	line-height			: 18px;
+	padding-top			: 0px;
+	color				: #000000;
+}
+
+.JuiListItemDataRow > div > div:first-child
+{
+	margin-left			: 0px;
+}
+
+/*----------------------------------------------------------------------*/
+/* Page																	*/
+/*----------------------------------------------------------------------*/
+
+.JuiPage
+{
+	background-color	: #EFEFF4;
+	width				: 100%;
+	height				: 100%;
+	position			: absolute;
+}
+
+.JuiPageNavBar
+{
+	background-color	: #F7F7F8;
+	border-bottom		: 1px solid #A7A7AB;
+	width				: 100%;
+	height				: 45px;
+	z-index				: 9999;
+	position			: absolute;
+}
+
+.JuiPage[NoNavBar] .JuiPageNavBar
+{
+	display				: none;
+}
+
+.JuiPageNavBarLeft
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 0px;
+	width				: 60px;
+	height				: 100%;
+	padding-top			: 2px;
+}
+
+.JuiPageNavBarRight
+{
+	position			: absolute;
+	top					: 0px;
+	right				: 0px;
+	width				: 120px;
+	height				: 100%;
+	padding-top			: 2px;
+	text-align			: right;
+}
+
+.JuiPageTitle
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 60px;
+	right				: 60px;
+	height				: 100%;
+	text-align			: center;
+	line-height			: 44px;
+	font-size			: 17px;
+	font-weight			: bold;
+}
+
+.JuiPageSubTitle
+{
+	display				: none;
+}
+
+.JuiPageTitleWithSubTitle
+{
+	
+}
+
+.JuiPageTitleWithSubTitle .JuiPageMainTitle
+{
+	height				: 28px;
+	line-height			: 28px;
+}
+
+.JuiPageTitleWithSubTitle > .JuiPageSubTitle
+{
+	height				: 16px;
+	line-height			: 16px;
+	font-size			: 14px;
+	display				: block;
+	color				: #007AFF;
+	font-weight			: normal;
+}
+
+.JuiPageSubTitle > img
+{
+	margin-left			: 3px;
+	height				: 8px;
+}
+
+.JuiPageMain
+{
+	position			: absolute;
+	top					: 45px;
+	bottom				: 0px;
+	width				: 100%;
+}
+
+.JuiPageWaitingMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 45px;
+	width				: 100%;
+	bottom				: 0px;
+	z-index				: 1;
+	background-color	: #FFFFFF;
+	opacity				: 0.3;
+	display				: none;
+}
+
+.JuiPageWaitingIcon
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 45px;
+	width				: 100%;
+	bottom				: 0px;
+	z-index				: 2;
+	text-align			: center;
+	display				: none;
+}
+
+.JuiPage[NoNavBar] .JuiPageMain,
+.JuiPage[NoNavBar] .JuiPageWaitingMask,
+.JuiPage[NoNavBar] .JuiPageWaitingIcon
+{
+	top					: 0px;
+}
+
+.JuiPageWaitingIcon:before
+{
+	display				: block;
+	height				: 40%;
+	content				: "";
+}
+
+.JuiPageWaitingIcon > img
+{
+	width				: 32px;
+	height				: 32px;
+}
+
+.JuiPageBody
+{
+	background-color	: #EFEFF4;
+	width				: 100%;
+	height				: 100%;
+	overflow			: scroll!important;
+	overflow-x			: hidden!important;
+	position			: absolute;
+	z-index				: 1;
+}
+
+/*----------------------------------------------------------------------*/
+/* PickList																*/
+/*----------------------------------------------------------------------*/
+
+.JuiPickList
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiPickListGroup
+{
+	border-top			: 1px solid #C8C7CC;
+	border-bottom		: 1px solid #C8C7CC;
+	margin-top			: 30px;
+}
+
+.JuiPickListGroup:last-child
+{
+	margin-bottom		: 30px;
+}
+
+.JuiPickListItem
+{
+	height				: 50px;
+	position			: relative;
+	padding-left		: 45px;
+	background-color	: #FFFFFF;
+}
+
+.JuiPickListItem:last-child
+{
+	height				: 49px;
+}
+
+.JuiPickListItem > div:first-child
+{
+	position			: absolute;
+	width				: 45px;
+	height				: 49px;
+	left				: 0px;
+	line-height			: 49px;
+	text-align			: center;
+	padding-top			: 2px;
+}
+
+.JuiPickListItem > div:first-child > img
+{
+	width				: 16px;
+	height				: 16px;
+	display				: none;
+}
+
+.JuiPickListItem[selected] > div:first-child > img
+{
+	display				: inline;
+}
+
+.JuiPickListItem > div:last-child
+{
+	width				: 100%;
+	height				: 100%;
+	line-height			: 49px;
+	padding-left		: 2px;
+	border-bottom		: 1px solid #C8C7CC;
+}
+
+.JuiPickListItem[selected] > div:last-child
+{
+	color				: #007AFF;
+}
+
+.JuiPickListItem:last-child > div:last-child
+{
+	border-bottom		: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* Popup																*/
+/*----------------------------------------------------------------------*/
+
+.JuiPopupMenu
+{
+	position			: fixed;
+	width				: 100%;
+	height				: 100%;
+	top					: 0px;
+	left				: 0px;
+	z-index				: 999999;
+}
+
+.JuiPopupMenuMask
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+	background-color	: #000000;
+	opacity				: 0.3;
+}
+
+.JuiPopupMenuOuter
+{
+	position			: absolute;
+	width				: 100%;
+	bottom				: 0px;
+}
+
+.JuiPopupMenuInner
+{
+	width				: 100%;
+	max-width			: 320px;
+	max-height			: 400px;
+	margin				: 0px auto;
+}
+
+.JuiPopupMenuInner > div
+{
+	background-color	: #FFFFFF;
+	margin				: 8px;
+	border-radius		: 5px;
+}
+
+.JuiPopupMenuItem
+{
+	width				: 100%;
+	height				: 44px;
+	text-align			: center;
+	border-bottom		: 1px solid #CECED2;
+	line-height			: 43px;
+}
+
+.JuiPopupMenuItem:last-child
+{
+	height				: 43px;
+	border-bottom		: none; 
+}
+
+/*----------------------------------------------------------------------*/
+/* TabBar																*/
+/*----------------------------------------------------------------------*/
+
+.JuiTabBar
+{
+	height				: 44px;
+	width				: 100%;
+	text-align			: center;
+	padding-top			: 6px;
+}
+
+.JuiTabBarItem
+{
+	display				: inline-block;
+	margin				: 0px 24px;
+}
+
+.JuiTabBarItemIcon
+{
+	height				: 20px;
+}
+
+.JuiTabBarItemIcon > img
+{
+	width				: 20px;
+	height				: 20px;
+}
+
+.JuiTabBarItemText
+{
+	height				: 16px;
+	line-height			: 16px;
+	font-size			: 10px;
+	padding-top			: 1px;
+	color				: #929292;
+}
+
+.JuiTabBarItemCurrent .JuiTabBarItemText
+{
+	color				: #007AFF;
+}
+
+/*----------------------------------------------------------------------*/
+/* TextBox																*/
+/*----------------------------------------------------------------------*/
+
+.JuiFormTextBox
+{
+	width				: 100%;
+	height				: 100%;
+	padding				: 0px 6px 0px 0px;
+	resize				: none;
+}
+
+.JuiFormTextBox textarea
+{
+	border				: none;
+	width				: 100%;
+	height				: 100%;
+	font-size			: 17px;
+	outline				: none;
+}
+
+.JuiFormTextBox textarea:focus
+{
+	outline				: none;
+	/*background-color	: #EEEEEE;*/
+}

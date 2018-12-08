@@ -1,0 +1,91 @@
+.WorkflowInfoPanel
+{
+	width			: 100%;
+	height			: 100%;
+	padding			: 8px 20px 42px 20px;
+	overflow		: hidden;
+}
+
+.WorkflowInfoPanel > div
+{
+	padding-right	: 118px;
+	white-space		: nowrap;
+}
+
+.WorkflowInfoPanel > div:last-child
+{
+	height			: 100%;
+}
+
+.WorkflowInfoPanel > div > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	padding			: 4px;
+	word-wrap       : break-word;
+	white-space     : pre-wrap;
+	
+}
+
+.WorkflowInfoPanel > div > div:first-child
+{
+	width			: 118px;
+}
+
+.WorkflowInfoPanel > div:last-child > div:last-child
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+/*-----------------------------------------------------------------------*/
+
+.WorkItemSubmitPanelTitle
+{
+	padding			: 0px 18px;
+}
+
+.WorkItemSubmitPanel
+{
+	padding			: 4px 20px 0px 20px;
+}
+
+.WorkItemSubmitPanel:first-child
+{
+	padding-top		: 12px;
+}
+
+.WorkItemSubmitPanel > div
+{
+	padding-right	: 118px;
+	white-space		: nowrap;
+}
+
+.WorkItemSubmitPanel > div:last-child
+{
+	height			: 106px;
+}
+
+.WorkItemSubmitPanel > div > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	padding			: 4px;
+}
+
+.WorkItemSubmitPanel > div > div:first-child
+{
+	width			: 118px;
+}
+
+.WorkItemSubmitPanel > div:last-child > div:last-child
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+.CommentRequired
+{
+	color				: #FF0000;
+	font-weight			: bold;
+}

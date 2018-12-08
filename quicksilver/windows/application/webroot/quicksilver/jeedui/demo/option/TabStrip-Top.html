@@ -1,0 +1,102 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>TabStrip(Top)</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.TabStrip");
+
+			var strip1 = null;
+			
+			var nextId = 3;
+			
+			function randomFill(control)
+			{
+				for (var i = 0; i < control.size(); ++i) {
+					control.getBodyByIndex(i).innerHTML = getRandomText(i + 1);
+				}
+			}
+			
+			function getRandomText(id)
+			{
+				var buffer = [];
+				for (var i = 0, n = Jui.random.next() * 10; i < n; ++i) {
+					buffer.push("line #" + id + "." + i);
+				}
+				return buffer.join("<br>");
+			}
+
+			function add()
+			{
+				var id = nextId++;
+				var body = strip1.add({
+					id: id,
+					text: "id=" + id,
+					icon: "../image/misc/6.png"
+				});
+				body.innerHTML = getRandomText(id);
+			}
+			
+			function removeByIndex()
+			{
+				var id = prompt("Please input the tab index to be deleted (first = 0):");
+				if (!Jui.string.isEmpty(id)) {
+					strip1.removeByIndex(parseInt(id));
+				}
+			}
+			
+			function removeById()
+			{
+				var id = prompt("Please input the tab ID to be deleted:");
+				if (!Jui.string.isEmpty(id)) {
+					strip1.remove(id);
+				}
+			}
+			
+			window.onload = function()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right: [
+					{control: "Button",	text: "add",				icon: "../image/misc/A.png",	onclick: add},
+					{control: "Button",	text: "removeByIndex",	icon: "../image/misc/B.png",	onclick: removeByIndex},
+					{control: "Button",	text: "removeById",		icon: "../image/misc/C.png",	onclick: removeById}
+				]});
+				
+				strip1 = Jui.option.TabStrip.create({target: "container1"});
+				strip1.load([
+					{id: "1", text: "id=1", icon: "../image/misc/5.png"},
+					{id: "2", text: "id=2", icon: "../image/misc/6.png"}
+				]);
+				randomFill(strip1);
+
+				var strip2 = Jui.option.TabStrip.create({target: "container2"});
+				strip2.load([
+					{id: "first",  text: "第一项第一项第一项", icon: "../image/misc/5.png", element: "content1"},
+					{id: "second", text: "第二项第二项第二项", icon: "../image/misc/6.png", element: "content2"},
+					{id: "third",  text: "第三项第三项第三项", icon: "../image/misc/7.png"}
+				]);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane">
+			<div style="position:relative;width:50%;height:50%;margin:0 auto">
+				<div style="height:25px;text-align:center;padding-top:5px">
+					演示1
+				</div>
+				<div id="container1" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+			</div>
+			<div style="position:relative;width:50%;height:50%;margin:0 auto">
+				<div style="height:25px;text-align:center;padding-top:5px">
+					演示2
+				</div>
+				<div id="content1" style="display:none">This is the first tab content</div>
+				<div id="content2" style="display:none">This is the second tab content</div>
+				<div id="container2" style="position:absolute;width:100%;top:25px;bottom:10px"></div>
+			</div>
+		</div>
+	</body>
+</html>

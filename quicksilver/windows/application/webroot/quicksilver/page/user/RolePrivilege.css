@@ -1,0 +1,83 @@
+.QsContent
+{
+	padding				: 2px;
+}
+
+.PrivilegeTable
+{
+	width 				: 100%;
+	border-collapse		: collapse;
+	white-space			: nowrap;
+}
+
+.PrivilegeTable tr
+{
+	height 				: 25px;
+}
+
+.GeneralPrivilegeTable tr
+{
+	background-color	: #FFFFEE;
+}
+
+.PrivilegeTable .BatchRow
+{
+	background-color	: #E8F2FE;
+}
+
+.PrivilegeTable .BatchRow div
+{
+	width				: 70px;
+	text-align			: left;
+	padding				: 0px;
+}
+
+.PrivilegeTable td
+{
+	text-align			: center;
+	border				: 1px solid #BCB8A9;
+	padding-left		: 3px;
+	padding-right		: 3px;
+}
+
+.PrivilegeTable th
+{
+	background-color	: #F4F2D9;
+	border				: 1px solid #BCB8A9;
+	box-shadow			: inset 0px 0px 2px #FFFFFF;
+}
+
+.PrivilegeTable .GroupTitle
+{
+	background-color	: #E8F2FE;
+}
+
+.Sql
+{
+	line-height			: 22px;
+	height				: 22px;
+	width				: 100%;
+	overflow			: hidden;
+	color				: #A0A0FF;
+	cursor				: pointer;
+}
+
+.SqlWithContent
+{
+	color				: #000080;
+	font-weight			: bold;
+}
+
+.MiscTitle
+{
+	margin-top			: 10px;
+	margin-bottom		: 3px;
+	color				: #8080FF;
+	font-size			: 14px;
+	font-weight			: bold;
+}
+
+.TopMiscTitle
+{
+	margin-top			: 0px;
+}

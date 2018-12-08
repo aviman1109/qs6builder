@@ -1,0 +1,1 @@
+bin/jre/bin/java -cp bin/lib/jeedsoft-quicksilver-toolset.jar com.jeedsoft.quicksilver.toolset.pack.extract.ExtractCmd $@

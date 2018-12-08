@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>OutlookBar</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.OutlookBar");
+
+			function randomFill(olbar)
+			{
+				for (var i = 0; i < olbar.size(); ++i) {
+					var buffer = [];
+					for (var j = 0, n = Jui.random.next() * (i + 1) * 10; j < n; ++j) {
+						buffer.push("line #" + (i + 1) + "." + (j + 1));
+					}
+					olbar.getBodyByIndex(i).innerHTML = buffer.join("<br>");
+				}
+			}
+			
+			function doSwitch(event)
+			{
+				Jui.message.hint("点击信息：" + JSON.stringify(event));
+			}
+			
+			window.onload = function()
+			{
+				var olbar2 = Jui.option.OutlookBar.create({target: "panel2"});
+				olbar2.load([
+					{text: "第一项", icon: "../image/misc/5.png"},
+					{text: "第二", icon: "../image/misc/6.png"},
+					{text: "这是第三", icon: "../image/misc/7.png"},
+					{text: "这是第四项", icon: "../image/misc/8.png"},
+					{text: "第五项", icon: "../image/misc/9.png"}
+				]);
+				randomFill(olbar2);
+				var olbar3 = Jui.option.OutlookBar.create({target: "none", showBorder: false});
+				olbar3.load([
+					{id: "a", text: "第一项", icon: "../image/misc/5.png"},
+					{id: "b", text: "第二项", icon: "../image/misc/6.png"},
+					{id: "c", text: "第三项", icon: "../image/misc/7.png"}
+				]);
+				olbar3.setCurrentId("b");
+				randomFill(olbar3);
+				Jui.dom.element("panel3").appendChild(olbar3.element);
+			}
+		</script>
+	</head>
+	<body style="padding:20px">
+		<div style="position:relative;width:700px;height:100%;margin:0 auto">
+			<div style="position:absolute;left:0px;width:200px;top:0px;height:20px;text-align:center">
+				页面载入过程中加载，带事件
+			</div>
+			<div style="position:absolute;left:0px;width:200px;top:35px;bottom:0%">
+				<script>
+					var olbar1 = Jui.option.OutlookBar.create({onswitch: doSwitch});
+					olbar1.load([
+						{id: "first",  text: "第一项", icon: "../image/misc/5.png"},
+						{id: "second", text: "第二项", icon: "../image/misc/6.png"},
+						{id: "third",  text: "第三项", icon: "../image/misc/7.png"},
+						{id: "forth",  text: "第四项", icon: "../image/misc/8.png"}
+					]);
+					randomFill(olbar1);
+				</script>
+			</div>
+			<div style="position:absolute;left:210px;width:200px;top:0px;height:20px;text-align:center">
+				页面载入后加载
+			</div>
+			<div id="panel2" style="position:absolute;left:210px;width:200px;top:35px;bottom:0%">
+			</div>
+			<div style="position:absolute;left:420px;width:200px;top:0px;height:20px;text-align:center">
+				页面载入后加载，无边框
+			</div>
+			<div id="panel3" style="position:absolute;left:420px;width:200px;top:35px;bottom:0%">
+			</div>
+		</div>
+	</body>
+</html>

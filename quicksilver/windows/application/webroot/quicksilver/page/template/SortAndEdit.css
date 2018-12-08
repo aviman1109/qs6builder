@@ -1,0 +1,18 @@
+.LeftZone
+{
+	position		: absolute;
+	padding			: 8px 0px 8px 8px;
+	width			: 240px;
+	height			: 100%;
+}
+
+.RightZone
+{
+	position		: absolute;
+	left			: 242px;
+	right			: 2px;
+	top				: 2px;
+	bottom			: 2px;
+	overflow-x		: hidden;
+	overflow-y		: auto;
+}

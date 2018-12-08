@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+	<title>GanttChart</title>
+	<script src="../../js/Jui.js"></script>
+	<script>
+		Jui.use("Jui.chart.GanttChart");
+
+		window.onload = function()
+		{
+			var items = [
+				{name:"调研",		date:["2012-06-01", "2012-06-15", "2012-06-03", "2012-06-14"]},
+				{name:"需求整理",	date:["2012-06-08", "2012-06-24", "2012-06-07", "2012-06-20"]},
+				{name:"开发",		date:["2012-06-18", "2012-07-18", "2012-06-20", "2012-07-23"]},
+				{name:"测试",		date:["2012-07-02", "2012-07-25", "2012-07-02", "2012-07-24"]},
+				{name:"集成调试",	date:["2012-07-24", "2012-07-30", "2012-07-24", "2012-07-30"]},
+				{name:"试运行",		date:["2012-08-01", "2012-08-15"]}
+			];
+			chart.load({items:items});
+		}
+	</script>
+</head>
+<body>
+	<div class="JuiBottomBorder" style="position:fixed;top:0px;left:0px;right:0px">
+		<script>
+			var bar = Jui.basic.ToolBar.create();
+			bar.load({right:[
+				{"control":"Button", "name":"add",		"text":"新增", "icon":"../image/misc/2.png"},
+				{"control":"Button", "name":"edit",		"text":"修改", "icon":"../image/misc/3.png"},
+				{"control":"Button", "name":"delete",	"text":"删除", "icon":"../image/misc/4.png"},
+				{"control":"Button", "name":"refresh",	"text":"刷新", "icon":"../image/misc/5.png"}
+			]});
+		</script>
+	</div>
+	<div style="position:fixed;left:0px;top:25px;right:0px;bottom:0px;padding:6px">
+		<script>
+			var chart = Jui.chart.GanttChart.create({
+				
+			});
+		</script>
+	</div>
+</body>
+</html>

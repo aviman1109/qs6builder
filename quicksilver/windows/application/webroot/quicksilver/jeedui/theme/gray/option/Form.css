@@ -1,0 +1,246 @@
+﻿.JuiForm
+{
+	width				: 100%;
+	font-size			: 14px;
+	color				: black;
+}
+
+.JuiForm[hasTab]
+{
+	height				: 100%;
+}
+
+.JuiForm[compact=true] .JuiFormPanel
+{
+	margin				: 0px auto;
+	padding				: 0px;
+}
+
+.JuiForm[compact=false] .JuiFormPanel,
+.JuiForm[hasTab] .JuiFormPanel
+{
+	margin				: 0px auto;
+	padding				: 8px 16px 40px 16px;
+}
+
+.JuiForm .JuiFormGroup
+{
+	float				: left;
+	width				: 100%;
+	padding-right		: 5px;
+	height				: 24px;
+	white-space			: nowrap;
+	cursor				: default;
+	margin				: 13px 0 10px 0;
+	color				: rgba(105, 105, 105, 0.85);
+}
+
+.JuiForm .JuiFormGroupLeft
+{
+	display				: inline-block;
+	width    			: 5px;
+	height				: 100%;
+	vertical-align		: top;
+	/* border-bottom		: 1px dotted #ccc; */
+	box-shadow			: 0px 1px rgb(214, 214, 214),
+						  0px 4px rgb(238, 238, 238);
+}
+
+.JuiForm .JuiFormGroupLeftInner
+{
+	width				: 3px;
+	height				: 100%;
+}
+
+.JuiForm .JuiFormGroupMain
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 100%;
+	vertical-align		: top;
+	/* border-bottom: 1px dashed gray; */
+	box-shadow			: 0px 1px rgb(214, 214, 214),
+						  0px 4px rgb(238, 238, 238);
+}
+
+.JuiForm .JuiFormGroupMainInner
+{
+	display					: inline-block;
+	height					: 100%;
+	vertical-align			: top;
+	background-color		: #eee;
+	padding					: 4px 6px 0px 5px;
+	border-top-left-radius	: 3px;
+	border-top-right-radius	: 3px;
+	box-shadow				: inset -2px 1px 0px 0px rgba(204, 204, 204, 0.26),
+							  inset 25px 0px 0px 0px rgba(204, 204, 204, 0.24),
+							  4px 2px 2px -2px rgba(221, 221, 221, 0.35),
+							  -2px 1px 2px -2px rgba(221, 221, 221, 0.85);
+	text-shadow				: 1px 1px 1px white;
+}
+.JuiForm .JuiFormGroupMainRight
+{
+	display				: inline-block;
+	height				: 100%;
+	width				: 30px;
+	vertical-align		: top;
+}
+
+.JuiForm .JuiFormGroupIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	background-image	: url(image/FormGroupIcon.png);
+	vertical-align		: top;
+}
+
+.JuiForm .JuiFormGroup[Collpased] .JuiFormGroupIcon
+{
+	background-position	: 0px -16px;
+}
+
+.JuiForm .JuiFormGroupText
+{
+	display				: inline-block;
+	height				: 16px;
+	vertical-align		: top;
+	padding-left		: 6px;
+	padding-top			: 0px;
+	font-family			: Segoe UI,微软雅黑,黑体;
+	line-height			: 16px;
+}
+
+.JuiForm .JuiFormItem
+{
+	float				: left;
+	min-width			: 230px;
+	margin				: 0px;
+	white-space			: nowrap;
+	position			: relative;
+	padding-left		: 0 !important;
+}
+.JuiForm .JuiFormItem > div {
+	box-shadow			: inset 0px -1px #ddd;
+	min-height			: 36px;
+}
+.JuiForm .JuiFormItem > div > div{
+	border				: 1px solid transparent;
+	padding-top			: 7px;
+	height				: 100%;
+}
+.JuiForm .JuiFormItem > div > div:hover{
+	border-bottom		: 1px solid dimgray;
+}
+.JuiForm .JuiFormItem > div > div.JuiCheckBox{
+	width				: 100%;
+}
+.JuiForm .JuiFormItem > div > div.JuiEntityBoxDisabled:hover,
+.JuiForm .JuiFormItem > div > div.JuiInputBoxDisabled:hover,
+.JuiForm .JuiFormItem > div > div.JuiComboBoxDisabled:hover,
+.JuiForm .JuiFormItem > div > div.JuiDateBoxDisabled:hover,
+.JuiForm .JuiFormItem > div > div.JuiTextBoxDisabled:hover,
+.JuiForm .JuiFormItem > div > div.JuiCheckBoxDisabled:hover{
+	border				: 1px solid transparent;
+}
+.JuiForm input{
+	font-size			: 14px;
+	height				: 20px;
+}
+.JuiForm .JuiFormItemTitle
+{
+	position			: absolute;
+	max-width			: 119px;
+	width				: auto!important;
+	height    			: 100%;
+	vertical-align		: middle;
+	float				: left;
+	line-height			: 32px;
+	padding-left		: 8px;
+	padding-right		: 8px;
+	overflow			: hidden;
+}
+
+.JuiForm .JuiFormItemTitle:before
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	width				: 0px;
+	height				: 100%;
+	content				: "";
+}
+
+.JuiForm .JuiFormItemTitle span
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	white-space			: normal;
+	line-height			: 1;
+	max-height			: 36px;
+}
+
+.JuiForm .JuiFormItem[Required] .JuiFormItemTitle span
+{
+}
+
+.JuiForm .JuiFormItem[Required] .JuiFormItemTitle span:before
+{
+	content				: '';
+	position			: absolute;
+	left				: 1px;
+	bottom				: 0;
+	top					: -2px;
+	margin				: auto;
+	width				: 2px;
+	height				: 16px;
+	background			: red;
+}
+.JuiForm .JuiFormItem[ReadOnly] .JuiFormItemTitle span:before{
+	display				:none;
+}
+.JuiForm .JuiFormItem[ReadOnly] .JuiFormItemTitle span
+{
+	color				: #aaa;
+	font-weight			: normal;
+	box-shadow			: none;
+}
+
+.JuiForm .JuiFormItemControl
+{
+	display				: block;
+	vertical-align		: top;     
+	left				: 0;
+	right				: 0;
+	padding-left		: 118px;
+	margin-right		: 33px;                        
+}
+.JuiForm .JuiFormItem[style*="height"] .JuiFormItemControl{
+    height				: 100%;
+}
+.JuiForm .JuiFormItem .JuiMultiCheckBox{
+	
+}
+.JuiForm .JuiInputBox,
+.JuiForm .JuiCheckBox,
+.JuiForm .JuiComboBox,
+.JuiForm .JuiDateBox,
+.JuiForm .JuiEntityBox,
+.JuiForm .JuiMultiEntityBox{
+	display				: inline-block;
+	line-height			: 27px;
+	cursor				: default;
+	padding-top			: 1px;
+}
+.JuiForm .JuiEntityBox .JuiEntityBoxMagnifier:before{
+}
+.JuiForm .JuiTextBox textarea{
+	border-bottom		:none;
+}
+.JuiForm .JuiTextBox textarea:hover{
+	border-color		:gray;
+}
+@media (max-width: 768px) {
+	 .JuiForm .JuiFormItemControl{
+	 	margin-right	: 15px;
+	}
+}

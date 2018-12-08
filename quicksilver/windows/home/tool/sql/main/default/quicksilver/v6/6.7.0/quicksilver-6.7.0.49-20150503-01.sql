@@ -1,0 +1,5 @@
+﻿--Minglei.Lee
+
+update TsPage set FActionMethodName=null where FCode='Qs.Misc.Prompt';
+insert into TsPage set FId='4974d932-3cb0-42f8-b969-e24aa5423e43', FName='單輸入框頁面',			FTitle='',					FCode='Qs.Misc.SingleBox',				FType='Other', FIcon=null,												FUrl='quicksilver/page/misc/SingleBox.jsp',					FActionMethodName=null,										FLoadHandler=null, FRelationId=null, FUnitId=null, FMasterUnitId='00000000-0000-0000-0001-000000002007', FIsSlavePage=0, FEditId='4e9b96a5-4c20-42a0-8929-d83efc27af4e', FIndex=null, FDialogWidth=null, FDialogHeight=null, FDescription=null, FVisible=1;
+insert into TsToolItem set FId='9538237e-fca7-4d74-8303-3f873329dbae', FPageId='4974d932-3cb0-42f8-b969-e24aa5423e43', FCode='Confirm', FName='確定', FLabel='', FType='Button', FAlign='right', FIndex=1, FWidth=0, FDefaultEventHandler='SingleBox.doConfirm', FIcon='quicksilver/image/16/Ok.png', FScale=null, FEntityUnitId=null, FDefaultValue=null, FSubItemSource=null, FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;

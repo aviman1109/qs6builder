@@ -1,0 +1,32 @@
+.QsContent
+{
+	padding			: 2px;
+}
+
+#BasicBody,
+#NoticeBody
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+.ButtonAndListPanel
+{
+	width			: 100%;
+	height			: 100%;
+	padding			: 8px 8px 42px 8px;
+	overflow		: hidden;
+}
+
+.ButtonAndListPanel > div:first-child
+{
+	width			: 100%;
+	height			: 34px;
+	text-align		: right;
+}
+
+.ButtonAndListPanel > div:last-child
+{
+	width			: 100%;
+	height			: 100%;
+}

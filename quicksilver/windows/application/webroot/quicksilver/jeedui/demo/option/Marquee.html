@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Tree</title>
+		<style>
+			.ContentPane > div
+			{
+				width: 500px;
+				height: 35px;
+				margin: 30px auto;
+				background-color: #ddd;
+			}
+		</style>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Marquee");
+			
+			function doLoad()
+			{
+				var bar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				bar.load({right:[
+					{control:"Button",	text:"reload", icon:"../image/misc/A.png",	onclick:loadMarquee}
+				]});
+
+				window.marquee1 = Jui.option.Marquee.create({
+					target		: "Container1",
+					textAlign	: "left",
+					onitemclick	: doItemClick
+				});
+				window.marquee2 = Jui.option.Marquee.create({
+					target		: "Container2",
+					textAlign	: "center",
+					onitemclick	: doItemClick
+				});
+				window.marquee3 = Jui.option.Marquee.create({
+					target		: "Container3",
+					textAlign	: "right",
+					onitemclick	: doItemClick
+				});
+				window.marquee4 = Jui.option.Marquee.create({
+					target		: "Container4",
+					direction	: "left",
+					onitemclick	: doItemClick
+				});
+				loadMarquee();
+			}
+			
+			function loadMarquee()
+			{
+				var items = [
+					{id:"1", html:"<p>关于更换<label style='font-size:18px;color:blue'>二代身份证</label>的通知</p>"},
+					{id:"2", ball:"red", html:"<p>2015<b><font color=red>春节</font></b>放假通知，请各单位做好值班安排</p>"},
+					{id:"3", ball:"yellow", name:"2014年马年尾牙时间及场地说明"},
+					{id:"4", ball:"blue", name:"1月20日园区停电通知"}
+				];
+				marquee1.load(items);
+				marquee2.load(items);
+				marquee3.load(items);
+				marquee4.load(items);
+			}
+			
+			function doItemClick(event)
+			{
+				Jui.message.hint(JSON.stringify(event.item));
+			}
+		</script>
+	</head>
+	<body onload="doLoad()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="padding-top:30px">
+			<div id="Container1"></div>
+			<div id="Container2"></div>
+			<div id="Container3"></div>
+			<div id="Container4"></div>
+		</div>
+	</body>
+</html>

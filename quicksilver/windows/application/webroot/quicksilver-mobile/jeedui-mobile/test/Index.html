@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Test</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no"/>		
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="Index.css">
+		<script src="Index.js"></script>
+		<script src="PageLoader.js"></script>
+		<script src="../page/util/Utility.js"></script>
+		<script src="../jeedui-mobile/script/Jui.js"></script>
+		<script>
+			function load()
+			{
+				PageLoader.loadScript("Test.js");
+				console.log(b);
+			}
+			function loadSource()
+			{
+				PageLoader.loadScriptSource("var a = 3;");
+				console.log(a);
+			}
+			function unload()
+			{
+				PageLoader.unloadScript("Test.js");
+			}
+			function call()
+			{
+				test();
+			}
+			function loadBlock()
+			{
+				if (window.arr == null) {
+					window.arr = [];
+				}
+				var sub = new Array(1024 * 1024);
+				for (var i = 0; i < sub.length; ++i) {
+					sub[i] = Jui.random.next();
+				}
+				window.arr.push(sub);
+			}
+			function unloadBlock()
+			{
+				delete window.arr;
+			}
+			function printBlock()
+			{
+				var buffer = [];
+				for (var i = 0; i < window.arr.length; ++i) {
+					buffer.push(window.arr[i].length);
+				}
+				console.log(buffer);
+			}
+			function getScript()
+			{
+				console.log(Utility.getFileText("Test.js"));
+			}
+			function openPage()
+			{
+				Jui.page.open(["Dynamic.js"]);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="JuiNavigationBar">
+			<div class="JuiNavigationBarLeft"></div>
+			<div class="JuiNavigationBarCenter">Quicksilver</div>
+			<div class="JuiNavigationBarRight"></div>
+		</div>
+		<div class="Content" id="Content">
+			<button onclick="load()">load</button>
+			<button onclick="loadSource()">loadSource</button>
+			<button onclick="unload()">unload</button>
+			<button onclick="call()">call</button>
+			<button onclick="loadBlock()">loadBlock</button>
+			<button onclick="unloadBlock()">unloadBlock</button>
+			<button onclick="printBlock()">printBlock</button>
+			<button onclick="getScript()">getScript</button>
+			<button onclick="openPage()">openPage</button>
+			<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>
+			<script>
+				Index.setElementScrollable(document.getElementById("Content"));
+			</script>
+		</div>
+		<div class="JuiTabBar" id="TabBar">
+		</div>
+	</body>
+</html>

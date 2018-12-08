@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>MultiTowTabStrip</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.MultiRowTabStrip");
+
+			function randomFill(tabStrip)
+			{
+				for (var i = 0, items = tabStrip.getItems(); i < items.length; ++i) {
+					var buffer = [];
+					for (var j = 0, n = Jui.random.next() * (i + 1) * 10; j < n; ++j) {
+						buffer.push("line #" + (i + 1) + "." + (j + 1));
+					}
+					tabStrip.getBody(items[i].id).innerHTML = buffer.join("<br>");
+				}
+			}
+			
+			window.onload = function()
+			{
+				var strip1 = Jui.option.MultiRowTabStrip.create({target: "container1"});
+				strip1.load([
+					{id: "1", text: "第一项", icon: "../image/misc/5.png", body: "content1"},
+					{id: "2", text: "第二项", icon: "../image/misc/6.png", body: "content2"}
+				]);
+
+				var strip2 = Jui.option.MultiRowTabStrip.create({target: "container2"});
+				strip2.load([
+					{id: "1", text: "第一项", icon: "../image/misc/5.png"},
+					{id: "2", text: "第二项第二项", icon: "../image/misc/6.png"},
+					{id: "3", text: "第三项第三项第三项", icon: "../image/misc/7.png"},
+					{id: "4", text: "第四项", icon: "../image/misc/6.png"},
+					{id: "5", text: "第五项第五项", icon: "../image/misc/1.png"},
+					{id: "6", text: "第六项第六项第六项", icon: "../image/misc/2.png"},
+					{id: "7", text: "第七项", icon: "../image/misc/3.png"},
+					{id: "8", text: "第八项第八项", icon: "../image/misc/4.png"},
+					{id: "9", text: "第九项第九项第九项", icon: "../image/misc/5.png"},
+					{id: "A", text: "第十项", icon: "../image/misc/A.png"}
+				]);
+				randomFill(strip2);
+
+				var strip3 = Jui.option.MultiRowTabStrip.create({target: "container3"});
+				strip3.load([
+					{id: "1", text: "第一项", icon: "../image/misc/5.png"},
+					{id: "2", text: "第二项第二项", icon: "../image/misc/6.png"},
+					{id: "3", text: "第三项第三项第三项", icon: "../image/misc/7.png"},
+					{id: "4", text: "第四项", icon: "../image/misc/6.png"},
+					{id: "5", text: "第五项第五项", icon: "../image/misc/1.png"},
+					{id: "6", text: "第六项第六项第六项", icon: "../image/misc/2.png"},
+					{id: "7", text: "第七项", icon: "../image/misc/3.png"},
+					{id: "8", text: "第八项第八项", icon: "../image/misc/4.png"},
+					{id: "9", text: "第九项第九项第九项", icon: "../image/misc/5.png"},
+					{id: "A", text: "第十项", icon: "../image/misc/A.png"},
+					{id: "B", text: "第十一项", icon: "../image/misc/A.png"},
+					{id: "C", text: "第十二项", icon: "../image/misc/B.png"},
+					{id: "D", text: "第十三项", icon: "../image/misc/C.png"},
+					{id: "E", text: "第十四项", icon: "../image/misc/D.png"},
+					{id: "F", text: "第十五项", icon: "../image/misc/E.png"}
+				]);
+				randomFill(strip3);
+			}
+		</script>
+	</head>
+	<body style="padding:10px">
+		<div style="position:relative;width:680px;height:33%;margin:0 auto">
+			<div style="height:25px;text-align:center;padding-top:5px">内容较少（一行）</div>
+			<div id="content1" style="display:none">This is the first tab content</div>
+			<div id="content2" style="display:none">This is the second tab content</div>
+			<div id="container1" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+		</div>
+		<div style="position:relative;width:680px;height:33%;margin:0 auto">
+			<div style="height:25px;text-align:center;padding-top:5px">内容较多（两行）</div>
+			<div id="container2" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+		</div>
+		<div style="position:relative;width:680px;height:33%;margin:0 auto">
+			<div style="height:25px;text-align:center;padding-top:5px">内容很多（三行）</div>
+			<div id="container3" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+		</div>
+	</body>
+</html>

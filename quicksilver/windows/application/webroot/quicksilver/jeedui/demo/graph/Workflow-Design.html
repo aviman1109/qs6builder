@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Workflow</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.graph.Workflow");
+			
+			var workflow = null;
+
+			var data =
+			{
+				"nodes":[
+					{"code":"N1","type":"Start","x":3,"y":6,"text":"开始"},
+					{"code":"N2","type":"Manual","x":7,"y":6,"text":"直接主管"},
+					{"code":"N3","type":"Manual","x":11,"y":6,"text":"间接主管"},
+					{"code":"N4","type":"Manual","x":15,"y":4,"text":"HR备案"},
+					{"code":"N5","type":"Manual","x":15,"y":8,"text":"财务备案"},
+					{"code":"N6","type":"Manual","x":19,"y":6,"text":"CEO签字"},
+					{"code":"N7","type":"End","x":23,"y":6,"text":"结束"},
+					{"code":"N8","type":"Manual","x":7,"y":2,"text":"返回修改"}
+				],
+				"lines":[
+					{"code":"L12","from":"N1","to":"N2","text":"提交", isDefault:true},
+					{"code":"L23","from":"N2","to":"N3","text":"同意"},
+					{"code":"L34","from":"N3","to":"N4","text":"同意"},
+					{"code":"L45","from":"N3","to":"N5","text":"同意"},
+					{"code":"L26","from":"N4","to":"N6","text":"", isDefault:true},
+					{"code":"L26","from":"N5","to":"N6","text":"", isDefault:true},
+					{"code":"L26","from":"N6","to":"N7","text":"", isDefault:true},
+					{"code":"L62","from":"N8","to":"N2","text":"提交", isDefault:true},
+					{"code":"L32","from":"N2","to":"N8","text":"打回","routes":[{x:170,y:144}]},
+					{"code":"L43","from":"N3","to":"N8","text":"打回"}
+				]
+			};
+
+			/*
+			var data =
+			{
+				"nodes":[
+					{"code":"NEWNODE-1","type":"Start","x":2,"y":5,"text":"开始"},
+					{"code":"NEWNODE-2","type":"Manual","x":5,"y":5,"text":"填写请假单"},
+					{"code":"NEWNODE-3","type":"Manual","x":8,"y":5,"text":"上级审批"},
+					{"code":"NEWNODE-4","type":"Manual","x":11,"y":5,"text":"HR审批"},
+					{"code":"NEWNODE-5","type":"Manual","x":17,"y":5,"text":"填写销假单"},
+					{"code":"NEWNODE-6","type":"Auto","x":14,"y":5,"text":"休假"},
+					{"code":"NEWNODE-7","type":"Manual","x":20,"y":5,"text":"上级审批"},
+					{"code":"NEWNODE-8","type":"End","x":23,"y":5,"text":"结束"},
+					{"code":"NEWNODE-9","type":"Manual","x":8,"y":2,"text":"人力资源总监审批"},
+					{"code":"NEWNODE-10","type":"End","x":5,"y":8,"text":"作废"}
+				],
+				"lines":[
+					{"code":"NEWLINE-1","from":"NEWNODE-1","to":"NEWNODE-2"},
+					{"code":"NEWLINE-2","from":"NEWNODE-2","to":"NEWNODE-3","text":"提交"},
+					{"code":"NEWLINE-3","from":"NEWNODE-3","to":"NEWNODE-4","text":"同意"},
+					{"code":"NEWLINE-4","from":"NEWNODE-4","to":"NEWNODE-6","text":"同意"},
+					{"code":"NEWLINE-5","from":"NEWNODE-6","to":"NEWNODE-5"},
+					{"code":"NEWLINE-6","from":"NEWNODE-5","to":"NEWNODE-7"},
+					{"code":"NEWLINE-7","from":"NEWNODE-7","to":"NEWNODE-8","text":"同意"},
+					{"code":"NEWLINE-8","from":"NEWNODE-3","to":"NEWNODE-9","text":"超过五天",isDefault:false},
+					{"code":"NEWLINE-9","from":"NEWNODE-9","to":"NEWNODE-4","text":"同意","routes":[{x:368,y:80}]},
+					{"code":"NEWLINE-10","from":"NEWNODE-2","to":"NEWNODE-10","text":"取消"},
+					{"code":"NEWLINE-14","from":"NEWNODE-7","to":"NEWNODE-5","text":"打回","routes":[{x:608,y:136}],isDefault:false},
+					{"code":"NEWLINE-13","from":"NEWNODE-9","to":"NEWNODE-2","text":"打回","routes":[{x:176,y:80}],isDefault:false},
+					{"code":"NEWLINE-11","from":"NEWNODE-4","to":"NEWNODE-2","text":"打回","routes":[{x:272,y:232}],isDefault:false},
+					{"code":"NEWLINE-12","from":"NEWNODE-3","to":"NEWNODE-2","text":"打回","routes":[{x:224,y:136}],isDefault:false}
+				]
+			};
+
+			var data =
+			{
+				"nodes":[
+					{"code":"N1","type":"Start","x":3,"y":6,"text":"开始"},
+					{"code":"N2","type":"End","x":19,"y":6,"text":"结束"}
+				],
+				"lines":[
+					{"code":"L12","from":"N1","to":"N2","text":"提交"}
+				]
+			};
+			*/
+			
+			function doLoad()
+			{
+				var toolBar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				toolBar.load({right:[
+					{control:"Button",	text:"getJson",	icon:"../image/misc/1.png",	onclick:"doGetJson"},
+					{control:"Button",	text:"clear",	icon:"../image/misc/2.png",	onclick:"doClear"}
+				]});
+				window.workflow = Jui.graph.Workflow.create({target:"ContentPane", isDesignMode:true});
+				workflow.load(data);
+			}
+			
+			function doGetJson()
+			{
+				var json = workflow.getJson();
+				Jui.message.hint(JSON.stringify(json));
+			}
+			
+			function doClear()
+			{
+				workflow.clear();
+			}
+		</script>
+	</head>
+	<body onload="doLoad()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" id="ContentPane"></div>
+	</body>
+</html>

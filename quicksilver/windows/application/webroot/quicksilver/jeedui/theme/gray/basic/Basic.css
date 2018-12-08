@@ -1,0 +1,4426 @@
+﻿/*----------------------------------------------------------------------*/
+/* Common																*/
+/*----------------------------------------------------------------------*/
+
+*
+{
+	box-sizing			: border-box;
+	-moz-box-sizing		: border-box;
+}
+
+[unselectable=on]
+{
+	user-select			: none;
+	-moz-user-select	: none;
+	-ms-user-select		: none;
+	-webkit-user-select	: none;
+}
+
+[unselectable=off]
+{
+	user-select			: auto;
+	-moz-user-select	: auto;
+	-ms-user-select		: text;
+	-webkit-user-select	: auto;
+}
+
+html
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+body
+{
+	width				: 100%;
+	height				: 100%;
+	margin				: 0px;
+	background          : white;
+}
+
+input
+{
+	outline				: none;	
+	color				: black;
+}
+
+::-webkit-input-placeholder
+{
+	color				: #999999;
+}
+
+::-moz-placeholder
+{
+	color				: #777777;
+}
+
+:-ms-input-placeholder
+{  
+	color				: #999999;
+}
+
+::-ms-clear
+{
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* Font																	*/
+/*----------------------------------------------------------------------*/
+
+body
+{
+	font-family			: helvetica,arial,verdana;
+	font-size			: 14px;
+}
+
+.JuiTitle
+{
+	font-family			: Segoe UI,微软雅黑,黑体;
+}
+
+/*----------------------------------------------------------------------*/
+/* JUI Common															*/
+/*----------------------------------------------------------------------*/
+
+.JuiLink
+{
+	color				: #0050A0;
+	cursor				: pointer;
+	white-space			: nowrap;
+}
+
+.JuiNumberBubble
+{
+	background-color	: #F46B0A;
+	color				: #FFFFFF;
+	display				: inline-block;
+	height				: 16px;
+	line-height			: 16px;
+	min-width			: 16px;
+	border-radius		: 8px;
+	padding				: 0px 4px;
+	text-align			: center;
+	font-size			: 12px;
+	box-shadow			: 0px 0px 2px rgba(244,97,10,0.5);
+}
+
+body .QsContent {
+	top					: 28px;
+}
+div.QsDarkBackground{
+	background-color	: white;
+}
+body.QsDarkBackground{
+	background-color	: #eee;
+	background-image	: url(../basic/image/Background.jpg);
+}
+/*QsContent*/
+.QsTopBorder {
+	border-top          : 1px solid #DAE2ED  !important;
+}
+.QsToolBar{
+	position			: absolute;  
+	top					: 0px !important;  
+	height				: auto !important;
+}
+.QsContent .QsLongShadow
+{
+	border-top-left-radius	: 3px;
+	border-top-right-radius	: 3px;
+	box-shadow				: inset 0px 1px 0px 1px white;
+}
+.QsRightBorder,
+.QsLeftBorder,
+.QsTopRightBorder,
+.QsTopLeftBorder{
+	border				: none!important;
+	overflow			: hidden;
+}
+body[onload="EntityInfo.doLoad()"] .LeftZone{
+    border				: 1px solid #ddd !important;
+    border-left			: none !important;
+    border-bottom		: none !important;
+    padding-top			: 0px;
+    background			: white;
+}
+body[onload="EntityInfo.doLoad()"] .ContentZone{
+   	border				: 1px solid #ddd !important;
+    border-right		: none !important;
+    border-bottom		: none !important;
+}
+.QsDoubleSorter > div:first-child > div:first-child, 
+.QsDoubleSorter > div:last-child > div:first-child,
+.SorterZone > div:nth-child(2n+1) > div:first-child{
+	font-family			: Segoe UI,微软雅黑,黑体;
+}
+/*topZone*/
+.QsDarkBackground .TopZone{
+	position			: relative;
+	width				: 100%;
+	height				: 35px;
+	z-index				: 7;
+	background			: rgba(94, 166, 255, 0);
+	box-shadow			: inset 0px 0px 0px 19px rgba(202, 184, 103, 0.74),
+						  inset 0px -39px 7px -5px rgba(255, 255, 255, 0.2),
+						  inset 0px -2px 8px rgba(0, 0, 0, 1);
+}
+.TopZone .LogoZone
+{
+	width				: 220px;
+	height				: 100%;
+	background-position	: 0px center;
+	background-repeat	: no-repeat;
+	background-image	: url(../../../Qs.Misc.GetLogo.file?args=%7BfileName%3A%27MainFrameLogo.png%27%7D);
+	float				: left;
+}
+.TopZone .UserZone{
+	float				: right;
+	margin-top			: 9px;
+	margin-right		: 17px;
+	color				: #fdfdfd;
+	line-height			: inherit;
+	padding				: 0;
+}
+/*ToolBarZone*/
+body.QsDarkBackground .ToolBarZone{
+	position			: relative;
+	height				: 26px;
+	font				: status-bar;
+	color				: dimgray;
+	top					: 0;
+	box-shadow			: inset 0px -4px 6px -6px rgba(88, 84, 84, 0.7),
+						  inset 0px 39px 7px -5px rgba(255, 255, 255, 0.37),
+						  0px -2px 30px rgba(255, 255, 255, 0);
+}
+/*Menu and Tab*/
+.QsDarkBackground .MenuZone,
+.QsDarkBackground .TabZone{	
+	position			: absolute;
+	height				: 100%;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+}
+.QsDarkBackground .MenuZone{
+	padding-right		: 4px;
+	padding-top			: 64px;
+	padding-bottom		: 4px;
+}
+.MenuZone .nail{
+    width				: 76%;
+    height				: 95%;
+    position			: absolute;
+    margin				: auto;
+    top					: 3px;
+    left				: 4px;
+    z-index				: 9999999999;
+	font-size			: 16px;
+    cursor				: pointer;
+    border-radius		: 15%;
+    overflow			: hidden !important;
+    display				: none;
+}
+.MenuZone .nail > div{
+	width				: 55%;
+	height				: 3px;
+	position			: absolute;
+	right				: 0;
+	left				: 0;
+	margin				: auto;	
+	top					: 2px;
+	border				: 1px solid silver !important;
+	border-bottom		: none !important;
+	border-right		: none !important;
+	box-shadow			: 1px 0px 1px silver;
+	border-radius		: 16%;
+}
+.MenuZone .nail[status="active"] > div{
+	background			: rgba(158, 163, 171, 0.17);
+	border-color		: rgb(215, 215, 215) !important;
+	box-shadow			: 1px 1px 1px rgb(161, 161, 161);
+}
+.QsDarkBackground .TabZone{
+	left				: 45px;
+	padding-top			: 60px;
+	padding-left		: 1px;
+	margin-left			: -13px;
+	z-index				: 10;
+}
+.QsDarkBackground .TabZone[style]{
+	margin-left			: 0px;
+}
+.QsDarkBackground .TabZone[style*="left: 45px;"]{
+	margin-left			: -13px;
+}
+.TreeTitle, .QueryFormTitle{
+	height				: 25px !important;
+}
+.TreeTitle[current], 
+.QueryFormTitle[current]{
+	background-color	: rgba(230, 244, 255, 0.8) !important;
+}
+.FormZone{
+	padding				: 2px 0 0 0 !important;
+}
+/**Query**/
+#QueryFormPanel{
+	padding				:5px;
+}
+.QueryFormControlRow{
+	margin-bottom		:8px;
+}
+.QueryFormTitleCell{
+	text-shadow			: 0px 0px grey;
+	color				: black;
+}
+.QueryFormTitleCell {}
+.QueryFormTitleRow .QueryFormIconCell
+{
+	position			:relative;
+}
+
+.QueryFormTitleRow .QueryFormIconCell img
+{
+	content				: '';
+	position			: absolute;
+	width				: 14px;
+	height				: 14px;
+	left				: 0;
+	background			: rgba(219, 219, 219, 0.75);
+	padding-left		: 14px;
+	box-shadow			: inset 1px 1px 2px -1px silver,inset 2px -2px 1px #E8E8E8, 0px 0px 0px 0px rgb(191, 191, 191),inset 0px -1px 0px 1px #eee;
+	border-radius		: 3px;
+}
+.QueryFormTitleRow .QueryFormIconCell img:before
+{	
+	width				: 0;
+	height				: 0;
+	position			: absolute;
+	color				: white;
+	font-family			: Segoe UI,微软雅黑,黑体;
+	font-size			: 18px;  font-weight: bold;
+	text-shadow			: 1px 0px 1px rgb(156, 156, 156);
+}
+.QueryFormTitleRow .QueryFormIconCell img[src="quicksilver/image/other/Collapse.png"]:before
+{
+	content				: '-';
+	top					: -7px;
+	left				: 3px;
+}
+.QueryFormTitleRow .QueryFormIconCell img[src="quicksilver/image/other/Expand.png"]:before
+{
+	content				: '+';
+	left				: 1px;
+	top					: -7px;
+}
+/*Module*/
+.ModuleTabBody .ModulePanel .ModulesTitle{
+	height				: 22px !important;
+	background			: rgba(246, 246, 246, 0.65) !important;
+	border-radius		: 2px;
+	box-shadow			: inset 0px -1px 1px -1px #ddd;
+}
+.ModuleTabBody .ModulePanel .ModulesContent{
+    top					: 28px !important;
+}
+.ModuleTabBody .Module{
+	box-shadow			: none !important;
+}
+/*Homepage*/
+.HomepageTable .HomepageZone{
+	padding				: 0px 4px 6px 4px;
+}
+.HomepageTable .HomepageZone .HomepageItem{
+	border				: 1px solid #DAE2ED !important;
+}
+.HomepageTable .JuiToolBar {
+	box-shadow			: inset 6px 0px rgba(42, 90, 152, 0.2),
+						  0px 0px 0px 0px rgba(101, 147, 207, 0.2),
+						  inset 0px 12px 0px 0px rgba(255, 255, 255, 0.66);
+}
+.HomepageTable .JuiToolBar > div > div > div
+{
+	padding-top			: 0px;
+}
+.HomepageTable .JuiToolBar .JuiToolBarHead,
+.HomepageTable .JuiToolBar .JuiToolBarTail{
+	display				: none;
+}
+.HomepageTable .JuiToolBarLeft > div{
+	margin-top			: 1px;
+	padding-right		: 3px;
+}
+.HomepageTable .JuiToolBarLeft > div:first-child{
+	margin-left			: 6px;
+	margin-right		: 0;
+	padding-right		: 0;
+}
+.HomepageTable .JuiToolBar .JuiToolBarRight > .JuiToolBarControlCell{
+	margin-top			:0px;
+}
+/*----------------------------------------------------------------------*/
+/* Button																*/
+/*----------------------------------------------------------------------*/
+
+.JuiButtonText > *
+{
+	vertical-align		: top;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiButton
+{
+	display				: inline-block;
+	height				: 26px;
+	border-radius		: 3px;
+	cursor				: default;
+	padding				: 4px 8px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+	background			: white;
+	border-bottom		: 1px solid silver;
+	border-right		: 1px solid silver;
+	border-left			: 1px solid #eee;
+	border-top			: 1px solid #EEE;
+}
+
+.JuiButton[Dark]
+{
+	background-image	: linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -ms-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -moz-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+	background-image	: -webkit-linear-gradient(top, #F7FEFF, #DCD8C9 90%, #C2C0C3 90%, #B8C9D9);
+}
+
+.JuiButton:hover
+{
+	background			: #F7F7F7;
+}
+
+.JuiButton:active,
+.JuiButtonMouseDown:hover /* for IE */
+{
+	background			: #F7F7F7;
+	border-top-color	: silver;
+	border-left-color	: silver;
+	border-bottom-color	: #eee;
+	border-right-color	: #eee;
+}
+
+.JuiButtonDisabled,
+.JuiButtonDisabled:hover
+{
+	background			: white;
+}
+
+.JuiButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiButton .JuiButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiSmallButton
+{
+	display				: inline-block;
+	height				: 22px;
+	line-height			: 21px;
+	border-radius		: 3px;
+	cursor				: default;
+	padding				: 0px 8px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+	background			: white;
+	border-bottom		: 1px solid silver;
+	border-right		: 1px solid silver;
+	border-left			: 1px solid #eee;
+	border-top			: 1px solid #EEE;
+}
+
+.JuiSmallButton[Dark]
+{
+}
+
+.JuiSmallButton:hover
+{
+	background			: #F7F7F7;
+}
+
+.JuiSmallButton:active,
+.JuiSmallButtonMouseDown:hover /* for IE */
+{
+	background			: #F7F7F7;
+	border-top-color	: silver;
+	border-left-color	: silver;
+	border-bottom-color	: #eee;
+	border-right-color	: #eee;
+}
+
+.JuiSmallButtonDisabled,
+.JuiSmallButtonDisabled:hover
+{
+	background			: white;
+}
+
+.JuiSmallButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiSmallButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiSmallButton .JuiButtonText
+{
+	display				: inline-block;
+	margin    			: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiSmallButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolButton
+{
+	display				: inline-block;
+	height				: 22px;
+	padding				: 3px 2px 0px 2px;
+	white-space			: nowrap;
+	cursor				: default;
+	border-radius		: 4px;
+}
+
+.JuiToolButton:hover
+{
+	background			: white;    
+	box-shadow			: inset -1px -1px 0px 0px #ccc;
+	color				: dimgray;
+}
+
+.JuiToolButton:active,
+.JuiToolButtonMouseDown:hover /* for IE */
+{
+	background			: white;
+	box-shadow			: inset 1px 1px 0px 0px #ccc;
+	color				: dimgray;
+}
+
+.JuiToolButtonDisabled,
+.JuiToolButtonDisabled:hover
+{
+	border				: none;
+	padding				: 3px 2px 0px 2px;
+	background			: none;
+	box-shadow			: none;
+}
+
+.JuiToolButton .JuiButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	line-height			: 16px;
+	margin				: 0px 2px 0px 2px;
+}
+
+.JuiToolButtonDisabled .JuiButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiToolButton .JuiButtonText
+{
+	display				: inline-block;
+	padding				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height   		: 16px;
+}
+
+.JuiToolButtonDisabled .JuiButtonText
+{
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+/* CheckBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiCheckBox
+{
+	display				: inline-block;
+	width				: 14px;
+	height				: 26px;
+	line-height			: 26px;
+	cursor				: default;
+	padding-top			: 1px;
+}
+
+.JuiCheckBox div
+{
+	display				: inline-block;
+	height				: 13px;
+	width				: 13px;
+	overflow			: hidden;
+	outline				: none;
+	background			: none;  
+	box-shadow			: inset 0px 0px 2px gray;  
+	border-radius		: 2px;
+}
+
+.JuiCheckBox div:hover
+{
+	box-shadow			: inset 0px 0px 3px gray;
+}
+
+.JuiCheckBox div:active
+{
+	background-position	: -28px 0px;
+}
+
+.JuiCheckBoxDisabled div,
+.JuiCheckBoxDisabled div:hover,
+.JuiCheckBoxDisabled div:active
+{
+	box-shadow			: inset 0px 0px 3px rgb(196, 196, 196);
+	border				: none;
+}
+
+.JuiCheckBox .JuiCheckBoxInnerChecked
+{
+
+	box-shadow			: inset 0px 0px 0px 1px gray,
+						  inset 0px 0px 0px 3px white,
+						  inset 0px 0px 20px 10px gray;
+}
+
+.JuiCheckBox .JuiCheckBoxInnerChecked:hover
+{
+	background-position	: -14px -14px;
+	border				: none;
+	box-shadow			: inset 0px 0px 0px 1px rgba(192, 192, 192, 1),
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px rgba(192, 192, 192, 1);
+}
+
+.JuiCheckBox .JuiCheckBoxInnerChecked:active
+{
+	background-position	: -28px -14px;
+}
+
+.JuiCheckBoxDisabled .JuiCheckBoxInnerChecked,
+.JuiCheckBoxDisabled .JuiCheckBoxInnerChecked:hover,
+.JuiCheckBoxDisabled .JuiCheckBoxInnerChecked:active
+{
+	box-shadow			: inset 0px 0px 3px 1px #ddd,
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px #ccc;
+	border				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolCheckBox
+{
+	width				: 14px;
+	height				: 22px;
+	line-height			: 22px;
+	cursor				: default;
+	padding-top			: 2px;
+}
+
+.JuiToolCheckBox div
+{      
+	display				: inline-block;  
+	height				: 13px;  
+	width				: 13px;  
+	overflow			: hidden;  
+	outline				: none;  
+	background			: none;  
+	box-shadow			: inset 0px 0px 2px gray;  
+	border-radius		: 2px;
+}
+
+.JuiToolCheckBox div:hover
+{
+	box-shadow			: inset 0px 0px 3px gray;
+}
+
+.JuiToolCheckBox div:active
+{
+	background-position	: -28px 0px;
+}
+
+.JuiToolCheckBoxDisabled div,
+.JuiToolCheckBoxDisabled div:hover,
+.JuiToolCheckBoxDisabled div:active
+{
+	background-position	: -42px 0px;
+	box-shadow			: inset 0px 0px 3px rgb(196, 196, 196);  
+	border				: none;
+}
+
+.JuiToolCheckBox .JuiCheckBoxInnerChecked
+{
+	box-shadow			: inset 0px 0px 3px 1px rgba(192, 192, 192, 0.6),
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px #aaa;
+}
+
+.JuiToolCheckBox .JuiCheckBoxInnerChecked:hover
+{  
+	border				: none;  
+	box-shadow			: inset 0px 0px 3px 1px rgba(192, 192, 192, 0.75),
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px rgba(192, 192, 192, 0.75);
+}
+
+.JuiToolCheckBox .JuiCheckBoxInnerChecked:active
+{
+	background-position	: -28px -14px;
+}
+
+.JuiToolCheckBoxDisabled .JuiCheckBoxInnerChecked,
+.JuiToolCheckBoxDisabled .JuiCheckBoxInnerChecked:hover,
+.JuiToolCheckBoxDisabled .JuiCheckBoxInnerChecked:active
+{
+	background-position	: -42px -14px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListCheckBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	line-height			: 24px;
+	cursor				: default;
+	padding-top			: 2px;
+	text-align			: center;
+}
+
+.JuiListCheckBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListCheckBox div
+{
+	display				: inline-block;
+	width				: 14px;
+	height				: 14px;
+	margin-top			: 3px;
+	background			: white;
+	box-shadow			: inset 0px 0px 2px rgb(88, 139, 255);
+	border-radius		: 2px;
+}
+.JuiListCheckBox div:focus{
+	outline				: none;
+}
+.JuiListCheckBox div:hover
+{
+	background-position	: -14px 0px;
+}
+
+.JuiListCheckBox div:active
+{
+	background-position	: -28px 0px;
+}
+
+.JuiListCheckBoxDisabled div,
+.JuiListCheckBoxDisabled div:hover,
+.JuiListCheckBoxDisabled div:active
+{
+	background-position	: -42px 0px;
+}
+
+.JuiListCheckBox .JuiCheckBoxInnerChecked
+{
+	background-position	: 0px -14px;
+	background			: rgba(189, 223, 250, 0.68);
+	box-shadow			: inset 0px 0px 2px rgb(100, 102, 107), 
+ 						  inset 0px 0px 0px 3px rgba(255, 255, 255, 1), 
+ 						  inset -1px -1px 2px 1px rgba(255, 255, 255, 0.65);
+}
+
+.JuiListCheckBox .JuiCheckBoxInnerChecked:hover
+{
+	background-position	: -14px -14px;
+}
+
+.JuiListCheckBox .JuiCheckBoxInnerChecked:active
+{
+	background-position	: -28px -14px;
+}
+
+.JuiListCheckBoxDisabled .JuiCheckBoxInnerChecked,
+.JuiListCheckBoxDisabled .JuiCheckBoxInnerChecked:hover,
+.JuiListCheckBoxDisabled .JuiCheckBoxInnerChecked:active
+{
+	background-position	: -42px -14px;
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiComboBox
+{
+	display				: inline-block;
+	height				: 25px;
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	background-color	: rgba(255, 255, 255, 0);
+	border-bottom		: 1px dashed silver;
+	border-radius		: 0;
+	padding				: 3px 0 0 1px;
+	position			: relative;
+}
+.JuiComboBox input[readonly]{
+	color				: black;
+}
+.JuiComboBox:hover,
+.JuiComboBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border				: none;
+	border-bottom		: 1px solid silver;
+	box-shadow			: none;
+	transition			: none;
+}
+
+.JuiComboBoxDropUp
+{
+}
+
+.JuiComboBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiComboBoxDisabled,
+.JuiComboBoxDisabled:hover
+{
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	opacity				: 0.7;  
+	border				: none;  
+	box-shadow			: none;
+	padding-top			: 3px;
+}
+
+.JuiComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	background			: rgba(255, 255, 255, 0.04);
+	border-radius		: 20%;
+	margin-top			: 0px;
+	position			: absolute;
+	right				: 0px;
+}
+.JuiComboBox .JuiComboBoxIcon:before
+{
+	content				:'';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+.JuiComboBox .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiComboBox .JuiComboBoxIcon:active,
+.JuiComboBoxDropUp .JuiComboBoxIcon,
+.JuiComboBoxDropUp .JuiComboBoxIcon:hover,
+.JuiComboBoxDropDown .JuiComboBoxIcon,
+.JuiComboBoxDropDown .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiComboBoxDisabled .JuiComboBoxIcon,
+.JuiComboBoxDisabled .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+	margin-top			: 1px;
+	border				: none;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolComboBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	border-bottom		: 1px dashed silver;
+	padding				: 2px 25px 0px 4px;
+	white-space			: nowrap;
+	background-clip		: padding-box;
+	position			: relative;
+	margin-right		: 2px;
+	margin-left			: 3px;
+}
+
+.JuiToolComboBox:hover,
+.JuiToolComboBoxFocused
+{
+	border				: none; 
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;
+}
+
+.JuiToolComboBoxDropUp,
+.JuiToolComboBoxDropUp:hover,
+.JuiToolComboBoxDropDown,
+.JuiToolComboBoxDropDown:hover
+{
+}
+
+.JuiToolComboBoxDisabled,
+.JuiToolComboBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+	background			: white;
+	opacity				: 0.7;
+}
+
+.JuiToolComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;  
+	width				: 16px;  
+	height				: 16px;  
+	background			: rgba(255, 255, 255, 0);  
+	border-radius		: 20%;  
+	position			: absolute;  
+	right				: 0px;
+}
+.JuiToolComboBox .JuiComboBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+.JuiToolComboBox:hover .JuiComboBoxIcon,
+.JuiToolComboBoxFocused .JuiComboBoxIcon
+{
+	background-position	: 0px -20px;
+	background-position	: 0px -20px;  
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiToolComboBox .JuiComboBoxIcon:active,
+.JuiToolComboBoxDropUp .JuiComboBoxIcon,
+.JuiToolComboBoxDropUp:hover .JuiComboBoxIcon,
+.JuiToolComboBoxDropDown .JuiComboBoxIcon,
+.JuiToolComboBoxDropDown:hover .JuiComboBoxIcon
+{
+	background-position	: 0px -40px;
+}
+
+.JuiToolComboBoxDisabled .JuiComboBoxIcon,
+.JuiToolComboBoxDisabled:hover .JuiComboBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+	box-shadow			: none;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListComboBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+	position: relative;
+}
+
+.JuiListComboBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListComboBox .JuiComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListComboBox .JuiComboBoxIcon
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: rgba(255, 255, 255, 0);
+	border-radius		: 20%;
+	margin-top			: 0px;
+	position			: absolute;
+	right: 0;
+}
+
+.JuiListComboBox .JuiComboBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 5px solid black;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiListComboBox .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListComboBox .JuiComboBoxIcon:active,
+.JuiListComboBoxDropUp .JuiComboBoxIcon,
+.JuiListComboBoxDropUp .JuiComboBoxIcon:hover,
+.JuiListComboBoxDropDown .JuiComboBoxIcon,
+.JuiListComboBoxDropDown .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListComboBoxDisabled .JuiComboBoxIcon,
+.JuiListComboBoxDisabled .JuiComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* ComboButton															*/
+/*----------------------------------------------------------------------*/
+
+.JuiComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 26px;
+	border-radius		: 3px;
+	cursor				: default;
+	padding				: 4px 17px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+	background			: white;  
+	border-bottom		: 1px solid silver;
+	border-right		: 1px solid silver;  
+	border-left			: 1px solid #eee;  
+	border-top			: 1px solid #eee;
+}
+
+.JuiComboButton:hover
+{
+	background-position	: 0px -24px;
+	background			: #F7F7F7;
+}
+
+.JuiComboButtonMouseDown:hover
+{
+	background-position	: 0px -48px;
+	background			: #eee;
+	border-top-color	: silver;
+	border-left-color	: silver;
+	border-bottom-color	: #eee;
+	border-right-color	: #eee;
+}
+
+.JuiComboButtonDropUp,
+.JuiComboButtonDropUp:hover
+{
+	border					: 1px solid #2392F3;
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+	background				: #F7F7F7;
+	border-top-color		: silver;
+	border-left-color		: silver;
+	border-bottom-color		: silver;
+	border-right-color		: silver;
+}
+
+.JuiComboButtonDropDown,
+.JuiComboButtonDropDown:hover
+{
+	border						: 1px solid #2392F3;
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+	background					: #F7F7F7;
+	border-top-color			: silver;  
+	border-left-color			: silver;  
+	border-bottom-color			: #eee;  
+	border-right-color			: silver;
+}
+
+.JuiComboButtonDisabled,
+.JuiComboButtonDisabled:hover
+{
+	background-position		: 0px -72px;
+	background				: transparent;
+}
+
+.JuiComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiComboButton .JuiComboButtonArrow
+{
+	width				: 16px;
+	height				: 24px;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 0px;
+	top					: 0px;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+}
+
+.JuiComboButton:hover .JuiComboButtonArrow
+{
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+	background-color	: #ddd;
+}
+
+.JuiComboButtonMouseDown .JuiComboButtonArrow
+{
+}
+
+.JuiComboButtonDropUp .JuiComboButtonArrow,
+.JuiComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiComboButtonDropDown .JuiComboButtonArrow,
+.JuiComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiComboButtonDisabled .JuiComboButtonArrow,
+.JuiComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left			: none;
+	background-position	: 3px center;
+}
+
+.JuiComboButtonDisabled .JuiComboButtonArrow
+{
+	opacity				: 0.5;
+}
+
+.JuiComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	background-color	:transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiSmallComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 22px;
+	line-height			: 21px;
+	border-radius		: 3px;
+	cursor				: default;
+	padding				: 0px 17px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+	background			: white;  
+	border-bottom		: 1px solid silver;
+	border-right		: 1px solid silver;  
+	border-left			: 1px solid #eee;  
+	border-top			: 1px solid #eee;
+}
+
+.JuiSmallComboButton:hover
+{
+	background-position	: 0px -24px;
+	background			: #F7F7F7;
+}
+
+.JuiSmallComboButtonMouseDown:hover
+{
+	background-position	: 0px -48px;
+	background			: #eee;
+	border-top-color	: silver;
+	border-left-color	: silver;
+	border-bottom-color	: #eee;
+	border-right-color	: #eee;
+}
+
+.JuiSmallComboButtonDropUp,
+.JuiSmallComboButtonDropUp:hover
+{
+	border					: 1px solid #2392F3;
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+	background				: #F7F7F7;
+	border-top-color		: silver;
+	border-left-color		: silver;
+	border-bottom-color		: silver;
+	border-right-color		: silver;
+}
+
+.JuiSmallComboButtonDropDown,
+.JuiSmallComboButtonDropDown:hover
+{
+	border						: 1px solid #2392F3;
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+	background					: #F7F7F7;
+	border-top-color			: silver;  
+	border-left-color			: silver;  
+	border-bottom-color			: #eee;  
+	border-right-color			: silver;
+}
+
+.JuiSmallComboButtonDisabled,
+.JuiSmallComboButtonDisabled:hover
+{	
+	background-position		: 0px -72px;
+	background				: transparent;
+}
+
+.JuiSmallComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiSmallComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiSmallComboButton .JuiComboButtonArrow
+{
+	width				: 14px;
+	height				: 20px;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 0px;
+	top					: 0px;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 2px center;
+}
+
+.JuiSmallComboButton:hover .JuiComboButtonArrow
+{
+	background-color	: #ddd;
+}
+
+.JuiSmallComboButtonMouseDown .JuiComboButtonArrow
+{
+}
+
+.JuiSmallComboButtonDropUp .JuiComboButtonArrow,
+.JuiSmallComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiSmallComboButtonDropDown .JuiComboButtonArrow,
+.JuiSmallComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiSmallComboButtonDisabled .JuiComboButtonArrow,
+.JuiSmallComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left			: none;
+	background-position	: 3px center;
+}
+
+.JuiSmallComboButtonDisabled .JuiComboButtonArrow
+{
+	opacity				: 0.5;
+}
+
+.JuiSmallComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	background-color	:transparent;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolComboButton
+{
+	position			: relative;
+	display				: inline-block;
+	height				: 22px;
+	line-height			: 16px;
+	padding				: 3px 14px 0px 2px;
+	cursor				: default;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiToolComboButton:hover
+{
+	border				: 1px solid #FFBD69;
+	background			: white;
+	border-radius		: 4px;
+	box-shadow			: inset 0px 0px 1px silver;
+	border				: none;
+	color				: dimgray;
+}
+
+.JuiToolComboButtonMouseDown,
+.JuiToolComboButtonMouseDown:hover
+{
+	border				: 1px solid #FB8C3C;
+	background-position	: 0px -20px;
+	background			: #eee;
+	border				: none;
+}
+
+.JuiToolComboButtonDropUp,
+.JuiToolComboButtonDropUp:hover,
+.JuiToolComboButtonDropDown,
+.JuiToolComboButtonDropDown:hover
+{	
+	background-position		: 0px -44px;
+	border-color			: transparent;
+	border-radius			: 0;
+	border-top-left-radius	: 4px;
+	border-top-right-radius	: 4px;
+	background				: #F7F7F7;	
+	box-shadow				: 0px 0px 0px 1px silver;
+	color					: dimgray;
+}
+
+.JuiToolComboButtonDisabled,
+.JuiToolComboButtonDisabled:hover
+{
+	border				: none;
+	background-image	: none;
+	box-shadow			: none;
+}
+
+.JuiToolComboButton .JuiComboButtonIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	margin				: 0px 2px 0px 2px;
+	background-position	: 0px center;
+	line-height			: 16px;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiToolComboButton .JuiComboButtonText
+{
+	display				: inline-block;
+	margin				: 0px 2px 0px 2px;
+	height				: 16px;
+	line-height			: 16px;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonText
+{
+	color				: #999999;
+}
+
+.JuiToolComboButton .JuiComboButtonArrow
+{
+	width				: 11px;
+	height				: 100%;
+	line-height			: 16px;
+	position			: absolute;
+	right				: 1px;
+	top					: 0px;
+	background-image	: url(image/ComboButtonArrow.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+}
+
+.JuiToolComboButton:hover .JuiComboButtonArrow
+{
+	width						: 12px;
+	right						: 0px;
+	border-top-right-radius		: 4px;
+	border-bottom-right-radius	: 4px;
+	background-color			: #ddd;
+}
+
+.JuiToolComboButtonMouseDown .JuiComboButtonArrow,
+.JuiToolComboButtonMouseDown:hover .JuiComboButtonArrow
+{
+	border-left			:none;
+}
+
+.JuiToolComboButtonDropUp .JuiComboButtonArrow,
+.JuiToolComboButtonDropUp:hover .JuiComboButtonArrow,
+.JuiToolComboButtonDropDown .JuiComboButtonArrow,
+.JuiToolComboButtonDropDown:hover .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	border-left			: none;
+}
+
+.JuiToolComboButtonDisabled .JuiComboButtonArrow,
+.JuiToolComboButtonDisabled:hover .JuiComboButtonArrow
+{
+	background-color	: transparent;
+	opacity				: 0.5;
+}
+
+/*----------------------------------------------------------------------*/
+/* DateBox 																*/
+/*----------------------------------------------------------------------*/
+
+.JuiDateBox
+{
+	display				: inline-block;
+	height				: 26px;
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	border-bottom		: 1px dashed silver;
+	border-radius		: 0;
+	padding				: 4px 0 0 1px;
+	position			: relative;
+}
+
+.JuiDateBox:hover,
+.JuiDateBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border				: none;
+	border-bottom		: 1px solid silver;
+	box-shadow			: none;
+	transition			: none;
+}
+
+.JuiDateBoxDropUp
+{
+	border-top-left-radius	: 0px;
+	border-top-right-radius	: 0px;
+}
+
+.JuiDateBoxDropDown
+{
+	border-bottom-left-radius	: 0px;
+	border-bottom-right-radius	: 0px;
+}
+
+.JuiDateBoxDisabled,
+.JuiDateBoxDisabled:hover
+{
+	background-color	: rgba(231, 231, 231, 0);
+	opacity				: 0.7;
+	border				: none;
+	box-shadow			: none;
+}
+
+.JuiDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: left;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	border-radius		: 20%;
+	margin-top			: 0px;
+	background			: white;
+	position			: absolute;
+	right				: 0;
+}
+
+.JuiDateBox .JuiDateBoxIcon:before{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiDateBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+    box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiDateBox .JuiDateBoxIcon:active,
+.JuiDateBoxDropUp .JuiDateBoxIcon,
+.JuiDateBoxDropUp .JuiDateBoxIcon:hover,
+.JuiDateBoxDropDown .JuiDateBoxIcon,
+.JuiDateBoxDropDown .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiDateBoxDisabled .JuiDateBoxIcon,
+.JuiDateBoxDisabled .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -60px;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolDateBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	padding				: 2px 25px 0px 4px;
+	white-space			: nowrap;
+	background-clip		: padding-box;
+	border-bottom		: 1px dashed silver;
+	position			: relative;
+	margin-right		: 2px;
+	margin-left			: 3px;
+}
+
+.JuiToolDateBox:hover,
+.JuiToolDateBoxFocused
+{
+	border				: none;  
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;
+}
+
+.JuiToolDateBoxDropUp,
+.JuiToolDateBoxDropUp:hover,
+.JuiToolDateBoxDropDown,
+.JuiToolDateBoxDropDown:hover
+{
+}
+
+.JuiToolDateBoxDisabled,
+.JuiToolDateBoxDisabled:hover
+{
+	background-color	: #F7F7F7;
+	border				: 1px solid transparent;
+	background			: white;
+	opacity				: 0.7;
+}
+
+.JuiToolDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;  
+	width				: 16px;  
+	height				: 16px;  
+	background			: rgba(255, 255, 255, 0);  
+	border-radius		: 20%;  
+	position			: absolute;  
+	right				: 0px;
+}
+.JuiToolDateBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+.JuiToolDateBox .JuiDateBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+.JuiToolDateBox:hover .JuiDateBoxIcon,
+.JuiToolDateBoxFocused .JuiDateBoxIcon
+{
+	background-position	: 0px -20px;
+}
+
+.JuiToolDateBox .JuiDateBoxIcon:active,
+.JuiToolDateBoxDropUp .JuiDateBoxIcon,
+.JuiToolDateBoxDropUp:hover .JuiDateBoxIcon,
+.JuiToolDateBoxDropDown .JuiDateBoxIcon,
+.JuiToolDateBoxDropDown:hover .JuiDateBoxIcon
+{
+	background-position	: 0px -40px;
+}
+
+.JuiToolDateBoxDisabled .JuiDateBoxIcon,
+.JuiToolDateBoxDisabled:hover .JuiDateBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListDateBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+	position			: relative;
+}
+
+.JuiListDateBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListDateBox .JuiDateBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	text-align			: center;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListDateBox .JuiDateBoxIcon
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: rgba(255, 255, 255, 0);
+	border-radius		: 20%;
+	margin-top			: 0px;
+	position			: absolute;
+	right				: 0px;
+}
+
+.JuiListDateBox .JuiDateBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 5px solid rgba(0, 0, 0, 1);
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiListDateBox .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListDateBox .JuiDateBoxIcon:active,
+.JuiListDateBoxDropUp .JuiDateBoxIcon,
+.JuiListDateBoxDropUp .JuiDateBoxIcon:hover,
+.JuiListDateBoxDropDown .JuiDateBoxIcon,
+.JuiListDateBoxDropDown .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListDateBoxDisabled .JuiDateBoxIcon,
+.JuiListDateBoxDisabled .JuiDateBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiDateBoxPopup
+{
+	position			: absolute;
+	background-color	: #FFFFFF;
+	overflow			: hidden;
+	box-shadow			: 0px 1px 0px 0px silver,
+						  -1px 0px 0px 0px silver,
+						  1px 0px 0px 0px silver,
+						  0px -1px 0px 0px #ccc;
+	z-index				: 300000000;
+	cursor				: default;
+}
+
+.JuiDateBoxPopup[Up]
+{
+	box-shadow			: 0px 0px 2px #bbb;
+	margin-top			: 1px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable
+{
+	width				: 100%;
+	border-collapse		: collapse;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable > tbody > tr > td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTable > tbody > tr > .JuiDateBoxPopupTopBarCell
+{
+	padding				: 4px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTopBar
+{
+	width				: 100%;
+	height				: 19px;
+	line-height			: 19px;
+	table-layout		: fixed;
+	border-collapse		: collapse;
+	background-color: #C4CFD1;
+	box-shadow: inset 1px 0px 2px silver;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTopBar td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNavigator
+{
+	background-image	: url(image/DateBoxPopupNavigator.png);
+	background-repeat	: no-repeat;
+	cursor				: pointer;
+	width				: 18px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupPreviousYear
+{
+	background-position	: 4px 5px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupPreviousMonth
+{
+	background-position	: 4px -15px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNextMonth
+{
+	background-position	: 5px -35px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupNextYear
+{
+	background-position	: 5px -55px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupCurrentYearMonth
+{
+	padding-top			: 1px;
+	text-align			: center;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable
+{
+	table-layout		: fixed;
+	border-spacing		: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable tr
+{
+	height				: 20px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td
+{
+	padding				: 0px;
+	text-align			: center;
+	width				: 27px;
+	border				: 1px solid transparent;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td:first-child,
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td:last-child
+{
+	color				: #FF0000;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable td[Disabled]
+{
+	color				: #999999;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupDateRow td:hover
+{
+	border				: 1px solid #FFBD69;
+	background-color	: #FFD970;
+	background-image	: linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -ms-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -moz-linear-gradient(top, #FFF5CC, #FFD970);
+	background-image	: -webkit-linear-gradient(top, #FFF5CC, #FFD970);
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter
+{
+	height				: 5px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter td
+{
+	padding				: 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupDateTable .JuiDateBoxPopupSplitter div
+{
+	width				: 100%;
+	height				: 1px;
+	background-color	: #ACA899;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable
+{
+	margin				: 4px 0px 0px 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable div > *
+{
+	vertical-align		: bottom;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable div > div
+{
+	display				:inline-block;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable input
+{
+	width				: 36px;
+	height				: 20px;
+	text-align			: center;
+	border				: 1px solid #bbb;
+	border-right		: none;
+	border-radius		: 2px 0px 0px 2px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span
+{
+	border				: 1px solid #bbb;
+	background-color	: #ddd;
+	display				: block;
+	width				: 16px;
+	height				: 10px;
+	background-repeat	: no-repeat;
+	position			: relative;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:hover
+{
+	background-color	: #fff;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:active
+{
+	background-color	: #ccc;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:first-child
+{
+	border-radius		: 0px 2px 0px 0px;
+	border-bottom		: none;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:last-child
+{
+	border-radius		: 0px 0px 2px 0px;
+	border-top			: none;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:before
+{
+	content				: '';
+	position			: absolute;
+	margin				: auto;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	width				: 0;
+	height				: 0;
+	border-left			: 4px solid transparent;
+	border-right		: 4px solid transparent;
+	
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:first-child:before
+{
+	border-bottom		: 4px solid gray;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeTable span:last-child:before
+{
+	border-top			: 4px solid gray;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupTimeSeparator
+{
+	font-family			: Fixedsys;
+	vertical-align		: top;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable
+{
+	margin				: 4px 0px 6px 0px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable td
+{
+	padding				: 0px 3px;
+	font-size			: 12px;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div
+{
+	display				: inline-block;
+	height				: 26px;
+	border-radius		: 3px;
+	cursor				: default;
+	padding				: 4px 8px 0px 8px;
+	text-align			: center;
+	white-space			: nowrap;
+	background			: white;
+	border-bottom		: 1px solid silver !important;
+	border-right		: 1px solid silver !important;
+	border-left			: 1px solid #eee !important;
+	border-top			: 1px solid #EEE !important;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div:hover
+{
+	background			: #F7F7F7;
+}
+
+.JuiDateBoxPopup .JuiDateBoxPopupButtonTable div:active
+{
+	background			: #F7F7F7;
+	border-top-color	: silver !important;
+	border-left-color	: silver !important;
+	border-bottom-color	: #eee !important;
+	border-right-color	: #eee !important;
+}
+
+/*----------------------------------------------------------------------*/
+/* Dialog																*/
+/*----------------------------------------------------------------------*/
+
+.JuiDialog
+{
+	min-width			: 300px;
+	min-height			: 150px;
+	border-radius		: 0;
+	box-shadow			: 0px 0px 1px 0px #6C6C6C,
+						  0px 0px 1px 0px #ccc,
+						  inset 0px 0px 80px 30px rgba(233, 233, 233, 0.4);
+	position			: fixed;
+	background			: rgba(235, 235, 205, 1);
+	cursor				: default;
+	resize				: both;
+	overflow			: hidden;
+}
+
+.JuiDialogFlash
+{
+	background-color	: #FDE06C;
+	background-image	: none;
+	background-image	: linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -ms-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -moz-linear-gradient(top, #FDE06C, #C0DBFF);
+	background-image	: -webkit-linear-gradient(top, #FDE06C, #C0DBFF);
+}
+
+.JuiDialogMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	opacity				: 0.03;
+	cursor				: default;
+}
+
+.JuiDialogMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+}
+
+.JuiDialog .JuiDialogTitle
+{
+	position			: absolute;
+	left				: 6px;
+	top					: 3px;
+	right				: 48px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+	background-image	: url(image/DialogIcon.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 20px;
+	resize				: none;
+}
+
+.JuiDialog .JuiDialogTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 40px;
+	height				: 28px;
+	background-color 	: transparent;
+}
+
+.JuiDialog .JuiDialogButton
+{
+	position			: absolute;
+	top					: 4px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/DialogButton.png);
+}
+
+.JuiDialog .JuiDialogMaximize
+{
+	right				: 23px;
+	background-position	: 0px -15px;
+}
+
+.JuiDialog .JuiDialogMaximize[Maximized]
+{
+	background-position	: 0px -30px;
+}
+
+.JuiDialog .JuiDialogClose
+{
+	right				: 5px;
+}
+
+.JuiDialog .JuiDialogClose:hover
+{
+	background-position	: -15px 0px;
+}
+
+.JuiDialog .JuiDialogMaximize:hover
+{
+	background-position	: -15px -15px;
+}
+
+.JuiDialog .JuiDialogMaximize[Maximized]:hover
+{
+	background-position	: -15px -30px;
+}
+
+.JuiDialog .JuiDialogBody
+{
+	position			: absolute;
+	top					: 28px;
+	bottom				: 6px;
+	left				: 6px;
+	right				: 6px;
+	background-color	: #F7F7FF;;
+	-moz-box-sizing		: content-box;
+	resize				: none;
+	box-shadow			: 0px 0px 0px 1px rgba(187, 187, 187, 0.28);
+}
+
+.JuiDialog .JuiDialogBody iframe
+{
+	width				: 100%;
+	height				: 100%;
+}
+
+.JuiDialog .JuiDialogBody .JuiDialogFrameMask
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* EntityBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiEntityBox
+{
+	display				: inline-block;
+	height				: 26px;
+	padding				: 3px 0 0 1px;
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	border				: none;  
+	border-bottom		: 1px dashed silver;  
+	box-shadow			: none;  
+	border-radius		: 0;
+	position			: relative;
+}
+
+.JuiEntityBox1Icon
+{
+}
+
+.JuiEntityBox0Icon
+{
+	padding-right		: 4px;
+}
+
+.JuiEntityBox:hover,
+.JuiEntityBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border				: none;
+	border-bottom		: 1px solid silver;
+	box-shadow			: none;
+	transition			: none;
+}
+
+.JuiEntityBoxDropUp
+{
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiEntityBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiEntityBoxDisabled,
+.JuiEntityBoxDisabled:hover
+{
+	border				: 1px solid #7F9DB9;
+	opacity				: 0.7;  
+	border				: none;  
+	box-shadow			: none;
+	padding-top			: 3px;
+}
+
+.JuiEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	cursor				: default;
+	margin-right		: 2px;
+	text-decoration		: underline;
+	color				: #0040A0;
+	font-size			: 14px;
+}
+
+.JuiEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiEntityBoxMagnifier
+{
+	display    			: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: white;
+	border-radius		: 20%;
+	position			: absolute;
+	right				: 18px;
+}
+.JuiEntityBox.JuiEntityBox1Icon .JuiEntityBoxMagnifier{
+	right				:0px;	
+}
+.JuiEntityBox .JuiEntityBoxMagnifier:before
+{
+	content				:'';
+	position			: absolute;
+	width				: 10px;
+	height				: 10px;
+	bottom				: 0;
+	top					: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	border				: 1px solid #aaa;
+	border-radius		: 50%;
+	box-shadow			: inset 0px 0px 0px 2px #FFF, 
+						  inset 0px 0px 0px 10px gray;
+	display				: inline-block;
+}
+
+.JuiEntityBox .JuiEntityBoxMagnifier:hover
+{
+    box-shadow: inset 0px 0px 0px 1px silver;
+}
+
+.JuiEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiEntityBoxDisabled .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+	margin-top			: 1px;
+	border				: none;
+	display				: none;
+}
+
+.JuiEntityBox .JuiEntityBoxArrow
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: white;
+	border-radius		: 20%;
+	margin-top			: 0px;
+	position			: absolute;
+	right				: 0px;
+}
+.JuiEntityBox .JuiEntityBoxArrow:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiEntityBox .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -20px;
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiEntityBox .JuiEntityBoxArrow:active,
+.JuiEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiEntityBoxArrowDown .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiEntityBoxDisabled .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -60px;
+	margin-top			: 1px;
+	border				: none;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolEntityBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	padding				: 2px 48px 0px 4px;
+	white-space			: nowrap;
+	background-clip		: padding-box;
+	border				: none;  
+	border-bottom		: 1px dashed silver;  
+	box-shadow			: none;  
+	border-radius		: 0;
+	position			: relative;
+	margin-right		: 2px;
+	margin-left			: 3px;
+}
+
+.JuiToolEntityBox1Icon
+{
+	padding-right		: 18px;
+}
+
+.JuiToolEntityBox0Icon
+{
+	padding-right		: 3px;
+}
+
+.JuiToolEntityBox:hover,
+.JuiToolEntityBoxFocused
+{
+	border				: none;  
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;
+}
+
+.JuiToolEntityBoxDropUp,
+.JuiToolEntityBoxDropUp:hover,
+.JuiToolEntityBoxDropDown,
+.JuiToolEntityBoxDropDown:hover
+{
+}
+
+.JuiToolEntityBoxDisabled,
+.JuiToolEntityBoxDisabled:hover
+{
+	border				: 1px solid transparent;
+	background			: white;
+	opacity				: 0.7;
+}
+
+.JuiToolEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiToolEntityBox .JuiEntityBoxMagnifier
+{                    
+	display				: inline-block;  
+	width				: 16px;  
+	height				: 16px;  
+	vertical-align		: top;  
+	margin-left			: 0px;  
+	background			: rgba(255, 255, 255, 0);  
+	border-radius		: 20%;  
+	position			: absolute;  
+	right				: 18px;
+}
+.JuiToolEntityBox .JuiEntityBoxMagnifier:hover
+{
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+.JuiToolEntityBox .JuiEntityBoxMagnifier:before
+{
+	content				: '';  
+	position			: relative;  
+	width				: 10px;  
+	height				: 10px;  
+	top					: 1px;  
+	left				: 2px;  
+	border				: 1px solid #aaa;  
+	border-radius		: 50%;  
+	box-shadow			: inset 0px 0px 0px 2px #FFF, 
+						  inset 0px 0px 0px 10px gray;  
+	display				: inline-block;
+}
+.JuiToolEntityBox:hover .JuiEntityBoxMagnifier,
+.JuiToolEntityBoxFocused .JuiEntityBoxMagnifier
+{
+	background-position	: 0px -20px;
+}
+
+.JuiToolEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiToolEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiToolEntityBoxDisabled:hover .JuiEntityBoxMagnifier
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+	display				: none;
+}
+
+.JuiToolEntityBox .JuiEntityBoxArrow
+{    
+	display				: inline-block;  
+	width				: 16px;  
+	height				: 16px;        
+	background			: rgba(255, 255, 255, 0);  
+	border-radius		: 20%;    
+	position			: absolute;  
+	right				: 0px;
+}
+.JuiToolEntityBox .JuiEntityBoxArrow:hover
+{
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+.JuiToolEntityBox .JuiEntityBoxArrow:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+.JuiToolEntityBox:hover .JuiEntityBoxArrow,
+.JuiToolEntityBoxFocused .JuiEntityBoxArrow
+{
+	background-position	: 0px -20px;
+}
+
+.JuiToolEntityBox .JuiEntityBoxArrow:active,
+.JuiToolEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiToolEntityBoxArrowDown:hover .JuiEntityBoxArrow
+{
+	background-position	: 0px -40px;
+}
+
+.JuiToolEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiToolEntityBoxDisabled:hover .JuiEntityBoxArrow
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListEntityBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 48px 0px 3px;
+	white-space			: nowrap;
+	position			: relative;
+}
+
+.JuiListEntityBox1Icon
+{
+	padding-right		: 25px;
+}
+
+.JuiListEntityBox0Icon
+{
+	padding-right		: 3px;
+}
+
+.JuiListEntityBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListEntityBox .JuiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListEntityBox .JuiEntityBoxText[NoLink]
+{
+	color				: #000000;
+	text-decoration		: none;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier
+{
+	display    			: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: rgba(255, 255, 255, 0);
+	border-radius		: 20%;
+	position			: absolute;
+	right				: 18px;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier:before
+{
+	content				:'';
+	position			: absolute;
+	width				: 10px;
+	height				: 10px;
+	bottom				: 0;
+	top					: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	border    			: 1px solid #aaa;
+	border-radius		: 50%;
+	box-shadow			: inset 0px 0px 0px 2px #FFF,           
+						  inset 0px 0px 0px 10px rgb(92, 92, 92);
+	display				: inline-block;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListEntityBox .JuiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListEntityBoxDisabled .JuiEntityBoxMagnifier,
+.JuiListEntityBoxDisabled .JuiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow
+{
+	display				: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: rgba(255, 255, 255, 0);
+	border-radius		: 20%;
+	margin-top			: 0px;
+	position			: absolute;
+	right				: 0px;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 5px solid black;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListEntityBox .JuiEntityBoxArrow:active,
+.JuiListEntityBoxArrowDown .JuiEntityBoxArrow,
+.JuiListEntityBoxArrowDown .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListEntityBoxDisabled .JuiEntityBoxArrow,
+.JuiListEntityBoxDisabled .JuiEntityBoxArrow:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* File Dropzone														*/
+/*----------------------------------------------------------------------*/
+
+.JuiFileDropZoneMask
+{
+	border				: 10px dashed #000000; 
+	background-color	: #808080;
+	opacity				: 0.25;
+	position			: fixed;
+	z-index				: 99999999;
+}
+
+/*----------------------------------------------------------------------*/
+/* HtmlBox 																*/
+/*----------------------------------------------------------------------*/
+
+.JuiHtmlBox
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+}
+
+/*----------------------------------------------------------------------*/
+/* InputBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiInputBox
+{
+	display				: inline-block;
+	height				: 25px;
+	padding				: 3px 0px 0px 1px;
+	transition			: box-shadow 0.2s linear;
+	background-color	: rgba(255, 255, 255, 0);
+	border				: none;  
+	border-bottom		: 1px dashed silver;  
+	box-shadow			: none;  
+	border-radius		: 0;
+}
+
+.JuiInputBox:hover,
+.JuiInputBoxFocused
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+	border				: none;
+	border-bottom		: 1px solid silver;
+	box-shadow			: none;
+	transition			: none;
+}
+.JuiInputBoxDropUp
+{
+	border-radius		: 0px 0px 3px 3px;
+}
+
+.JuiInputBoxDropDown
+{
+	border-radius		: 3px 3px 0px 0px;
+}
+
+.JuiInputBoxDisabled,
+.JuiInputBoxDisabled:hover
+{
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	opacity				: 0.7;
+	border				: none;
+	box-shadow			: none;
+	padding-top			: 3px;
+}
+
+.JuiInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Phone]
+{
+	background-image	: url(image/InputBoxPhone.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 24px;
+}
+
+.JuiInputBox input
+{
+	height				: 100%;
+	width				: 100%;
+	border				: none;
+	line-height			: 13px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+	vertical-align		: top;
+	font-size			: 14px;
+}
+
+.JuiInputBox input[readonly]{
+	color				: black;
+}
+.JuiInputBox[type=Number] input,
+.JuiInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiInputBox[type=Email] input,
+.JuiInputBox[type=Url] input,
+.JuiInputBox[type=Phone] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolInputBox
+{
+	width				: 175px;
+	height				: 22px;
+	padding				: 2px 3px 0px 3px;
+	background-clip		: padding-box;
+	border				: none;  
+	border-bottom		: 1px dashed silver;    
+	margin-right		: 2px;
+	margin-left			: 3px;
+}
+
+.JuiToolInputBox:hover,
+.JuiToolInputBoxFocused
+{
+	border				: none;
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;  
+}
+
+.JuiToolInputBoxDisabled,
+.JuiToolInputBoxDisabled:hover
+{
+	border				: 1px solid transparent;
+	background-color	: #FFFFFF;
+	opacity				: 0.7;
+}
+
+.JuiToolInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 23px;
+}
+
+.JuiToolInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 23px;
+}
+
+.JuiToolInputBox input
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolInputBox[type=Number] input,
+.JuiToolInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiToolInputBox[type=Email] input,
+.JuiToolInputBox[type=Url] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListInputBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 3px 0px 3px;
+}
+
+.JuiListInputBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListInputBox[type=Email]
+{
+	background-image	: url(image/InputBoxEmail.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Url]
+{
+	background-image	: url(image/InputBoxUrl.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Password]
+{
+	background-image	: url(image/InputBoxPassword.png);
+	background-repeat	: no-repeat;
+	background-position	: 4px center;
+	padding-left		: 24px;
+}
+
+.JuiListInputBox[type=Percent]
+{
+	background-image	: url(image/InputBoxPercent.png);
+	background-repeat	: no-repeat;
+	background-position	: right center;
+	padding-right		: 24px;
+}
+
+.JuiListInputBox input
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	line-height   		: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+	font-size			: 14px;
+}
+
+.JuiListInputBox[type=Number] input,
+.JuiListInputBox[type=Percent] input
+{
+	text-align			: right;
+}
+
+.JuiListInputBox[type=Email] input,
+.JuiListInputBox[type=Url] input
+{
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: default;
+}
+
+/*----------------------------------------------------------------------*/
+/* MessageBox															*/
+/*----------------------------------------------------------------------*/
+
+.JuiMessageBox
+{
+	min-width			: 240px;
+	min-height			: 130px;
+	border-radius		: 3px;
+	position			: fixed;
+	box-shadow			: 0px 0px 0px 2px rgba(255, 255, 255, 0.5),
+						  inset 0px 0px 1px gray,
+						  inset 0px 0px 6px white;
+	cursor				: default;
+	background			: rgba(235, 235, 205, 1);
+}
+
+.JuiMessageBoxMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+	display				: none;
+}
+
+.JuiMessageBoxTitle
+{
+	position			: absolute;
+	left				: 7px;
+	top					: 3px;
+	right				: 30px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+}
+
+.JuiMessageBoxTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 24px;
+	height				: 28px;
+	background-color	: transparent;
+}
+
+.JuiMessageBoxClose
+{
+	position			: absolute;
+	top					: 4px;
+	right				: 5px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/CommandIcon.gif);
+}
+
+.JuiMessageBoxClose:hover
+{
+	background-position	: 15px 0px;
+}
+
+.JuiMessageBoxIcon
+{
+	position			: absolute;
+	top					: 34px;
+	left				: 13px;
+	width				: 32px;
+	height				: 32px;
+	background-image	: url(image/MessageBoxInfo.png);
+}
+
+.JuiMessageBoxWarningIcon
+{
+	background-image	: url(image/MessageBoxWarning.png);
+}
+
+.JuiMessageBoxErrorIcon
+{
+	background-image	: url(image/MessageBoxError.png);
+}
+
+.JuiMessageBoxQuestionIcon
+{
+	background-image	: url(image/MessageBoxQuestion.png);
+}
+
+.JuiMessageBoxSuccessIcon
+{
+	background-image	: url(image/MessageBoxSuccess.png);
+}
+
+.JuiMessageBoxText
+{
+	margin				: 34px 15px 42px 55px;
+	max-width			: 400px;
+	max-height			: 240px;
+	line-height			: 18px;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+}
+
+.JuiMessageBoxHint .JuiMessageBoxText
+{
+	margin-bottom		: 8px;
+	min-width			: 200px;
+	max-width			: 200px;
+}
+
+.JuiMessageBoxButtonRow
+{
+	position			: absolute;
+	bottom				: 8px;
+	width				: 100%;
+	text-align			: center;
+	white-space			: nowrap;
+}
+
+.JuiMessageBoxHint .JuiMessageBoxButtonRow
+{
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiCheckBox 														*/
+/*----------------------------------------------------------------------*/
+
+.JuiMultiCheckBox
+{
+	white-space			: normal;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem
+{
+	display				: inline-block;
+	height				: 23px;
+	line-height			: 22px;
+	margin-right		: 8px;
+	cursor				: default;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+.JuiMultiCheckBoxOneItemPerLine .JuiMultiCheckBoxItem
+{
+	display				: block;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem div
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	height				: 13px;
+	line-height			: 13px;
+	margin-left			: 2px;
+	margin-right		: 5px;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon
+{
+	width				: 13px;
+	margin-right		: 3px;
+	overflow			: hidden;
+	box-shadow			: inset 0px 0px 2px gray;
+	border-radius		: 50%;
+}
+
+.JuiMultiCheckBoxMultiSelect .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon
+{  
+	box-shadow			: inset 0px 0px 2px gray;  
+	border-radius		: 2px;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:hover
+{  
+	box-shadow			: inset 0px 0px 3px gray;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:active
+{
+	background-position	: -28px 0px;
+}
+
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon,
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:active,
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:hover
+{
+	box-shadow			: inset 0px 0px 3px rgb(196, 196, 196);  
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon
+{
+	box-shadow			: inset 0px 0px 0px 1px gray,
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px gray;
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:hover
+{
+	box-shadow			: inset 0px 0px 0px 1px rgba(192, 192, 192, 1),
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px rgba(192, 192, 192, 1);
+}
+
+.JuiMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:active
+{
+	background-position	: -28px -14px;
+}
+
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon,
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:active,
+.JuiMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:hover
+{
+	box-shadow			: inset 0px 0px 3px 1px #ddd,
+						  inset 0px 0px 0px 3px white, 
+						  inset 0px 0px 20px 10px #ccc;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiCheckBox
+{
+	height				: 24px;
+	overflow			: hidden;
+	white-space			: nowrap;
+	padding-left		: 3px;
+}
+
+.JuiListMultiCheckBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem
+{
+	display				: inline-block;
+	height				: 24px;
+	line-height			: 22px;
+	margin-right		: 6px;
+	cursor				: default;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem div
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	height				: 14px;
+	line-height			: 14px;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon
+{
+	background-image	: url(image/Radio.png);
+	width				: 14px;
+	margin-right		: 3px;
+	overflow			: hidden;
+}
+
+.JuiListMultiCheckBoxMultiSelect .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon
+{
+	background-image	: url(image/CheckBox.png);
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:hover
+{
+	background-position	: -14px 0px;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:active
+{
+	background-position	: -28px 0px;
+}
+
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon,
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:active,
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem .JuiMultiCheckBoxIcon:hover
+{
+	background-position	: -42px 0px;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon
+{
+	background-position	: 0px -14px;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:hover
+{
+	background-position	: -14px -14px;
+}
+
+.JuiListMultiCheckBox .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:active
+{
+	background-position	: -28px -14px;
+}
+
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon,
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:active,
+.JuiListMultiCheckBoxDisabled .JuiMultiCheckBoxItem[Checked] .JuiMultiCheckBoxIcon:hover
+{
+	background-position	: -42px -14px;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiCheckComboBox 												    */
+/*----------------------------------------------------------------------*/
+
+.JuiMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	padding				: 2px 25px 0px 4px;
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	border-bottom		: 1px dashed silver;
+	border-radius		: 0;
+	position			: relative;
+}
+
+.JuiMultiCheckComboBox:hover,
+.JuiMultiCheckComboBoxFocused
+{
+	border				: none;  
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;  
+	transition			: none;
+}
+
+.JuiMultiCheckComboBoxDropUp
+{
+}
+
+.JuiMultiCheckComboBoxDropDown
+{
+}
+
+.JuiMultiCheckComboBoxDisabled,
+.JuiMultiCheckComboBoxDisabled:hover
+{
+	background			: white;
+	border				: none;
+	box-shadow			: none;
+	opacity				: 0.7;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{
+	display				: inline-block;  
+	width				: 18px;  
+	height				: 18px;  
+	background			: rgba(255, 255, 255, 0);  
+	border-radius		: 20%;  
+	margin-top			: 0px;  
+	position			: absolute;  
+	right				: 0px;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon:hover
+{
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon:hover,
+.JuiMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon:hover
+{
+	display				: none;
+}
+
+.JuiMultiCheckComboBoxPopup
+{
+	position			: absolute;
+	display				: block;	
+	background-color	: #FFFFFF;
+	overflow-x			: hidden;
+	overflow-y			: auto;
+	padding				: 1px 6px;
+	box-shadow			: 0px 1px 0px 0px silver,
+						  -1px 0px 0px 0px silver,
+						  1px 0px 0px 0px silver,
+						  0px -1px 0px 0px #ddd;
+	z-index				: 300000000;
+}
+
+.JuiMultiCheckComboBoxPopup[Up]
+{
+	overflow-x			: hidden !important;
+	overflow-y			: auto !important;
+	box-shadow			: 0px 0px 2px #bbb;  
+	margin-top			: 1px;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiToolMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 175px;
+	height				: 22px;
+	padding				: 2px 25px 0px 4px;
+	white-space			: nowrap;
+	background-color	: rgba(255, 255, 255, 0);
+	border-bottom		: 1px dashed silver;
+	position			: relative;
+}
+
+.JuiToolMultiCheckComboBox:hover,
+.JuiToolMultiCheckComboBoxFocused
+{
+	border-bottom		: 1px solid silver;
+}
+
+.JuiToolMultiCheckComboBoxDropUp,
+.JuiToolMultiCheckComboBoxDropUp:hover,
+.JuiToolMultiCheckComboBoxDropDown,
+.JuiToolMultiCheckComboBoxDropDown:hover
+{
+}
+
+.JuiToolMultiCheckComboBoxDisabled,
+.JuiToolMultiCheckComboBoxDisabled:hover
+{
+	border				: 1px solid transparent;
+	background			: white;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{              
+	display				: inline-block;  
+	width				: 16px;  
+	height				: 16px;  
+	background			: white;  
+	border-radius		: 20%;  
+	position			: absolute;  
+	right				: 0px;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon:hover
+{
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon:before
+{
+	content				: '';
+	position			: absolute;
+	top					: 0;
+	bottom				: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	width				: 0;
+	height				: 0;
+	border-top			: 6px solid gray;
+	border-left			: 5px solid transparent;
+	border-right		: 5px solid transparent;
+}
+
+.JuiToolMultiCheckComboBox:hover .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxFocused .JuiMultiCheckComboBoxIcon
+{
+	background-position	: 0px -20px;
+}
+
+.JuiToolMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiToolMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropUp:hover .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDropDown:hover .JuiMultiCheckComboBoxIcon
+{
+}
+
+.JuiToolMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiToolMultiCheckComboBoxDisabled:hover .JuiMultiCheckComboBoxIcon
+{
+	background-position	: 0px -60px;
+	border-left			: 1px solid transparent;
+	display				: none;
+	opacity				: 0.7;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiCheckComboBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+}
+
+.JuiListMultiCheckComboBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	margin-right		: 2px;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon
+{
+	display				: inline-block;
+	width				: 21px;
+	height				: 20px;
+	vertical-align		: top;
+	background-image	: url(image/ComboBoxIcon.png);
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListMultiCheckComboBox .JuiMultiCheckComboBoxIcon:active,
+.JuiListMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDropUp .JuiMultiCheckComboBoxIcon:hover,
+.JuiListMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDropDown .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon,
+.JuiListMultiCheckComboBoxDisabled .JuiMultiCheckComboBoxIcon:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* MultiEntityBox 														*/
+/*----------------------------------------------------------------------*/
+
+.JuiMultiEntityBox
+{
+	display				: inline-block;
+	width				: 200px;
+	height				: 26px;
+	padding				: 3px 0 0 1px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	white-space			: nowrap;
+	border				: none;  
+	border-bottom		: 1px dashed silver;  
+	box-shadow			: none;  
+	border-radius		: 0;
+	position			: relative;
+}
+
+.JuiMultiEntityBox:hover,
+.JuiMultiEntityBoxFocused
+{
+	border				: none;  
+	border-bottom		: 1px solid silver;  
+	box-shadow			: none;  
+	transition			: none;
+}
+
+.JuiMultiEntityBoxDisabled,
+.JuiMultiEntityBoxDisabled:hover
+{
+	background			: white;
+	border				: none;
+	box-shadow			: none;
+	opacity				: 0.7;
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier
+{
+	display				: inline-block;  
+	width				: 18px;  
+	height				: 18px;  
+	vertical-align		: top;  
+	margin-left			: 0px;  
+	background			: white;  
+	border-radius		: 20%;  
+	position			: absolute;  
+	right				: 0;
+}
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:hover{
+	box-shadow			: inset 0px 0px 0px 1px silver;
+}
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:before{
+	content				: '';
+	position			: absolute;
+	width				: 10px;
+	height				: 10px;
+	bottom				: 0;
+	top					: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	border				: 1px solid #aaa;
+	border-radius		: 50%;
+	box-shadow			: inset 0px 0px 0px 2px #FFF, 
+						  inset 0px 0px 0px 10px gray;
+	display				: inline-block;
+}
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiMultiEntityBox .JuiMultiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier,
+.JuiMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+	display				: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListMultiEntityBox
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 24px;
+	padding				: 2px 25px 0px 3px;
+	white-space			: nowrap;
+	position			: relative;
+}
+
+.JuiListMultiEntityBoxDisabled
+{
+	background-color	: #E7E7E7;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxText
+{
+	height				: 20px;
+	width				: 100%;
+	border				: none;
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	padding-left		: 0px;
+	padding-right		: 0px;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier
+{
+	display    			: inline-block;
+	width				: 18px;
+	height				: 18px;
+	vertical-align		: top;
+	margin-left			: 0px;
+	background			: rgba(255, 255, 255, 0);
+	border-radius		: 20%;
+	position			: absolute;
+	right				: 0px;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier:before
+{
+	content				: '';
+	position			: absolute;
+	width				: 10px;
+	height				: 10px;
+	bottom				: 0;
+	top					: 0;
+	left				: 0;
+	right				: 0;
+	margin				: auto;
+	border				: 1px solid #aaa;
+	border-radius		: 50%;
+	box-shadow			: inset 0px 0px 0px 2px #FFF,
+						  inset 0px 0px 0px 10px rgb(92, 92, 92);
+	display				: inline-block;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -20px;
+}
+
+.JuiListMultiEntityBox .JuiMultiEntityBoxMagnifier:active
+{
+	background-position	: 0px -40px;
+}
+
+.JuiListMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier,
+.JuiListMultiEntityBoxDisabled .JuiMultiEntityBoxMagnifier:hover
+{
+	background-position	: 0px -60px;
+}
+
+/*----------------------------------------------------------------------*/
+/* PictureBox 															*/
+/*----------------------------------------------------------------------*/
+
+.JuiPictureBox
+{
+	height				: 180px;
+	width				: 200px;
+	border				: 1px solid silver;
+	background-color	: #FFFFFF;
+	overflow			: hidden;
+	text-align			: center;
+	padding				: 3px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(214, 215, 215, 0.3);
+	outline				: none;
+}
+
+.JuiPictureBoxDisabled
+{
+	background-color : #E7E7E7;
+}
+
+.JuiPictureBox div
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border-radius		: 3px;
+}
+
+.JuiPictureBox img
+{
+	position			: absolute;
+	top					: -1000px;
+}
+
+/*----------------------------------------------------------------------*/
+/* PopupList     														*/
+/*----------------------------------------------------------------------*/
+
+.JuiPopupList
+{
+	position			: absolute;	
+	background-color	: #FFFFFF;
+	display				: block;
+	overflow-x			: hidden;
+	overflow-y			: auto;
+	padding				: 1px 0px;
+	box-shadow			: 0px 1px 0px 0px silver,
+						  -1px 0px 0px 0px silver,
+						  1px 0px 0px 0px silver,
+						  0px -1px 0px 0px #D1D1D1;
+	z-index				: 300000000;
+}
+
+body.QsDarkBackground .JuiPopupList{
+	overflow-y			: auto !important;
+}
+
+.JuiPopupList[Up]
+{
+	box-shadow			: 0px 0px 2px #bbb;  
+	margin-top			: 1px;
+}
+
+.JuiPopupList[NoTopPadding]
+{
+	padding-top			: 0px;
+}
+
+.JuiPopupList table
+{
+	border-collapse		: separate;
+	cursor				: default;
+	overflow			: hidden;
+	table-layout		: fixed;
+	width				: 100%;
+}
+.JuiPopupList tr
+{
+	height				: 22px;
+	white-space			: nowrap;
+}
+
+.JuiPopupList .Group
+{
+	height				: 24px;
+}
+
+.JuiPopupList .Group:first-child
+{
+	height				: 22px;
+}
+
+.JuiPopupList .Group td
+{
+	padding				: 1px 0px;
+}
+
+.JuiPopupList .Group:first-child td
+{
+	padding-top			: 0px;
+}
+
+.JuiPopupList .Group div
+{
+	background-color	: #DDE7EE;
+	border-top			: 1px solid #C5C5C5;
+	border-bottom		: 1px solid #C5C5C5;
+	color				: #808080;
+	width				: 100%;
+	height				: 100%;
+	line-height			: 20px;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+	padding-left		: 16px;
+}
+
+.JuiPopupList .Group:first-child div
+{
+	border-top			: none;
+}
+
+.JuiPopupList .Item td
+{
+	border-left			: 1px solid #FFFFFF;
+	border-right		: 1px solid #FFFFFF;
+}
+
+.JuiPopupList .Item div
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border				: 1px solid transparent;
+	line-height			: 20px;
+	padding-left		: 5px;
+}
+
+.JuiPopupList .Item:hover div,
+.JuiPopupList .Item[Hover] div
+{
+	background-color	: #FFE7A1;
+	/* border				: 1px solid #0A246A; */
+}
+
+/*----------------------------------------------------------------------*/
+/* PopupMenu															*/
+/*----------------------------------------------------------------------*/
+
+.JuiPopupMenu
+{
+	cursor				: default;
+	position			: absolute;
+	z-index				: 300000000;
+}
+
+.JuiPopupMenuTopLeft
+{
+	box-shadow			: 1px 0px 0px 0px #ddd, 
+						  0px -1px 0px 0px #ddd, 
+						  1px -1px 0px 0px #F9F9F9;
+}
+
+.JuiPopupMenuTopRight
+{  
+	margin-top			: 0px;
+}
+
+.JuiPopupMenuBottomLeft
+{
+	box-shadow			: none;
+}
+
+.JuiPopupMenuBottomRight
+{
+}
+
+.JuiPopupMenu .JuiPopupMenuBorderMask
+{
+	height				: 1px;
+	margin				: 1px;
+	background-color	: #F7F7F7;
+	overflow			: hidden;
+	position			: absolute;
+	display				: none;
+}
+
+.JuiPopupMenu table
+{
+	background-color: #FFFFFF;
+	border				: 1px solid #ccc !important;
+	border-collapse		: separate;
+	border-spacing		: 0;
+	width				: 100%;
+	padding				: 1px 0px;
+}
+
+.JuiPopupMenu tr
+{
+	height				: 24px;
+}
+
+.JuiPopupMenu td
+{
+	padding				: 0px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuIconCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuIconCell,
+.JuiPopupMenu .JuiPopupMenuSplitter .JuiPopupMenuIconCell
+{
+	background   : #eee;
+	box-shadow			: inset -9px 0px 8px -15px gray, 
+						  inset 11px 0px 50px -15px rgb(255, 254, 254);
+	width				: 24px;
+	padding				: 0px 0px 0px 2px;
+	overflow			: hidden;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuIconCell
+{
+	background-image	: none;
+	background-color: #FDE68B;
+	border-left: 1px solid white;
+	/* border-radius		: 3px 0px 0px 3px; */
+	padding: 1px 0px 0px 1px;
+}
+
+.JuiPopupMenu .JuiPopupMenuIcon
+{
+	height				: 16px;
+	width				: 20px;
+	background-position	: 3px 0px;
+	background-repeat	: no-repeat;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuIcon
+{
+	opacity				: 0.5;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuTextCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuTextCell
+{
+	padding-left		: 8px;
+	line-height			: 22px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuTextCell
+{
+	background-color: #FDE68B;
+	/* border-top: 1px solid white; */
+	/* border-bottom: 1px solid white; */
+	padding-top: 1px;
+	line-height			: 20px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuTextCell
+{
+	color				: #808080;
+}
+
+.JuiPopupMenu .JuiPopupMenuItem .JuiPopupMenuArrowCell,
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuArrowCell
+{
+	width				: 20px;
+	border-right		: 1px solid #FBFBFF;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemActive .JuiPopupMenuArrowCell
+{
+	background-color: #FDE68B;
+	border-right: 1px solid white;
+	/* border-radius		: 0px 3px 3px 0px; */
+}
+
+.JuiPopupMenu .JuiPopupMenuArrow
+{
+	background-image	: url(image/PopupMenuArrow.png);
+	background-position	: 7px 0px;
+	background-repeat	: no-repeat;
+	height				: 7px;
+	width				: 11px;
+}
+
+.JuiPopupMenu .JuiPopupMenuItemDisabled .JuiPopupMenuArrow
+{
+	opacity				: 0.5;
+}
+
+.JuiPopupMenu .JuiPopupMenuSplitter
+{
+	height: 3px;
+}
+
+.JuiPopupMenu .JuiPopupMenuIconSplitterCell
+{
+	/* padding-left		: 8px; */
+}
+
+.JuiPopupMenu .JuiPopupMenuSplitterLine
+{
+	background-color: #E4E4E4;
+	box-shadow			: 0 0 1px white;
+	height				: 1px;
+	width				: 100%;
+}
+
+/*----------------------------------------------------------------------*/
+/* ProgressBar															*/
+/*----------------------------------------------------------------------*/
+
+.JuiProgressBar
+{
+	width				: 180px;
+	height				: 120px;
+	border				: none;
+	position			: fixed;
+	background-color	: rgba(235, 235, 205, 1);
+	box-shadow			: 0px 0px 1px 0px #6C6C6C,
+						  0px 0px 1px 0px #ccc,
+						  inset 0px 0px 80px 30px rgba(233, 233, 233, 0.4);
+	cursor				: default;
+}
+
+.JuiProgressBarMask
+{
+	position			: fixed;
+	left				: 0px;
+	right				: 0px;
+	top					: 0px;
+	bottom				: 0px;
+	background-color	: transparent;
+	cursor				: default;
+	display				: none;
+}
+
+.JuiProgressBarTitle
+{
+	position			: absolute;
+	left				: 7px;
+	top					: 3px;
+	right				: 30px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: ellipsis;
+	color				: rgba(57, 79, 132, 1);
+	text-shadow			: 0px 0px 0px white;
+	font-weight			: bold;
+}
+
+.JuiProgressBarTitleMask
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 24px;
+	height				: 28px;
+	background-color	: transparent;
+}
+
+.JuiProgressBarClose
+{
+	position			: absolute;
+	top					: 4px;
+	right				: 5px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(image/CommandIcon.gif);
+}
+
+.JuiProgressBarClose:hover
+{
+	background-position	: 15px 0px;
+}
+
+.JuiProgressBarAnimation
+{
+	position			: absolute;
+	left				: 6px;
+	right				: 6px;
+	top					: 28px;
+	bottom				: 6px;
+	border				: none;
+	box-shadow			: 0px 0px 0px 1px rgba(187, 187, 187, 0.28);
+	background-color	: rgb(255, 255, 255);
+	background-image	: url(image/ProgressBar.gif);
+	background-repeat	: no-repeat;
+	background-position	: center center	;
+}
+
+/*----------------------------------------------------------------------*/
+/* TextBox																*/
+/*----------------------------------------------------------------------*/
+
+.JuiTextBox
+{
+	width				: 300px;
+	height				: 108px;
+}
+
+.JuiTextBox textarea
+{
+	background-color	: #FFFFFF;
+	width				: 100%;
+	height				: 100%;
+	outline				: none;
+	resize				: none;
+	line-height			: 17px;
+	margin				: 0px;
+	border				: 1px dashed transparent;
+	border-bottom		: 1px dashed silver;
+	overflow-y			: auto;
+	white-space			: pre-wrap; 	
+}
+
+.JuiTextBox textarea:hover{
+	border				: 1px solid silver;
+	transition			:none;
+}
+
+.JuiTextBox:hover textarea/*,
+.JuiTextBoxFocused textarea*/
+{
+	border				: 1px solid silver;
+	overflow-y			: auto;
+}
+
+.JuiTextBoxDisabled textarea,
+.JuiTextBoxDisabled:hover textarea
+{
+	background-color	: rgba(231, 231, 231, 0);
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	border				: none !important;
+	opacity				: 0.7;
+	box-shadow			: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+.JuiListTextBox
+{
+	width				: 100%;
+	height				: 24px;
+}
+
+.JuiListTextBox textarea
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	margin				: 0px;
+	border				: none;
+	padding				: 4px 0px 0px 3px;
+	outline				: none;
+	resize				: none;
+	line-height			: 17px;
+	background-color	: transparent;
+}
+
+.JuiListTextBoxDisabled textarea
+{
+	background-color	: #E7E7E7;
+}
+
+/*----------------------------------------------------------------------*/
+/* ToolBar																*/
+/*----------------------------------------------------------------------*/
+
+.JuiToolBar
+{
+	position			: relative;
+	width				: 100%;
+	height				: 28px;
+	padding				: 1px 0;
+	white-space			: nowrap;
+	background-image	: url(../basic/image/ToolBarBackground.png);
+	background-color	: rgba(255, 255, 255, 0.85);
+	overflow: hidden;
+}
+.ToolBarZone .JuiToolBar {
+	height				: 26px;
+	background			: none;
+	box-shadow			: none;
+	padding-top			: 3px;
+}
+.JuiToolBar > div, .JuiToolBar > div > div, .JuiToolBar > div > div > div
+{
+	vertical-align		: top;
+	white-space			: nowrap;
+}
+.JuiToolBar > div > div > div
+{
+}
+
+.JuiToolBar .JuiToolBarHead
+{
+	left				: 0px;
+	width				: 7px;
+	height				: 26px;
+	background-image	: url(image/ToolBarHead.png);
+	background-repeat	: no-repeat;
+	background-position	: 3px center;
+	display				: inline-block;
+}
+
+.ToolBarZone .JuiToolBarHead 
+{
+	position			: absolute;
+	top					: 0px;
+}
+.JuiToolBar .JuiToolBarBody
+{
+	left    			: 9px;
+	right				: 16px;
+	width				: 100%;
+	display				: inline-block;
+	padding-left		: 2px;
+	min-height			: 26px;
+}
+
+.JuiToolBar .JuiToolBarTail
+{
+	position			: absolute;
+	right				: 0px;
+	width				: 13px;
+	height				: 26px;
+	background-image	: url(image/ToolBarTail.png);
+	opacity				: 0.5;
+	display				: inline-block;
+}
+.ToolBarZone .JuiToolBarTail {
+	height				: 26px;
+	top					: 0px;
+}
+.JuiToolBar .JuiToolBarTailEnabled
+{
+	opacity				: 1;
+}
+
+.JuiToolBar .JuiToolBarTailEnabled:hover
+{
+	background-position	: 0px -26px;
+}
+
+.JuiToolBar .JuiToolBarTailDropDown,
+.JuiToolBar .JuiToolBarTailDropDown:hover
+{
+	background-position	: -1px 0px;
+	border-left			: 1px solid #2392F3;
+}
+
+.JuiToolBar .JuiToolBarLeft
+{
+    display				: inline-block;
+}
+.JuiToolBar .JuiToolBarLeft .JuiToolBarControlCell{
+	display				: inline-block;
+	float				: left;
+	padding-bottom		: 2px;
+	margin-right		: 2px;
+	margin-top			: 2px;
+	margin-left			: 0px;
+}
+.ToolBarZone .JuiToolBarLeft {
+	display				: none;
+}
+
+.JuiToolBar .JuiToolBarRight
+{
+	position			: absolute;
+	right				: 16px;
+	display				: inline-block;
+}
+
+.JuiToolBar .JuiToolBarRight .JuiToolBarControlCell{
+	display				: inline-block;
+	margin-top			: 1px;
+	margin-left			: 1px;
+}
+
+.ToolBarZone .JuiToolBarRight {
+	margin-top: -2px;
+}
+.JuiToolBar .JuiToolBarLabelCell,
+.JuiToolBar .JuiToolBarLinkCell
+{
+	height				: 24px;
+	line-height			: 22px;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	display				: inline-block;
+	float				: left;
+}
+
+/*scroll bar*/
+*::-webkit-scrollbar,
+* textarea::-webkit-scrollbar{
+    width				: 13px;
+    height				: 13px;
+    border-radius		: 2px;
+}
+*::-webkit-scrollbar-thumb,
+* textarea::-webkit-scrollbar-thumb {
+    background-color	: rgba(199, 199, 199, 1);
+    border-radius		: 4px;
+    border				: 2px solid white;
+}
+*::-webkit-scrollbar-track:window-inactive{
+	background			: transparent; 
+}
+*::-webkit-scrollbar-track:window-active{
+	background			: rgba(209, 209, 209, 0.15);
+}
+/*demo*/
+div.TopRightRegion{
+	color				: #fdfdfd;
+}

@@ -1,0 +1,111 @@
+.QsContent
+{
+	overflow			: hidden;
+}
+
+.TopZone
+{
+	position			: relative;
+	width				: 100%;
+	height				: 60px;
+	padding-left		: 186px;
+	background-image	: url(../../image/48/Edit.gif);
+	background-position	: 66px center;
+	background-repeat	: no-repeat;
+}
+
+.TopZone .TypeAndNameCell
+{
+	width				: 100%;
+	height				: 30px;
+	padding-top			: 8px;
+	white-space			: nowrap;
+	font-weight			: bold;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+}
+
+.TopZone .SlavePageNameCell
+{
+	width				: 100%;
+	height				: 30px;
+	background-repeat	: no-repeat;
+	background-position	: 2px 4px;
+	font-size			: 16px;
+	font-weight			: bolder;
+	color				: #6699CC;
+	padding				: 3px 0px 0px 22px;
+}
+
+.TopZone .HintCell
+{
+	width				: 100%;
+	height				: 28px;
+	background-color	: #fff3c2;
+	border				: 1px solid #888;
+	line-height			: 26px;
+	display				: none;
+	margin-top			: 2px;
+	position			: relative;
+	z-index				: 999999;
+}
+
+.TopZone .HintContent
+{
+	position			: absolute;
+	left				: 0px;
+	right				: 30px;
+	height				: 100%;
+	padding				: 0px 6px;
+}
+
+.TopZone .HintClose
+{
+	position			: absolute;
+	right				: 0px;
+	width				: 26px;
+	height				: 26px;
+	background-image	: url(image/HintClose.png);
+	background-position	: center center;
+	background-repeat	: no-repeat;
+}
+
+.TopZone .HintClose:hover
+{
+	opacity				: 0.5;
+}
+
+.BottomZone
+{
+	position			: absolute;
+	left				: 6px;
+	right				: 6px;
+	top					: 60px;
+	bottom				: 6px;
+	left				: 0px;
+	right				: 0px;
+	bottom				: 0px;
+}
+
+.BottomZone .LeftZone
+{
+	width				: 180px;
+	height				: 100%;
+	padding-top			: 3px;
+}
+
+.BottomZone .ContentZone
+{
+	position			: absolute;
+	left				: 186px;
+	right				: 0px;
+	top					: 0px;
+	height				: 100%;
+}
+
+.BottomZone .ContentZone > iframe
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+}

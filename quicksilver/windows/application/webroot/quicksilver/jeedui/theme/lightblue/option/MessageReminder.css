@@ -1,0 +1,97 @@
+﻿.JuiMessageReminder
+{
+	left				: auto;
+	top					: auto;
+	right				: 9px;
+	bottom				: 9px;
+	min-height			: 150px;
+	border				: 1px solid #979EA6;
+	border-radius		: 3px;
+	position			: fixed;
+	background-image	: linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -ms-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -moz-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	background-image	: -webkit-linear-gradient(top, #DCE9F9, #C7D6E9 24px, #C7D6E9 92%, #C9D9F4);
+	box-shadow			: 0px 0px 20px 5px rgba(128,128,128,0.4), 0px 0px 2px #FFFFFF inset;
+	cursor				: default;
+	/*
+	background-image	: linear-gradient(top, #F9F9E0, #EFEFD0 24px, #EFEFD0 92%, #F4F4C9);
+	background-image	: -ms-linear-gradient(top, #F9F9E0, #EFEFD0 24px, #EFEFD0 92%, #F4F4C9);
+	background-image	: -moz-linear-gradient(top, #F9F9E0, #EFEFD0 24px, #EFEFD0 92%, #F4F4C9);
+	background-image	: -webkit-linear-gradient(top, #F9F9E0, #EFEFD0 24px, #EFEFD0 92%, #F4F4C9);
+	*/
+}
+
+.JuiMessageReminderTitle
+{
+	position			: absolute;
+	left				: 7px;
+	top					: 3px;
+	right				: 30px;
+	height				: 20px;
+	line-height			: 20px;
+	white-space			: nowrap;
+	overflow			: ellipsis;
+	color				: #142D63;
+	font-weight			: bold;
+}
+
+.JuiMessageReminderClose
+{
+	position			: absolute;
+	top					: 4px;
+	right				: 5px;
+	width				: 15px;
+	height				: 15px;
+	background-image	: url(../basic/image/CommandIcon.gif);
+}
+
+.JuiMessageReminderClose:hover
+{
+	background-position	: 15px 0px;
+}
+
+.JuiMessageReminderIcon
+{
+	position			: absolute;
+	top					: 34px;
+	left				: 13px;
+	width				: 32px;
+	height				: 32px;
+	background-image	: url(image/MessageListIcon.png);
+}
+
+.JuiMessageReminderContent
+{
+	margin				: 26px 15px 8px 60px;
+	min-width			: 400px;
+	max-width			: 400px;
+	max-height			: 448px; /* 10 rows (10*36 + 11*8) */
+	overflow			: auto;
+}
+
+.JuiMessageReminderContent > div
+{
+	margin				: 8px 0px;
+	line-height			: 18px;
+	max-height			: 36px;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+}
+
+.JuiMessageReminderCountdown
+{
+	font-family			: Courier New, Terminal;
+	padding-right		: 6px;
+	color				: #FF0000;
+}
+
+.JuiMessageReminderContent .JuiLink
+{
+	white-space			: normal;
+}
+
+.JuiMessageReminderItemRead .JuiMessageReminderItemText
+{
+	color				: #999999;
+}

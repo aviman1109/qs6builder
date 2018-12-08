@@ -1,0 +1,29 @@
+.ContentRoot
+{
+	width			: 360px;
+	height			: 100%;
+	margin			: 0px auto;
+	padding			: 8px;
+}
+
+#SorterPanel
+{
+	width			: 80%;
+	height			: 100%;
+	float			: left;
+	overflow		: hidden;
+	padding-bottom	: 34px;
+}
+
+#ComboBoxPanel
+{
+	width			: 100%;
+	height			: 34px;
+}
+
+.ButtonOuterPanel
+{
+	width			: 16%;
+	height			: 100%;
+	float			: left;
+}

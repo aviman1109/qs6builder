@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Calendar</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Calendar");
+
+			var calendar;
+
+			function doData(event)
+			{
+				var start = Jui.cast.toDate(event.start);
+				var end = Jui.cast.toDate(event.end);
+				var dayCount = (end.getTime() - start.getTime()) / 86400000 + 1;
+				var maxDuration = 12 * 3600 * 1000;
+				var startMs = start.getTime();
+				var rangeMs = dayCount * 86400000;
+				var activities = [];
+				for (var k = 0; k < Math.max(1, event.userIds.length); ++k) {
+					var userId = event.userIds.length < 2 ? null : event.userIds[k];
+					for (var i = 0, n = 4 * dayCount * Jui.random.next(); i < n; ++i) {
+						var x = Jui.random.next() * rangeMs;
+						var t1 = startMs + (x - x%1800000);
+						var t2 = t1 + maxDuration * Jui.random.next();
+						activities.push({id:i, name:Jui.random.next(), userId:userId, start:new Date(t1), end:new Date(t2)});
+					}
+				}
+				calendar.load({activities:activities});
+			}
+			
+			function doActivityClick(event)
+			{
+				Jui.message.hint("doActivityClick: " + JSON.stringify(event));
+			}
+			
+			function doActivityContextMenu(event)
+			{
+				Jui.message.hint("doActivityContextMenu: " + JSON.stringify(event));
+			}
+
+			window.onload = function()
+			{
+				Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				var users = [{id:1, name:"Thomas"}, {id:2, name:"Jackson"}, {id:3, name:"George Bush"}];
+				window.calendar = Jui.option.Calendar.create({
+					target					: "ContentPane",
+					users					: users,
+					hasLeft					: false,
+					ondata					: doData,
+					onactivityclick			: doActivityClick,
+					onactivitycontextmenu	: doActivityContextMenu
+				});
+				calendar.refresh();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" id="ContentPane"></div>
+	</body>
+</html>

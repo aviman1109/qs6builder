@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>ToolBar</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			var schemas = [
+				{title: "我的查询方案", items: [
+					{value: "1", text: "IT Industry"},
+					{value: "2", text: "我关注的"}
+				]},
+				{title: "系统查询方案", items: [
+					{value: "11", text: "我的客户"},
+					{value: "12", text: "部门客户"},
+					{value: "13", text: "全部客户"}
+				]}
+			];
+			
+			var editTypes = [
+				{id: "1", text: "企业客户", icon: "demo/image/misc/A.png"},
+				{id: "2", text: "个人客户", icon: "demo/image/misc/X.png"},
+				{splitter: true},
+				{id: "3", text: "经销商"},
+				{id: "4", text: "合作伙伴", icon: "demo/image/misc/V.png"}
+			];
+
+			function init()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "top"});
+				bar.load({
+					left: [
+						{"control": "Button", "name": "add",		"text": "新增", "icon": "../image/misc/2.png", "onclick": "showName"}
+					],
+					right: [
+						{"control": "Button", "name": "add",		"text": "新增", "icon": "../image/misc/2.png", "onclick": "showName"},
+						{"control": "Button", "name": "edit",		"text": "修改", "icon": "../image/misc/3.png", "onclick": "showName"},
+						{"control": "Button", "name": "delete",	"text": "删除", "icon": "../image/misc/4.png", "onclick": "showName"},
+						{"control": "Button", "name": "refresh2",	"text": "刷新", "icon": "../image/misc/5.png", "onclick": "showName"}
+					]
+				});
+			}
+
+			function doClick(event)
+			{
+				Jui.message.hint(event.name);
+			}
+
+			function showName(event)
+			{
+				Jui.message.hint([event.id, event.name, event.text]);
+			}
+
+			function doEntityBoxBeforeDrop()
+			{
+				var groups = [{title: "最近使用", items: []}, {title: "下拉选单", items: []}];
+				for (var i = 0; i < groups.length; ++i) {
+					for (var j = 0, n = 1 + Jui.random.nextInt(10); j < n; ++j) {
+						groups[i].items.push({value: Jui.random.nextInt(1000), text: Jui.random.nextString(3, 15)});
+					}
+				}
+				this.loadItems(groups);
+			}
+			
+			function doEntityBoxSelect()
+			{
+				Jui.message.hint("弹出选择列表（entityType=" + this.getEntityType() + "）");
+				this.setValue(Jui.random.nextInt(1000), Jui.random.nextString(3, 20));
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="top" style="height:30px"></div>
+		<script>
+			var t1 = new Date().valueOf();
+			for (var i = 0; i < 5; ++i) {
+				document.writeln("<br><br>");
+				var bar = Jui.basic.ToolBar.create();
+				bar.load({
+					left: [
+						{"control": "ComboBox", 	"name": "QuerySchema",	"emptyText": "查询方案", items: schemas},
+						{"control": "Splitter"},
+						{"control": "InputBox", 	"name": "Keyword",		"emptyText": "名称/编号"},
+						{"control": "Splitter"},
+						{"control": "DateBox", 	"name": "Time",			"emptyText": "时间"},
+						{"control": "Splitter"},
+						{"control": "EntityBox", "name": "User",			"emptyText": "用户", entityType: "Qs.User", onselect: doEntityBoxSelect, onbeforedrop: doEntityBoxBeforeDrop},
+						{"control": "Splitter"},
+						{"control": "CheckBox", 	"name": "IncludeDisabled"},
+						{"control": "Label", 	"text": "勾选框"}
+					],
+					right: [
+						{"control": "ComboButton", "name": "add",		"text": "新增", "icon": "../image/misc/2.png", "onclick": "showName", items: editTypes},
+						{"control": "Button", "name": "edit",		"text": "修改", "icon": "../image/misc/3.png", "onclick": "showName"},
+						{"control": "Button", "name": "delete",	"text": "删除", "icon": "../image/misc/4.png", "onclick": "showName"},
+						{"control": "Button", "name": "refresh2",	"text": "刷新", "icon": "../image/misc/5.png", "onclick": "showName"}
+					]
+				});
+			}
+			var t2 = new Date().valueOf();
+			Jui.message.hint("Generate 5 bars: " + (t2 - t1) + "ms");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>TabStrip(Left)</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("TabStrip", "OutlookBar");
+
+			function randomFill(control)
+			{
+				for (var i = 0; i < control.size(); ++i) {
+					var buffer = [];
+					for (var j = 0, n = Jui.random.next() * (i + 1) * 15; j < n; ++j) {
+						buffer.push("line #" + (i + 1) + "." + (j + 1));
+					}
+					control.getBodyByIndex(i).innerHTML = buffer.join("<br>");
+				}
+			}
+
+			function doSwitch(event)
+			{
+				Jui.message.hint("TAB 切换：" + JSON.stringify(event));
+			}
+
+			window.onload = function()
+			{
+				var strip2 = Jui.option.TabStrip.create({target: "panel2", tabPosition: "left"});
+				strip2.load([
+					{text: "第一项",		icon: "../image/misc/5.png", element: "content2.1"},
+					{text: "二",			icon: "../image/misc/6.png", element: "content2.2"},
+					{text: "这是第三项", icon: "../image/misc/7.png"}
+				]);
+
+				var strip3 = Jui.option.TabStrip.create({target: "panel3", tabPosition: "left"});
+				strip3.load([
+					{text: "第一项", icon: "../image/misc/5.png"},
+					{text: "第二项", icon: "../image/misc/6.png"}
+				]);
+				var olbar1 = Jui.option.OutlookBar.create({showBorder: false, target: strip3.getBodyByIndex(0)});
+				olbar1.load([
+					{text: "第1.1项", icon: "../image/misc/A.png"},
+					{text: "第1.2项", icon: "../image/misc/B.png"},
+					{text: "第1.3项", icon: "../image/misc/C.png"},
+					{text: "第1.4项", icon: "../image/misc/D.png"}
+				]);
+				randomFill(olbar1);
+				var olbar2 = Jui.option.OutlookBar.create({showBorder: false, target: strip3.getBodyByIndex(1)});
+				olbar2.load([
+					{text: "第2.1项", icon: "../image/misc/E.png"},
+					{text: "第2.2项", icon: "../image/misc/F.png"},
+					{text: "第2.3项", icon: "../image/misc/G.png"}
+				]);
+				randomFill(olbar2);
+			}
+		</script>
+	</head>
+	<body style="padding:20px">
+		<div style="position:relative;width:700px;height:100%;margin:0 auto">
+			<div style="position:absolute;left:0px;width:240px;top:0px;height:20px;text-align:center">
+				第一时间加载，带事件
+			</div>
+			<div style="position:absolute;left:0px;width:220px;top:25px;bottom:0%">
+				<script>
+					var strip1 = Jui.option.TabStrip.create({tabPosition: "left", onswitch: doSwitch});
+					strip1.load([
+						{id: "first",  text: "第一项", icon: "../image/misc/5.png"},
+						{id: "second", text: "第二项", icon: "../image/misc/6.png"},
+						{id: "third",  text: "第三项", icon: "../image/misc/7.png"}
+					]);
+					randomFill(strip1);
+				</script>
+			</div>
+			<div style="position:absolute;left:230px;width:220px;top:0px;height:20px;text-align:center">
+				页面加载后加载
+			</div>
+			<div id="panel2" style="position:absolute;left:230px;width:220px;top:25px;bottom:0%">
+			</div>
+			<div id="content2.1" style="padding:3px;color:blue;display:none">this is the first tab body</div>
+			<div id="content2.2" style="padding:3px;display:none">this is the second tab body</div>
+			<div style="position:absolute;left:460px;width:220px;top:0px;height:20px;text-align:center">
+				与 OutlookBar 组合
+			</div>
+			<div id="panel3" style="position:absolute;left:460px;width:220px;top:25px;bottom:0%"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+#MainTable
+{
+	margin			: 30px auto;	
+}
+
+#MainTable > tbody > tr
+{
+	height			: 34px;
+}
+
+#MainTable > tbody > tr > td
+{
+	padding			: 0px 3px;
+}

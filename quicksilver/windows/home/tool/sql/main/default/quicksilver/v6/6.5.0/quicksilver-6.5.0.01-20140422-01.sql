@@ -1,0 +1,30 @@
+﻿--minglei--------------------------------------------------
+
+delete from TsToolItem where FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476';
+insert into TsToolItem set FId='51fab27c-4ac5-49d8-9f94-63b05bd79029', FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476', FCode='DataSource',		FName='',			FLabel='資料來源',	FType='ComboBox-SelectOnly',	FAlign='left',  FIndex=1, FWidth=120,	FDefaultEventHandler='DatabaseIndexManage.doDataSourceChange',	FIcon='',									FScale=null, FEntityUnitId=null, FDefaultValue=null,		FSubItemSource='SubItemTable', FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;
+insert into TsToolItem set FId='645e4912-9110-408c-b2bb-4feab9dd7407', FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476', FCode='Splitter',		FName='',			FLabel='',			FType='Splitter-Hidden',		FAlign='left',  FIndex=2, FWidth=0,		FDefaultEventHandler='',										FIcon='',									FScale=null, FEntityUnitId=null, FDefaultValue=null,		FSubItemSource=null,           FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType=null,         FHandlePageId=null;
+insert into TsToolItem set FId='1eb4543d-d7a0-4a11-949b-ba00b1e2bf8f', FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476', FCode='IndexType',		FName='',			FLabel='索引類型',	FType='ComboBox-SelectOnly',	FAlign='left',  FIndex=3, FWidth=120,	FDefaultEventHandler='DatabaseIndexManage.doIndexTypeChange',	FIcon='',									FScale=null, FEntityUnitId=null, FDefaultValue='Normal',	FSubItemSource='SubItemTable', FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;
+insert into TsToolItem set FId='340cf76f-bf30-46c0-b87e-80b5fb6b6baf', FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476', FCode='Recommend',		FName='系統建議',	FLabel='',			FType='Button',					FAlign='right', FIndex=1, FWidth=0,		FDefaultEventHandler='DatabaseIndexManage.doRecommend',			FIcon='quicksilver/image/16/Recommend.png',	FScale=null, FEntityUnitId=null, FDefaultValue=null,		FSubItemSource=null,           FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;
+insert into TsToolItem set FId='f5579111-9c1b-4f9b-8d05-4f4100c446b2', FPageId='f08bd6f2-8c84-44fe-b53b-ea9e2a457476', FCode='Refresh',			FName='刷新',		FLabel='',			FType='Button',					FAlign='right', FIndex=2, FWidth=0,		FDefaultEventHandler='DatabaseIndexManage.doRefresh',			FIcon='quicksilver/image/16/Refresh.gif',	FScale=null, FEntityUnitId=null, FDefaultValue=null,		FSubItemSource=null,           FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;
+
+delete from TsToolSubItem where FToolItemId='1eb4543d-d7a0-4a11-949b-ba00b1e2bf8f';
+insert into TsToolSubItem set FId='4a1dfcfe-b71f-4117-be39-56edc8a04b2a', FToolItemId='1eb4543d-d7a0-4a11-949b-ba00b1e2bf8f', FCode='Normal',	FName='普通索引',			FExpandMode='None', FIndex=1, FIcon=null,	FEventHandler=null,			FVisibleCondition=null, FEnableCondition=null, FHandleType=null, FHandlePageId=null;
+insert into TsToolSubItem set FId='1c471ee5-21e6-4796-ae1f-385140e493c1', FToolItemId='1eb4543d-d7a0-4a11-949b-ba00b1e2bf8f', FCode='Key',		FName='主鍵/唯一鍵索引',	FExpandMode='None', FIndex=2, FIcon=null,	FEventHandler=null,			FVisibleCondition=null, FEnableCondition=null, FHandleType=null, FHandlePageId=null;
+insert into TsToolSubItem set FId='5b843901-ca3a-4a52-a30d-b24c60df22c1', FToolItemId='1eb4543d-d7a0-4a11-949b-ba00b1e2bf8f', FCode='All',		FName='全部索引',			FExpandMode='None', FIndex=3, FIcon=null,	FEventHandler=null,			FVisibleCondition=null, FEnableCondition=null, FHandleType=null, FHandlePageId=null;
+
+delete from TsPage where FId='8aa9d7a3-45b9-437a-91cd-e455936c21b8';
+insert into TsPage set FId='8aa9d7a3-45b9-437a-91cd-e455936c21b8', FName='資料庫索引建議',		FTitle='索引建議',			FCode='Qs.Misc.DatabaseIndexRecommend',	FType='Other', FIcon=null,												FUrl='quicksilver/page/misc/DatabaseIndexRecommend.jsp',	FActionMethodName=null,										FLoadHandler=null, FRelationId=null, FUnitId=null, FMasterUnitId='00000000-0000-0000-0001-000000002007', FIsSlavePage=0, FPlatform='Computer', FIndex=null, FDialogWidth=null, FDialogHeight=null, FDescription=null, FVisible=1;
+
+delete from TsToolItem where FPageId='8aa9d7a3-45b9-437a-91cd-e455936c21b8';
+insert into TsToolItem set FId='8615cae7-8a07-4b1a-b72a-153bfdac27b7', FPageId='8aa9d7a3-45b9-437a-91cd-e455936c21b8', FCode='CreateAll',		FName='全部創建',	FLabel='',			FType='Button',					FAlign='right', FIndex=1, FWidth=0,		FDefaultEventHandler='DatabaseIndexRecommend.doCreateAll',		FIcon='quicksilver/image/16/BatchAdd.gif',	FScale=null, FEntityUnitId=null, FDefaultValue=null,		FSubItemSource=null,           FDictionaryId=null, FSubItemRoutine=null, FVisibleCondition=null, FEnableCondition=null, FHandleType='JavaScript', FHandlePageId=null;
+
+delete from TsTextResource where FId='b3619168-32d0-4365-8857-a90d41a6116d';
+delete from TsTextResource where FId='5a3e7759-fbda-499b-b40d-12082fb907b7';
+delete from TsTextResource where FId='9747b1d9-64cb-474b-aa41-4ac87c4a6157';
+delete from TsTextResource where FId='1d64dde0-cc2b-4307-9e19-6694f94a7179';
+insert into TsTextResource set FId='b3619168-32d0-4365-8857-a90d41a6116d', FCode='T.Qs.Misc.DatabaseIndexManage.NoData',				FValue='沒有符合條件的索引。';
+insert into TsTextResource set FId='5a3e7759-fbda-499b-b40d-12082fb907b7', FCode='T.Qs.Misc.DatabaseIndexRecommend.CreateAllConfirm',	FValue='您是否要為資料庫“${0}”創建所有系統建議的索引？';
+insert into TsTextResource set FId='9747b1d9-64cb-474b-aa41-4ac87c4a6157', FCode='T.Qs.Misc.DatabaseIndexRecommend.Information',		FValue='以下是系統根據欄位及排序設置，建議在資料來源“${0}”中創建的索引：';
+insert into TsTextResource set FId='1d64dde0-cc2b-4307-9e19-6694f94a7179', FCode='T.Qs.Misc.DatabaseIndexRecommend.NoData',				FValue='系統建議的索引均已存在。如需創建其它索引，請通過 SQL 指令創建。';
+
+update TsTimer set FName='系統日清整', FRoutine='com.jeedsoft.quicksilver.handler.timer.SystemDailyRoutine' where FRoutine='com.jeedsoft.quicksilver.handler.timer.SystemCleanRoutine';

@@ -1,0 +1,1 @@
+../jre/bin/java -cp "lib/*" com.jeedsoft.quicksilver.toolset.tool.migrate.ImportCmd $@

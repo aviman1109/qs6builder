@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>PopupMenu</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function doMenuClick(event)
+			{
+				Jui.message.hint(JSON.stringify(event));
+			}
+
+			var menu = Jui.basic.PopupMenu.create({onclick: doMenuClick, items: [
+				{text: "test1"},
+				{text: "菜单测试一", icon: "demo/image/misc/5.png"},
+				{text: "菜单测试二", icon: "demo/image/misc/A.png"},
+				{text: "菜单测试三", icon: "demo/image/misc/C.png"},
+				{text: "菜单测试四", icon: "demo/image/misc/E.png", children: [
+					{text: "SubItem1"}, {text: "SubItem2"}, {text: "SubItem3"}, {text: "SubItem4"}
+				]},
+				{text: "菜单测试五", icon: "demo/image/misc/F.png", children: [
+					{text: "SubItem1"}, {text: "SubItem2"}, {text: "SubItem3"}, {text: "SubItem4"}, 
+					{text: "SubItem5"}, {text: "SubItem6"}, {text: "SubItem7"}, {text: "SubItem8"}, 
+					{text: "SubItem9"}, {text: "SubItem10"}, {text: "SubItem11"}, {text: "SubItem12"}
+				]},
+				{text: "菜单测试-禁用1", icon: "demo/image/misc/6.png", disabled: true},
+				{text: "菜单测试-禁用2", icon: "demo/image/misc/9.png", disabled: true, children: [{text: "SubItem1"}, {text: "SubItem2"}]},
+				{splitter: true},
+				{text: "菜单测试-一个比较长的行一个比较长的行一个比较长的行"}
+			]});
+
+			Jui.event.attach(document, "contextmenu", function() {
+				Jui.event.preventDefault();
+				menu.show();
+			});
+		</script>
+	</head>
+	<body style="overflow:auto" class="Padding">
+		Please click the right mouse button.
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+		<br>a
+	</body>
+</html>

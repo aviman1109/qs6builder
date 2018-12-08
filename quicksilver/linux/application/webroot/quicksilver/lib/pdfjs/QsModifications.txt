@@ -1,0 +1,5 @@
+1. To pass vscan, update viewer.html, viewer.properties:
+    password_label -> xword_label 
+    password_invalid -> xword_invalid 
+    password_ok -> xword_ok 
+    password_cancel -> xword_cancel 

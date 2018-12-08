@@ -1,0 +1,6 @@
+var LocalApiGroupForm =
+{
+	doLoad: function()
+	{
+	}
+};

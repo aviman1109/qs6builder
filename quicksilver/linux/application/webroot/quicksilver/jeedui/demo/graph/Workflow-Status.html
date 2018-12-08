@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Workflow</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.graph.Workflow");
+			
+			var data =
+			{
+				"nodes":[
+					{"code":"N1","type":"Start","x":3,"y":6,"text":"开始", status:"Finished"},
+					{"code":"N2","type":"Manual","x":7,"y":6,"text":"直接主管", status:"Finished"},
+					{"code":"N3","type":"Manual","x":11,"y":6,"text":"间接主管", status:"Finished"},
+					{"code":"N4","type":"Manual","x":15,"y":4,"text":"HR备案", status:"Finished"},
+					{"code":"N5","type":"Manual","x":15,"y":8,"text":"财务备案", status:"Running"},
+					{"code":"N6","type":"Manual","x":19,"y":6,"text":"CEO签字"},
+					{"code":"N7","type":"End","x":23,"y":6,"text":"结束"},
+					{"code":"N8","type":"Manual","x":7,"y":2,"text":"返回修改"}
+				],
+				"lines":[
+					{"code":"L12","from":"N1","to":"N2","text":"提交", isDefault:true, status:"Pass"},
+					{"code":"L23","from":"N2","to":"N3","text":"同意", status:"Pass"},
+					{"code":"L34","from":"N3","to":"N4","text":"同意", status:"Pass"},
+					{"code":"L45","from":"N3","to":"N5","text":"同意", status:"Pass"},
+					{"code":"L26","from":"N4","to":"N6","text":"", isDefault:true, status:"Ready"},
+					{"code":"L26","from":"N5","to":"N6","text":"", isDefault:true},
+					{"code":"L26","from":"N6","to":"N7","text":"", isDefault:true},
+					{"code":"L62","from":"N8","to":"N2","text":"提交", isDefault:true},
+					{"code":"L32","from":"N2","to":"N8","text":"打回","routes":[{x:170,y:144}]},
+					{"code":"L43","from":"N3","to":"N8","text":"打回"}
+				]
+			};
+
+			function doLoad()
+			{
+				Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				var workflow = Jui.graph.Workflow.create({target:"ContentPane"});
+				workflow.load(data);
+			}
+		</script>
+	</head>
+	<body onload="doLoad()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" id="ContentPane"></div>
+	</body>
+</html>

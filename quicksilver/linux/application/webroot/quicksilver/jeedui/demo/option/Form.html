@@ -1,0 +1,445 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Form</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Form");
+			
+			var form = null;
+
+			var educationRecordGridHeader = [
+				{title:"开始日期", 		key:"start",	type:"Date"},
+				{title:"结束日期", 		key:"end",		type:"Date"},
+				{title:"城市",			key:"city",		type:"String"},
+				{title:"公司/组织",		key:"company",	type:"String"},
+				{title:"公司规模（人）",	key:"size",		type:"Integer"},
+				{title:"是否专职", 		key:"fullTime",	type:"Boolean"}
+			];
+			var educationRecordGridData = [
+				{start:"1973-09-21", end:"1979-07-05", city:"洛杉矶",	company:"洛杉矶公立中学",		size:3000,	fullTime:true},
+				{start:"1979-09-01", end:"1981-06-22", city:"洛杉矶",	company:"洛杉矶西方学院",		size:10000,	fullTime:true},
+				{start:"1981-06-23", end:"1983-07-03", city:"纽约",		company:"哥伦比亚大学",			size:30000,	fullTime:true}
+			];
+			
+			var workRecordListTitle = [
+				{title:"开始日期",			key:"start",	type:"Date"},
+				{title:"结束日期",			key:"end",		type:"Date"},
+				{title:"城市",				key:"city",		type:"String"},
+				{title:"公司/组织",			key:"company",	type:"String"},
+				{title:"公司规模（人）",	key:"size",		type:"Integer"},
+				{title:"是否专职", 			key:"fullTime",	type:"Boolean"}
+			];
+			var workRecordListData = [
+				{start:"1983-10-12", end:"1985-01-29", city:"纽约",		company:"国际商务公司",			size:5000,	fullTime:true},
+				{start:"1985-02-19", end:"1988-05-11", city:"芝加哥",	company:"未知",					size:80,	fullTime:false},
+				{start:"1988-06-21", end:"1991-07-05", city:"剑桥",		company:"哈佛大学法学院",		size:3500,	fullTime:true},
+				{start:"1990-03-01", end:"1991-02-28", city:"剑桥",		company:"《哈佛法律评论》杂志",	size:400,	fullTime:false},
+				{start:"1991-08-10", end:"1993-09-09", city:"芝加哥",	company:"迈勒·B·G律师事务所",	size:200,	fullTime:false},
+				{start:"1993-09-15", end:"2004-05-15", city:"芝加哥",	company:"芝加哥大学",			size:28000,	fullTime:true},
+				{start:"2004-06-03", end:"2008-12-01", city:"华盛顿",	company:"联邦参议院",			size:1200,	fullTime:true},
+				{start:"2009-01-20", end:null, 		   city:"华盛顿",	company:"白宫",					size:600,	fullTime:true}
+			];
+			var workRecordListTitle = {
+				keyField: "id",
+				fields: [
+					{
+						"control": "DateBox",
+						"title": "开始日期",
+						"width": 100,
+						"name": "start",
+						"format": "yyyy-MM-dd",
+						required: true
+					},
+					{
+						"control": "DateBox",
+						"title": "结束日期",
+						"width": 100,
+						"name": "end",
+						"format": "yyyy-MM-dd"
+					},
+					{
+						"control": "InputBox",
+						"title": "城市",
+						"width": 100,
+						"name": "city",
+						"type": "string"
+					},
+					{
+						"control": "InputBox",
+						"title": "公司/组织",
+						"width": 100,
+						"name": "company",
+						"type": "string"
+					},
+					{
+						"control": "InputBox",
+						"title": "公司规模（人）",
+						"align": "right",
+						"width": 100,
+						"name": "size",
+						"type": "int"
+					},
+					{
+						"control": "CheckBox",
+						"title": "是否专职",
+						"width": 100,
+						"name": "fullTime"
+					}
+				]
+			};
+			var workRecordButtons = [
+				{text:"新增", name:"Add", onclick:doListAdd},
+				{text:"删除", name:"Delete", onclick:doListDelete},
+				{text:"上升", name:"MoveUp", onclick:doListMoveUp},
+				{text:"下降", name:"MoveDown", onclick:doListMoveDown},
+				{text:"置顶", name:"MoveTop", onclick:doListMoveTop},
+				{text:"置底", name:"MoveBottom", onclick:doListMoveBottom}
+			];
+
+			var titleTabGroup = [
+					{group1:"基本资料", group2:"基本信息", "name":"FName", "title":"姓名", "control":"InputBox", "type":"string", "color":"blue", "required":true},
+					{group1:"基本资料", group2:"基本信息", "name":"FGender", "title":"性别", "control":"ComboBox", "color":"orange", "selectOnly":true, "required":true, "items":[
+						{"value":1, "text":"男"},
+						{"value":2, "text":"女"}
+					]},
+					{group1:"基本资料", group2:"基本信息", "name":"FDepartmentId", "title":"负责部门", "control":"EntityBox", "color":"red", "entityType":"group", "textField":"FDepartmentId$", disabled:false, "required":true},
+					{group1:"基本资料", group2:"基本信息", "name":"FBirthday", "title":"生日", "control":"DateBox", "format":"yyyy-MM-dd"},
+					{group1:"基本资料", group2:"基本信息", "name":"FCreateTime", "title":"创建时间", "control":"DateBox", "format":"yyyy-MM-dd HH:mm", "disabled":false},
+					{group1:"基本资料", group2:"基本信息", "name":"FDisabled", "title":"禁用", "control":"CheckBox"},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FDuty", "title":"职务", "control":"InputBox", "type":"string", "required":true},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FFrom", "title":"籍贯", "control":"InputBox", "type":"string", "required":true},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FIdentityNo", "title":"身份证号", "control":"InputBox", "type":"string", "required":true},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FEducation", "title":"学历", "control":"ComboBox", "items":[
+						{"value":"小学"},
+						{"value":"初中"},
+						{"value":"高中"},
+						{"value":"大学"},
+						{"value":"硕士"},
+						{"value":"博士"}
+					]},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FSatisfaction", "title":"满意度", "control":"InputBox", "type":"percent"},
+					{group1:"基本资料", group2:"人力资源信息", "name":"FSalary", "title":"月薪", "control":"InputBox", "type":"double"},
+					{group1:"其它资料", "name":"FOfficePhone", "title":"商务电话", "control":"InputBox", "type":"phone", "required":true},
+					{group1:"其它资料", group2:"联系信息", "name":"FOfficeFax", "title":"商务传真", "type":"phone", "control":"InputBox"},
+					{group1:"其它资料", group2:"联系信息", "name":"FMobile", "title":"手机", "type":"phone", "control":"InputBox"},
+					{group1:"其它资料", group2:"联系信息", "name":"FFacebookId", "title":"Facebook ID", "control":"InputBox", "type":"string"},
+					{group1:"其它资料", group2:"联系信息", "name":"FOfficeAddress", "title":"办公地址", "control":"InputBox"},
+					{group1:"其它资料", group2:"其它信息", "name":"FHobby", "title":"个人爱好", "control":"InputBox"},
+					{group1:"其它资料", group2:"其它信息", "name":"FHeight", "title":"身高", "control":"InputBox", "type":"int"},
+					{group1:"其它资料", group2:"其它信息", "name":"FWeight", "title":"体重", "control":"InputBox", "type":"int"},
+					{group1:"其它资料", group2:"其它信息", "name":"FNote", "title":"备注", "control":"TextBox", "colSpan":2, "rowSpan":3},
+					{group1:"其它资料", group2:"其它信息", "name":"FMarried", "title":"婚否", "control":"CheckBox"},
+					{group1:"其它资料", group2:"其它信息", "name":"FCouple", "title":"配偶", "control":"InputBox"},
+					{group1:"其它资料", group2:"其它信息", "name":"FHasChildren", "title":"是否有子女", "control":"CheckBox"},
+					{group1:"其它资料", group2:"其它信息", "name":"FHomepage", "title":"主页", "control":"InputBox", "type":"url", "colSpan":2},
+					{group1:"其它资料", group2:"其它信息", "name":"FEmail", "title":"电子信箱", "control":"InputBox", "type":"email"}
+			];
+			
+			var titleBlockGroup = [
+				{group2:"基本信息", "name":"FName", "title":"姓名", "control":"InputBox", "type":"string", "color":"blue", "required":true},
+				{group2:"基本信息", "name":"FGender", "title":"性别", "control":"ComboBox", "color":"orange", "selectOnly":true, "required":true, "items":[
+					{"value":1, "text":"男"},
+					{"value":2, "text":"女"}
+				]},
+				{group2:"基本信息", "name":"FDepartmentId", "title":"负责部门", "control":"EntityBox", "color":"red", "entityType":"group", "textField":"FDepartmentId$", disabled:true, "required":true},
+				{group2:"基本信息", "name":"FUserId", "title":"负责人", "control":"EntityBox", hasMagnifier:false, "entityType":"user", "textField":"FUserId$", "required":true},
+				{group2:"基本信息", "name":"FCreaterId", "title":"创建人", "control":"EntityBox", hasMagnifier:true, hasDropdown:false, "entityType":"user", "textField":"FCreaterName", "required":true},
+				{group2:"基本信息", "name":"FTracers", "title":"跟踪人", "control":"MultiEntityBox", "entityType":"user", textField:"FTracers$"},
+				{group2:"基本信息", "name":"FBirthday", "title":"生日", "control":"DateBox", "format":"yyyy-MM-dd"},
+				{group2:"基本信息", "name":"FCreateTime", "title":"创建时间", "control":"DateBox", "format":"yyyy-MM-dd HH:mm", "disabled":true},
+				{group2:"基本信息", "name":"FDisabled", "title":"禁用", "control":"CheckBox"},
+				{group2:"人力资源信息", "name":"FLabel", "title":"标签", "control":"Label", rowSpan:0, colSpan:2, html:"标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试标签测试"},
+				{group2:"人力资源信息", "name":"FDuty", "title":"职务", "control":"InputBox", "type":"string", "required":true},
+				{group2:"人力资源信息", "name":"FFrom", "title":"籍贯", "control":"InputBox", "type":"string", "required":true},
+				{group2:"人力资源信息", "name":"FIdentityNo", "title":"身份证号", "control":"InputBox", "type":"string", "required":true},
+				{group2:"人力资源信息", "name":"FEducation", "title":"学历", "control":"ComboBox", "items":[
+					{"value":"小学"},
+					{"value":"初中"},
+					{"value":"高中"},
+					{"value":"大学"},
+					{"value":"硕士"},
+					{"value":"博士"}
+				]},
+				{group2:"人力资源信息", "name":"FSatisfaction", "title":"满意度", "control":"InputBox", "type":"percent"},
+				{group2:"人力资源信息", "name":"FSalary", "title":"月薪", "control":"InputBox", "type":"double"},
+				{group2:"联系信息", "name":"FOfficePhone", "title":"商务电话", "control":"InputBox", "type":"phone", "required":true},
+				{group2:"联系信息", "name":"FOfficeFax", "title":"商务传真", "control":"InputBox", "type":"phone"},
+				{group2:"联系信息", "name":"FDial", "title":"拨号", "control":"Button", text:"拨打电话", onclick:"doDial"},
+				{group2:"联系信息", "name":"FMobile", "title":"手机", "control":"InputBox", "type":"phone"},
+				{group2:"联系信息", "name":"FFacebookId", "title":"Facebook ID", "control":"InputBox", "type":"string"},
+				{group2:"联系信息", "name":"FOfficeAddress", "title":"办公地址", "control":"InputBox"},
+				{group2:"教育经历", "name":"FEducationRecord", "title":"教育经历", "control":"Grid", colSpan:0, header:educationRecordGridHeader, pageSize:5},
+				{group2:"工作经历", "name":"FWorkRecord", "title":"工作经历", "control":"List", colSpan:0, rowSpan:6, titleJson:workRecordListTitle, buttons:workRecordButtons},
+				{group2:"other", "name":"FHobby", "title":"个人爱好", "control":"InputBox"},
+				{group2:"other", "name":"FHeight", "title":"身高", "control":"InputBox", "type":"int"},
+				{group2:"other", "name":"FWeight", "title":"体重", "control":"InputBox", "type":"int"},
+				{group2:"other", "name":"FNote", "title":"备注", "control":"TextBox", "colSpan":2, "rowSpan":3},
+				{group2:"other", "name":"FMarried", "title":"婚否", "control":"CheckBox"},
+				{group2:"other", "name":"FCouple", "title":"配偶", "control":"InputBox"},
+				{group2:"other", "name":"FHasChildren", "title":"是否有子女", "control":"CheckBox"},
+				{group2:"other", "name":"FHomepage", "title":"主页", "control":"InputBox", "type":"url", "colSpan":2},
+				{group2:"other", "name":"FEmail", "title":"电子信箱", "control":"InputBox", "type":"email"}
+			];
+
+			var titleNoGroup = [
+				{"name":"FName", "title":"姓名", "control":"InputBox", "type":"string", "color":"blue", "required":true},
+				{"name":"FGender", "title":"性别", "control":"ComboBox", "color":"orange", "selectOnly":true, "required":true, "items":[
+					{"value":1, "text":"男"},
+					{"value":2, "text":"女"}
+				]},
+				{"name":"FDepartmentId", "title":"负责部门", "control":"EntityBox", "color":"red", "entityType":"group", "textField":"FDepartmentId$", disabled:true, "required":true},
+				{"name":"FBirthday", "title":"生日", "control":"DateBox", "format":"yyyy-MM-dd"},
+				{"name":"FCreateTime", "title":"创建时间", "control":"DateBox", "format":"yyyy-MM-dd HH:mm", "disabled":true},
+				{"name":"FDisabled", "title":"禁用", "control":"CheckBox"},
+				{"name":"FDuty", "title":"职务", "control":"InputBox", "type":"string", "required":true},
+				{"name":"FFrom", "title":"籍贯", "control":"InputBox", "type":"string", "required":true},
+				{"name":"FIdentityNo", "title":"身份证号", "control":"InputBox", "type":"string", "required":true},
+				{"name":"FEducation", "title":"学历", "control":"ComboBox", "items":[
+					{"value":"小学"},
+					{"value":"初中"},
+					{"value":"高中"},
+					{"value":"大学"},
+					{"value":"硕士"},
+					{"value":"博士"}
+				]},
+				{"name":"FSatisfaction", "title":"满意度满意度满意度", "control":"InputBox", "type":"percent"},
+				{"name":"FSalary", "title":"月薪", "control":"InputBox", "type":"double"},
+				{"name":"FOfficePhone", "title":"商务电话", "control":"InputBox", "required":true, "type":"phone"},
+				{"name":"FOfficeFax", "title":"商务传真", "control":"InputBox", "type":"phone"},
+				{"name":"FMobile", "title":"手机", "control":"InputBox", "type":"phone"},
+				{"name":"FFacebookId", "title":"Facebook ID", "control":"InputBox", "type":"string"},
+				{"name":"FOfficeAddress", "title":"办公地址", "control":"InputBox"},
+				{"name":"FHobby", "title":"个人爱好", "control":"InputBox"},
+				{"name":"FHeight", "title":"身高", "control":"InputBox", "type":"int"},
+				{"name":"FWeight", "title":"体重", "control":"InputBox", "type":"int"},
+				{"name":"FNote", "title":"备注备注备注备注备注", "control":"TextBox", "colSpan":2, "rowSpan":3},
+				{"name":"FCouple", "title":"配偶", "control":"InputBox"},
+				{"name":"FMarried", "title":"婚否", "control":"CheckBox"},
+				{"name":"FHasChildren", "title":"是否有子女", "control":"CheckBox"},
+				{"name":"FHomepage", "title":"主页", "control":"InputBox", "type":"url", "colSpan":2},
+				{"name":"FEmail", "title":"电子信箱", "control":"InputBox", "type":"email"}
+			];
+
+			var title;
+			if (/tab/.test(window.location.href)) {
+				title = titleTabGroup;
+			}
+			else if (/block/.test(window.location.href)) {
+				title = titleBlockGroup;
+			}
+			else {
+				title = titleNoGroup;
+			}
+			
+			var data = {
+				"FId"				: 44,
+				"FName"				: "贝拉克·奥巴马",
+				"FGender"			: 1,
+				"FDepartmentId"		: "131",
+				"FUserId"			: "5712",
+				"FBirthday"			: "1961-08-04",
+				"FCreateTime"		: "2008-03-01 14:20:34",
+				"FCreaterId" 		: "123",		
+				"FCreaterName" 		: "Thomas",		
+				
+				"FDuty"				: "总统",
+				"FFrom"				: "夏威夷",
+				"FIdentityNo"		: "739346196901230261",
+				"FEducation"		: "大学",
+				"FSatisfaction"		: 63.526,
+				"FSalary"			: "32767",
+
+				"FOfficePhone"		: "088-88888888",
+				"FOfficeFax"		: "066-66666666",
+				"FOfficeAddress"	: "华盛顿特区宾夕法尼亚大道1600号",
+				"FMobile"			: "13888888888",
+				"FFacebookId"		: "obama@whitehouse.gov",
+
+				"FHobby"			: "篮球、高尔夫球",
+				"FHeight"			: "185",
+				"FWeight"			: "75",
+				"FNote"				: "第44任美国总统\n美国第一位黑人总统",
+				"FMarried"			: true,
+				"FHasChildren"		: true,
+				"FCouple"			: "米歇尔·奥巴马",
+				"FHomepage"			: "http://www.whitehouse.gov/obama",
+				"FEmail"			: "obama@whitehouse.gov",
+				
+				"FEducationRecord"	: educationRecordGridData,
+				"FWorkRecord"		: workRecordListData,
+
+				"FDepartmentId$"	: "大客户部",
+				"FUserId$"			: "Andrew"
+			};
+
+			var newData = {
+				"FId"				: 43,
+				"FName"				: "比尔·克林顿",
+				"FGender"			: 1,
+				"FDepartmentId"		: "131",
+				"FUserId"			: "5712",
+				"FBirthday"			: "1961-08-04",
+				"FCreateTime"		: "2008-03-01 14:20:34",
+
+				"FDuty"				: "总统",
+				"FFrom"				: "阿肯色州",
+				"FIdentityNo"		: "43423454354555555",
+				"FEducation"		: "大学",
+				"FSatisfaction"		: 74.1,
+				"FSalary"			: "35982",
+
+				"FOfficePhone"		: "088-88888888",
+				"FOfficeFax"		: "066-66666666",
+				"FOfficeAddress"	: "华盛顿特区宾夕法尼亚大道1600号",
+				"FMobile"			: "13888888888",
+				"FFacebookId"				: "clinton@whitehouse.gov",
+
+				"FHobby"			: "篮球、高尔夫球",
+				"FHeight"			: "185",
+				"FWeight"			: "75",
+				"FNote"				: "第43任美国总统\n第一位战后出生的总统",
+				"FMarried"			: true,
+				"FHasChildren"		: true,
+				"FCouple"			: "希拉里·克林顿",
+				"FHomepage"			: "http://www.whitehouse.gov/clinton",
+				"FEmail"			: "clinton@whitehouse.gov",
+
+				"FDepartmentId$"	: "大客户部",
+				"FUserId$"			: "Andrew"
+			};
+			
+			function doGetData()
+			{
+				var data = form.getData();
+				Jui.message.hint(JSON.stringify(data));
+				console.log(data);
+			}
+			
+			function doLoadData()
+			{
+				form.loadData(newData);
+			}
+
+			function doLoad()
+			{
+				form.load({title:title, data:newData});
+			}
+			
+			function doValidate()
+			{
+				if (form.validate()) {
+					Jui.message.hint("校验通过。");
+				}
+			}
+			
+			function doClear()
+			{
+				form.clear();
+			}
+			
+			function doSetFocus()
+			{
+				form.setFieldFocus("FHobby");
+			}
+
+			function doSetFieldFocus()
+			{
+				form.setFieldFocus("FHobby");
+			}
+
+			function doSetFieldRequired()
+			{
+				form.setFieldRequired("FHobby", !form.isFieldRequired("FHobby"));
+			}
+
+			function doSetFieldDisabled()
+			{
+				form.setFieldDisabled("FHobby", !form.isFieldDisabled("FHobby"));
+			}
+
+			function doSetFieldVisible()
+			{
+				form.setFieldVisible("FDuty", !form.isFieldVisible("FDuty"));
+			}
+			
+			function doDial()
+			{
+				Jui.message.hint("you clicked dial button");
+			}
+			
+			function doListAdd()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.appendDataAndEdit({});
+			}
+
+			function doListDelete()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.deleteSelectedRows();
+			}
+
+			function doListMoveUp()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.moveUp();
+				console.log(this.getForm().getListButton(fieldName, "MoveUp"));
+			}
+
+			function doListMoveDown()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.moveDown();
+			}
+
+			function doListMoveTop()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.moveTop();
+			}
+
+			function doListMoveBottom()
+			{
+				var button = this;
+				var fieldName = this.getArgValue("fieldName");
+				var list = this.getForm().getControl(fieldName);
+				list.moveBottom();
+			}
+
+			window.onload = function()
+			{
+				var bar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				bar.load({right:[
+					{control:"Button",	text:"getData",				icon:"../image/misc/3.png",	onclick:"doGetData"},
+					{control:"Button",	text:"loadData",			icon:"../image/misc/A.png",	onclick:"doLoadData"},
+					{control:"Button",	text:"load",				icon:"../image/misc/B.png",	onclick:"doLoad"},
+					{control:"Button",	text:"validate",			icon:"../image/misc/4.png",	onclick:"doValidate"},
+					{control:"Button",	text:"clear",				icon:"../image/misc/5.png",	onclick:"doClear"},
+					{control:"Button",	text:"setFieldFocus",		icon:"../image/misc/6.png",	onclick:"doSetFieldFocus"},
+					{control:"Button",	text:"setFieldRequired",	icon:"../image/misc/7.png",	onclick:"doSetFieldRequired"},
+					{control:"Button",	text:"setFieldDisabled",	icon:"../image/misc/8.png",	onclick:"doSetFieldDisabled"},
+					{control:"Button",	text:"setFieldVisible",		icon:"../image/misc/9.png",	onclick:"doSetFieldVisible"}
+				]});
+				form = Jui.option.Form.create({target:"ContentPane"});
+				form.load({title:title, data:data});
+			}
+		</script>
+	</head>
+	<body class="Padding">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" id="ContentPane"></div>
+	</body>
+</html>

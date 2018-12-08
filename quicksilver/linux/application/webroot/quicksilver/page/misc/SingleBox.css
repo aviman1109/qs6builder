@@ -1,0 +1,22 @@
+.QsContent
+{
+	padding		: 20px 20px 54px 20px;
+	overflow	: hidden;
+}
+
+.QsContent > div:first-child
+{
+	width		: 100%;
+	height		: 40px;
+}
+
+.QsContent > div:first-child > div
+{
+	text-align	: left;
+}
+
+.QsContent > div:last-child
+{
+	width		: 100%;
+	height		: 100%;
+}

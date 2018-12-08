@@ -1,0 +1,22 @@
+﻿alter table TsField add FWebServiceListQueryField varchar(50);
+alter table TsField add FWebServiceItemQueryField varchar(50);
+alter table TsField add FWebServiceCreateField varchar(50);
+
+delete from TsField where FId='eaf119cd-4133-4e05-a0c1-43dfa52f5f10';
+delete from TsField where FId='05fef0cc-a4f3-402a-b118-54979e021757';
+delete from TsField where FId='cc670727-9fe1-4bc8-b841-7886ee100413';
+insert into TsField set FId='eaf119cd-4133-4e05-a0c1-43dfa52f5f10', FUnitId='00000000-0000-0000-0001-000000000002', FName='FWebServiceListQueryField', FTitle='列表查询字段',  FType='InputBox-Text',       FSize=50,  FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null,                                   FEntityUnitId=null,                                   FSupportLocalText=0,    FLocalTextField=null, FSelectListFilterSql='',   FSourceType='local', FJoinField=null, FSourceField=null, FSource='',   FColSpan=1, FRowSpan=1, FIsNewRow=0,    FListWidth=100, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValue=null,      FValidation=null, FRelationCapacity=null;
+insert into TsField set FId='05fef0cc-a4f3-402a-b118-54979e021757', FUnitId='00000000-0000-0000-0001-000000000002', FName='FWebServiceItemQueryField', FTitle='单项查询字段',  FType='InputBox-Text',       FSize=50,  FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null,                                   FEntityUnitId=null,                                   FSupportLocalText=0,    FLocalTextField=null, FSelectListFilterSql='',   FSourceType='local', FJoinField=null, FSourceField=null, FSource='',   FColSpan=1, FRowSpan=1, FIsNewRow=0,    FListWidth=100, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValue=null,      FValidation=null, FRelationCapacity=null;
+insert into TsField set FId='cc670727-9fe1-4bc8-b841-7886ee100413', FUnitId='00000000-0000-0000-0001-000000000002', FName='FWebServiceCreateField',    FTitle='新增/修改字段', FType='InputBox-Text',       FSize=50,  FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null,                                   FEntityUnitId=null,                                   FSupportLocalText=0,    FLocalTextField=null, FSelectListFilterSql='',   FSourceType='local', FJoinField=null, FSourceField=null, FSource='',   FColSpan=1, FRowSpan=1, FIsNewRow=0,    FListWidth=100, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValue=null,      FValidation=null, FRelationCapacity=null;
+
+update TsField set FWebServiceListQueryField = FWebServiceFieldName where FWebServiceListQueryField is null and FWebServiceFieldName is not null;
+update TsField set FWebServiceItemQueryField = FWebServiceFieldName where FWebServiceItemQueryField is null and FWebServiceFieldName is not null;
+update TsField set FWebServiceCreateField = FWebServiceFieldName where FWebServiceCreateField is null and FWebServiceFieldName is not null;
+
+java setFormFields('75138d58-0c96-43ed-962e-39b66f28a295', '基本信息', '83da7ed2-8248-4c2e-b788-7976e5b8b070', null, 'FTitle,FName,FType,FUnitId,FVisible,FRequired,FReadOnly,FQueryable,FDefaultValue,FHint,FValidation', '类型信息', '04234553-4f26-47c1-967d-389b0bdbce6f', '83da7ed2-8248-4c2e-b788-7976e5b8b070', 'FSize,FScale,FRelationTable,FRelationCapacity,FDictionaryId,FSupportI18n', '实体信息', '7d4ddff1-5d65-41e0-b04a-89d60da24f8b', '83da7ed2-8248-4c2e-b788-7976e5b8b070', 'FEntityUnitId,FSupportLocalText,FLocalTextField,FSelectListFilterSql', '来源信息', '2d1d1604-9001-461c-b19e-02d044a5d842', '83da7ed2-8248-4c2e-b788-7976e5b8b070', 'FSourceType,FJoinField,FSourceField,FSource', '表单信息', '0c76fb5e-5e71-425e-97b0-38af40b7f88e', '83da7ed2-8248-4c2e-b788-7976e5b8b070', 'FRowSpan,FColSpan,FLabelColor,FIsNewRow', '列表信息', '7544efe3-6515-42b9-a3bb-2840a68cdb5d', '83da7ed2-8248-4c2e-b788-7976e5b8b070', 'FListWidth,FListAlign', '其它信息', '8ad6c087-edf2-4925-bf19-ad76b8c6d030', null, 'FCustomData', 'WebService', 'fc0bc310-f065-4423-8312-c33f6ec0418b', '8ad6c087-edf2-4925-bf19-ad76b8c6d030', 'FWebServiceListQueryField,FWebServiceItemQueryField,FWebServiceCreateField');
+
+alter table TsField drop column FWebServiceFieldName;
+delete from TsField where FId='7f6632bc-514a-4000-a967-ceeb27b22829';
+delete from TsFormField where FFieldName='FWebServiceFieldName';
+delete from TsEditField where FFieldName='FWebServiceFieldName';
+delete from TsListField where FFieldName='FWebServiceFieldName';

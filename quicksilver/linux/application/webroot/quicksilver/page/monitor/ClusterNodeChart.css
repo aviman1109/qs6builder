@@ -1,0 +1,16 @@
+.QsContent
+{
+	padding			: 10px 10px 0px 10px;
+}
+
+.QsContent > div
+{
+	width			: 100%;
+	height			: 220px;
+	margin-bottom	: 10px;
+}
+
+.PanelWithBottomLegend
+{
+	height			: 250px;
+}

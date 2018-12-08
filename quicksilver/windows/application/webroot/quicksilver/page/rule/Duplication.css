@@ -1,0 +1,14 @@
+#Message
+{
+	width		: 100%;
+	height		: 32px;
+	padding		: 8px;
+}
+
+#ListPanel
+{
+	position	: absolute;
+	width		: 100%;
+	top			: 32px;
+	bottom		: 0px;
+}

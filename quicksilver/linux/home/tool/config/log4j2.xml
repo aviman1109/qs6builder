@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout charset="UTF-8" pattern="[%d{HH:mm:ss}] %m%n"/>
+		</Console>
+		<File name="File" fileName="${sys:fileName}.log" append="false">
+			<PatternLayout charset="UTF-8" pattern="[%d{HH:mm:ss}] %m%n"/>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.mchange" level="warn"/>
+		<Logger name="com.jeedsoft.common.advanced" level="warn"/>
+		<Root level="info">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="File"/>
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,22 @@
+#MainTable
+{
+	margin			: 10px auto;
+	border-collapse	: collapse;	
+}
+
+#MainTable > tbody > tr
+{
+	height			: 34px;
+}
+
+#MainTable > tbody > tr:first-child
+{
+	text-align		: center;
+	font-weight		: bold;
+}
+
+#MainTable > tbody > tr > td
+{
+	padding			: 0px 6px;
+	border			: 1px solid #C7C7C7;
+}

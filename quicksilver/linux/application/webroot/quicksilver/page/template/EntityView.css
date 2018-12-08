@@ -1,0 +1,171 @@
+body
+{
+	padding			: 8px 12px 12px 12px;
+}
+
+.EntityViewTextHighlight
+{
+	background-color	: #FFFF00;
+	display				: inline;	
+}
+
+.Block
+{
+	padding-top		: 3px;
+	padding-bottom	: 3px;
+	width			: 100%;
+}
+
+.BlockWithSolidLine
+{
+	border-top		: 1px solid #B3C5D1;
+}
+
+.BlockWithDottedLine
+{
+	border-top		: 1px dotted #B3C5D1;
+}
+
+.BlockHeader
+{
+	width			: 100%;
+	height			: 30px;
+	border-collapse	: collapse;
+	border-spacing	: 0px;
+}
+
+.BlockHeader table
+{
+	border-collapse	: collapse;
+	border-spacing	: 0px;
+}
+
+.BlockHeader td
+{
+	padding			: 0px;
+}
+
+.BlockHeader .BlockFlag
+{
+	padding			: 4px 3px 0px 0px;
+}
+
+.BlockHeader .BlockTitle
+{
+	font-weight		: bold;
+	font-size		: 14px;
+	word-break		: break-all;
+}
+
+.BlockContent
+{
+	padding-left	: 20px;
+	width			: 100%;
+	margin-top		: 2px;
+}
+
+.BlockContentNoPadding
+{
+	padding			: 0px;
+}
+
+.BlockContentMessage
+{
+	width				: 100%;
+	height				: 24px;
+	padding-top			: 3px;
+	text-align			: center;	
+}
+
+.SimpleFieldGroup
+{
+	font-size		: 14px;
+	width			: 100%;
+	overflow		: hidden;
+}
+
+.SimpleFieldGroupItem
+{
+	padding-right	: 12px;
+	display			: inline;
+	line-height		: 26px;
+}
+
+.SimpleFieldGroupItemTitle
+{
+	padding-right	: 3px;
+}
+
+.SimpleFieldGroupItemValue
+{
+	font-weight		: bold;
+	white-space		: nowrap;
+}
+
+.TableFieldGroupTable
+{
+	font-size		: 14px;
+	line-height		: 22px;
+	width			: 100%;
+	table-layout	: fixed;
+	border-collapse	: collapse;
+	border-spacing	: 0px;
+}
+
+.TableFieldGroupTable td
+{
+	padding			: 4px 0px;
+}
+
+.TableFieldGroupTable .TableFieldGroupSplitter
+{
+	width			: 15px;	
+}
+
+.TableFieldGroupTable .FieldBox
+{
+	width			: 100%;
+}
+
+.HtmlContent
+{
+	line-height		: 22px;
+	border			: 1px solid #C3DAF9;
+	background-color: #FFFFFF;
+	padding			: 3px;
+	white-space		: normal !important;
+	word-break		: break-all !important;
+}
+
+.HtmlContent p
+{
+	margin			: 3px 0px;	
+}
+
+.ListTable
+{
+	width				: 100%;
+	border-collapse		: separate;
+	border-spacing		: 1px;
+	background-color	: #FFFFFF;
+}
+
+.ListTable tr
+{
+	height				: 22px;
+}
+
+.ListTable tr:first-child
+{
+	background-color	: #DDDDFF;
+}
+
+.ListTable tr:nth-child(2n+3)
+{
+	background-color	: #EEEEEE;
+}
+
+.ListTable td
+{
+	padding 			: 0px 2px;
+}

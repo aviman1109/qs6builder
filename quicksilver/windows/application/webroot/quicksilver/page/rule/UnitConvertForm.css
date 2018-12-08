@@ -1,0 +1,25 @@
+.ButtonRow
+{
+	text-align	: right;
+	position	: relative;
+	padding		: 8px;
+}
+
+.ButtonRow > div:first-child
+{
+	position	: absolute;
+	height		: 26px;
+	line-height	: 26px;
+}
+
+.ButtonRow > div:last-child
+{
+	display		: inline-block;
+	text-align	: right;
+}
+
+#MappingListCell
+{
+	height		: 340px;
+	padding		: 0px 8px;
+}

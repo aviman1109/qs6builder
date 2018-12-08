@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Form</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script src="ListData.js"></script>
+		<script>
+			Jui.use("Jui.option.List");
+			
+			var list;
+
+			var tags = [
+				{"value":1, "text":"南方"},
+				{"value":2, "text":"黑人"},
+				{"value":3, "text":"德裔"},
+				{"value":4, "text":"军人"},
+				{"value":5, "text":"富豪"}
+			];
+
+			var listJson = {
+				"title":{"keyField":"FId", "nameField":"FName", "fields":[
+					{"name":"FSerial", "title":"第几任", "control":"InputBox", "type":"int", "required":true, "align":"center", width:60},
+					{"name":"FName", "title":"姓名", "control":"InputBox", "type":"string", width:150, "color":"blue", "required":true},
+					{"name":"FGender", "title":"性别", "control":"ComboBox", "width":50, "align":"center", "selectOnly":true, "required":true, "items":[
+						{"value":1, "text":"男"},
+						{"value":2, "text":"女"}
+					]},
+					{"name":"FBirthDate", "title":"生日", "control":"DateBox", "width":90, "align":"center", "format":"yyyy-MM-dd", "color":"green"},
+					{"name":"FDeathDate", "title":"卒日", "control":"DateBox", "width":90, "align":"center", "format":"yyyy-MM-dd", "color":"green"},
+					{"name":"FLive", "title":"是否在世是否在世是否在世", "control":"CheckBox", "width":80, "align":"center"},
+					{"name":"FPartyId", "title":"党派", "control":"EntityBox", "entityType":"party", "textField":"FPartyId$", "required":true, "readonly":true},
+					{"name":"FSecretaryIds", "title":"国务卿", "control":"MultiEntityBox", width:150, "entityType":"contact", "textField":"FSecretaryNames"},
+					{"name":"FFrom", "title":"出生地", "control":"InputBox", "type":"string", "required":true},
+					{"name":"FPercentage", "title":"大选得票率", "control":"InputBox", "type":"percent", scale:1, "align":"right"},
+					{"name":"FHomepage", "title":"相关网页", "control":"InputBox", "type":"url"},
+					{"name":"FTag", "title":"标签", "control":"MultiCheckComboBox", "type":"percent", "items":tags},
+					{"name":"FNote", "title":"备注", "control":"TextBox"}
+				]},
+				"data":{"pageCount":3, "pageIndex":1, "records":records}
+			};
+
+			for (var i = 0; i < listJson.title.fields.length; ++i) {
+				//listJson.title.fields[i].disabled = true;
+			}
+			
+			function doListDoubleClick(event)
+			{
+				Jui.message.hint("double click: event=" + JSON.stringify(event));
+			}
+			
+			function doListClick(event)
+			{
+				Jui.message.hint("click: event=" + JSON.stringify(event));
+			}
+			
+			function doDeleteRowsByIndex()
+			{
+				list.deleteRowsByIndex(3);
+			}
+			
+			function doDeleteRowsByKey()
+			{
+				list.deleteRowsByKey(40);
+			}
+			
+			function doAppendData()
+			{
+				list.appendData(records[records.length - 1]);
+			}
+			
+			function doAppendDataAndEdit()
+			{
+				list.appendDataAndEdit(records[records.length - 1]);
+			}
+						
+			function doGetData()
+			{
+				Jui.message.hint("data :" + list.getData());
+			}
+						
+			function doLoadData()
+			{
+				list.load(listJson);
+			}
+						
+			function doClear()
+			{
+				list.clear();
+			}
+
+			window.onload = function()
+			{
+				var bar = Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				bar.load({right:[
+					{control:"ComboButton",	text:"delete", icon:"../image/misc/C.png", dropOnly:true, items:[
+						{text:"deleteRowsByIndex", 	onclick:doDeleteRowsByIndex},
+						{text:"deleteRowsByKey", 	onclick:doDeleteRowsByKey},
+						{text:"deleteSelectedRows",	onclick:"list.deleteSelectedRows()"}
+					]},
+					{control:"ComboButton",	text:"append/update", icon:"../image/misc/D.png", dropOnly:true, items:[
+						{text:"appendData", 		onclick:doAppendData},
+						{text:"appendDataAndEdit",	onclick:doAppendDataAndEdit}
+					]},
+					{control:"ComboButton",	text:"move", icon:"../image/misc/E.png", dropOnly:true, items:[
+						{text:"moveTop", 	onclick:"list.moveTop()"},
+						{text:"moveUp", 	onclick:"list.moveUp()"},
+						{text:"moveDown", 	onclick:"list.moveDown()"},
+						{text:"moveBottom",	onclick:"list.moveBottom()"}
+					]},
+					{control:"Button",		text:"getData",				icon:"../image/misc/3.png",	onclick:"doGetData"},
+					{control:"Button",		text:"loadData",			icon:"../image/misc/A.png",	onclick:"doLoadData"},
+					{control:"Button",		text:"clear",				icon:"../image/misc/5.png",	onclick:"doClear"}
+				]});
+
+				window.list = Jui.option.List.create({
+					target			: "ContentPane",
+					border			: "top",
+					editable		: true,
+					onclick			: doListClick,
+					ondoubleclick	: doListDoubleClick
+				});
+				list.load(listJson);
+			}
+		</script>
+	</head>
+	<body class=Padding>
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" id="ContentPane"></div>
+	</body>
+</html>

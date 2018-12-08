@@ -1,0 +1,53 @@
+.QsContent
+{
+	overflow			: hidden;
+	padding				: 10px;
+}
+
+.SystemName
+{
+	font-size			: 16px;
+	text-align			: center;
+	padding-top			: 3px;
+	height				: 30px;
+}
+
+.PropertyTable
+{
+	width				: 100%;
+	border-collapse		: collapse;
+}
+
+.PropertyTable tr
+{
+	height				: 26px;
+}
+
+.PropertyTable td
+{
+	border				: 1px solid #C0C0C0;
+	background-color	: #FFFFFF;
+	padding				: 3px;
+}
+
+.PropertyTable td:first-child
+{
+	width				: 140px;
+}
+
+.Copyright
+{
+	color				: #808080;
+	padding-top			: 8px;
+}
+
+.PoweredBy
+{
+	width				: 100%;
+	height				: 120px;
+	overflow			: hidden;
+	margin-top			: 18px;
+	background-image	: url(../../image/other/PoweredByQuicksilver.png);
+	background-position	: center 0px;
+	background-repeat	: no-repeat;
+}

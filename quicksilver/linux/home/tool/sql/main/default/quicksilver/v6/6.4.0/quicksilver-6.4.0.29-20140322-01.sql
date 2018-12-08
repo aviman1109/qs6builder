@@ -1,0 +1,7 @@
+alter table TsDictionaryItem add column FEnabled bit default 1;
+update TsDictionaryItem set FEnabled=1 where FEnabled is null;
+insert into TsField set FId='dfe91eb3-448c-45c8-9721-fe4dad82ec16', FUnitId='00000000-0000-0000-0001-000000000016', FName='FEnabled',      FTitle='是否啟用', FType='CheckBox',         FSize=null, FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null, FEntityUnitId=null,                                   FSupportLocalText=0,    FSupportI18n=0,    FLocalTextField=null, FRelationTable=null, FRelationCapacity=null, FRelationId=null, FSelectListConstantFilterSql='',   FSelectListVariableFilterSql='',   FSourceType='local', FJoinField=null, FSourceField=null, FSource='',   FColSpan=1, FRowSpan=1, FIsNewRow=0,    FListWidth=100, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValue=1, FHint=null, FValidation=null, FWebServiceListQueryField=null, FWebServiceItemQueryField=null, FWebServiceCreateField=null, FCustomData='';
+java setListFields('24ac8764-6f6d-404d-a356-aed03057e821', 'FEnabled,FValue,FText,FParentValue');
+
+delete from TsDictionaryItem where FDictionaryId='4f2dbf3f-ee88-4704-a766-d788e46cf850' and FValue='View';
+insert into TsDictionaryItem set FId='45dfc41c-a043-4a17-be9c-5cdfe686b6ee', FDictionaryId='4f2dbf3f-ee88-4704-a766-d788e46cf850',FValue='View',FText='查看',FIndex=1;

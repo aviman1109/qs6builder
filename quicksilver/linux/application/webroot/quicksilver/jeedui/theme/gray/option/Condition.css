@@ -1,0 +1,148 @@
+﻿.JuiCondition
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+}
+
+.JuiConditionNode
+{
+	width				: 100%;
+}
+
+.JuiConditionRow
+{
+	padding-left		: 21px;
+	background-image	: url("image/ConditionNodeLine.png");
+	background-repeat	: no-repeat;
+	display				: block;
+	width				: 100%;
+	height				: 30px;
+	overflow			: hidden;
+}
+
+.JuiConditionRow[lineType=HorzLine]
+{
+	background-position : 7px 0px;
+}
+
+.JuiConditionRow[lineType=UpLLine]
+{
+	background-position : 7px -31px;
+}
+
+.JuiConditionRow[lineType=DownLLine]
+{
+	background-position : 7px -62px;
+}
+
+.JuiConditionRow[lineType=TLine]
+{
+	background-position : 7px -93px;
+}
+
+.JuiConditionBar
+{
+	background-color	: #D8E8FF;
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border-left			: 1px solid #FFFFFF;
+	border-top			: 1px solid #FFFFFF;
+	border-right		: 1px solid #ACA899;
+	border-bottom		: 1px solid #ACA899;
+	cursor				: default;
+	white-space			: nowrap;
+	padding				: 1px 0px 0px 7px;
+	line-height			: 26px;
+}
+
+.JuiConditionRow[type=Add] .JuiConditionBar
+{
+	color				: #8080A0;
+}
+
+.JuiCondition[Disabled] .JuiConditionRow[type=Add] .JuiConditionBar
+{
+	color				: #808080;
+}
+
+.JuiConditionRow[Current] .JuiConditionBar
+{
+	/* padding-left		: 2px; */
+}
+
+.JuiConditionRow[Selected] .JuiConditionBar
+{
+	background-color	: #FFE69E;
+}
+
+.JuiConditionBar > div
+{
+	display				: inline-block;
+	overflow			: hidden;
+	margin-right		: 5px;
+}
+
+.JuiConditionFieldCell
+{
+	width				: 150px;
+	text-overflow		: ellipsis;
+}
+
+.JuiConditionOperatorCell
+{
+	width				: 136px;
+}
+
+.JuiConditionValueCell
+{
+}
+
+.JuiConditionEdit > div
+{
+	display				: inline-block;
+	overflow			: hidden;
+	padding-right		: 2px;
+	margin-right		: 5px;
+}
+
+.JuiConditionEditFieldCell
+{
+	width				: 150px;
+}
+
+.JuiConditionEditOperatorCell
+{
+	width				: 136px;
+}
+
+.JuiConditionEditValueCell
+{
+	width				: 150px;
+}
+
+.JuiConditionEditDateCell
+{
+	width				: 90px;
+}
+
+.JuiConditionNodeBlock
+{
+	padding-left		: 24px;
+	width				: 100%;
+}
+
+.JuiConditionTopNodeBlock
+{
+	width				: 100%;
+}
+
+.JuiConditionNodeBlockWithLine
+{
+	padding-left		: 24px;
+	width				: 100%;
+	background-image	: url(image/ConditionVertLine.png);
+	background-repeat	: repeat-y;
+	background-position	: 7px 0px;
+}

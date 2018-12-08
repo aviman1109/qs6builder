@@ -1,0 +1,17 @@
+#TabContainer
+{
+	position	: absolute;
+	left		: 0px;
+	right		: 64px;
+	top			: 0px;
+	height		: 100%;
+}
+
+.ButtonContainerOuter
+{
+	position	: absolute;
+	right		: 0px;
+	width		: 70px;
+	top			: 0px;
+	height		: 100%;
+}

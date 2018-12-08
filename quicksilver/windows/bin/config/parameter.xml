@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+	<!-- basic -->
+	<parameter key="Ets.Install.AppName">quicksilver</parameter>
+	<parameter key="Ets.Install.ProductName">Quicksilver</parameter>
+	<parameter key="Ets.Install.ServiceName">Quicksilver</parameter>
+
+	<!-- ports -->
+	<parameter key="Ets.Install.Port.Http">12821</parameter>
+	<parameter key="Ets.Install.Port.Https">12822</parameter>
+	<parameter key="Ets.Install.Port.Ajp">12823</parameter>
+	<parameter key="Ets.Install.Port.Shutdown">12824</parameter> <!-- tomcat only -->
+
+	<!-- misc -->
+	<parameter key="Ets.Install.ServerType">Tomcat</parameter>
+	<parameter key="Ets.Install.ReportSolution">BIRT</parameter>
+	<parameter key="Ets.Install.BindSolr">true</parameter>
+</parameters>

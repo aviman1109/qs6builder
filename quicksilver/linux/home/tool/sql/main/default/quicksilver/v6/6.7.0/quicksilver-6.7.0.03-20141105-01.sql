@@ -1,0 +1,5 @@
+﻿--lei.lei TsNotice create FEmailBcc
+alter table TsNotice add FEmailBcc varchar(200);
+insert into TsField set FId='46114fd7-e513-4a81-8b7f-e86fab02bdf1', FUnitId='00000000-0000-0000-0001-000000000023', FName='FEmailBcc',             FTitle='密送',         FType='InputBox-Text', FSize=200,    FVisible=1, FFilterByRole=0, FRequired=0, FReadOnly=0, FQueryable=1, FDictionaryId=null, FEntityUnitId=null,                                   FSupportLocalText=0,    FSupportI18n=0,    FLocalTextField=null, FRelationTable=null, FRelationCapacity=null, FRelationId=null, FSelectListConstantFilterSql='',   FSelectListVariableFilterSql='',   FSourceType='local', FJoinField=null, FSourceField=null, FSource='',   FColSpan=0, FRowSpan=1, FIsNewRow=0,    FListWidth=150, FListAlign='default', FScale=null, FLabelColor=null, FDefaultValueType=null,          FDefaultValue=null, FHint='',   FValidation=null, FWebServiceListQueryField=null, FWebServiceItemQueryField=null, FWebServiceCreateField=null, FCustomData='',   FAlwaysBringDataToClient=0;
+update TsPage set FDialogHeight=650 where FId='13d1887d-54e9-4de2-b2b4-09dade5fafb0';
+

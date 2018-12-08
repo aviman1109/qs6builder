@@ -1,0 +1,68 @@
+﻿.JuiMarquee
+{
+	width				: 450px;
+	height: 35px;
+	position			: relative;
+	overflow			: hidden;
+}
+
+.JuiMarquee .JuiMarqueeContent
+{
+	width				: 100%;
+	height				: 100%;
+	position			: absolute;
+}
+
+.JuiMarquee .JuiMarqueeContent > div
+{
+	width				: 100%;
+	overflow			: hidden;
+	white-space			: nowrap;
+}
+
+.JuiMarquee > marquee
+{
+	white-space			: nowrap;
+}
+
+.JuiMarquee > marquee > div
+{
+	display				: inline-block;
+	margin-right		: 16px;
+}
+
+.JuiMarquee > marquee > div:last-child
+{
+	margin-right		: 0px;
+}
+
+.JuiMarquee .JuiMarqueeText
+{
+	cursor				: pointer;
+	background-image	: url(image/MarqueeBallGreen.png);
+	background-repeat	: no-repeat;
+	background-position	: 0px center;
+	padding-left		: 19px;
+	line-height			: 24px;
+	height				: 24px;
+}
+
+.JuiMarquee .JuiMarqueeText[ball="red"]
+{
+	background-image	: url(image/MarqueeBallRed.png);
+}
+
+.JuiMarquee .JuiMarqueeText[ball="blue"]
+{
+	background-image	: url(image/MarqueeBallBlue.png);
+}
+
+.JuiMarquee .JuiMarqueeText[ball="green"]
+{
+	background-image	: url(image/MarqueeBallGreen.png);
+}
+
+.JuiMarquee .JuiMarqueeText[ball="yellow"]
+{
+	background-image	: url(image/MarqueeBallYellow.png);
+}

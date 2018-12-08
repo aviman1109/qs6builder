@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>MultiCheckBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			var languages = [
+				"Java", "C", "C++", "C#", "Objective-C",
+				"PHP", "Python", "Ruby", "JavaScript"
+			];
+			
+			var genders = [
+				{value: "M", text: "Male"},
+				{value: "F", text: "Female"}
+			];
+			
+			var databases = [
+				{value: 1, text: "Oracle"},
+				{value: 2, text: "SQL Server"},
+				{value: 3, text: "DB2"},
+				{value: 4, text: "Sybase"},
+				{value: 5, text: "MySQL"},
+				{value: 6, text: "PostgreSQL"},
+				{value: 7, text: "H2"},
+				{value: 8, text: "HSQLDB"},
+				{value: 9, text: "Derby"}
+			];
+			
+			var sports = [
+				{value: 1, text: "足球"},
+				{value: 2, text: "篮球"},
+				{value: 3, text: "排球"},
+				{value: 4, text: "乒乓球"},
+				{value: 5, text: "乒乓球"},
+				{value: 6, text: "棒球"},
+				{value: 7, text: "橄榄球"},
+				{value: 8, text: "台球"},
+				{value: 9, text: "短跑"},
+				{value: 10, text: "长跑"},
+				{value: 11, text: "跳高"},
+				{value: 12, text: "跳远"},
+				{value: 13, text: "自行车"},
+				{value: 14, text: "滑雪"},
+				{value: 15, text: "赛艇"},
+				{value: 16, text: "拳击"},
+				{value: 17, text: "铅球"},
+				{value: 18, text: "铁饼"},
+				{value: 19, text: "沙滩排球"},
+				{value: 20, text: "游泳"}
+			];
+			
+			var answers = [
+				{value: "A", text: "A.可以有2个以上package语句"},
+				{value: "B", text: "B.可以有2个以上import语句"},
+				{value: "C", text: "C.可以有2个以上public类"},
+				{value: "D", text: "D.只能有1个类定义 "}
+			];
+
+			function init()
+			{
+				Jui.basic.MultiCheckBox.create({target: "normal", items: languages, onchange: doChange, value: "Java,JavaScript"});
+				Jui.basic.MultiCheckBox.create({target: "fixed-width", items: databases, onchange: doChange, itemWidth: 100, value: "1,2,3,6,7,8,9"});
+				Jui.basic.MultiCheckBox.create({target: "solo-line", oneItemPerLine: true, items: answers, onchange: doChange});
+				Jui.basic.MultiCheckBox.create({target: "readonly", items: sports, disabled: true, value: "5,7,12,18"});
+				Jui.basic.MultiCheckBox.create({target: "radio", multiSelect: false, items: languages, onchange: doChange, value: "JavaScript"});
+				Jui.basic.MultiCheckBox.create({target: "radio-fixed-width", multiSelect: false, items: databases, onchange: doChange, itemWidth: 100, value: "2"});
+				Jui.basic.MultiCheckBox.create({target: "radio-solo-line", multiSelect: false, oneItemPerLine: true, items: answers, onchange: doChange, value: "B"});
+				Jui.basic.MultiCheckBox.create({target: "radio-readonly", multiSelect: false, items: sports, disabled: true, value: "16"});
+			}
+
+			function doChange()
+			{
+				Jui.message.hint(this.getValue());
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable" style="width:100%">
+			<col width="150"><col>
+			<tr><td>多选</td><td id="normal"></td></tr>
+			<tr><td>多选 - 定宽</td><td id="fixed-width"></td></tr>
+			<tr><td>多选 - 每项一行</td><td id="solo-line"></td></tr>
+			<tr><td>多选 - 只读</td><td id="readonly"></td></tr>
+			<tr><td>单选</td><td id="radio"></td></tr>
+			<tr><td>单选 - 定宽</td><td id="radio-fixed-width"></td></tr>
+			<tr><td>单选 - 每项一行</td><td id="radio-solo-line"></td></tr>
+			<tr><td>单选 - 只读</td><td id="radio-readonly"></td></tr>
+		</table>
+	</body>
+</html>

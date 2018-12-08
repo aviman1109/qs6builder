@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Button</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				Jui.basic.Button.create({target: "normal", text: '显示当前时间', icon: '../image/misc/A.png', onclick: "showTime"});
+				Jui.basic.Button.create({target: "fixed-width", text: 'Fixed', icon: '../image/misc/A.png', style: "width: 100px"});
+				Jui.basic.Button.create({target: "icon-only", icon: '../image/misc/A.png'});
+				Jui.basic.Button.create({target: "text-only", text: '只有文字'});
+				Jui.basic.Button.create({target: "disabled", text: '禁用', icon: '../image/misc/A.png', disabled: true});
+				Jui.basic.Button.create({target: "tool-button", face: "ToolButton", text: '显示当前时间', icon: '../image/misc/A.png', onclick: "showTime"});
+				Jui.basic.Button.create({target: "tool-button-icon-only", face: "ToolButton", icon: '../image/misc/A.png'});
+				Jui.basic.Button.create({target: "tool-button-text-only", face: "ToolButton", text: '只有文字'});
+				Jui.basic.Button.create({target: "tool-button-disabled", text: '禁用', icon: '../image/misc/A.png', disabled: true, face: "ToolButton"});
+
+				//高效批量创建
+				var t1 = new Date().valueOf();
+				var args = {text: '批量创建', icon: '../image/misc/D.png', onclick: doButtonclick};
+				var buffer = ["<table id=batch class=DemoTable><col width=100><col width=100><col width=100>"];
+				for (var i = 0; i < 6; ++i) {
+					buffer.push("<tr>");
+					buffer.push(  "<td>" + Jui.basic.Button.getHtml(args) + "</td>");
+					buffer.push(  "<td>" + Jui.basic.Button.getHtml(args) + "</td>");
+					buffer.push(  "<td>" + Jui.basic.Button.getHtml(args) + "</td>");
+					buffer.push("</tr>");
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				var cells = document.getElementById("batch").getElementsByTagName("TD");
+				for (var i = 0; i < cells.length; ++i) {
+					var temp = {id: i, name: Jui.random.next()};
+					Jui.basic.Button.initialize(cells[i].firstChild, Jui.object.merge(temp, args));
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function showTime()
+			{
+				Jui.message.hint(new Date());
+			}
+
+			function doButtonclick(event)
+			{
+				Jui.message.hint("id:" + event.id + ", name:" + event.name);
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable">
+			<col width="100"><col>
+			<tr><td>普通按钮</td><td id="normal"></td></tr>
+			<tr><td>固定宽度</td><td id="fixed-width"></td></tr>
+			<tr><td>只有图片</td><td id="icon-only"></td></tr>
+			<tr><td>只有文字</td><td id="text-only"></td></tr>
+			<tr><td>禁用</td><td id="disabled"></td></tr>
+			<tr><td>工具条按钮</td><td id="tool-button"></td></tr>
+			<tr><td>只有图片</td><td id="tool-button-icon-only"></td></tr>
+			<tr><td>只有文字</td><td id="tool-button-text-only"></td></tr>
+			<tr><td>工具禁用</td><td id="tool-button-disabled"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

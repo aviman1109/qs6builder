@@ -1,0 +1,42 @@
+.QsContent
+{
+	padding			: 20px 20px 0px 20px;
+}
+
+.FileZone > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+}
+
+.FileZone > div:nth-child(2)
+{
+	width			: 360px;
+}
+
+.OptionZone > div:first-child
+{
+	margin-top		: 6px;	
+	height			: 26px;
+	line-height		: 26px;
+}
+
+.OptionZone > div:last-child
+{
+	padding-left	: 56px;
+}
+
+#UploadZone,s
+#ImportZone
+{
+	height			: 26px;
+	line-height		: 26px;
+	white-space		: nowrap;
+}
+
+#UploadZone > div,
+#ImportZone > div,
+#ImportZone > div > div
+{
+	display			: inline-block;
+}

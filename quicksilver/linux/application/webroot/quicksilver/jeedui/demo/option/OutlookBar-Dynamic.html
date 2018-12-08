@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>OutlookBar</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.OutlookBar");
+
+			var bar;
+
+			function randomFill(bar)
+			{
+				for (var i = 0; i < bar.size(); ++i) {
+					var buffer = [];
+					for (var j = 0, n = Jui.random.next() * (i + 1) * 10; j < n; ++j) {
+						buffer.push("line #" + (i + 1) + "." + (j + 1));
+					}
+					bar.getBodyByIndex(i).innerHTML = buffer.join("<br>");
+				}
+			}
+			
+			function doSwitch(event)
+			{
+				Jui.message.hint("点击信息：" + JSON.stringify(event));
+			}
+			
+			function doAdd()
+			{
+				var item = {id:idAdd.getValue(), text:textAdd.getValue(), icon:"../image/misc/D.png"};
+				if (Jui.string.isEmpty(item.id) || Jui.string.isEmpty(item.text)) {
+					Jui.message.hint("请填写 ID 和文字。");
+					return;
+				}
+				try {
+					bar.add(item, true);
+				}
+				catch (e) {
+					Jui.message.hint(e.message);
+				}
+			}
+			
+			function doUpdate()
+			{
+				var item = {id:idUpdate.getValue(), text:textUpdate.getValue(), icon:"../image/misc/E.png"};
+				if (Jui.string.isEmpty(item.id) || Jui.string.isEmpty(item.text)) {
+					Jui.message.hint("请填写 ID 和文字。");
+					return;
+				}
+				bar.update(item);
+			}
+			
+			function doUpdateStyle()
+			{
+				var id = idUpdateStyle.getValue();
+				if (Jui.string.isEmpty(id)) {
+					Jui.message.hint("请填写 ID。");
+					return;
+				}
+				var cell = bar.getTextCell(id);
+				if (cell != null) {
+					cell.style.fontWeight = "bold";
+					cell.style.color = "#0000FF";
+				}
+			}
+			
+			function doCustomize()
+			{
+				var id = idCustomize.getValue();
+				var text = textCustomize.getValue();
+				if (Jui.string.isEmpty(id) || Jui.string.isEmpty(text)) {
+					Jui.message.hint("请填写 ID 和内容。");
+					return;
+				}
+				var cell = bar.getCustomCell(id);
+				if (cell != null) {
+					cell.style.width = "80px";
+					Jui.dom.setInnerText(cell, text);
+				}
+			}
+
+			function doRemove()
+			{
+				var id = idAdd.getValue();
+				if (Jui.string.isEmpty(id)) {
+					Jui.message.hint("请填写 ID。");
+					return;
+				}
+				bar.remove(id);
+			}
+			
+			window.onload = function()
+			{
+				bar = Jui.option.OutlookBar.create({
+					target		: "BarContainer",
+					onswitch	: doSwitch,
+					style		: "width:300px;position:relative;margin:0 auto"
+				});
+				bar.load([
+					{id:"first",  text:"第一项（文字超出了 OutlookBar 的宽度）", icon:"../image/misc/5.png"},
+					{id:"second", text:"第二项", icon:"../image/misc/6.png"}
+				]);
+				randomFill(bar);
+			}
+		</script>
+	</head>
+	<body style="position:relative;border:20px solid transparent">
+		<table style="margin:0 auto;">
+			<tr style="height:32px">
+				<td>ID</td>
+				<td><script>var idAdd = Jui.basic.InputBox.create({style:"width:150px", value:"123"});</script></td>
+				<td style="padding-left:6px">文字</td>
+				<td><script>var textAdd = Jui.basic.InputBox.create({style:"width:150px", value:"新项"});</script></td>
+				<td style="padding-left:6px"><script>Jui.basic.Button.create({text:"新增", onclick:doAdd});</script></td>
+			</tr>
+			<tr style="height:32px">
+				<td>ID</td>
+				<td><script>var idUpdate = Jui.basic.InputBox.create({style:"width:150px", value:"123"});</script></td>
+				<td style="padding-left:6px">文字</td>
+				<td><script>var textUpdate = Jui.basic.InputBox.create({style:"width:150px", value:"第三项"});</script></td>
+				<td style="padding-left:6px"><script>Jui.basic.Button.create({text:"更新", onclick:doUpdate});</script></td>
+			</tr>
+			<tr style="height:32px">
+				<td>ID</td>
+				<td><script>var idUpdateStyle = Jui.basic.InputBox.create({style:"width:150px", value:"123"});</script></td>
+				<td></td>
+				<td></td>
+				<td style="padding-left:6px"><script>Jui.basic.Button.create({text:"改变样式", onclick:doUpdateStyle});</script></td>
+			</tr>
+			<tr style="height:32px">
+				<td>ID</td>
+				<td><script>var idCustomize = Jui.basic.InputBox.create({style:"width:150px", value:"123"});</script></td>
+				<td style="padding-left:6px">内容</td>
+				<td><script>var textCustomize = Jui.basic.InputBox.create({style:"width:150px", value:"自定义文字"});</script></td>
+				<td style="padding-left:6px"><script>Jui.basic.Button.create({text:"自定义区域", onclick:doCustomize});</script></td>
+			</tr>
+			<tr style="height:32px">
+				<td>ID</td>
+				<td><script>var idRemove = Jui.basic.InputBox.create({style:"width:150px", value:"123"});</script></td>
+				<td></td>
+				<td></td>
+				<td style="padding-left:6px"><script>Jui.basic.Button.create({text:"删除", onclick:doRemove});</script></td>
+			</tr>
+		</table>
+		<div id="BarContainer" style="position:absolute;width:100%;top:175px;bottom:0px"></div>
+	</body>
+</html>

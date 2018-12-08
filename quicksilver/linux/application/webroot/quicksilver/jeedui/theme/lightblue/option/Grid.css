@@ -1,0 +1,163 @@
+﻿.JuiGrid
+{
+	width				: 100%;
+	overflow			: auto;
+	cursor				: default;
+}
+
+.JuiGridTablePanel
+{
+	width				: 100%;
+}
+
+.JuiGridNavigator
+{
+	width				: 100%;
+	padding-top			: 6px;
+	text-align			: right;
+}
+
+.JuiGridTable
+{
+	width				: 100%;
+	border-spacing		: 0px;
+	background-color	: #FFFFFF;
+	white-space			: normal;
+}
+
+.JuiGridTable tr
+{
+	height				: 25px;
+}
+
+.JuiGridTable tr:first-child
+{
+	height				: 26px;
+}
+
+.JuiGridTable tr:hover
+{
+	background-color	: #FFFFAA;
+}
+
+.JuiGridTable td
+{
+	border-right		: 1px solid #B7B7B7;
+	border-bottom		: 1px solid #B7B7B7;
+	padding				: 3px;
+}
+
+.JuiGridTable tr:first-child td
+{
+	text-align			: center;
+	border-top			: 1px solid #7F9DB9;
+	box-shadow			: inset 0px 0px 2px #FFFFFF;
+	background-image	: linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -ms-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -moz-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+	background-image	: -webkit-linear-gradient(top, #E3EFFF, #C4DDFF 50%, #ADD1FF 50%, #C0DBFF);
+}
+
+.JuiGridTable tr:last-child td
+{
+	border-bottom		: 1px solid #7F9DB9;
+}
+
+.JuiGridTable td:first-child
+{
+	border-left			: 1px solid #7F9DB9;
+}
+
+.JuiGridTable td:last-child
+{
+	border-right		: 1px solid #7F9DB9;
+}
+
+.JuiGridTrueValue
+{
+	width				: 16px;
+	height				: 16px;
+	background-image	: url(image/GridTrueValue.png);
+}
+
+.JuiGridNavigator > div
+{
+	display				: inline-block;
+	vertical-align		: middle;
+}
+
+.JuiGridNavigator .JuiGridButton
+{
+	background-image	: url(image/ListButton.png);
+	background-repeat	: no-repeat;
+	background-position	: center 0px;
+	border				: 1px solid transparent;
+	width				: 24px;
+	height				: 20px;
+}
+
+.JuiGridNavigator .JuiGridPreviousPageButton
+{
+	background-position	: center -18px;
+	margin-right		: 3px;
+}
+
+.JuiGridNavigator .JuiGridNextPageButton
+{
+	background-position	: center -36px;
+	margin-left			: 3px;
+}
+
+.JuiGridNavigator .JuiGridLastPageButton
+{
+	background-position	: center -54px;
+}
+
+.JuiGridNavigator .JuiGridButton:hover
+{
+	border				: 1px solid #FFBD69;
+	background-color	: #FFE5A0;
+}
+
+.JuiGridNavigator .JuiGridButton:active
+{
+	border				: 1px solid #FB8C3C;
+	background-color	: #FC973D;
+}
+
+.JuiGridNavigator .JuiGridButton[Forbidden]
+{
+	border				: 1px solid transparent;
+	background-color	: transparent;
+	opacity				: 0.5;
+}
+
+.JuiGridNavigator .JuiGridPageIndex
+{
+	border				: 1px solid #DFDBFF;
+	width				: 40px;
+	height				: 20px;
+	text-align			: right;
+	padding-right		: 1px;
+	margin				: 0px;
+}
+
+.JuiGridNavigator .JuiGridPageSplitter
+{
+	padding				: 0px 2px;
+}
+
+.JuiGridControlContainer > *
+{
+	margin				: 0px 3px;
+}
+
+.JuiGridLink
+{
+	vertical-align		: top;
+	line-height			: 18px;
+	background-color	: transparent;
+	color				: #0040A0;
+	text-decoration		: underline;
+	cursor				: pointer;
+}

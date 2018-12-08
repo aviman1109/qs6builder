@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Dialog Recursion Dialog Recursion Dialog Recursion Dialog Recursion Dialog Recursion</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right:[
+					{control: "Button",	text: "继续弹出", icon: "../image/misc/1.png", onclick:doOpen}
+				]});
+			}
+
+			function doOpen()
+			{
+				Jui.basic.Dialog.open("demo/basic/DialogRecursion.html")
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="text-align:center;padding-top:20px">
+			注：在 Chrome 浏览器中以本地文件的形式访问该页面时，对话框会限制在当前的 iframe 内。
+		</div>
+	</body>
+</html>

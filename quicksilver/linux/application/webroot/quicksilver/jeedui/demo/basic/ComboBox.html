@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>ComboBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			var items = [
+				{value: "11", 	text: "India"},
+				{value: "12", 	text: "Korea"},
+				{value: "13", 	text: "Japan"},
+				{value: "14", 	text: "This is a long country name"},
+				{value: "21", 	text: "France"},
+				{value: "22", 	text: "England"},
+				{value: "23", 	text: "Germany"},
+				{value: "24", 	text: "Italy"},
+				{value: "25", 	text: "Irland"},
+				{value: "26", 	text: "Norway"},
+				{value: "27", 	text: "Netherlands"},
+				{value: "28", 	text: "Russia"},
+				{value: "31", 	text: "US"},
+				{value: "32", 	text: "Canada"},
+				{value: "33", 	text: "Brazil"},
+				{value: "34", 	text: "Chile"},
+				{value: "35", 	text: "Argentina"},
+				{value: "41", 	text: "Egypt"},
+				{value: "42", 	text: "South Africa"},
+				{value: "51", 	text: "Australia"},
+				{value: "52", 	text: "New Zealand"}
+			];
+
+			var groups = [
+				{title: "Asia", items: [
+					{value: "11", 	text: "India"},
+					{value: "12", 	text: "Korea"},
+					{value: "13", 	text: "Japan"},
+					{value: "14", 	text: "This is a long country name"}
+				]},
+				{title: "Europe", items: [
+					{value: "21", 	text: "France"},
+					{value: "22", 	text: "England"},
+					{value: "23", 	text: "Germany"},
+					{value: "24", 	text: "Italy"},
+					{value: "25", 	text: "Irland"},
+					{value: "26", 	text: "Norway"},
+					{value: "27", 	text: "Netherlands"},
+					{value: "28", 	text: "Russia"}
+				]},
+				{title: "America", items: [
+					{value: "31", 	text: "US"},
+					{value: "32", 	text: "Canada"},
+					{value: "33", 	text: "Brazil"},
+					{value: "34", 	text: "Chile"},
+					{value: "35", 	text: "Argentina"}
+				]},
+				{title: "Africa", items: [
+					{value: "41", 	text: "Egypt"},
+					{value: "42", 	text: "South Africa"}
+				]},
+				{title: "Oceania", items: [
+					{value: "51", 	text: "Australia"},
+					{value: "52", 	text: "New Zealand"}
+				]}
+			];
+
+			function init()
+			{
+				Jui.basic.ComboBox.create({target: "normal", value: "23", emptyText: "Fill It", hint: "Countries", items: items});
+				Jui.basic.ComboBox.create({target: "inputable", value: "42", items: items, selectOnly: false});
+				Jui.basic.ComboBox.create({target: "readonly", disabled: true, value: "这是个只读下拉框"});
+				Jui.basic.ComboBox.create({target: "color", backgroundColor: "#FFFFBB", value: "51", items: items});
+				Jui.basic.ComboBox.create({target: "fixed-width", style: "width:33%", value: "52", items: items});
+				Jui.basic.ComboBox.create({target: "group", items: groups});
+				Jui.basic.ComboBox.create({target: "no-item"});
+				Jui.basic.ComboBox.create({target: "tool", face: "ToolComboBox", value: "23", emptyText: "Fill It", hint: "Countries", items: items});
+				Jui.basic.ComboBox.create({target: "tool-inputable", face: "ToolComboBox", value: "42", items: items, selectOnly: false});
+				Jui.basic.ComboBox.create({target: "tool-readonly", face: "ToolComboBox", disabled: true, value: "这是个只读下拉框"});
+
+				var t1 = new Date().valueOf();
+				var buffer = [];
+				buffer.push("<table id=batch class='DemoTable SeparateTable'>");
+				buffer.push("<col width=160><col width=160><col width=160>");
+				var args = {style: "width:100%", items: items};
+				for (var i = 0; i < 30; ++i) {
+					if (i % 3 == 0) {
+						buffer.push("<tr>");
+					}
+					buffer.push("<td>" + Jui.basic.ComboBox.getHtml(args) + "</td>");
+					if (i % 3 == 2) {
+						buffer.push("</tr>");
+					}
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				for (var i = 0, rows = document.getElementById("batch").rows; i < rows.length; ++i) {
+					for (var j = 0, cells = rows[i].cells; j < cells.length; ++j) {
+						args.id = i * 3 + j;
+						args.name = Jui.random.next();
+						var box = Jui.basic.ComboBox.initialize(cells[j].firstChild, args);
+						if (j == 0) {
+							box.setValue(i);
+						}
+						else if (j == 1) {
+							box.setDisabled(true);
+						}
+					}
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function doComboBoxChange()
+			{
+				Jui.message.hint(this.getValue());
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable" style="width:100%">
+			<col width="150"><col>
+			<tr><td>下拉框</td><td id="normal"></td></tr>
+			<tr><td>下拉框 - 可输入</td><td id="inputable"></td></tr>
+			<tr><td>下拉框 - 只读</td><td id="readonly"></td></tr>
+			<tr><td>下拉框 - 带颜色</td><td id="color"></td></tr>
+			<tr><td>下拉框 - 指定宽度</td><td id="fixed-width"></td></tr>
+			<tr><td>下拉框 - 带分组</td><td id="group"></td></tr>
+			<tr><td>下拉框 - 无下拉项</td><td id="no-item"></td></tr>
+			<tr><td>工具条下拉框</td><td id="tool"></td></tr>
+			<tr><td>工具条下拉框 - 可输入</td><td id="tool-inputable"></td></tr>
+			<tr><td>工具条下拉框 - 只读</td><td id="tool-readonly"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

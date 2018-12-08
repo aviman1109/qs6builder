@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://127.0.0.1:${Ets.Install.HttpPort}/${Ets.Install.AppName}
+[InternetShortcut]
+URL=http://127.0.0.1:${Ets.Install.Port.Http}/${Ets.Install.AppName}
+Modified=A0C14F4DEE36CB01ED
+HotKey=0
+IDList=
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2

@@ -1,0 +1,18 @@
+	<!-- FineReport -->
+	<servlet>
+		<servlet-name>ReportServer</servlet-name>
+		<servlet-class>com.fr.web.ReportServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReportServer</servlet-name>
+		<url-pattern>/ReportServer</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>FineReportFilter</filter-name>
+		<filter-class>com.jeedsoft.quicksilver.report.vendor.finereport.FineReportFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FineReportFilter</filter-name>
+		<url-pattern>/ReportServer</url-pattern>
+	</filter-mapping>

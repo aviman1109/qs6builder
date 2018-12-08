@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>HtmlBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<style>
+			.HtmlBoxDemoTable > tbody > tr > td
+			{
+				padding: 10px 0px;
+			}
+		</style>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.basic.HtmlBox.setEditor({editorPath: "../../../editor/ckeditor"});
+			var html = "Please visit <a href='http://www.google.com'>Google</a>.";
+			var box1;
+
+			function doLoad()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right:[
+					{control: "Button",	text: "focus",			icon: "../image/misc/1.png",	onclick: "doFocus"},
+					{control: "Button",	text: "setValue",		icon: "../image/misc/2.png",	onclick: "doSetValue"},
+					{control: "Button",	text: "getValue",		icon: "../image/misc/3.png",	onclick: "doGetValue"},
+					{control: "Button",	text: "setDisabled",	icon: "../image/misc/4.png",	onclick: "doSetDisabled"}
+				]});
+
+				box1 = Jui.basic.HtmlBox.create({target: "cell1", value: html});
+				Jui.basic.HtmlBox.create({target: "cell2", value: html});
+				Jui.basic.HtmlBox.create({target: "cell3", value: html, disabled: true});
+			}
+			
+			function doFocus()
+			{
+				box1.focus();
+			}
+			
+			function doSetValue()
+			{
+				box1.setValue("You can search icons in <a href='http://www.findicons.com'>findicons.com</a>.");
+			}
+			
+			function doGetValue()
+			{
+				Jui.message.hint(box1.getValue());
+			}
+			
+			function doSetDisabled()
+			{
+				box1.setDisabled(!box1.isDisabled());
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="doLoad()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="padding:10px 15px 10px 15px">
+			<table class="DemoTable HtmlBoxDemoTable" style='width:100%;table-layout:fixed'>
+				<col width=140><col>
+				<tr><td>普通富文本框</td><td id="cell1" style="height:170px"></td></tr>
+				<tr><td>只读富文本框</td><td id="cell2" style="height:220px"></td></tr>
+				<tr><td>普通富文本框</td><td id="cell3" style="height:270px"></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

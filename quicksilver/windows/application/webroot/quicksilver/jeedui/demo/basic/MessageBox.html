@@ -1,0 +1,84 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>MessageBox</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right: [
+					{control: "Button",	text: "Info",			icon: "../image/misc/1.png",	onclick: "doInfo"},
+					{control: "Button",	text: "Alert",			icon: "../image/misc/2.png",	onclick: "doAlert"},
+					{control: "Button",	text: "Error",			icon: "../image/misc/3.png",	onclick: "doError"},
+					{control: "Button",	text: "Confirm",		icon: "../image/misc/4.png",	onclick: "doConfirm"},
+					{control: "Button",	text: "YesNoCancel",	icon: "../image/misc/5.png",	onclick: "doYesNoCancel"},
+					{control: "Button",	text: "Hint",			icon: "../image/misc/6.png",	onclick: "doHint"},
+					{control: "Button",	text: "HtmlHint",		icon: "../image/misc/7.png",	onclick: "doHtmlHint"},
+					{control: "Button",	text: "Success",		icon: "../image/misc/8.png",	onclick: "doSuccess"}
+				]});
+			}
+
+			function doInfo()
+			{
+				var text = "";
+				for (var i = 0, n = 1 + 50 * Jui.random.next(); i < n; ++i) {
+					text += Math.round(Math.pow(10, 10 * Jui.random.next())) + " ";
+				}
+				Jui.message.info("自动生成以下随机数：\n" + text);
+			}
+
+			function doAlert()
+			{
+				Jui.message.alert("Server response time is too long. Please select another server or login later.");
+			}
+
+			function doError()
+			{
+				Jui.message.error("文件上传失败：服务器没有响应.");
+			}
+
+			function doConfirm()
+			{
+				Jui.message.confirm("您是否确定？", function(result) {
+					Jui.basic.MessageBox.open({modal: false, text: "消息框的返回值为“" + result + "”。"});
+				}, true);
+			}
+
+			function doYesNoCancel()
+			{
+				Jui.message.ync("您是否要彻底删除该记录？", function(result) {
+					Jui.basic.MessageBox.open({modal: false, text: "消息框的返回值为“" + result + "”。"});
+				}, true);
+			}
+
+			function doHint()
+			{
+				var text = "";
+				for (var i = 0, n = 1 + 50 * Jui.random.next(); i < n; ++i) {
+					text += Math.round(Math.pow(10, 10 * Jui.random.next())) + " ";
+				}
+				Jui.message.hint("自动生成以下随机数：\n" + text);
+			}
+
+			function doHtmlHint()
+			{
+				var message = "您收到 2 条新消息。<br><a href='http://www.google.com' target='_blank'>立即查看</a>";
+				Jui.message.htmlHint(message, "demo/image/misc/Email.png");
+			}
+
+			function doSuccess()
+			{
+				Jui.message.success("您输入的内容已成功保存.");
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="text-align:center;padding-top:20px">
+			注：在 Chrome 浏览器中以本地文件的形式访问该页面时，对话框会限制在当前的 iframe 内。
+		</div>
+	</body>
+</html>

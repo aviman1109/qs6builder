@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>OutlookBar</title>
+		<style>
+			div {position:absolute}
+			.t {left:0px;width:100%;top:0px;height:30px;line-height:30px;text-align:center}
+			.r {background-color:#FFCCCC;border:1px solid #FF0000}
+			.g {background-color:#CCFFCC;border:1px solid #00FF00}
+			.b {background-color:#CCCCFF;border:1px solid #0000FF}
+		</style>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Resizer");
+			
+			function doLoad()
+			{
+				Jui.option.Resizer.create({elements:["a1", "a2"], minimize:"left"});
+				Jui.option.Resizer.create({elements:["b1", "b2"], offset:5, minimize:"bottom"});
+				Jui.option.Resizer.create({elements:["c1", "c2"], fixed:"right", minimize:"right", transparent:false});
+				Jui.option.Resizer.create({elements:["d1", "d2"], offset:-3});
+				Jui.option.Resizer.create({elements:["d2", "d3"], offset:-3, fixed:"right"});
+			}
+		</script>
+	</head>
+	<body onload="doLoad()">
+		<div style="left:0px;top:0px;width:50%;height:50%">
+			<div class=t>左右拖动</div>
+			<div id=a1 class=r style="left:10px;width:150px;top:30px;bottom:10px"></div>
+			<div id=a2 class=g style="left:166px;right:10px;top:30px;bottom:10px"></div>
+		</div>
+		<div style="right:0px;top:0px;width:50%;height:50%">
+			<div class=t>上下拖动</div>
+			<div id=b1 class=r style="left:10px;right:10px;top:30px;height:100px"></div>
+			<div id=b2 class=g style="left:10px;right:10px;top:146px;bottom:10px"></div>
+		</div>
+		<div style="left:0px;bottom:0px;width:50%;height:50%">
+			<div class=t>左右拖动（窗口缩放时右侧宽度固定）</div>
+			<div id=c1 class=r style="left:10px;right:166px;top:30px;bottom:10px"></div>
+			<div id=c2 class=g style="right:10px;width:150px;top:30px;bottom:10px"></div>
+		</div>
+		<div style="right:0px;bottom:0px;width:50%;height:50%">
+			<div class=t>左中右三栏拖动</div>
+			<div id=d1 style="left:10px;right:75%;top:30px;bottom:10px;padding-right:3px">
+				<div class=r style="position:static;width:100%;height:100%"></div>
+			</div>
+			<div id=d2 style="left:25%;right:25%;top:30px;bottom:10px;padding:0px 3px">
+				<div class=g style="position:static;width:100%;height:100%"></div>
+			</div>
+			<div id=d3 style="left:75%;right:10px;top:30px;bottom:10px;padding-left:3px">
+				<div class=b style="position:static;width:100%;height:100%"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+
+	<item key="Ets.I18n.Public.ViewErrorInLog">
+		详细错误信息请查看日志。
+	</item>
+	<item key="Ets.I18n.Public.StartExecuting">
+		开始执行...
+	</item>
+	<item key="Ets.I18n.Public.WaitForOperation">
+		操作尚未完成，请等待。
+	</item>
+
+	<item key="Ets.I18n.Button.Confirm">
+		确定
+	</item>
+	<item key="Ets.I18n.Button.Cancel">
+		取消
+	</item>
+	<item key="Ets.I18n.Button.Add">
+		新增
+	</item>
+	<item key="Ets.I18n.Button.Modify">
+		修改
+	</item>
+	<item key="Ets.I18n.Button.Delete">
+		删除
+	</item>
+	<item key="Ets.I18n.Button.Initialize">
+		初始化
+	</item>
+	<item key="Ets.I18n.Button.Test">
+		测试
+	</item>
+	<item key="Ets.I18n.Button.PreviousStep">
+		上一步
+	</item>
+	<item key="Ets.I18n.Button.NextStep">
+		下一步
+	</item>
+	<item key="Ets.I18n.Button.Close">
+		关闭
+	</item>
+	<item key="Ets.I18n.Button.Extract">
+		提取
+	</item>
+	<item key="Ets.I18n.Button.Upgrade">
+		升级
+	</item>
+	<item key="Ets.I18n.Button.SelectFile">
+		选择...
+	</item>
+	<item key="Ets.I18n.Button.Export">
+		导出
+	</item>
+	<item key="Ets.I18n.Button.Import">
+		导入
+	</item>
+	
+	<item key="Ets.I18n.Sql.Executing">
+		执行 ${0}...
+	</item>
+	<item key="Ets.I18n.Sql.Connecting">
+		连接 ${0}...
+	</item>
+	<item key="Ets.I18n.Sql.CheckingDataSource">
+		检查数据源...
+	</item>
+	<item key="Ets.I18n.Sql.InvalidDataSourceFile">
+		数据源配置文件不存在或格式错误。
+	</item>
+	<item key="Ets.I18n.Sql.NotConnectable">
+		数据源 ${0} 连接失败：${1}"
+	</item>
+	<item key="Ets.I18n.Sql.DataSource">
+		数据源
+	</item>
+	<item key="Ets.I18n.Sql.DataSourceId">
+		数据源ID
+	</item>
+	<item key="Ets.I18n.Sql.JdbcDriver">
+		JDBC驱动
+	</item>
+	<item key="Ets.I18n.Sql.JdbcUrl">
+		JDBC连接串
+	</item>
+	<item key="Ets.I18n.Sql.User">
+		用户
+	</item>
+	<item key="Ets.I18n.Sql.Password">
+		密码
+	</item>
+	<item key="Ets.I18n.Sql.MinConnection">
+		最小连接数
+	</item>
+	<item key="Ets.I18n.Sql.MaxConnection">
+		最大连接数
+	</item>
+	<item key="Ets.I18n.Sql.TranslateSql">
+		启用SQL翻译
+	</item>
+	<item key="Ets.I18n.Sql.EncryptPassword">
+		加密密码
+	</item>
+	<item key="Ets.I18n.Sql.DataSourceType">
+		数据源类型
+	</item>
+	<item key="Ets.I18n.Sql.TransactionTimeout">
+		事务超时时间(秒)
+	</item>
+	<item key="Ets.I18n.Sql.ConnectOrExecuteFailed">
+		数据库无法访问或执行失败：
+	</item>
+	<item key="Ets.I18n.Sql.ModuleUpgradeStart">
+		开始升级模块“${0}”...
+	</item>
+	<item key="Ets.I18n.Sql.ModuleUpgradeEnd">
+		模块“${0}”升级完成。数据库版本：${1}。
+	</item>
+	<item key="Ets.I18n.Sql.ModuleMergeStart">
+		开始将模块“${0}”合并到模块“${1}”...
+	</item>
+	<item key="Ets.I18n.Sql.ModuleMergeEnd">
+		模块“${0}”已合并到模块“${1}”。
+	</item>
+
+	<item key="Ets.I18n.File.StartCopy">
+		开始复制文件...
+	</item>
+	<item key="Ets.I18n.File.Copying">
+		复制 ${0}...
+	</item>
+	<item key="Ets.I18n.File.CopyError">
+		复制文件 ${0} 时发生错误。
+		文件可能正在被使用，或者因其它原因不允许被修改。
+		单击“终止”退出，单击 “重试”进行重试，单击“忽略”跳过这个文件（不推荐）。
+	</item>
+				
+	<item key="Ets.I18n.WepApp.Creating">
+		开始创建 WEB 应用...
+	</item>
+	<item key="Ets.I18n.WepApp.Created">
+		WEB 应用创建完毕。
+	</item>
+	<item key="Ets.I18n.WepApp.UnzipOldWar">
+		解压原 WEB 应用...
+	</item>
+	<item key="Ets.I18n.WepApp.ZipWar">
+		创建 WEB 应用包...
+	</item>
+
+	<item key="Ets.I18n.License.Agree">
+		我已阅读并同意以上协议
+	</item>
+
+	<item key="Ets.I18n.Extract.DialogTitle">
+		软件提取向导
+	</item>
+	<item key="Ets.I18n.Extract.LicenseTopText">
+		※本向导将软件提取为免安装包。在提取软件前，请仔细阅读下面的协议。
+	</item>
+	<item key="Ets.I18n.Extract.LicenseText">
+ 		重要须知：${Ets.I18n.Company.SimpleName}在此特别提醒用户认真阅读、充分理解本《软件许可及服务协议》（下称《协议》）--- 用户应认真阅读、充分理解本《协议》中各条款，特别涉及免除或者限制${Ets.I18n.Company.SimpleName}责任的免责条款，对用户的权利限制的条款，约定争议解决方式、司法管辖、法律适用的条款。请您审慎阅读并选择接受或不接受本《协议》。除非您接受本《协议》所有条款，否则您无权使用本软件及其相关服务。您的下载和使用等行为将视为对本《协议》的接受，并同意接受本《协议》各项条款的约束。
+		本《协议》是您（下称“用户”）与${Ets.I18n.Company.FullName}（下称“${Ets.I18n.Company.SimpleName}”）及其之间关于用户下载和使用${Ets.I18n.Product.FullName}所订立的协议。本《协议》描述${Ets.I18n.Company.SimpleName}与用户之间关于软件许可使用及服务相关方面的权利义务。
+   		本《协议》可由${Ets.I18n.Company.SimpleName}随时更新，更新后的协议条款一旦公布即代替原来的协议条款，恕不再另行通知。用户可重新下载本软件或网站查阅最新版协议条款。在${Ets.I18n.Company.SimpleName}修改《协议》条款后，如果用户不接受修改后的条款，请立即停止使用${Ets.I18n.Company.SimpleName}提供的软件和服务，用户继续使用${Ets.I18n.Company.SimpleName}提供的软件和服务将被视为已接受了修改后的协议。
+    	除本《协议》有明确规定外，本《协议》并未对利用本“软件”使用的${Ets.I18n.Company.SimpleName}的其他服务规定相关的服务条款。对于这些服务，一般有单独的服务条款加以规范，用户须在使用有关服务时另行了解与确认。单独的服务条款与本协议有冲突的地方，以单独的服务条款为准。如用户使用该服务，视为对相关服务条款的接受。   		 		
+	</item>
+	<item key="Ets.I18n.Extract.HomeFolderPageDescription">
+		请选择应用服务器、部署模式、平台位数和报表解决方案。提取工具将按照您的选择对产品进行组合，并创建默认的 H2 数据库。
+	</item>
+	<item key="Ets.I18n.Extract.HomeFolder">
+		提取到：
+	</item>
+	<item key="Ets.I18n.Extract.ApplicationServer">
+		应用服务器：
+	</item>
+	<item key="Ets.I18n.Extract.DeployMode">
+		部署模式：
+	</item>
+	<item key="Ets.I18n.Extract.DeployModeItems">
+		独立模式
+		集群模式
+	</item>
+	<item key="Ets.I18n.Extract.ReportSolution">
+		报表解决方案：
+	</item>
+	<item key="Ets.I18n.Extract.SelectHomeFolderAlert">
+		请选择提取路径。
+	</item>
+	<item key="Ets.I18n.Extract.SelectApplicationServerAlert">
+		请选择应用服务器。
+	</item>
+	<item key="Ets.I18n.Extract.SelectDeployModeAlert">
+		请选择部署模式。
+	</item>
+	<item key="Ets.I18n.Extract.SelectReportSolutionAlert">
+		请选择报表解决方案。
+	</item>
+	<item key="Ets.I18n.Extract.CollectInformation">
+		收集信息...
+	</item>
+	<item key="Ets.I18n.Extract.QuitConfirm">
+		提取尚未完成，您是否确定要终止？
+	</item>
+	<item key="Ets.I18n.Extract.Finished">
+		提取完成。
+	</item>
+	<item key="Ets.I18n.Extract.FinishedWithSqlError">
+		提取完成，有 ${0} 笔 SQL 执行失败，请查看日志。
+	</item>
+	<item key="Ets.I18n.Extract.Failed">
+		提取失败。
+	</item>
+
+	<item key="Ets.I18n.Upgrade.DialogTitle">
+		软件升级向导
+	</item>
+	<item key="Ets.I18n.Upgrade.LicenseTopText">
+		※在升级软件前，请仔细阅读下面的协议。特别是，您需要事先停止应用服务器、备份原安装目录及数据库，以防在升级过程中因意外事件而造成的数据损坏或丢失。
+	</item>
+	<item key="Ets.I18n.Upgrade.LicenseText">
+ 		重要须知：${Ets.I18n.Company.SimpleName}在此特别提醒用户认真阅读、充分理解本《软件许可及服务协议》（下称《协议》）--- 用户应认真阅读、充分理解本《协议》中各条款，特别涉及免除或者限制${Ets.I18n.Company.SimpleName}责任的免责条款，对用户的权利限制的条款，约定争议解决方式、司法管辖、法律适用的条款。请您审慎阅读并选择接受或不接受本《协议》。除非您接受本《协议》所有条款，否则您无权使用本软件及其相关服务。您的下载和使用等行为将视为对本《协议》的接受，并同意接受本《协议》各项条款的约束。
+		本《协议》是您（下称“用户”）与${Ets.I18n.Company.FullName}（下称“${Ets.I18n.Company.SimpleName}”）及其之间关于用户下载和使用${Ets.I18n.Product.FullName}所订立的协议。本《协议》描述${Ets.I18n.Company.SimpleName}与用户之间关于软件许可使用及服务相关方面的权利义务。
+   		本《协议》可由${Ets.I18n.Company.SimpleName}随时更新，更新后的协议条款一旦公布即代替原来的协议条款，恕不再另行通知。用户可重新下载本软件或网站查阅最新版协议条款。在${Ets.I18n.Company.SimpleName}修改《协议》条款后，如果用户不接受修改后的条款，请立即停止使用${Ets.I18n.Company.SimpleName}提供的软件和服务，用户继续使用${Ets.I18n.Company.SimpleName}提供的软件和服务将被视为已接受了修改后的协议。
+    	除本《协议》有明确规定外，本《协议》并未对利用本“软件”使用的${Ets.I18n.Company.SimpleName}的其他服务规定相关的服务条款。对于这些服务，一般有单独的服务条款加以规范，用户须在使用有关服务时另行了解与确认。单独的服务条款与本协议有冲突的地方，以单独的服务条款为准。如用户使用该服务，视为对相关服务条款的接受。   		 		
+	</item>
+	<item key="Ets.I18n.Upgrade.HomeFolderPageDescription">
+		请选择需要升级的产品当前的安装目录、WEB 目录和扩展目录。升级向导将对安装目录中的文件进行更新，并根据安装目录中的数据源配置信息升级数据库。
+	</item>
+	<item key="Ets.I18n.Upgrade.HomeFolder">
+		安装目录：
+	</item>
+	<item key="Ets.I18n.Upgrade.InvalidHomeFolder">
+		请选择有效的安装目录。
+	</item>
+	<item key="Ets.I18n.Upgrade.SqlOrderDuplicated">
+		同一数据源的 SQL 次序不能完全相同。
+	</item>
+	<item key="Ets.I18n.Upgrade.Finished">
+		升级完成。
+	</item>
+	<item key="Ets.I18n.Upgrade.FinishedWithSqlError">
+		升级完成，有 ${0} 笔 SQL 执行失败，请查看日志。
+	</item>
+	<item key="Ets.I18n.Upgrade.Failed">
+		升级失败。
+	</item>
+	<item key="Ets.I18n.Upgrade.QuitConfirm">
+		正在升级中，强行关闭很可能导致系统处于错误状态。
+		您是否确定要关闭？
+	</item>
+				
+	<item key="Ets.I18n.DsConfig.DialogTitle">
+		数据源配置
+	</item>
+	<item key="Ets.I18n.DsConfig.DefaultDataSourceTitle">
+		主数据源
+	</item>
+	<item key="Ets.I18n.DsConfig.DefaultDataSourceDescription">
+		设置系统自身的数据源。
+		可以使用默认的嵌入式 H2 数据库，也可以使用其它数据库。如果使用其它数据库，请在系统第一次启动前执行数据初始化。
+	</item>
+	<item key="Ets.I18n.DsConfig.CannotReinitializeAlert">
+		数据库已经初始化，不能重复执行。
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectionTest">
+		数据源连接测试
+	</item>
+	<item key="Ets.I18n.DsConfig.DatabaseInitialize">
+		数据库初始化
+	</item>
+	<item key="Ets.I18n.DsConfig.DatabaseInitializeConfirm">
+		您是否确定要初始化数据库“${0}”？
+	</item>
+	<item key="Ets.I18n.DsConfig.UrlFormat">
+		格式：
+	</item>
+	<item key="Ets.I18n.DsConfig.CustomDataSource">
+		附加数据源
+	</item>
+	<item key="Ets.I18n.DsConfig.OtherOption">
+		其它选项
+	</item>
+	<item key="Ets.I18n.DsConfig.ModifySuccess">
+		数据源配置修改成功，将在下次启动应用服务器时生效。
+	</item>
+	<item key="Ets.I18n.DsConfig.ModifySelectAlert">
+		请选择要修改的数据源。
+	</item>
+	<item key="Ets.I18n.DsConfig.DeleteSelectAlert">
+		请选择要删除的数据源。
+	</item>
+	<item key="Ets.I18n.DsConfig.TryCreatingDatabase">
+		尝试创建数据库...
+	</item>
+	<item key="Ets.I18n.DsConfig.AnalysingSqlFile">
+		分析 SQL 文件...
+	</item>
+	<item key="Ets.I18n.DsConfig.Initializing">
+		正在初始化(${0}%)...
+	</item>
+	<item key="Ets.I18n.DsConfig.ExecuteFinished">
+		执行完毕。成功 ${0} 笔，忽略 ${1} 笔，失败 ${2} 笔。
+	</item>
+	<item key="Ets.I18n.DsConfig.TryConnecting">
+		尝试连接 ${0}...
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectSuccess">
+		连接成功。
+	</item>
+	<item key="Ets.I18n.DsConfig.ConnectFailed">
+		连接失败，错误信息：
+	</item>
+	<item key="Ets.I18n.DsConfig.QuitConfirm">
+		初始化尚未完成，强行关闭将导致数据不完整，数据库无法使用。
+		您是否确定要关闭？
+	</item>
+
+	<item key="Ets.I18n.Export.InvalidNumber">
+		 “${0}”不是有效的数字。
+	</item>
+	<item key="Ets.I18n.Export.SelectDataSourceAlert">
+		请选择需要导出的数据源。
+	</item>
+	<item key="Ets.I18n.Export.ReadManual">
+		※请首先阅读《数据迁移说明》。特别是，导出前需要关闭应用服务器，以保证数据的完整性。
+	</item>
+	<item key="Ets.I18n.Export.DataSourceConfigFile">
+		数据源配置文件
+	</item>
+	<item key="Ets.I18n.Export.RowsPerTable">
+		单表数据上限
+	</item>
+	<item key="Ets.I18n.Export.DataSourceToExport">
+		需导出的数据源
+	</item>
+	<item key="Ets.I18n.Export.Option">
+		导出选项
+	</item>
+	<item key="Ets.I18n.Export.ToSingleFile">
+		导出为单一文件（数据量较小时适用）
+	</item>
+	<item key="Ets.I18n.Export.GenerateDropStatement">
+		生成 drop 语句
+	</item>
+	<item key="Ets.I18n.Export.ViewAsTable">
+		将视图作为表导出
+	</item>
+	<item key="Ets.I18n.Export.StopOnError">
+		发生错误后终止执行
+	</item>
+	<item key="Ets.I18n.Export.TablesExport">
+		导出的表
+		(默认全部导出)
+	</item>
+	<item key="Ets.I18n.Export.TablesNotExport">
+		不导出的表
+	</item>
+	<item key="Ets.I18n.Export.InvalidDataSourceConfigFile">
+		数据源配置文件无效，详细信息请查看控制台。
+	</item>
+	<item key="Ets.I18n.Export.DialogTitle">
+		数据迁移 - 导出
+	</item>
+	<item key="Ets.I18n.Export.Finished">
+		导出完成。成功 ${0} 笔，失败 ${1} 笔。
+	</item>
+	<item key="Ets.I18n.Export.Failed">
+		导出失败。
+	</item>
+	<item key="Ets.I18n.Export.ExportingTable">
+		导出表“${0}”的数据...
+	</item>
+	<item key="Ets.I18n.Export.ExportingTableRange">
+		导出表“${0}”的数据（${1}~${2}）...
+	</item>
+	<item key="Ets.I18n.Export.TableExportError">
+		导出表“${0}”的数据时发生错误。
+	</item>
+	<item key="Ets.I18n.Export.DropStatementGenerateError">
+		生成“${0}”的 drop 语句时发生错误。
+	</item>
+	<item key="Ets.I18n.Export.ExportingTableDdl">
+		导出“${0}”的表结构...
+	</item>
+	<item key="Ets.I18n.Export.TableDdlExportError">
+		导出“${0}”的表结构时发生错误。
+	</item>
+	<item key="Ets.I18n.Export.DataDirectory">
+		数据路径：
+	</item>
+	<item key="Ets.I18n.Export.QuitConfirm">
+		导出尚未完成，强行关闭将导致数据不完整，导出的数据无法使用。
+		您是否确定要关闭？
+	</item>
+
+	<item key="Ets.I18n.Import.SelectDataSourceAlert">
+		请选择需要导入的数据源。
+	</item>
+	<item key="Ets.I18n.Import.DataDirectoryNotExist">
+		数据目录“${0}”不存在。
+	</item>
+	<item key="Ets.I18n.Import.DefaultDataDirectoryNotExist">
+		缺省的数据目录不存在。
+	</item>
+	<item key="Ets.I18n.Import.ReadManual">
+		※请首先阅读《数据迁移说明》。特别是，导入前应保证目标数据库没有数据表，并做好数据备份。
+	</item>
+	<item key="Ets.I18n.Import.DataDirectory">
+		数据目录
+	</item>
+	<item key="Ets.I18n.Import.DataSourceToImport">
+		需导入的数据源
+	</item>
+	<item key="Ets.I18n.Import.Option">
+		导入选项
+	</item>
+	<item key="Ets.I18n.Import.DialogTitle">
+		数据迁移 - 导入
+	</item>
+	<item key="Ets.I18n.Import.DataNotExist">
+		无法导入数据到数据源“${0}”中：数据不存在。
+	</item>
+	<item key="Ets.I18n.Import.Finished">
+		导入完成。成功 ${0} 笔，忽略 ${1} 笔，失败 ${2} 笔。
+	</item>
+	<item key="Ets.I18n.Import.Failed">
+		导入失败。
+	</item>
+	<item key="Ets.I18n.Import.InsertingToTable">
+		向表 ${0} 中增加数据...
+	</item>
+	<item key="Ets.I18n.Import.CreatingTable">
+		创建表 ${0}...
+	</item>
+	<item key="Ets.I18n.Import.TryDeletingTable">
+		尝试删除表 ${0}...
+	</item>
+	<item key="Ets.I18n.Import.QuitConfirm">
+		导入尚未完成，强行关闭将导致数据不完整，数据库无法使用。
+		您是否确定要关闭？
+	</item>
+
+</root>

@@ -1,0 +1,181 @@
+﻿.JuiForm
+{
+	width				: 100%;
+}
+
+.JuiForm[hasTab]
+{
+	height				: 100%;
+}
+
+.JuiForm[compact=true] .JuiFormPanel
+{
+	margin				: 0px auto;
+	padding				: 0px;
+}
+
+.JuiForm[compact=false] .JuiFormPanel,
+.JuiForm[hasTab] .JuiFormPanel
+{
+	margin				: 0px auto;
+	padding				: 8px 16px 4px 16px;
+}
+
+.JuiForm .JuiFormGroup
+{
+	float				: left;
+	width				: 100%;
+	padding-right		: 5px;
+	height				: 24px;
+	white-space			: nowrap;
+	cursor				: default;
+	margin				: 5px 0px;
+	color				: #FFFFFF;
+	overflow			: hidden;
+}
+
+.JuiForm .JuiFormGroupLeft
+{
+	display				: inline-block;
+	width				: 5px;
+	height				: 100%;
+	vertical-align		: top;
+}
+
+.JuiForm .JuiFormGroupLeftInner
+{
+	width				: 3px;
+	height				: 100%;
+	background-color	: #7EB2E8;
+}
+
+.JuiForm .JuiFormGroupMain
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 100%;
+	vertical-align		: top;
+	border-bottom		: 3px solid #7EB2E8;
+}
+
+.JuiForm .JuiFormGroupMainInner
+{
+	display				: inline-block;
+	height				: 100%;
+	vertical-align		: top;
+	background-color	: #7EB2E8;
+	padding				: 4px 6px 0px 6px;
+}
+
+.JuiForm .JuiFormGroupMainRight
+{
+	display				: inline-block;
+	height				: 100%;
+	width				: 30px;
+	vertical-align		: top;
+	background-image	: url(image/FormGroupMainRight.png);
+}
+
+.JuiForm .JuiFormGroupIcon
+{
+	display				: inline-block;
+	width				: 16px;
+	height				: 16px;
+	background-image	: url(image/FormGroupIcon.png);
+	vertical-align		: top;
+}
+
+.JuiForm .JuiFormGroup[Collpased] .JuiFormGroupIcon
+{
+	background-position	: 0px -16px;
+}
+
+.JuiForm .JuiFormGroupText
+{
+	display				: inline-block;
+	height				: 16px;
+	vertical-align		: top;
+	padding-left		: 3px;
+	padding-top			: 0px;
+	font-family			: Segoe UI,微软雅黑,黑体;
+	line-height			: 16px;
+}
+
+.JuiForm .JuiFormItem
+{
+	float				: left;
+	min-height			: 34px;
+	margin				: 0px;
+	white-space			: nowrap;
+	padding				: 0px 8px 0px 108px;
+	position			: relative;
+}
+
+.JuiForm .JuiFormItemTitle
+{
+	position			: absolute;
+	top					: 0px;
+	left				: 8px;
+	width				: 100px;
+	height				: 100%;
+	vertical-align		: middle;
+	overflow			: hidden;
+}
+
+.JuiForm .JuiFormItem[NoTitle]
+{
+	padding-left		: 8px!important;
+}
+
+.JuiForm .JuiFormItem[NoTitle] .JuiFormItemTitle
+{
+	display				: none;
+}
+
+.JuiForm .JuiFormItemTitle:before
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	width				: 0px;
+	height				: 100%;
+	content				: "";
+}
+
+.JuiForm .JuiFormItemTitle span
+{
+	display				: inline-block;
+	vertical-align		: middle;
+	work-wrap           :break-word;
+	white-space			: pre-wrap;
+}
+
+.JuiForm .JuiFormItem[Required] .JuiFormItemTitle span
+{
+	color				: #FF0000;
+	font-weight			: bold;
+}
+
+.JuiForm .JuiFormItem[ReadOnly] .JuiFormItemTitle span
+{
+	color				: #808080;
+	font-weight			: normal;
+}
+
+.JuiForm .JuiFormItemControl
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 100%;
+	padding				: 4px 0px;
+	vertical-align		: top;
+}
+
+.JuiForm .JuiFormListButtonPanel
+{
+	white-space			: normal;
+}
+
+.JuiForm .JuiFormListButtonPanel > *
+{
+	margin				: 0px 8px 8px 0px;
+}

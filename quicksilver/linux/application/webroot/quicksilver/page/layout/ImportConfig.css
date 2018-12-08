@@ -1,0 +1,61 @@
+.QsContent
+{
+	padding			: 2px;
+}
+
+#TemplatePanel
+{
+	width			: 600px;
+	height			: 100%;
+	margin			: 0px auto;
+}
+
+#DuplicationPanel
+{
+	width			: 600px;
+	height			: 100%;
+	margin			: 0px auto;
+	padding-bottom	: 143px;
+	overflow		: hidden;
+}
+
+#DuplicationListPanel
+{
+	width			: 100%;
+	height			: 117px;
+	padding			: 8px;
+}
+
+#DuplicationListButtonPanel
+{
+	width			: 100%;
+	text-align		: center;
+}
+
+.DuplicationSorterPanel
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+#MappingPanel
+{
+	width			: 600px;
+	height			: 100%;
+	margin			: 0px auto;
+	padding-bottom	: 34px;
+	overflow		: hidden;
+}
+
+#MappingListPanel
+{
+	width			: 100%;
+	height			: 100%;
+	padding			: 8px;
+}
+
+#MappingListButtonPanel
+{
+	width			: 100%;
+	text-align		: center;
+}

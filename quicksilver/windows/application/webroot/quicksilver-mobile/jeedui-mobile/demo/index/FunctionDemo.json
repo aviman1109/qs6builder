@@ -1,0 +1,38 @@
+{
+	"title": {
+		"rows": [
+			{
+				"height": 38,
+				"fields":
+				[
+					{"name":"FName", "control":"InputBox", "type":"string"}
+				]
+			}
+		]
+	},
+	"data":
+	[
+		{"icon":"demo/image/ios7/4-01.png", "FName":"待办工作项"},
+		{"icon":"demo/image/ios7/1-02.png", "FName":"日历"},
+		{"icon":"demo/image/ios7/1-03.png", "FName":"任务"},
+		{"icon":"demo/image/ios7/1-04.png", "FName":"活动"},
+		{"icon":"demo/image/ios7/1-05.png", "FName":"费用"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"知识"},
+		{"icon":"demo/image/ios7/1-07.png", "FName":"客户"},
+		{"icon":"demo/image/ios7/1-08.png", "FName":"联系人"},
+		{"icon":"demo/image/ios7/1-09.png", "FName":"线索"},
+		{"icon":"demo/image/ios7/1-10.png", "FName":"商机"},
+		{"icon":"demo/image/ios7/1-11.png", "FName":"报价单"},
+		{"icon":"demo/image/ios7/2-01.png", "FName":"合同"},
+		{"icon":"demo/image/ios7/2-02.png", "FName":"订单"},
+		{"icon":"demo/image/ios7/2-03.png", "FName":"服务请求"},
+		{"icon":"demo/image/ios7/2-04.png", "FName":"专案"},
+		{"icon":"demo/image/ios7/2-05.png", "FName":"目标客户"},
+		{"icon":"demo/image/ios7/2-06.png", "FName":"市场计划"},
+		{"icon":"demo/image/ios7/2-07.png", "FName":"部门"},
+		{"icon":"demo/image/ios7/2-08.png", "FName":"员工"},
+		{"icon":"demo/image/ios7/2-09.png", "FName":"产品"},
+		{"icon":"demo/image/ios7/2-10.png", "FName":"价目表"},
+		{"icon":"demo/image/ios7/2-11.png", "FName":"退出"}
+	]
+}

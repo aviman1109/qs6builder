@@ -1,0 +1,11 @@
+.QsContent
+{
+	padding			: 2px;
+}
+
+#BasicBody,
+#RecipientBody
+{
+	width			: 100%;
+	height			: 100%;
+}

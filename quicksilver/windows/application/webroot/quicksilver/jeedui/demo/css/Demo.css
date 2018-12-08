@@ -1,0 +1,32 @@
+.ToolBarPane
+{
+	position	: fixed;
+	top			: 0px;
+	left		: 0px;
+	right		: 0px;
+}
+
+.ContentPane
+{
+	position	: fixed;
+	top			: 27px;
+	bottom		: 0px;
+	left		: 0px;
+	right		: 0px;
+	overflow	: auto;
+}
+
+.Padding
+{
+	padding		: 10px;
+}
+
+.DemoTable
+{
+	table-layout: fixed;
+}
+
+.DemoTable > tbody > tr > td
+{
+	padding		: 4px;
+}

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<version>8.0.24</version>
+	<compatible-version>7</compatible-version>
+	<directory>apache-tomcat</directory>
+	<deploy-directory>apache-tomcat/webapps</deploy-directory>
+	<deploy-as-war>false</deploy-as-war>
+	<solr-deploy-directory>solr</solr-deploy-directory>
+	<ignore-paths>
+		apache-tomcat/conf/
+		apache-tomcat/extension/${Ets.Install.AppName}/config/
+		apache-tomcat/extension/${Ets.Install.AppName}/image/logo/
+		h2/data/
+
+		server.bat
+		apache-tomcat/bin/service-install.bat
+		apache-tomcat/bin/service-uninstall.bat
+		apache-tomcat/bin/service-update.bat
+		apache-tomcat/webapps/ROOT/index.html
+	</ignore-paths>
+	<delete-files>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">log4j-1\..*\.jar</delete-file>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">log4j\.properties</delete-file>
+		<delete-file dir="${Ets.Upgrade.WarPath}/WEB-INF/lib">slf4j-log4j1.*\.jar</delete-file>
+		<delete-file dir="${Ets.Install.ServerDirectory}/webapps">docs</delete-file>
+		<delete-file dir="${Ets.Install.ServerDirectory}/webapps">examples</delete-file>
+		<delete-file dir="${Ets.Install.ServerDirectory}/conf">web.xml</delete-file>
+	</delete-files>
+	<text-replacements>
+		<text-replacement file="${Ets.Install.Path}/apache-tomcat/extension/${Ets.Install.AppName}/config/application.properties">
+			<item>
+				<expression>log.provider.class\s*=\s*com.jeedsoft.common.advanced.log.log4j.Log4jLogProvider</expression>
+				<replacement>log.provider.class = com.jeedsoft.common.advanced.log.log4j2.Log4j2FullAsyncLogProvider</replacement>
+			</item>
+			<item>
+				<expression>log.config.file\s*=\s*log4j.xml</expression>
+				<replacement>log.config.file = log4j2.xml</replacement>
+			</item>
+		</text-replacement>
+	</text-replacements>
+</root>

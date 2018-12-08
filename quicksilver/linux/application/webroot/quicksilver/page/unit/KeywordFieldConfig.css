@@ -1,0 +1,41 @@
+.QsContent
+{
+	padding			: 2px;
+}
+
+#KeywordTabBody,
+#EqualQueryTabBody
+{
+	width			: 100%;
+	height			: 100%;
+	padding-bottom	: 32px;
+	overflow		: hidden;
+}
+
+.TabBodyTopRow
+{
+	padding			: 6px 8px 0px 8px;
+	white-space		: nowrap;
+}
+
+.TabBodyTopRow > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+}
+
+.TabBodyTopRow > div:nth-child(2n+3)
+{
+	padding-left	: 6px;
+}
+
+#ResultLimitTabBody .TabBodyTopRow
+{
+	padding-top		: 10px;
+}
+
+#ResultLimitTabBody > div:last-child
+{
+	padding			: 8px;
+	color			: #808080;
+}

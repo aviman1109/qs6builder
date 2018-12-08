@@ -1,0 +1,71 @@
+.ChartContainer
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	text-align			: center;
+}
+
+.ChartContainer[grid]
+{
+	overflow			: auto;
+}
+
+.ChartGridTable
+{
+	border-collapse		: collapse;
+	margin				: 0px auto;
+}
+
+.ChartGridTable tr
+{
+	height				: 26px;
+}
+
+.ChartGridTable th
+{
+	background-color	: #C3DAF9;
+	border				: 1px solid #AAAAAA;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	width				: 100px;
+	text-align			: center;
+}
+
+.ChartGridTable td
+{
+	border				: 1px solid #AAAAAA;
+	text-align			: right;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	background-color	: #FFFFFF;
+}
+
+.ChartGridTable .GroupCell
+{
+	background-color	: #C3DAF9;
+	text-align			: left;
+}
+
+.ChartGridTable .SubTotalGroupCell
+{
+	background-color	: #C3DAF9;
+	text-align			: center;
+}
+
+.ChartGridTable .GrandTotalGroupCell
+{
+	background-color	: #C3DAF9;
+	text-align			: center;
+	font-weight			: bold;
+}
+
+.ChartGridTable .TotalValueCell
+{
+	background-color	: #EEEEEE;
+}
+
+.ChartGridTable .PercentageCell
+{
+	color				: #808080;
+}

@@ -1,0 +1,33 @@
+.ContentRoot
+{
+	width			: 100%;
+	height			: 100%;
+	overflow		: hidden;
+}
+
+#LeftPanel
+{
+	float			: left;
+	width			: 75%;
+	height			: 100%;
+}
+
+.QsMiddleAlign
+{
+	float			: left;
+	width			: 5%;
+	height			: 100%;
+}
+
+#RightPanel
+{
+	float			: left;
+	width			: 20%;
+	height			: 100%;
+}
+
+iframe
+{
+	width			: 100%;
+	height			: 100%;
+}

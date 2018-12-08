@@ -1,0 +1,198 @@
+.TabZone
+{
+	padding				: 2px 2px 0px 2px;
+	height				: 320px;
+}
+
+.LayoutZone
+{
+	padding				: 8px;	
+}
+
+.FormatTabBody .FormatsPanel
+{
+	width				: 750px;
+	padding				: 6px;
+	text-align			: center;
+	overflow			: hidden;
+	margin				: 0px auto;
+}
+
+.FormatTabBody .FormatsPanel .Format
+{
+	margin				: 4px;
+	padding				: 1px;
+	border				: 1px solid #D3D3D3;
+	width				: 80px;
+	height				: 70px;
+	cursor				: default;
+	background-color	: #FFFFFF;
+	display				: inline-block;
+	vertical-align		: top;
+}
+
+.FormatTabBody .FormatsPanel .SelectedFormat
+{
+	background-color	: #FCF9CE;
+}
+
+.FormatTabBody .FormatsPanel .Format .LegendRow
+{
+	width				: 100%;
+	white-space			: nowrap;
+}
+
+.FormatTabBody .FormatsPanel .Format .LegendRow > div
+{
+	height				: 100%;
+	padding				: 1px;
+	display				: inline-block;
+}
+
+.FormatTabBody .FormatsPanel .Format .LegendRow > div > div
+{
+	width				: 100%;
+	height				: 100%;
+	border				: 1px solid #B5C4DE;
+	background-image	: linear-gradient(top, #FFFFFF, #EBF0F9);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #EBF0F9);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #EBF0F9);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #EBF0F9);
+}
+
+.FormatTabBody .FormatsPanel .Format .LabelRow
+{
+	height				: 18px;
+	text-align			: center;
+	padding-top			: 3px;
+}
+
+.FormatTabBody .FormatsPanel .SelectedFormat .LabelRow
+{
+	font-weight			: bold;
+}	
+
+.FormatTabBody .FormatBoxRow
+{
+	text-align			: center;
+}
+
+.FormatTabBody .FormatBoxRow > div
+{
+	display				: inline-block;
+	vertical-align		: top;
+}
+
+.FormatTabBody .FormatBoxRow > div:first-child
+{
+	padding-right		: 6px;
+	height				: 26px;
+	line-height			: 26px;
+}
+
+.ModuleTabBody
+{
+	width				: 100%;
+	height				: 100%;
+	padding				: 4px;
+	overflow			: hidden;
+	position			: relative;
+}
+
+.ModuleTabBody .ModulePanel
+{
+	padding				: 4px;
+	overflow			: hidden;
+	position			: relative;
+}
+
+.ModuleTabBody .SystemModulePanel
+{
+	width				: 50%;
+	height				: 100%;
+}
+
+.ModuleTabBody .UserModulePanel
+{
+	position			: absolute;
+	left				: 50%;
+	right				: 4px;
+	top					: 4px;
+	bottom				: 4px;
+}
+
+.ModuleTabBody .ModulePanel .ModulesTitle
+{
+	width				: 100%;
+	height				: 20px;
+	line-height			: 20px;
+	text-align			: center;
+	background-image	: linear-gradient(left, #9CBCEB, #DCDCFF);
+	background-image	: -ms-linear-gradient(left, #9CBCEB, #DCDCFF);
+	background-image	: -moz-linear-gradient(left, #9CBCEB, #DCDCFF);
+	background-image	: -webkit-linear-gradient(left, #9CBCEB, #DCDCFF);
+}
+
+.ModuleTabBody .ModulePanel .ModulesContent
+{
+	position			: absolute;
+	left				: 4px;
+	right				: 4px;
+	top					: 24px;
+	bottom				: 4px;
+	border				: 1px solid #CCCCCC;
+	border-top			: none;
+	padding				: 4px;
+}
+
+.ModuleTabBody .Module
+{
+	border				: 1px solid #D3D3D3;
+	width				: 120px;
+	height				: 46px;
+	background-color	: #FFFFFF;
+	margin				: 4px;
+	position			: relative;
+	display				: inline-block;
+	overflow			: hidden;
+	padding-left		: 26px;
+}
+
+.ModuleTabBody .SelectedModule
+{
+	background-color: #FCF9CE;
+}
+
+.ModuleTabBody .Module .ModuleCheckBoxCell
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	width				: 24px;
+	height				: 100%;
+	line-height			: 40px;
+	text-align			: center;
+}
+
+.ModuleTabBody .Module .ModuleNameCell,
+.ModuleTabBody .Module .ModuleOperationCell
+{
+	white-space			: nowrap;
+	height				: 22px;
+	line-height			: 20px;
+}
+
+.ModuleTabBody .Module .ModuleNameCell
+{
+	padding-top			: 2px;
+}
+
+.ModuleTabBody .Module .ModuleOperationCell > label:first-child
+{
+	margin-right		: 6px;
+}
+
+.ModuleTabBody .Module .ModuleOperationCell .Gray
+{
+	color				: #808080;
+}

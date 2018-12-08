@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<title>TabStrip(Dynamic)</title>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.TabStrip");
+
+			function randomFill(control)
+			{
+				for (var i = 0; i < control.size(); ++i) {
+					var buffer = [];
+					for (var j = 0, n = Jui.random.next() * (i + 1) * 15; j < n; ++j) {
+						buffer.push("line #" + (i + 1) + "." + (j + 1));
+					}
+					control.getBodyByIndex(i).innerHTML = buffer.join("<br>");
+				}
+			}
+
+			function doSwitch(event)
+			{
+				Jui.message.hint("TAB 切换：" + JSON.stringify(event));
+			}
+
+			window.onload = function()
+			{
+				var strip1 = Jui.option.TabStrip.create({target: "container1", tabPosition: "top", dynamic: true, onswitch: doSwitch});
+				strip1.load([
+					{id: "first",  text: "第一项第一项第一项", icon: "../image/misc/5.png"},
+					{id: "second", text: "第二项第二项第二项", icon: "../image/misc/6.png"},
+					{id: "third",  text: "第三项第三项第三项", icon: "../image/misc/7.png"}
+				]);
+				randomFill(strip1);
+
+				var strip2 = Jui.option.TabStrip.create({target: "container2", tabPosition: "top", dynamic: true, onswitch: doSwitch});
+				strip2.load([
+					{id: "first",  text: "第一项第一项第一项", icon: "../image/misc/5.png"},
+					{id: "second", text: "第二项第二项第二项", icon: "../image/misc/6.png"},
+					{id: "third",  text: "第三项第三项第三项", icon: "../image/misc/7.png"}
+				]);
+				randomFill(strip2);
+			}
+		</script>
+	</head>
+	<body style="padding:10px">
+		<div style="position:relative;width:50%;height:50%;margin:0 auto">
+			<div style="height:25px;text-align:center;padding-top:5px">演示一</div>
+			<div id="container1" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+		</div>
+		<div style="position:relative;width:50%;height:50%;margin:0 auto">
+			<div style="height:25px;text-align:center;padding-top:5px">演示二</div>
+			<div id="container2" style="position:absolute;width:100%;top:25px;bottom:0"></div>
+		</div>
+	</body>
+</html>

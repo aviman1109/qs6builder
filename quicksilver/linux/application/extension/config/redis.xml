@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	This configuration file will take effect for QS cluster.
+
+	If Redis sentinel is enabled, you should add a "master" attribute in <servers> node, and specify
+	at least 3 sentinel servers. For example:
+
+	<servers master="mymaster">
+		<server host="192.168.1.100" port="8000"/>
+		<server host="192.168.1.101" port="8000"/>
+		<server host="192.168.1.102" port="8000"/>
+	</servers>
+-->
+
+<root>
+	<datasources>
+		<datasource>
+			<id>default</id>
+			<servers>
+				<server host="127.0.0.1" port="6379"/>
+			</servers>
+			<password></password>
+			<database>12</database>
+			<operationTimeout>2000</operationTimeout>
+			<!--
+			<poolConfig>
+				<maxTotal>8</maxTotal>
+				<maxIdle>8</maxIdle>
+				<minIdle>0</minIdle>
+				<lifo>true</lifo>
+				<maxWaitMillis>-1</maxWaitMillis>
+				<minEvictableIdleTimeMillis>1800000</minEvictableIdleTimeMillis>
+				<softMinEvictableIdleTimeMillis>-1</softMinEvictableIdleTimeMillis>
+				<numTestsPerEvictionRun>3</numTestsPerEvictionRun>
+				<testOnCreate>false</testOnCreate>
+				<testOnBorrow>false</testOnBorrow>
+				<testOnReturn>false</testOnReturn>
+				<testWhileIdle>false</testWhileIdle>
+				<timeBetweenEvictionRunsMillis>-1</timeBetweenEvictionRunsMillis>
+				<evictionPolicyClassName>org.apache.commons.pool2.impl.DefaultEvictionPolicy</evictionPolicyClassName>
+				<blockWhenExhausted>true</blockWhenExhausted>
+				<jmxEnabled>true</jmxEnabled>
+				<jmxNameBase></jmxNameBase>
+				<jmxNamePrefix>pool</jmxNamePrefix>
+			</poolConfig>
+			-->
+		</datasource>
+	</datasources>
+</root>

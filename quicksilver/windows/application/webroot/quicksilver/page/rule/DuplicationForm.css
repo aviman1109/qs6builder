@@ -1,0 +1,13 @@
+.FullZone
+{
+	width		: 100%;
+	height		: 100%;
+	padding		: 8px;
+}
+
+.BlockContent
+{
+	padding		: 6px 8px 10px 8px;
+	width		: 100%;
+	height		: 300px;
+}

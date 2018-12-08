@@ -1,0 +1,30 @@
+﻿delete from TsParameterDefinition where FId='9841e478-fd88-42bb-91f0-58c20a92de3d';
+delete from TsParameterDefinition where FId='2279599f-dfaf-4ba9-9bc8-99aae598f5ae';
+delete from TsParameterDefinition where FId='5389430f-5dba-4be8-9b17-be4cee219979';
+delete from TsParameterDefinition where FId='a33adb34-0452-47a4-9d11-e9f5f15ea727';
+delete from TsParameterDefinition where FId='5b71a696-03e2-4617-9efb-c5e5e0082848';
+delete from TsParameterDefinition where FId='679ac185-c913-4f16-8662-1fba49ba0a0f';
+delete from TsParameterDefinition where FId='bcb6c31e-8349-4086-a935-b6f5c23aee7f';
+delete from TsParameterDefinition where FId='8b243d3c-05b0-4830-a49e-b06c4f4a719c';
+delete from TsParameterDefinition where FId='426d8a7b-8e86-4021-b542-922929040528';
+delete from TsParameterDefinition where FId='42670b10-8477-45ee-865e-8489e83296fc';
+delete from TsParameterDefinition where FId='49e8e7c4-1fdc-4594-b825-2846a69867b4';
+delete from TsParameterDefinition where FId='a84d0c41-ad55-4886-b965-637eb17fe17a';
+delete from TsParameterDefinition where FId='beef7a4f-bd74-48a1-a19c-45a0e6761492';
+
+insert into TsParameterDefinition set FId='9841e478-fd88-42bb-91f0-58c20a92de3d', FName='登录页左上信息',				FCode='QsIndexTopLeftText',			FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=1;
+insert into TsParameterDefinition set FId='2279599f-dfaf-4ba9-9bc8-99aae598f5ae', FName='登录页右上信息',				FCode='QsIndexTopRightText',		FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=2;
+insert into TsParameterDefinition set FId='5389430f-5dba-4be8-9b17-be4cee219979', FName='登录后自动打开页面',			FCode='QsAutoOpenPages',			FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',        FRowSpan=1, FColSpan=0, FRequired=1, FVisible=1, FIndex=3;
+insert into TsParameterDefinition set FId='a33adb34-0452-47a4-9d11-e9f5f15ea727', FName='菜单宽度',						FCode='QsMenuWidth',				FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Integer',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=4;
+insert into TsParameterDefinition set FId='5b71a696-03e2-4617-9efb-c5e5e0082848', FName='页签数量上限',					FCode='QsMaxTabCount',				FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Integer',		FRange='SystemAndUser',	FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=5;
+insert into TsParameterDefinition set FId='679ac185-c913-4f16-8662-1fba49ba0a0f', FName='列表每页记录数',				FCode='QsListPageSize',				FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Integer',		FRange='SystemAndUser', FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=6;
+insert into TsParameterDefinition set FId='bcb6c31e-8349-4086-a935-b6f5c23aee7f', FName='首页最近访问记录数',			FCode='QsHomepageLastOpenCount',	FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Integer',		FRange='SystemAndUser', FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=7;
+insert into TsParameterDefinition set FId='8b243d3c-05b0-4830-a49e-b06c4f4a719c', FName='主从表单上下比例',				FCode='QsFormTopDownRatio',			FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=1, FVisible=1, FIndex=8;
+insert into TsParameterDefinition set FId='426d8a7b-8e86-4021-b542-922929040528', FName='关闭未保存表单时提醒',			FCode='QsFormAlertOnDiscard',		FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='CheckBox',				FRange='System',		FRowSpan=1, FColSpan=1, FRequired=0, FVisible=1, FIndex=9;
+insert into TsParameterDefinition set FId='42670b10-8477-45ee-865e-8489e83296fc', FName='询问是否继续新增',				FCode='QsFormQueryAddNext',			FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='CheckBox',				FRange='System',		FRowSpan=1, FColSpan=1, FRequired=0, FVisible=1, FIndex=10;
+insert into TsParameterDefinition set FId='49e8e7c4-1fdc-4594-b825-2846a69867b4', FName='首页版式',						FCode='QsHomepageFormat',			FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='SystemAndUser',	FRowSpan=1, FColSpan=1, FRequired=0, FVisible=0, FIndex=11;
+insert into TsParameterDefinition set FId='a84d0c41-ad55-4886-b965-637eb17fe17a', FName='LOGO 地址',					FCode='QsLogoUrl',					FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=0, FVisible=0, FIndex=12;
+insert into TsParameterDefinition set FId='beef7a4f-bd74-48a1-a19c-45a0e6761492', FName='LOGO 高度',					FCode='QsLogoHeight',				FParameterGroupId='621529ad-7daf-4768-9a1a-54ba72cfb3ab', FType='InputBox-Text',		FRange='System',		FRowSpan=1, FColSpan=1, FRequired=0, FVisible=0, FIndex=13;
+
+delete from TsSystemParameter where FKey='bcb6c31e-8349-4086-a935-b6f5c23aee7f';
+insert into TsSystemParameter set FId='d70ac92d-a3ee-40ad-9138-1ce084e9ed04', FKey='bcb6c31e-8349-4086-a935-b6f5c23aee7f', FValue='20';

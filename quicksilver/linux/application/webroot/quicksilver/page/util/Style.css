@@ -1,0 +1,537 @@
+/*----------------------------------------------------------------------*/
+/* General																*/
+/*----------------------------------------------------------------------*/
+
+.QsFullSize
+{
+	width			: 100%;
+	height			: 100%;
+}
+
+.QsFullWidth
+{
+	width			: 100%!important;
+}
+
+.QsPadding
+{
+	padding			: 8px;
+}
+
+.QsBlockTitle
+{
+	font-family			: Segoe UI,微软雅黑,黑体;
+	width				: 100%;
+	height				: 24px;
+	line-height			: 24px;
+	background-color	: #7EB2E8;
+	padding-left		: 6px;
+}
+
+.QsLink
+{
+	color			: #0050A0;
+	cursor			: pointer;
+	white-space		: nowrap;
+	text-decoration	: none;
+}
+
+.QsLinkWithIcon
+{
+	color				: #0050A0;
+	cursor				: pointer;
+	white-space			: nowrap;
+	height				: 16px;
+	line-height			: 16px;
+	padding-left		: 19px;
+	background-repeat	: no-repeat;
+}
+
+.QsDarkBackground
+{
+	background-color	: #DFDFFF;
+}
+
+.QsBackground
+{
+	background-color	: #F7F7FF;
+}
+
+.QsBorder
+{
+	border				: 1px solid #6593CF;
+}
+
+.QsTopBorder
+{
+	border-top			: 1px solid #6593CF;
+}
+
+.QsLeftBorder
+{
+	border-left			: 1px solid #6593CF;
+}
+
+.QsRightBorder
+{
+	border-right		: 1px solid #6593CF;
+}
+
+.QsBottomBorder
+{
+	border-bottom		: 1px solid #6593CF;
+}
+
+.QsTopLeftBorder
+{
+	border-top			: 1px solid #6593CF;
+	border-left			: 1px solid #6593CF;
+}
+
+.QsTopRightBorder
+{
+	border-top			: 1px solid #6593CF;
+	border-right		: 1px solid #6593CF;
+}
+
+.QsBottomLeftBorder
+{
+	border-bottom		: 1px solid #6593CF;
+	border-left			: 1px solid #6593CF;
+}
+
+.QsBottomRightBorder
+{
+	border-bottom		: 1px solid #6593CF;
+	border-right		: 1px solid #6593CF;
+}
+
+.QsShadow
+{
+	box-shadow			: 0px 0px 6px rgba(101,147,207,0.5);
+}
+
+.QsShortShadow
+{
+	box-shadow			: 0px 0px 3px rgba(101,147,207,0.5);
+}
+
+.QsLongShadow
+{
+	box-shadow			: 0px 0px 18px rgba(101,147,207,0.33);
+}
+
+.QsHorzButtonPanel > *
+{
+	margin-left			: 4px;	
+	margin-right		: 4px;	
+}
+
+.QsVertButtonPanel > *
+{
+	margin-top			: 4px;	
+	margin-bottom		: 4px;
+}
+
+.QsLeftButtonPanel > *
+{
+	margin-right		: 8px;	
+}
+
+.QsRightButtonPanel > *
+{
+	margin-left			: 8px;	
+}
+
+/*----------------------------------------------------------------------*/
+/* ToolBar/Content														*/
+/*----------------------------------------------------------------------*/
+
+.QsWarningBar
+{
+	position			: fixed;
+	top					: 0px;
+	left				: 0px;
+	right				: 0px;
+	height				: 36px;
+	display				: none;
+	padding-right		: 36px;
+	background-image	: linear-gradient(top, #FEF0B0, #FAE692);
+	background-image	: -ms-linear-gradient(top, #FEF0B0, #FAE692);
+	background-image	: -moz-linear-gradient(top, #FEF0B0, #FAE692);
+	background-image	: -webkit-linear-gradient(top, #FEF0B0, #FAE692);
+	border-bottom		: 1px solid #666666;
+}
+
+.QsWarningBar > div:first-child
+{
+	width				: 100%;
+	height				: 100%;
+	padding-left		: 20px;
+	line-height			: 35px;
+}
+
+.QsWarningBar > div:last-child
+{
+	position			: absolute;
+	width				: 12px;
+	height				: 12px;
+	right				: 12px;
+	top					: 12px;
+	background-image	: url(../../image/other/WarningBarClose.png);
+}
+
+.QsWarningBar > div:last-child:hover
+{
+	background-position	: 0px -12px;
+}
+
+.QsWarningBar > div:last-child:active
+{
+	background-position	: 0px -24px;
+}
+
+.QsToolBar
+{
+	position		: fixed;
+	top				: 0px;
+	left			: 0px;
+	right			: 0px;
+	height			: 26px;
+}
+
+.QsContent
+{
+	position		: fixed;
+	left			: 0px;
+	right			: 0px;
+	top				: 26px;
+	bottom			: 0px;
+	overflow		: auto;
+}
+
+.QsContent[toolbar=false]
+{
+	top				: 0px;
+}
+
+body[warningbar=true] .QsWarningBar
+{
+	display			: block;
+}
+
+body[warningbar=true] .QsToolBar
+{
+	top				: 36px;
+}
+
+body[warningbar=true] .QsContent
+{
+	top				: 62px;
+}
+
+body[warningbar=true] .QsContent[toolbar=false]
+{
+	top				: 36px;
+}
+
+.QsTabStripContainer .QsContent
+{
+	padding			: 2px;
+}
+
+/*----------------------------------------------------------------------*/
+/* 用 HTML 元素仿 JUI 效果，以保持界面风格的一致性。但请尽量使用 JUI 控件，只有必	*/
+/* 须时才用以下内容                                                                                                       	*/
+/*----------------------------------------------------------------------*/
+
+.QsInputBox
+{
+	width				: 200px;
+	height				: 26px;
+	border				: 1px solid #7F9DB9;
+	padding				: 0px 4px;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+}
+
+.QsInputBox:hover,
+.QsInputBox:focus
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.QsInputBox[readOnly]
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.QsTextBox
+{
+	width				: 100%;
+	height				: 108px;
+	border				: 1px solid #7F9DB9;
+	border-radius		: 3px;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+	transition			: box-shadow 0.2s linear;
+	outline				: none;
+	resize				: none;
+	overflow-y			: scroll;
+	line-height			: 17px;
+	padding				: 2px;
+}
+
+.QsTextBox:hover,
+.QsTextBox:focus
+{
+	border				: 1px solid #2392F3;
+	box-shadow			: 0px 0px 4px rgba(35,146,243,0.5);
+}
+
+.QsTextBox[readOnly]
+{
+	background-color	: #E7E7E7;
+	border				: 1px solid #7F9DB9;
+	box-shadow			: 1px 1px rgba(127,157,185,0.3);
+}
+
+.QsSmallButton
+{
+	cursor				: default;
+	padding				: 0px 6px;
+	display				: inline-block;
+	white-space			: nowrap;
+	height				: 22px;
+	line-height			: 20px;
+	border				: 1px solid #003C74;
+	border-radius		: 3px;
+	background-image	: url(image/Button.png);
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+}
+
+.QsSmallButtonLeft
+{
+	margin				: 3px 6px 3px 0px;
+}
+
+.QsSmallButtonRight
+{
+	margin				: 3px 0px 3px 6px;
+}
+
+.QsSmallButton:hover
+{
+	background-image	: linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -ms-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -moz-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+	background-image	: -webkit-linear-gradient(top, #FFE8AF 0px, #FDD889 1px, #FCFCFB 2px, #ECEBE6 18px, #F8B230 19px, #E5A710 20px);
+}
+
+.QsSmallButton:active
+{
+	background-image	: linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -ms-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -moz-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+	background-image	: -webkit-linear-gradient(top, #D1CCC1 0.5px, #DCD8CF 1.5px, #E5E4DD 2.5px, #E2E2DA 17.5px, #EAE9E3 18.5px, #F2F1EE 19.5px);
+}
+
+.QsSmallButton[disabled],
+.QsSmallButton[disabled]:hover
+{
+	border				: 1px solid #808080;
+	background-image	: linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -ms-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -moz-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	background-image	: -webkit-linear-gradient(top, #FFFFFF, #F0F0EA 85%, #D6D0C5);
+	color				: #999999;
+}
+
+/*----------------------------------------------------------------------*/
+/* Align																*/
+/*----------------------------------------------------------------------*/
+
+.QsMiddleAlign:before
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	width			: 0px;
+	height			: 100%;
+	content			: "";
+}
+
+.QsMiddleAlign > *
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	white-space		: normal;
+	text-align		: center;
+}
+
+.QsLeftZone
+{
+	width		: 220px;
+	height		: 100%;
+	padding		: 4px 0px 0px 8px;
+	overflow	: auto;
+}
+
+.QsRightZone
+{
+	position	: absolute;
+	left		: 226px;
+	top			: 0px;
+	right		: 0px;
+	bottom		: 0px;
+	overflow	: hidden;
+}
+
+/*----------------------------------------------------------------------*/
+/* DoubleSorter															*/
+/*----------------------------------------------------------------------*/
+
+.QsDoubleSorter
+{
+	position		: relative;
+	width			: 100%;
+	height			: 100%;
+	overflow		: hidden;
+}
+
+.QsDoubleSorter > div:first-child
+{
+	position		: absolute;
+	left			: 8px;
+	right			: 50%;
+	top				: 8px;
+	bottom			: 8px;
+	padding			: 22px 30px 0px 0px;
+}
+
+.QsDoubleSorter > div:last-child
+{
+	position		: absolute;
+	left			: 50%;
+	right			: 8px;
+	top				: 8px;
+	bottom			: 8px;
+	padding			: 22px 0px 0px 30px;
+}
+
+.QsDoubleSorter > div:nth-child(2)
+{
+	position		: relative;
+	width			: 60px;
+	height			: 100%;
+	margin			: 0px auto;
+	z-index			: 1;
+}
+
+.QsDoubleSorter > div:first-child > div:first-child,
+.QsDoubleSorter > div:last-child > div:first-child
+{
+	position		: absolute;
+	top				: 0px;
+	width			: 100%;
+	height			: 22px;
+	text-align		: center;
+}
+
+.QsDoubleSorter > div:nth-child(2):before
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	width			: 0px;
+	height			: 100%;
+	content			: "";
+}
+
+.QsDoubleSorter > div:nth-child(2) > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	white-space		: normal;
+	text-align		: center;
+}
+
+.QsDoubleSorter > div:nth-child(2) > div > *
+{
+	margin			: 4px;
+}
+
+/*----------------------------------------------------------------------*/
+/* SorterAndList														*/
+/*----------------------------------------------------------------------*/
+
+.QsSorterAndList
+{
+	position		: relative;
+	width			: 100%;
+	height			: 100%;
+	overflow		: hidden;
+}
+
+.QsSorterAndList > div
+{
+	position		: absolute;
+	top				: 8px;
+	bottom			: 8px;
+}
+
+.QsSorterAndList > div:first-child
+{
+	left			: 8px;
+	width			: 240px;
+	padding-top		: 22px;
+}
+
+.QsSorterAndList > div:nth-child(2)
+{
+	left			: 248px;
+	width			: 60px;
+}
+
+.QsSorterAndList > div:last-child
+{
+	left			: 308px;
+	right			: 8px;
+	padding-top		: 22px;
+}
+
+.QsSorterAndList > div:first-child > div:first-child,
+.QsSorterAndList > div:last-child > div:first-child
+{
+	position		: absolute;
+	top				: 0px;
+	width			: 100%;
+	height			: 22px;
+	text-align		: center;
+}
+
+.QsSorterAndList > div:nth-child(2):before
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	width			: 0px;
+	height			: 100%;
+	content			: "";
+}
+
+.QsSorterAndList > div:nth-child(2) > div
+{
+	display			: inline-block;
+	vertical-align	: middle;
+	white-space		: normal;
+	text-align		: center;
+}
+
+.QsSorterAndList > div:nth-child(2) > div > *
+{
+	margin			: 4px;
+}

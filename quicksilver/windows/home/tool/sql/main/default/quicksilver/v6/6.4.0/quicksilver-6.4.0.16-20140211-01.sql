@@ -1,0 +1,1 @@
+create index IsTimerLog on TsTimerLog (FStartTime, FStatus, FClusterNode);

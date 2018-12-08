@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Random</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<style>
+			.Block
+			{
+				margin: 20px;
+				float: left;
+				font-family: Courier New;
+			}
+			.BlockTitle
+			{
+				text-align: center;
+				font-weight: bold;
+				margin-bottom: 6px;
+			}
+		</style>
+		<script>
+			var N = 10;
+			var SPLITTER = "--------------------------";
+			function writeln(s)
+			{
+				document.write(s);
+				document.write("<br>");
+			}
+		</script>
+	</head>
+	<body>
+		<div class="Block">
+			<div class="BlockTitle">Random Integers</div>
+			<script>
+				var sum = 0;
+				for (var i = 0; i < N; ++i) {
+					var random = Jui.random.nextInt();
+					sum += random;
+					writeln("nextInt() = " + random);
+				}
+				writeln("FACTOR: " + (((sum / N) + 0x80000000) / 0xFFFFFFFF));
+				writeln(SPLITTER);
+				
+				var sum = 0;
+				for (var i = 0; i < N; ++i) {
+					var random = Jui.random.nextInt(100);
+					sum += random;
+					writeln("nextInt(100) = " + random);
+				}
+				writeln("FACTOR: " + (sum / N / 100));
+			</script>
+		</div>
+		<div class="Block">
+			<div class="BlockTitle">Random Floats</div>
+			<script>
+				var sum = 0;
+				for (var i = 0; i < 2 * N; ++i) {
+					var random = Jui.random.next();
+					sum += random;
+					writeln("next() = " + random);
+				}
+				writeln("FACTOR: " + (sum / 2 / N));
+			</script>
+		</div>
+		<div class="Block">
+			<div class="BlockTitle">Random Strings</div>
+			<script>
+				for (var i = 0; i < N; ++i) {
+					var random = Jui.random.nextString(2, 8, 'ABCDEFGHIJ');
+					writeln("nextString(2, 8, 'ABCDEFGHIJ') = " + random);
+				}
+				writeln(SPLITTER);
+				for (var i = 0; i < N; ++i) {
+					var random = Jui.random.nextString(3, 3, '0123456789');
+					sum += parseInt(random);
+					writeln("nextString(3, 3, '0123456789') = " + random);
+				}
+				writeln("FACTOR: " + (sum / N / 1000));
+			</script>
+		</div>
+		<div class="Block">
+			<div class="BlockTitle">Random UUIDs</div>
+			<script>
+				var sums = [0, 0, 0, 0, 0];
+				for (var i = 0; i < 2 * N; ++i) {
+					var random = Jui.random.nextUuid();
+					sums[0] += parseInt(random.substring(0, 8), 16);
+					sums[1] += parseInt(random.substring(9, 13), 16);
+					sums[2] += parseInt(random.substring(15, 18), 16);
+					sums[3] += parseInt(random.substring(19, 23), 16);
+					sums[4] += parseInt(random.substring(24, 36), 16);
+					writeln(random);
+				}
+				writeln("FACTOR: ");
+				writeln(sums[0] / N / 2 / 0xFFFFFFFF);
+				writeln(sums[1] / N / 2 / 0xFFFF);
+				writeln(sums[2] / N / 2 / 0xFFF);
+				writeln(sums[3] / N / 2 / 0xFFFF);
+				writeln(sums[4] / N / 2 / 0xFFFFFFFFFFFF);
+			</script>
+		</div>
+	</body>
+</html>

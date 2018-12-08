@@ -1,0 +1,60 @@
+.QsContent
+{
+	overflow-x			: hidden;	
+}
+
+#MainTable
+{
+	width 				: 100%;
+	border-collapse		: collapse;
+	table-layout		: fixed;
+}
+
+#MainTable tr
+{
+	height 				: 25px;
+}
+
+#MainTable td
+{
+	border-right		: 1px solid #CCCCCC;
+	border-bottom		: 1px solid #CCCCCC;
+	padding				: 0px 3px;
+	overflow			: hidden;
+}
+
+#MainTable tr:first-child td
+{
+	text-align			: center;
+	background-color	: #F4F2E1;
+	border-left			: 1px solid #FFFFFF;
+	border-top			: 1px solid #FFFFFF;
+	border-right		: 1px solid #BCB8A9;
+	border-bottom		: 1px solid #BCB8A9;
+}
+
+#MainTable td:nth-child(3n+1)
+{
+	text-align			: center;
+}
+
+#MainTable span
+{
+	display				: inline-block;
+	width				: 100%;
+	height				: 16px;
+	line-height			: 16px;
+	margin-top			: 3px;
+	white-space			: nowrap;
+	overflow			: hidden;
+}
+
+#MainTable tr:nth-child(2n+0)
+{
+	background-color	: #FFFFFF;
+}
+
+#MainTable tr:nth-child(2n+1)
+{
+	background-color	: #FFFFE0;
+}

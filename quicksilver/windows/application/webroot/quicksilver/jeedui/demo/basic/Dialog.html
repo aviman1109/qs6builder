@@ -1,0 +1,65 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Dialog</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			function init()
+			{
+				var bar = Jui.basic.ToolBar.create({target: "ToolBarPane"});
+				bar.load({right: [
+					{control: "Button",	text: "普通",			icon: "../image/misc/1.png",	onclick: doNormal},
+					{control: "Button",	text: "指定大小1",		icon: "../image/misc/2.png",	onclick: doSize1},
+					{control: "Button",	text: "指定大小2",		icon: "../image/misc/7.png",	onclick: doSize2},
+					{control: "Button",	text: "最大化",			icon: "../image/misc/3.png",	onclick: doMaximize},
+					{control: "Button",	text: "大小固定",		icon: "../image/misc/4.png",	onclick: doUnresizable},
+					{control: "Button",	text: "最大化且固定",	icon: "../image/misc/5.png",	onclick: doMaxUnresizable},
+					{control: "Button",	text: "多层窗口",		icon: "../image/misc/6.png",	onclick: doRecursion}
+				]});
+			}
+
+			function doNormal()
+			{
+				Jui.basic.Dialog.open("demo/basic/Button.html");
+			}
+			
+			function doSize1()
+			{
+				Jui.basic.Dialog.open("demo/option/List-Normal.html", {width: 850, height: 601});
+			}
+
+			function doSize2()
+			{
+				Jui.basic.Dialog.open("demo/basic/MessageBox.html", {width: 800, height: 400});
+			}
+
+			function doMaximize()
+			{
+				Jui.basic.Dialog.open("demo/basic/MessageBox.html", {maximize: true});
+			}
+			
+			function doUnresizable()
+			{
+				Jui.basic.Dialog.open("demo/basic/MessageBox.html", {resizable: false});
+			}
+			
+			function doMaxUnresizable()
+			{
+				Jui.basic.Dialog.open("demo/basic/MessageBox.html", {maximize: true, resizable: false});
+			}
+		
+			function doRecursion()
+			{
+				Jui.basic.Dialog.open("demo/basic/DialogRecursion.html");
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane" style="text-align:center;padding-top:20px">
+			注：在 Chrome 浏览器中以本地文件的形式访问该页面时，对话框会限制在当前的 iframe 内。
+		</div>
+	</body>
+</html>

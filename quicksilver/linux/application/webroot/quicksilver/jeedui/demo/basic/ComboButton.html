@@ -1,0 +1,95 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>ComboButton</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<script src="../../js/Jui.js"></script>
+		<script>
+			var enItems = [
+				{id: 1, text: "New", icon: "demo/image/misc/S.png"},
+				{id: 2, text: "Update", icon: "demo/image/misc/T.png"},
+				{id: 3, text: "Delete", icon: "demo/image/misc/U.png"},
+				{splitter: true},
+				{id: 4, text: "Close"},
+				{id: 5, text: "Unclose", icon: "demo/image/misc/V.png"},
+				{splitter: true},
+				{id: 6, text: "Import", icon: "demo/image/misc/W.png"},
+				{id: 7, text: "Export as Excel Format"}
+			];
+			
+			var cnItems = [
+				{id: 1, text: "新增", icon: "demo/image/misc/S.png"},
+				{id: 2, text: "修改", icon: "demo/image/misc/T.png"},
+				{id: 3, text: "删除", icon: "demo/image/misc/U.png"},
+				{splitter: true},
+				{id: 4, text: "关闭"},
+				{id: 5, text: "反关闭", icon: "demo/image/misc/V.png"},
+				{splitter: true},
+				{id: 6, text: "导入", icon: "demo/image/misc/W.png"},
+				{id: 7, text: "导出为 Excel 格式"}
+			];
+			
+			function init()
+			{
+				Jui.basic.ComboButton.create({target: "normal", text: "操作", icon: "../image/misc/A.png", onclick: "showTime", items: cnItems});
+				Jui.basic.ComboButton.create({target: "fixed-width", text: "Operation", icon: "../image/misc/B.png", style: "width: 240px", items: enItems});
+				Jui.basic.ComboButton.create({target: "icon-only", icon: "../image/misc/C.png", items: cnItems});
+				Jui.basic.ComboButton.create({target: "text-only", text: "只有文字", items: cnItems});
+				Jui.basic.ComboButton.create({target: "drop-only", text: "一律下拉", icon: "../image/misc/D.png", dropOnly: true, onclick: "showTime", items: cnItems});
+				Jui.basic.ComboButton.create({target: "disabled", text: "禁用", icon: "../image/misc/E.png", disabled: true});
+				Jui.basic.ComboButton.create({target: "tool", face: "ToolComboButton", text: "工具按钮", icon: "../image/misc/A.png", items: cnItems});
+				Jui.basic.ComboButton.create({target: "tool-icon-only", face: "ToolComboButton", icon: "../image/misc/A.png", items: cnItems});
+				Jui.basic.ComboButton.create({target: "tool-text-only", face: "ToolComboButton", text: "只有文字并且很宽很宽很宽", items: cnItems});
+				Jui.basic.ComboButton.create({target: "tool-disabled", face: "ToolComboButton", text: "禁用", icon: "../image/misc/A.png", disabled: true});
+
+				//高效批量创建
+				var t1 = new Date().valueOf();
+				var args = {text: "批量方式", icon: "../image/misc/D.png", onclick: doComboButtonClick, items: cnItems};
+				var buffer = ["<table id=batch class=DemoTable><col width=100><col width=100><col width=100>"];
+				for (var i = 0; i < 6; ++i) {
+					buffer.push("<tr>");
+					buffer.push(  "<td>" + Jui.basic.ComboButton.getHtml(args) + "</td>");
+					buffer.push(  "<td>" + Jui.basic.ComboButton.getHtml(args) + "</td>");
+					buffer.push(  "<td>" + Jui.basic.ComboButton.getHtml(args) + "</td>");
+					buffer.push("</tr>");
+				}
+				buffer.push("</table>");
+				document.getElementById("batch-container").innerHTML = buffer.join("");
+				var cells = document.getElementById("batch").getElementsByTagName("TD");
+				for (var i = 0; i < cells.length; ++i) {
+					var temp = {id: i, name: Jui.random.next()};
+					Jui.basic.ComboButton.initialize(cells[i].firstChild, Jui.object.merge(temp, args));
+				}
+				var t2 = new Date().valueOf();
+				Jui.message.hint("Generate 30 items: " + (t2 - t1) + "ms");
+			}
+
+			function showTime()
+			{
+				Jui.message.hint(new Date());
+			}
+
+			function doComboButtonClick(event)
+			{
+				Jui.message.hint("id:" + event.id + ", name:" + event.name);
+			}
+		</script>
+	</head>
+	<body class="Padding" onload="init()">
+		<table class="DemoTable">
+			<col width="100"><col>
+			<tr><td>普通</td><td id="normal"></td></tr>
+			<tr><td>固定宽度</td><td id="fixed-width"></td></tr>
+			<tr><td>只有图片</td><td id="icon-only"></td></tr>
+			<tr><td>只有文字</td><td id="text-only"></td></tr>
+			<tr><td>一律下拉</td><td id="drop-only"></td></tr>
+			<tr><td>普通禁用</td><td id="disabled"></td></tr>
+			<tr><td>工具按钮</td><td id="tool"></td></tr>
+			<tr><td>只有图片</td><td id="tool-icon-only"></td></tr>
+			<tr><td>只有文字</td><td id="tool-text-only"></td></tr>
+			<tr><td>工具禁用</td><td id="tool-disabled"></td></tr>
+		</table>
+		<div id="batch-container"></div>
+	</body>
+</html>

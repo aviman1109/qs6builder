@@ -1,0 +1,49 @@
+{
+	"title": {
+		"rows": [
+			{
+				"height": 18,
+				"fields":
+				[
+					{"name":"FOrder", "control":"InputBox", "type":"string", "fontSize":14, "color":"#C0A080"},
+					{"name":"FLiveYear", "control":"InputBox", "type":"string", "fontSize":14, "color":"#C0A080"}
+				]
+			},
+			{
+				"height": 22,
+				"fields":
+				[
+					{"name":"FName", "control":"InputBox", "type":"string", "fontSize":18}
+				]
+			},
+			{
+				"height": 13,
+				"fields":
+				[
+					{"name":"FMobile", "control":"InputBox", "type":"string", "fontSize":11, "color":"#999999"}
+				]
+			}
+		]
+	},
+	"data":
+	[
+		{"icon":"demo/image/ios7/1-06.png", "FName":"贝拉克·奥巴马", "FOrder":"第44任", "FLiveYear":"1961-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·沃克·布什", "FOrder":"第43任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"比尔·克林顿", "FOrder":"第42任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·布什", "FOrder":"第41任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"罗纳德·里根", "FOrder":"第40任", "FLiveYear":"1911-2004", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"吉米·卡特", "FOrder":"第39任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"贝拉克·奥巴马", "FOrder":"第44任", "FLiveYear":"1961-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·沃克·布什", "FOrder":"第43任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"比尔·克林顿", "FOrder":"第42任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·布什", "FOrder":"第41任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"罗纳德·里根", "FOrder":"第40任", "FLiveYear":"1911-2004", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"吉米·卡特", "FOrder":"第39任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"贝拉克·奥巴马", "FOrder":"第44任", "FLiveYear":"1961-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·沃克·布什", "FOrder":"第43任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"比尔·克林顿", "FOrder":"第42任", "FLiveYear":"1946-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"乔治·布什", "FOrder":"第41任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"罗纳德·里根", "FOrder":"第40任", "FLiveYear":"1911-2004", "FMobile":"(01)83123456-1234"},
+		{"icon":"demo/image/ios7/1-06.png", "FName":"吉米·卡特", "FOrder":"第39任", "FLiveYear":"1924-", "FMobile":"(01)83123456-1234"}
+	]
+}

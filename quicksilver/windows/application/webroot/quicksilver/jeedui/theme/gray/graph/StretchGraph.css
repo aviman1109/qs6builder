@@ -1,0 +1,17 @@
+﻿.JuiStretchGraph
+{
+	overflow			: hidden;
+}
+
+.JuiStretchGraph .JuiGraphContent
+{
+	background-size		: 100% 100%;
+	background-repeat	: no-repeat;
+}
+
+.JuiStretchGraph .JuiStretchGraphImage
+{
+	position			: absolute;
+	width				: 100%;
+	height				: 100%;
+}

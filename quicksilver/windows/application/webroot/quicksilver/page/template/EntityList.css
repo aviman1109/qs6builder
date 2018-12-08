@@ -1,0 +1,142 @@
+body
+{
+	overflow			: hidden;
+}
+
+.QsContent
+{
+	overflow			: hidden;
+}
+
+.LeftZone
+{
+	position			: absolute;
+	width				: 226px;
+	height				: 100%;
+	overflow			: hidden;
+	padding-right		: 6px;
+}
+
+.LeftZone[hasTitle]
+{
+	padding-bottom		: 27px;
+}
+
+.ListZone
+{
+	position			: absolute;
+	left				: 0px;
+	top					: 0px;
+	right				: 0px;
+	bottom				: 0px;	
+}
+
+.RightZone
+{
+	position			: absolute;
+	right				: 0px;
+	top					: 0px;
+	height				: 100%;
+	padding-left		: 6px;
+}
+
+.TreeTitle, .QueryFormTitle
+{
+	width				: 50%;
+	height				: 27px;
+	top					: 0px;
+	line-height			: 26px;
+	background-color	: #C3DAF9;
+	text-align			: center;
+	cursor				: default;
+	float				: left;
+	padding				: 0px 6px;
+	white-space			: nowrap;
+	overflow			: hidden;
+	text-overflow		: ellipsis;
+}
+
+.TreeTitle
+{
+	left				: 0px;
+}
+
+.QueryFormTitle
+{
+	left				: 50%;
+	right				: 0px;
+}
+
+.TreeTitle[current], .QueryFormTitle[current]
+{
+	background-color	: #D3EAFF;
+}
+
+#TreePanel, #QueryFormPanel
+{
+	width				: 100%;
+	height				: 100%;
+	padding-bottom		: 38px;
+	overflow			: hidden;
+}
+
+#TreeBodyPanel, #QueryFormBodyPanel
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+	padding				: 6px;
+}
+
+#QueryFormBodyPanel
+{
+	padding-top			: 0px;	
+}
+
+#TreeButtonPanel, #QueryFormButtonPanel
+{
+	width				: 100%;
+	height				: 38px;
+	padding-top			: 4px;
+	text-align			: center;
+}
+
+.QueryPaneHideArrow
+{
+	position			: absolute;
+	right				: 3px;
+	top					: 4px;
+	width				: 16px;
+	height				: 16px;	
+	background-image	: url(../../image/16/LightLeft.png);
+}
+
+.QueryPaneArrowMouseOver
+{
+	background-color	: #FFE7A2; 
+}
+
+.QueryPaneArrowMouseDown
+{
+	background-color	: #FEAB54; 
+}
+
+.QueryPaneShowArrow
+{
+	width				: 16px;
+	height				: 16px;	
+	background-image	: url(../../image/16/LightRight.png);
+}
+
+.QueryPaneMinizedText
+{
+	border				: none;
+}
+
+.QueryPaneMinimized
+{
+	width				: 100%;
+	height				: 100%;	
+	text-align			: center;
+	padding-top			: 6px;
+}

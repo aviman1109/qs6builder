@@ -1,0 +1,30 @@
+.FormZone
+{
+	width			: 100%;
+	overflow		: auto;
+	padding			: 2px;
+}
+
+.ListZone
+{
+	position		: absolute;
+	width			: 100%;
+	bottom			: 0px;
+	padding			: 0px 8px 42px 8px;
+}
+
+.ListZone .ButtonPanel
+{
+	height			: 34px;
+	white-space		: nowrap;
+}
+
+.ListZone .ButtonPanel > div
+{
+	display			: inline-block;
+}
+
+.ListZone .ButtonPanel > div:last-child
+{
+	padding-left	: 8px;
+}

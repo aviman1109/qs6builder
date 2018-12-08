@@ -1,0 +1,1 @@
+bin/jre/bin/java -cp "bin/lib/*" com.jeedsoft.quicksilver.toolset.pack.upgrade.UpgradeCmd $@

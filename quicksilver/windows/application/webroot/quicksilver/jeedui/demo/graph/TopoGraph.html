@@ -1,0 +1,83 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+	<title>TopoGraph</title>
+	<script src="../../js/Jui.js"></script>
+	<script>
+		Jui.use("Jui.graph.Graph");
+
+		window.onload = function()
+		{
+			var data = {"nodes":[{"id":"NODE-1","text":"终端","type":"Laptop","x":111,"y":176},{"id":"NODE-2","text":"终端","type":"Laptop","x":111,"y":270},{"id":"NODE-3","text":"终端","type":"Laptop","x":113,"y":370},{"id":"NODE-4","text":"","type":"Cloud","x":285,"y":267},{"id":"NODE-5","text":"服务器1","type":"Server","x":338,"y":368},{"id":"NODE-6","text":"服务器2","type":"Server","x":338,"y":456},{"id":"NODE-7","text":"服务器3","type":"Server","x":448,"y":80},{"id":"NODE-9","text":"DB服务器1","type":"DbServer","x":450,"y":311},{"id":"NODE-10","text":"DB服务器2","type":"DbServer","x":658,"y":311},{"id":"NODE-11","text":"服务器4","type":"Server","x":446,"y":193},{"id":"NODE-12","text":"WEB服务器1","type":"WebServer","x":453,"y":453},{"id":"NODE-13","text":"WEB服务器2","type":"WebServer","x":661,"y":453},{"id":"NODE-14","text":"","type":"Group","x":661,"y":80},{"id":"NODE-15","text":"","type":"Server","x":630,"y":62},{"id":"NODE-16","text":"","type":"Server","x":683,"y":59},{"id":"NODE-17","text":"","type":"Server","x":659,"y":103},{"id":"NODE-8","text":"","type":"JoinPoint","x":545,"y":80},{"id":"NODE-18","text":"","type":"JoinPoint","x":545,"y":453},{"id":"NODE-19","text":"","type":"JoinPoint","x":545,"y":193},{"id":"NODE-20","text":"","type":"JoinPoint","x":545,"y":416},{"id":"NODE-21","text":"","type":"JoinPoint","x":338,"y":416},{"id":"NODE-22","text":"","type":"JoinPoint","x":545,"y":267}],"lines":[{"type":"Light","from":"NODE-1","to":"NODE-4","routes":null},{"type":"Light","from":"NODE-2","to":"NODE-4","routes":null},{"type":"Light","from":"NODE-4","to":"NODE-3","routes":null},{"type":"Dark","from":"NODE-5","to":"NODE-6","routes":null},{"type":"Dark","from":"NODE-7","to":"NODE-14","routes":null},{"type":"Dark","from":"NODE-12","to":"NODE-13","routes":null},{"type":"Dark","from":"NODE-8","to":"NODE-18","routes":null},{"type":"Dark","from":"NODE-11","to":"NODE-19","routes":null},{"type":"Dark","from":"NODE-21","to":"NODE-20","routes":null},{"type":"Dark","from":"NODE-9","to":"NODE-10","routes":null},{"type":"Light","from":"NODE-4","to":"NODE-22","routes":null}]};
+			graph.load(data);
+		}
+
+		function getNodeHtml(node)
+		{
+			return "<div class=JuiGraphNode style='border:1px solid black;height:20px'>" + node.text + "</div>";
+		}
+
+		function doDoubleClick()
+		{
+			alert(JSON.stringify(graph.getData()));
+		}
+
+		function doDeleteClick()
+		{
+			graph.deleteCurrentElement();
+		}
+	</script>
+</head>
+<body ondblclick="doDoubleClick()">
+	<div class="JuiBottomBorder" style="position:fixed;top:0px;left:0px;right:0px">
+		<script>
+			var bar = Jui.basic.ToolBar.create();
+			bar.load({right:[
+				{"control":"Button", "name":"add",		"text":"新增", "icon":"../image/misc/2.png"},
+				{"control":"Button", "name":"edit",		"text":"修改", "icon":"../image/misc/3.png"},
+				{"control":"Button", "name":"delete",	"text":"删除", "icon":"../image/misc/4.png", onclick:doDeleteClick},
+				{"control":"Button", "name":"refresh",	"text":"刷新", "icon":"../image/misc/5.png"}
+			]});
+		</script>
+	</div>
+	<div style="position:fixed;left:0px;top:25px;right:0px;bottom:0px">
+		<script>
+			var nodeTypes = [
+				"VirtualNode",
+				{name:"Laptop",		width:32,	height:32,	icon:"../image/Laptop.png"},
+				{name:"Server",		width:32,	height:32,	icon:"../image/SmallServer.png"},
+				{name:"DbServer",	width:32,	height:32,	icon:"../image/SmallDbServer.png"},
+				{name:"WebServer",	width:32,	height:32,	icon:"../image/SmallWebServer.png"},
+				{name:"Switch",		width:32,	height:32,	icon:"../image/SwitchSmall.png"},
+				{name:"Group",		width:160,	height:105,	icon:"../image/Group.png"},
+				{name:"JoinPoint",	width:10,	height:10,	icon:"../image/JoinPoint.png"},
+				{name:"Cloud",		width:64,	height:64,	icon:"../image/SmallCloud.png"}
+			];
+			var lineTypes = [
+				{name:"Dark", width:2, color:"#66A"},
+				{name:"Light", width:2, color:"#CCF"}
+			];
+			var legendItems = [
+				{type:"Light",		text:"连接线(浅)",	className:"JuiGraphLegendLine"},
+				{type:"Dark",		text:"连接线(深)",	className:"JuiGraphLegendLine"},
+				{type:"Server",		text:"普通服务器",	icon:"../image/LegendServer.png"},
+				{type:"DbServer",	text:"DB服务器",	icon:"../image/LegendDbServer.png"},
+				{type:"WebServer",	text:"WEB服务器",	icon:"../image/LegendWebServer.png"},
+				{type:"Cloud",		text:"云",			icon:"../image/LegendCloud.png"},
+				{type:"Group",		text:"群",			icon:"../image/LegendGroup.png"},
+				{type:"Laptop",		text:"终端",		icon:"../image/LegendNotebook.png"},
+				{type:"JoinPoint",	text:"连接点",		icon:"../image/LegendJoinPoint.png"}
+			];
+			var graph = Jui.graph.Graph.create({
+				gridVisible		: true,
+				isDesignMode	: true,
+				lineTypes		: lineTypes, 
+				nodeTypes		: nodeTypes,
+				legendItems		: legendItems,
+				scrollable		: false
+			});
+		</script>
+	</div>
+</body>
+</html>

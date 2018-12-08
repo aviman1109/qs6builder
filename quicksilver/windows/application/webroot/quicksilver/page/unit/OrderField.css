@@ -1,0 +1,16 @@
+.QsDoubleSorter > div:first-child
+{
+	right	: 66%;
+}
+
+.QsDoubleSorter > div:nth-child(2)
+{
+	left	: 30%;
+	width	: 8%;
+	margin	: 0px;
+}
+
+.QsDoubleSorter > div:last-child
+{
+	left	: 34%;
+}

@@ -1,0 +1,16 @@
+#MessageRow
+{
+	padding-left	: 12px;
+	height			: 30px;
+	line-height		: 30px;
+	white-space		: nowrap;
+	overflow		: hidden;
+}
+
+#ListPanel
+{
+	position		: absolute;
+	width			: 100%;
+	top				: 30px;
+	bottom			: 0px;
+}

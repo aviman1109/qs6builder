@@ -1,0 +1,2 @@
+﻿delete from TsTimer where FId='58199782-a8aa-4635-9995-07b7869ba772';
+insert into TsTimer set FId='58199782-a8aa-4635-9995-07b7869ba772', FName='系统清理',     FType='JavaClass', FRoutine='com.jeedsoft.quicksilver.handler.timer.SystemCleanRoutine',	    FIntervalLength=1, FIntervalType='date',   	FSystemStartupAction='None',	    FEnabled=1, FBaseTime=timestamp('2012-01-01 01:30:00'), FAllowConcurrentRun=0;

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+	<title>Graph</title>
+	<script src="../../js/Jui.js"></script>
+	<script>
+		Jui.use("Jui.graph.Graph");
+
+		window.onload = function()
+		{
+			var nodes = [
+				{type:"NormalNode",		id:"a", text:"测试",			x:100, y:60},
+				{type:"VirtualNode",	id:"b", text:"测试二",			x:400, y:150},
+				{type:"NormalNode",		id:"c", text:"this is a test",	x:200, y:350}
+			];
+			var lines = [
+				{type:"Line",			from:"a", to:"b"},
+				{type:"Arrow",			from:"b", to:"c", routes:[]},
+				{type:"DoubleArrow",	from:"c", to:"a", routes:[{x:100,y:200}]}
+			];
+			graph.load({nodes:nodes, lines:lines});
+		}
+
+		function getNodeHtml(node)
+		{
+			return "<div class=JuiGraphNode style='border:1px solid red;height:20px;cursor:default;white-space:nowrap'>" + node.text + "</div>";
+		}
+	</script>
+</head>
+<body class="JuiBackground">
+	<div class="JuiBottomBorder" style="position:fixed;top:0px;left:0px;right:0px">
+		<script>
+			var bar = Jui.basic.ToolBar.create();
+			bar.load({right:[
+				{"control":"Button", "name":"add",		"text":"新增", "icon":"../image/2.png"},
+				{"control":"Button", "name":"edit",		"text":"修改", "icon":"../image/3.png"},
+				{"control":"Button", "name":"delete",	"text":"删除", "icon":"../image/4.png"},
+				{"control":"Button", "name":"refresh",	"text":"刷新", "icon":"../image/5.png"}
+			]});
+		</script>
+	</div>
+	<div style="position:fixed;left:0px;top:25px;right:0px;bottom:0px">
+		<script>
+			var nodeTypes = [
+				"NormalNode",
+				"VirtualNode",
+				{name:"CustomNode", htmlFunc:getNodeHtml}
+			];
+			var lineTypes = [
+				"Line", "Arrow", "DoubleArrow"
+			]
+			var graph = Jui.graph.Graph.create({
+				isDesignMode	: true,
+				lineTypes		: lineTypes, 
+				nodeTypes		: nodeTypes, 
+				gridSize		: 32
+			});
+		</script>
+	</div>
+</body>
+</html>

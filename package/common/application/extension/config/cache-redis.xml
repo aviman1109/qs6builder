@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<servers>
+		<server host="127.0.0.1" port="6379"/>
+	</servers>
+	<password></password>
+	<database>11</database>
+	<operationTimeout>2000</operationTimeout>
+	<expire>1800000</expire>
+	<!--
+	<poolConfig>
+		<maxTotal>8</maxTotal>
+		<maxIdle>8</maxIdle>
+		<minIdle>0</minIdle>
+		<lifo>true</lifo>
+		<maxWaitMillis>-1</maxWaitMillis>
+		<minEvictableIdleTimeMillis>1800000</minEvictableIdleTimeMillis>
+		<softMinEvictableIdleTimeMillis>-1</softMinEvictableIdleTimeMillis>
+		<numTestsPerEvictionRun>3</numTestsPerEvictionRun>
+		<testOnCreate>false</testOnCreate>
+		<testOnBorrow>false</testOnBorrow>
+		<testOnReturn>false</testOnReturn>
+		<testWhileIdle>false</testWhileIdle>
+		<timeBetweenEvictionRunsMillis>-1</timeBetweenEvictionRunsMillis>
+		<evictionPolicyClassName>org.apache.commons.pool2.impl.DefaultEvictionPolicy</evictionPolicyClassName>
+		<blockWhenExhausted>true</blockWhenExhausted>
+		<jmxEnabled>true</jmxEnabled>
+		<jmxNameBase></jmxNameBase>
+		<jmxNamePrefix>pool</jmxNamePrefix>
+	</poolConfig>
+	-->
+</root>

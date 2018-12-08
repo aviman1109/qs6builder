@@ -1,0 +1,175 @@
+﻿.JuiCondition
+{
+	width				: 100%;
+	height				: 100%;
+	overflow			: auto;
+}
+
+.JuiConditionNode
+{
+	width				: 100%;
+}
+
+.JuiConditionRow
+{
+	padding-left		: 21px;
+	/*
+	background-image	: url("image/ConditionNodeLine.png");
+	background-repeat	: no-repeat;
+	*/
+	display				: block;
+	width				: 100%;
+	height				: 30px;
+	overflow			: hidden;
+	position			: relative;
+}
+
+.JuiConditionBar
+{
+	background-color	: #D8E8FF;
+	width				: 100%;
+	height				: 100%;
+	overflow			: hidden;
+	border-left			: 1px solid #FFFFFF;
+	border-top			: 1px solid #FFFFFF;
+	border-right		: 1px solid #ACA899;
+	border-bottom		: 1px solid #ACA899;
+	cursor				: default;
+	white-space			: nowrap;
+	padding				: 1px 0px 0px 7px;
+	line-height			: 26px;
+}
+
+.JuiConditionRow[type=Add] .JuiConditionBar
+{
+	color				: #8080A0;
+}
+
+.JuiCondition[Disabled] .JuiConditionRow[type=Add] .JuiConditionBar
+{
+	color				: #808080;
+}
+
+.JuiConditionRow[Current] .JuiConditionBar
+{
+	padding-left		: 2px;
+}
+
+.JuiConditionRow[Selected] .JuiConditionBar
+{
+	background-color	: #FFE69E;
+}
+
+.JuiConditionBar > div
+{
+	display				: inline-block;
+	overflow			: hidden;
+}
+
+.JuiConditionFieldCell
+{
+	width				: 150px;
+	text-overflow		: ellipsis;
+}
+
+.JuiConditionOperatorCell
+{
+	width				: 136px;
+}
+
+.JuiConditionValueCell
+{
+}
+
+.JuiConditionEdit > div
+{
+	display				: inline-block;
+	overflow			: hidden;
+	padding-right		: 2px;
+}
+
+.JuiConditionEditFieldCell
+{
+	width				: 150px;
+}
+
+.JuiConditionEditOperatorCell
+{
+	width				: 136px;
+}
+
+.JuiConditionEditValueCell
+{
+	width				: 150px;
+}
+
+.JuiConditionEditDateCell
+{
+	width				: 90px;
+}
+
+.JuiConditionNodeBlock
+{
+	padding-left		: 24px;
+	width				: 100%;
+}
+
+.JuiConditionTopNodeBlock
+{
+	width				: 100%;
+}
+
+.JuiConditionNodeBlockWithLine
+{
+	padding-left		: 24px;
+	width				: 100%;
+	position			: relative;
+	/*
+	background-image	: url(image/ConditionVertLine.png);
+	background-repeat	: repeat-y;
+	background-position	: 7px 0px;
+	*/
+}
+
+.JuiConditionNodeBlockWithLine:before,
+.JuiConditionRow:before,
+.JuiConditionRow:after
+{
+	position			: absolute;
+	left				: 8px;
+	width				: 1px;
+	border-left			: 1px solid #ccc;
+	z-index				: -1;
+	content				: "";
+}
+
+.JuiConditionNodeBlockWithLine:before
+{
+	height				: 100%;
+}
+
+.JuiConditionRow:before
+{
+	top					: 0px;
+	height				: 15px;
+}
+
+.JuiConditionRow:after
+{
+	top					: 15px;
+	height				: 15px;
+	width				: 10px;
+	border-top			: 1px solid #ccc;
+}
+
+.JuiConditionRow[lineType=HorzLine]:before,
+.JuiConditionRow[lineType=DownLLine]:before
+{
+	display				: none;
+}
+
+.JuiConditionRow[lineType=UpLLine]:after
+{
+	height				: 1px;
+	border-left			: none;
+}

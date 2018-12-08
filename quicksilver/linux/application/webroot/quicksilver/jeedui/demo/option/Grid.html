@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+		<title>Grid</title>
+		<link rel="stylesheet" type="text/css" href="../misc/Demo.css">
+		<style>
+			.Title
+			{
+				text-align: center;
+				margin-top: 20px;
+			}
+			.Container
+			{
+				width: 800px;
+				margin: 10px auto 0px auto;
+			}
+		</style>
+		<script src="../../js/Jui.js"></script>
+		<script>
+			Jui.use("Jui.option.Grid");
+			
+			function doLoad()
+			{
+				var comboItems = [
+				    {text:"A", onclick:"doComboButtonClick(1)"},
+				    {text:"B", onclick:"doComboButtonClick(2)"},
+				    {text:"C", onclick:"doComboButtonClick(3)"}
+				];
+				var header = [
+				    {title:"开始日期", 	key:"start",		type:"Date"},
+				    {title:"结束日期", 	key:"end",			type:"Date"},
+				    {title:"所在城市", 	key:"city",			type:"String"},
+				    {title:"所在机构", 	key:"company",		type:"String"},
+				    {title:"薪酬", 		key:"price",		type:"Integer"},
+				    {title:"是否专职", 	key:"fullTime",		type:"Boolean"},
+				    {title:"操作", 		key:"operation",	type:"Control", items:[{type:"Link", text:"锁定", onclick:"doLinkClick"}, {type:"Link", text:"解锁", onclick:"doLinkClick"}]},
+				    {title:"操作", 		key:"operation",	type:"Control", items:[{type:"Button", text:"锁定", onclick:"doButtonClick"}, {type:"ComboButton", text:"删除", items:comboItems}]}
+				];
+				var data = [
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶1", company:"洛杉矶西方学院", fullTime:true},
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶2", company:"洛杉矶西方学院", fullTime:true},
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶3", company:"洛杉矶西方学院", fullTime:true},
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶4", company:"洛杉矶西方学院", fullTime:true},
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶5", company:"洛杉矶西方学院", fullTime:true},
+				    {start:"1979-09-01", 	end:"1983-07-03",	city:"洛杉矶6", company:"洛杉矶西方学院", fullTime:true},
+				];
+
+				Jui.basic.ToolBar.create({target:"ToolBarPane"});
+				window.grid1 = Jui.option.Grid.create({target:"Container1"});
+				window.grid2 = Jui.option.Grid.create({target:"Container2"});
+				grid1.load({header:header, data:data});
+				grid2.load({header:header, data:[]});
+			}
+			
+			function doLinkClick()
+			{
+				Jui.message.hint("您点击了链接: " + JSON.stringify(this.getEventRow()));
+			}
+			
+			function doButtonClick()
+			{
+				Jui.message.hint("您点击了按钮: " + JSON.stringify(this.getOwner().getEventRow()));
+			}
+			
+			function doComboButtonClick(index)
+			{
+				Jui.message.hint("您点击了下拉项: index=" + index + ": " + JSON.stringify(grid1.getEventRow()));
+			}
+		</script>
+	</head>
+	<body onload="doLoad()">
+		<div class="ToolBarPane" id="ToolBarPane"></div>
+		<div class="ContentPane">
+			<div class="Title">有内容</div>
+			<div class="Container" id="Container1"></div>
+			<div class="Title">无内容</div>
+			<div class="Container" id="Container2"></div>
+		</div>
+	</body>
+</html>
