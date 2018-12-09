@@ -6,7 +6,7 @@ kind: pipeline
 name: default
 
 clone:
-  depth: 1
+  depth: 20
 
 steps:
 - name: build
@@ -16,5 +16,5 @@ steps:
     username: aviman1109
     password: ToDrogogOivwad0
     repo: aviman1109/qs6builder
-    tags: nocommand
+    tags: bill
     dockerfile: Dockerfile
