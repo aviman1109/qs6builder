@@ -2,14 +2,17 @@
 echo setting...
 count=0
 echo $count
-cd /tmp/qs-build/bin/local/qs6
-if [ ! -z "${PLUGIN_MODULE}" ]; then
-    echo ${PLUGIN_MODULE} 
-    sed -i 's/PLUGIN_MODULE/'"${PLUGIN_MODULE}"'/' settings.xml && echo "set PLUGIN_MODULE complete" || echo "Failure set PLUGIN_MODULE"
-    count=`expr $count + 1`
-else
-   echo you need settings:PLUGIN_MODULE
-fi
+# cd /tmp/qs-build/bin/local/qs6
+# if [ ! -z "${PLUGIN_MODULE}" ]; then
+#     echo ${PLUGIN_MODULE} 
+#     sed -i 's/PLUGIN_MODULE/'"${PLUGIN_MODULE}"'/' settings.xml && echo "set PLUGIN_MODULE complete" || echo "Failure set PLUGIN_MODULE"
+#     count=`expr $count + 1`
+# else
+#    echo you need settings:PLUGIN_MODULE
+# fi
+./setParameter.sh PLUGIN_MODULE ${PLUGIN_MODULE} && echo "set PLUGIN_MODULE complete" || echo "Failure set PLUGIN_MODULE"
+
+
 
 if [ ! -z "${PLUGIN_VERSION}" ]; then
     sed -i 's/PLUGIN_VERSION/'"${PLUGIN_VERSION}"'/' settings.xml && echo "set PLUGIN_VERSION complete" || echo "Failure set PLUGIN_VERSION"
