@@ -27,7 +27,7 @@ else
 fi
 
 if [ ! -z "${PLUGIN_INITIALISM}" ]; then
-    sed -i 's/PLUGIN_INITIALISM/'"${PLUGIN_INITIALISM}"'' settings.xml && echo "set PLUGIN_INITIALISM complete" || echo "Failure set PLUGIN_INITIALISM"
+    sed -i 's/PLUGIN_INITIALISM/'"${PLUGIN_INITIALISM}"'/' settings.xml && echo "set PLUGIN_INITIALISM complete" || echo "Failure set PLUGIN_INITIALISM"
     count=`expr $count + 1`
 else
    echo you need settings:PLUGIN_INITIALISM
