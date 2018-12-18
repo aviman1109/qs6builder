@@ -10,8 +10,7 @@ echo $count
 # else
 #    echo you need settings:PLUGIN_MODULE
 # fi
-./setParameter.sh PLUGIN_MODULE ${PLUGIN_MODULE} && echo "set PLUGIN_MODULE complete" || echo "Failure set PLUGIN_MODULE"
-
+./setParameter.sh PLUGIN_MODULE ${PLUGIN_MODULE} && count=`expr $count + 1` || echo "count=${count} not add"
 
 
 if [ ! -z "${PLUGIN_VERSION}" ]; then
@@ -45,11 +44,13 @@ if [ ! -z "${PLUGIN_PORT}" ]; then
     x=`expr ${x} + 1`
     sed -i 's/PLUGIN_PORT_3/'"${x}"'/' settings.xml && echo "set ajpPort complete" || echo "Failure set ajpPort"
     x=`expr ${x} + 1`
-    sed -i 's/PLUGIN_PORT_4/'"${x}"'/' settings.xml && echo "set ajpPort complete" || echo "Failure set ajpPort"
+    sed -i 's/PLUGIN_PORT_4/'"${x}"'/' settings.xml && echo "set shutdownPort complete" || echo "Failure set shutdownPort"
     count=`expr $count + 1`
 else
    echo you need settings:PLUGIN_PORT
 fi
+
+cat settings.xml
 
 if [ $count = 5 ]; then
     ../../ant/bin/ant -buildfile build.xml -logfile build.log -Dos=linux -Dmode=full
