@@ -55,3 +55,9 @@ else
    echo check your .drone.yml
 fi
 
+file="/tmp/qs-build/output/${PLUGIN_MODULE}-linux*.zip"
+if [ -f "$file" ]; then
+    cp $file /${PLUGIN_BASE}/ && echo "Success Build!!!!" || echo "Failure with something..."
+else
+   echo "there is nothing in output"
+fi
