@@ -6,7 +6,7 @@ kind: pipeline
 name: default
 
 clone:
-  depth: 20
+  depth: 10
 
 steps:
 - name: build
