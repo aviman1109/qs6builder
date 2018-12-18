@@ -68,8 +68,7 @@ if [ $count = 8 ]; then
 else
    echo check your .drone.yml
 fi
-
-file="/tmp/qs-build/output/*-linux*.zip"
+file=$(ls /tmp/qs-build/output/*-linux*.zip)
 echo $file
 if [ -f "${file}" ]; then
     cp ${file} /${PLUGIN_BASE}/ && echo "Success Build!!!!" || echo "Failure with something..."
