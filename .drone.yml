@@ -9,7 +9,7 @@ clone:
   depth: 10
 
 steps:
-- name: build
+- name: BuildDocker
   image: plugins/docker
   pull: always
   settings:
