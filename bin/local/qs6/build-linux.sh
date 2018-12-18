@@ -2,11 +2,7 @@
 echo setting...
 count=0
 echo $count
-chmod 777 -R /tmp/qs-build/bin/
-chmod 777 /tmp/qs-build/bin/local/qs6/settings.xml
-chmod 777 -R /tmp/qs-build/output/
-ls -al /tmp/qs-build/bin/local/qs6/
-
+cd /tmp/qs-build/bin/local/qs6
 if [ ! -z "${PLUGIN_MODULE}" ]; then
     echo ${PLUGIN_MODULE} 
     sed -i 's/PLUGIN_MODULE/'"${PLUGIN_MODULE}"'/' settings.xml && echo "set PLUGIN_MODULE complete" || echo "Failure set PLUGIN_MODULE"
