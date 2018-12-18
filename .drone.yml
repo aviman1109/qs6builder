@@ -18,4 +18,3 @@ steps:
     repo: aviman1109/qs6builder
     tags: builder
     dockerfile: Dockerfile
-    # wqed
