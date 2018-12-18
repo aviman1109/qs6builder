@@ -11,7 +11,7 @@ echo $count
 #    echo you need settings:PLUGIN_MODULE
 # fi
 ./setParameter.sh PLUGIN_MODULE ${PLUGIN_MODULE} && count=`expr $count + 1` || echo "count=${count} not add"
-
+echo $count
 
 if [ ! -z "${PLUGIN_VERSION}" ]; then
     sed -i 's/PLUGIN_VERSION/'"${PLUGIN_VERSION}"'/' settings.xml && echo "set PLUGIN_VERSION complete" || echo "Failure set PLUGIN_VERSION"
@@ -58,9 +58,9 @@ else
    echo check your .drone.yml
 fi
 
-file="/tmp/qs-build/output/${PLUGIN_MODULE}-linux*.zip"
+file="/tmp/qs-build/output/*-linux*.zip"
 if [ -f "$file" ]; then
     cp $file /${PLUGIN_BASE}/ && echo "Success Build!!!!" || echo "Failure with something..."
 else
-   echo "there is nothing in output"
+   echo "There is nothing in output..."
 fi
