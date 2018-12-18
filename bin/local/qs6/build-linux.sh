@@ -63,7 +63,7 @@ done
 
 cat settings.xml
 
-if [ $count = 5 ]; then
+if [ $count = 8 ]; then
     ../../ant/bin/ant -buildfile build.xml -logfile build.log -Dos=linux -Dmode=full
 else
    echo check your .drone.yml
