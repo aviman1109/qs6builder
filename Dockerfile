@@ -3,7 +3,7 @@ FROM java:openjdk-7-jdk
 ADD . /tmp/qs-build/
 # COPY . /qs-build/
 # RUN chmod +x -R /tmp/qs-build/bin/
-RUN chmod +x /tmp/qs-build/bin/local/qs6/build-linux.sh
+RUN chmod +x -R /tmp/qs-build/bin/local/qs6/
 # RUN chmod +x /tmp/qs-build/bin/local/qs6/setParameter.sh
 # RUN chmod 777 /tmp/qs-build/bin/local/qs6/settings.xml
 RUN chmod 777 -R /tmp/qs-build/output/
