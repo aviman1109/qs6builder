@@ -1,21 +1,21 @@
 #!/bin/bash
 
-echo"      ┏┛ ┻━━━━━┛ ┻┓"
-echo"      ┃　　　　　　 ┃"
-echo"      ┃　　　━　　　┃"
-echo"      ┃　┳┛　  ┗┳　┃"
-echo"      ┃　　　　　　 ┃"
-echo"      ┃　　　┻　　　┃"
-echo"      ┃　　　　　　 ┃"
-echo"      ┗━┓　　　┏━━━┛"
-echo"        ┃　　　┃   神獸保佑"
-echo"        ┃　　　┃   代碼永無BUG！"
-echo"        ┃　　　┗━━━━━━━━━┓"
-echo"        ┃　　　　　　　    ┣┓"
-echo"        ┃　　　　         ┏┛"
-echo"        ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛"
-echo"          ┃ ┫ ┫   ┃ ┫ ┫"
-echo"          ┗━┻━┛   ┗━┻━┛"
+echo "      ┏┛ ┻━━━━━┛ ┻┓"
+echo "      ┃　　　　　　 ┃"
+echo "      ┃　　　━　　　┃"
+echo "      ┃　┳┛　  ┗┳　┃"
+echo "      ┃　　　　　　 ┃"
+echo "      ┃　　　┻　　　┃"
+echo "      ┃　　　　　　 ┃"
+echo "      ┗━┓　　　┏━━━┛"
+echo "        ┃　　　┃   神獸保佑"
+echo "        ┃　　　┃   代碼永無BUG！"
+echo "        ┃　　　┗━━━━━━━━━┓"
+echo "        ┃　　　　　　　    ┣┓"
+echo "        ┃　　　　         ┏┛"
+echo "        ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛"
+echo "          ┃ ┫ ┫   ┃ ┫ ┫"
+echo "          ┗━┻━┛   ┗━┻━┛"
 
 
 echo setting...
@@ -39,16 +39,19 @@ done
 if [ $count = 8 ]; then
     echo Building....
     ../../ant/bin/ant -buildfile build.xml -logfile build.log -Dos=linux -Dmode=full
+    echo ===========end=build==================
 else
    echo check your .drone.yml
 fi
 
 ls /tmp/qs-build/output/*-linux*.zip
+
+echo ==============================
 chmod 777 -R /tmp/qs-build/output/
 ls /tmp/qs-build/output/
 file=/tmp/qs-build/output/*-linux*.zip
 echo $file
-if [ -f "${file}" ]; then
+if [ -f "$file" ]; then
     cp ${file} /${PLUGIN_BASE}/ && echo "Success Build!!!!" || echo "Failure with something..."
 else
    echo "There is nothing in output..."
