@@ -6,15 +6,15 @@ kind: pipeline
 name: default
 
 clone:
-  depth: 20
+  depth: 10
 
 steps:
-- name: build
+- name: BuildDocker
   image: plugins/docker
   pull: always
   settings:
     username: aviman1109
     password: ToDrogogOivwad0
     repo: aviman1109/qs6builder
-    tags: bill
+    tags: builder
     dockerfile: Dockerfile
