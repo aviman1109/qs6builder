@@ -40,6 +40,7 @@ filename=$file
 if [ -f $filename ]; then
     cp ${file} /${PLUGIN_BASE}/ && Success || Failure
 else
+   Failure
    echo "There is nothing in output..."
 fi
 
