@@ -7,7 +7,7 @@
 	<property name="project.module"			value="PLUGIN_MODULE"/>
 	<property name="project.version"		value="PLUGIN_VERSION"/>
 	<property name="project.base"			location="/PLUGIN_BASE/PLUGIN_MODULE"/>
-	<property name="project.jarname"		value="chainsea-pgw.jar"/>
+	<property name="project.jarname"		value="chainsea-PLUGIN_INITIALISM.jar"/>
 	<property name="quicksilver.package"	location="/tmp/qs-build/quicksilver"/>
 
 	<property name="package.settings">
@@ -15,13 +15,13 @@
 			{
 				extract:
 				{
-					appName			: "pgw",
-					productName		: "Chainsea pgw",
-					serviceName		: "Chainsea pgw",
-					httpPort		: "12521",
-					httpsPort		: "12522",
-					ajpPort			: "12523",
-					shutdownPort	: "12524"
+					appName			: "PLUGIN_MODULE",
+					productName		: "Chainsea PLUGIN_MODULE",
+					serviceName		: "Chainsea PLUGIN_MODULE",
+					httpPort		: "PLUGIN_PORT_1",
+					httpsPort		: "PLUGIN_PORT_2",
+					ajpPort			: "PLUGIN_PORT_3",
+					shutdownPort	: "PLUGIN_PORT_4"
 				}
 			}
 		]]>
