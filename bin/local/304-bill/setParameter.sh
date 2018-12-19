@@ -1,7 +1,6 @@
 #!/bin/sh
-if [ ! -z "${2}" ]; then
-    echo setting....${2} 
-    sed -i 's/'"${1}"'/'"${2}"'/g' settings.xml && echo "set ${1} complete" || echo "Failure set ${1}"
+if [ $# -eq 3 ]; then
+    sed -i 's/value="'"$1"'"/value="'"$2"'"</g' $3
 else
-   echo you need settings:${1}
+   echo error
 fi
