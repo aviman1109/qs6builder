@@ -1,10 +1,10 @@
 PIDS=`ps aux | grep pgw | awk '{print $2}' | xargs`
-echo $$
-
+echo "this pid $$"
+echo "ssh pid $1"
 read -a PID <<< "${PIDS}"
 for ((i=0; i < ${#PID[@]}; i++))
 do
-    if [ ! $$ = ${PID[$i]} ]; then
+    if [ ! ${PID[$i]} = $$ -a ${PID[$i]} = $1 ]; then
         echo $i ${PID[$i]}
         ppid=${PID[$i]}
         # echo $ppid
