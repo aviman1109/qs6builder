@@ -1,4 +1,4 @@
-PIDS=`ps aux | grep pgw | awk '{print $2}' | xargs`
+PIDS=`ps aux | grep $2 | awk '{print $2}' | xargs`
 echo "this pid $$"
 echo "ssh pid $1"
 read -a PID <<< "${PIDS}"
