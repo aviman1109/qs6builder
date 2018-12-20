@@ -1,5 +1,6 @@
 PIDS=`ps aux | grep pgw | awk '{print $2}' | xargs`
 read -a PID <<< "${PIDS}"
+echo "kill pid......"
 for ((i=0; i < ${#PID[@]}; i++))
 do
     echo $i ${PID[$i]}
