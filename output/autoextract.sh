@@ -13,13 +13,14 @@ mv /home/source/drone/${project}-linux*.zip /home/source/old/
 
 cd /tmp/${project}
 if ./extractcmd.sh -path $project_home; then
-    # cd /home/source/drone
+    cd /home/source/drone
     cp -f *.xml $project_home/apache-tomcat/extension/${project}/config/
     cp -f application.properties $project_home/apache-tomcat/extension/${project}/config/
-    # cd $project_home/tool
-    $project_home/tool/dsinitcmd.sh -ds default
+    cd $project_home/tool
+    ./dsinitcmd.sh -ds default
     echo =====inited=====
-    nohup $project_home/server.sh > /dev/null 2>&1 &
+    cd $project_home
+    ./server.sh > /dev/null 2>&1 &
     echo "---extracted--> ${ver}"
     date +"%Y/%m/%d %H:%M:%S extracted [${project}] ${ver}" >> /home/setup/installed.txt
 fi
