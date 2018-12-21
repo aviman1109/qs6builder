@@ -57,11 +57,9 @@ cd /tmp/qs-build/output/
 ls *linux*.zip
 
 echo ==============================
-# chmod 777 -R /tmp/qs-build/output/
-# ls /tmp/qs-build/output/
 file=*linux*.zip
-# echo $file
 filename=$file
+cp *.sh /${PLUGIN_BASE}/ && echo "Success cp .sh" || echo "Failure cp"
 if [ -f $filename ]; then
     cp ${file} /${PLUGIN_BASE}/ && Success || Failure
 else

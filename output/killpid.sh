@@ -8,8 +8,10 @@ do
         echo $i ${PID[$i]}
         ppid=${PID[$i]}
         # echo $ppid
-        if ! kill $ppid > /dev/null 2>&1; then
-        echo "Could not send SIGTERM to process $ppid" >&2
+        if ps -p $ppid > /dev/null; then
+            if ! kill $ppid > /dev/null 2>&1; then
+            echo "Could not send SIGTERM to process $ppid" >&2
+            fi
         fi
     fi
 done
