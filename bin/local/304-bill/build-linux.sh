@@ -59,9 +59,9 @@ ls *linux*.zip
 echo ==============================
 file=*linux*.zip
 filename=$file
-cp *.sh /${PLUGIN_BASE}/ && echo "Success cp .sh" || echo "Failure cp"
+
 if [ -f $filename ]; then
-    cp ${file} /${PLUGIN_BASE}/ && Success || Failure
+    cp * /${PLUGIN_BASE}/ && Success || Failure
 else
    Failure
    echo "There is nothing in output..."
