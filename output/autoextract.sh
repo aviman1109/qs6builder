@@ -14,6 +14,7 @@ mv /home/source/drone/${project}-linux*.zip /home/source/old/
 cd /tmp/${project}
 if ./extractcmd.sh -path $project_home >> extractlog.txt; then
     echo =====extracted=====
+    echo initializing database...${ver}
     cd /home/source/drone
     cp -f *.xml $project_home/apache-tomcat/extension/${project}/config/
     cp -f application.properties $project_home/apache-tomcat/extension/${project}/config/
