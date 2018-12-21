@@ -13,7 +13,9 @@ mv /home/source/drone/${project}-linux*.zip /home/source/old/
 
 cd /tmp/${project}
 if ./extractcmd.sh -path $project_home; then
-    cd $project_home
+    cd $project_home/tool
+    ./dsinitcmd.sh -ds default
+    echo =====inited=====
     nohup $project_home/server.sh > /dev/null 2>&1 &
     echo "---upgraded--> ${ver}"
     date +"%Y/%m/%d %H:%M:%S upgraded [${project}] ${ver}" >> /home/setup/installed.txt
