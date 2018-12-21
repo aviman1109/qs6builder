@@ -8,16 +8,19 @@ unzip -q /home/source/drone/${project}-linux*.zip -d /tmp && echo "Success unzip
 mv /tmp/${project}* /tmp/${project}/
 
 ver=$(ls /home/source/drone/${project}-linux*.zip)
-echo upgrading...${ver}
+echo extracting...${ver}
 mv /home/source/drone/${project}-linux*.zip /home/source/old/
 
 cd /tmp/${project}
 if ./extractcmd.sh -path $project_home; then
-    cd $project_home/tool
-    ./dsinitcmd.sh -ds default
+    # cd /home/source/drone
+    cp -f *.xml $project_home/apache-tomcat/extension/${project}/config/
+    cp -f application.properties $project_home/apache-tomcat/extension/${project}/config/
+    # cd $project_home/tool
+    $project_home/tool/dsinitcmd.sh -ds default
     echo =====inited=====
     nohup $project_home/server.sh > /dev/null 2>&1 &
-    echo "---upgraded--> ${ver}"
-    date +"%Y/%m/%d %H:%M:%S upgraded [${project}] ${ver}" >> /home/setup/installed.txt
+    echo "---extracted--> ${ver}"
+    date +"%Y/%m/%d %H:%M:%S extracted [${project}] ${ver}" >> /home/setup/installed.txt
 fi
 
