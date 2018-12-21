@@ -13,12 +13,13 @@ mv /home/source/drone/${project}-linux*.zip /home/source/old/
 
 cd /tmp/${project}
 if ./extractcmd.sh -path $project_home >> extractlog.txt; then
+    echo =====extracted=====
     cd /home/source/drone
     cp -f *.xml $project_home/apache-tomcat/extension/${project}/config/
     cp -f application.properties $project_home/apache-tomcat/extension/${project}/config/
     cd $project_home/tool
     ./dsinitcmd.sh -ds default >> dsinitlog.txt
-    echo =====inited=====
+    echo =====dsinited=====
     cd $project_home
     ./server.sh > /dev/null 2>&1 &
     echo "---extracted--> ${ver}"
