@@ -12,7 +12,8 @@ echo upgrading...${ver}
 mv /home/source/drone/${project}-linux*.zip /home/source/old/
 
 cd /tmp/${project}
-if ./upgradecmd.sh -path $project_home; then
+if ./upgradecmd.sh -path $project_home >> upgradelog.txt; then
+    echo =====upgraded=====
     cd $project_home
     nohup $project_home/server.sh > /dev/null 2>&1 &
     echo "---upgraded--> ${ver}"
