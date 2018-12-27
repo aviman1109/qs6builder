@@ -38,11 +38,11 @@
 		</copy>
 		-->
 
-		<!--
+		
 		<copy todir="${output.webroot}/WEB-INF/lib">
 			<fileset dir="${project.base}/WebRoot/WEB-INF/lib"/>
 		</copy>
-		
+		<!--
 		<copy todir="${output.webroot}/Qs">
 			<fileset dir="${project.base}/WebRoot/chatbotmanager"/>
 		</copy>
