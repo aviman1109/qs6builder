@@ -5,5 +5,3 @@ if [ ! -z "${2}" ]; then
 else
    echo you need settings:${1}
 fi
-
-# echo -------------------

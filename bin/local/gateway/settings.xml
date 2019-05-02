@@ -3,10 +3,10 @@
 -->
 
 <project>
-	<property name="project.name"			value="PLUGIN_MODULE"/>
+	<property name="project.name"			value="PLUGIN_NAME"/>
 	<property name="project.module"			value="PLUGIN_MODULE"/>
 	<property name="project.version"		value="PLUGIN_VERSION"/>
-	<property name="project.base"			location="/PLUGIN_BASE/PLUGIN_MODULE"/>
+	<property name="project.base"			location="/PLUGIN_BASE/PLUGIN_MODULE/gatewayTrunk"/>
 	<property name="project.jarname"		value="chainsea-PLUGIN_INITIALISM.jar"/>
 	<property name="quicksilver.package"	location="/tmp/qs-build/quicksilver"/>
 
@@ -29,47 +29,52 @@
 
 	<target name="after-copy">
 
-		<!--
 		<copy todir="${output.extension}/report/birt/working/ChatIVR" overwrite="true">
-			<fileset dir="${project.base}/file/report/ChatIVR"/>
+			<fileset dir="${project.base}/file/report/ChatICR"/>
 		</copy>
+	
 		<copy todir="${output.webroot}">
 			<fileset file="${project.base}/WebRoot/WebChatEntry.js"/>
 		</copy>
-		-->
-
-		
 		<copy todir="${output.webroot}/WEB-INF/lib">
 			<fileset dir="${project.base}/WebRoot/WEB-INF/lib"/>
 		</copy>
-		<!--
-		<copy todir="${output.webroot}/Qs">
-			<fileset dir="${project.base}/WebRoot/chatbotmanager"/>
-		</copy>
-		-->
-		<copy todir="${output.webroot}/custom">
-			<fileset dir="${project.base}/WebRoot/custom"/>
+		<copy todir="${output.webroot}/gateway">
+			<fileset dir="${project.base}/WebRoot/gateway"/>
 		</copy>
 		<copy todir="${output.sql}/${project.module}/default">
 			<fileset dir="${project.base}/sql"/>
 		</copy>
-		<!--
+				
 		<copy todir="${output.extension}/attachment" overwrite="true">
 			<fileset dir="${project.base}/attachment"/>
 		</copy>
+		
+		<!-- Chris add -->
+		
+		<!--
+		<copy todir="${tomcat.webapps}/gateway/webchat" overwrite="true">
+			<fileset dir="${project.base}/WebRoot/webchat"/>
+		</copy>
 		-->
-		<!-- 存放報表js文件 
+	
+		<!-- 存放報表js文件 -->
 		<copy todir="${output.webroot}/custom">
 			<fileset dir="${project.base}/WebRoot/custom"/>
 		</copy>		
-		-->
+
 		<!-- 暫時性的動作，平台代碼有變更 -->
+
 		<!--
 		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chat.html"  overwrite="true" />
-		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chatIVR.html"  overwrite="true" />
-		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chatXiaoI.html"  overwrite="true" />
-		
+		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chatICR.html"  overwrite="true" />
+		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chatQbi.html"  overwrite="true" />
+		<copy todir="${output.webroot}"  file="${project.base}/WebRoot/chatXaioI.html"  overwrite="true" />		
 		<copy todir="${output.webroot}"  file="${project.base}/release.txt"  overwrite="true" />
 		-->
+		
+		<!--<copy todir="${output.webroot}"  file="${project.base}/WebRoot/GuestBook.jsp"  overwrite="true" />-->
+		<!--<copy todir="${output.webroot}"  file="${project.base}/WebRoot/Redirection.jsp"  overwrite="true" />-->
+		
 	</target>
 </project>
