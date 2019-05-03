@@ -2,17 +2,6 @@
 SettingFile=/tmp/qs-build/bin/local/${PLUGIN_MODULE}/settings.xml
 FilePath=/tmp/qs-build/bin/local/${PLUGIN_MODULE}
 
-Success(){
-
-    echo Success
-
-}
-
-Failure(){
-
-    echo Failure
-　
-}
 
 setParameter (){
     if [ ! -z "${2}" ]; then
@@ -61,7 +50,7 @@ file=*linux*.zip
 filename=$file
 
 if [ -f $filename ]; then
-    cp * /${PLUGIN_BASE}/ && Success || Failure
+    cp * /${PLUGIN_BASE}/ && echo Success || echo Failure
 else
    Failure
    echo "There is nothing in output..."
