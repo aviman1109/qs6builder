@@ -42,7 +42,7 @@ done
 cat ${SettingFile}
 echo ==========end=setting===================
 cd ${FilePath}
-ls
+ls -al
 if [ $count = 9 ]; then
     echo Building....
     ./build-linux.sh
@@ -53,6 +53,7 @@ fi
 
 echo your output file
 cd /tmp/qs-build/output/
+ls -al
 ls *linux*.zip
 
 echo ==============================
