@@ -28,7 +28,7 @@
 	</property>
 
 	<target name="after-copy">
-<!-- 
+
 		<copy todir="${output.extension}/report/birt/working/ChatIVR" overwrite="true">
 			<fileset dir="${project.base}/file/report/ChatICR"/>
 		</copy>
@@ -61,7 +61,7 @@
 		<!-- 存放報表js文件 -->
 		<copy todir="${output.webroot}/custom">
 			<fileset dir="${project.base}/WebRoot/custom"/>
-		</copy>		 -->
+		</copy>		
 
 		<!-- 暫時性的動作，平台代碼有變更 -->
 
