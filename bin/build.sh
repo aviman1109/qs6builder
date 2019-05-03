@@ -52,7 +52,6 @@ filename=$file
 if [ -f $filename ]; then
     cp * /${PLUGIN_BASE}/ && echo Success || echo Failure
 else
-   Failure
    echo "There is nothing in output..."
 fi
 
