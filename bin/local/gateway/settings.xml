@@ -8,7 +8,7 @@
 	<property name="project.version"		value="PLUGIN_VERSION"/>
 	<property name="project.base"			location="/PLUGIN_BASE/PLUGIN_MODULE/gatewayTrunk"/>
 	<property name="project.jarname"		value="chainsea-PLUGIN_INITIALISM.jar"/>
-	<property name="quicksilver.package"	location="/tmp/qs-build/output/"/>
+	<property name="quicksilver.package"	location="/tmp/qs-build/quicksilver"/>
 
 	<property name="package.settings">
 		<![CDATA[
