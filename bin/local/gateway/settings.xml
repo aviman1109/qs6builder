@@ -3,11 +3,11 @@
 -->
 
 <project>
-	<property name="project.name"			value="PLUGIN_NAME"/>
-	<property name="project.module"			value="PLUGIN_MODULE"/>
+	<property name="project.name"			value="gateway"/>
+	<property name="project.module"			value="gateway"/>
 	<property name="project.version"		value="PLUGIN_VERSION"/>
 	<property name="project.base"			location="/PLUGIN_BASE/PLUGIN_MODULE/gatewayTrunk"/>
-	<property name="project.jarname"		value="chainsea-PLUGIN_INITIALISM.jar"/>
+	<property name="project.jarname"		value="chainsea-gateway.jar"/>
 	<property name="quicksilver.package"	location="/tmp/qs-build/quicksilver"/>
 
 	<property name="package.settings">
@@ -15,20 +15,20 @@
 			{
 				extract:
 				{
-					appName			: "PLUGIN_MODULE",
-					productName		: "Chainsea PLUGIN_MODULE",
-					serviceName		: "Chainsea PLUGIN_MODULE",
-					httpPort		: "PLUGIN_PORT_1",
-					httpsPort		: "PLUGIN_PORT_2",
-					ajpPort			: "PLUGIN_PORT_3",
-					shutdownPort	: "PLUGIN_PORT_4"
+					appName			: "gateway",
+					productName		: "Chainsea CRM Gateway",
+					serviceName		: "Chainsea CRM Gateway",
+					httpPort		: "12621",
+					httpsPort		: "12622",
+					ajpPort			: "12623",
+					shutdownPort	: "12624"
 				}
 			}
 		]]>
 	</property>
 
 	<target name="after-copy">
-<!-- 
+
 		<copy todir="${output.extension}/report/birt/working/ChatIVR" overwrite="true">
 			<fileset dir="${project.base}/file/report/ChatICR"/>
 		</copy>
@@ -61,7 +61,7 @@
 		<!-- 存放報表js文件 -->
 		<copy todir="${output.webroot}/custom">
 			<fileset dir="${project.base}/WebRoot/custom"/>
-		</copy>		 -->
+		</copy>		
 
 		<!-- 暫時性的動作，平台代碼有變更 -->
 

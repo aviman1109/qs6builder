@@ -55,3 +55,4 @@ else
    echo "There is nothing in output..."
 fi
 
+cat ${FilePath}/build.log
